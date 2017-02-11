@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>DlgToWin by Ketil</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5"><img border="0" src="../images/ketil.gif" width="60" height="90">DlgToWin by KetilO</font></B></P>
+
+<P>
+This AddIn creates all the code needed to create an app from a dialogbox in RadASM.<BR>
+<BR>
+How to install:<BR>
+Copy DlgToWin.dll to C:\RadASM\AddIns<BR>
+Copy *.rad to C:\RadASM\Templates<BR>
+<BR>
+Edit RadASM.ini  and add the following;<BR>
+<BR>
+<A HREF="rah_radasm_ini.htm#addins">[AddIns]</A><BR>
+xx=DlgToWin.dll,1<BR>
+<BR>
+Where xx is the next available AddIn<BR>
+<BR>
+<B>How to use:</B><BR>
+<BR>
+In RadASM, open a dialog box in the editor. From the <B>Tools</B> menu select <B>Dialog to window</B> Make your choices and click OK. The result is shown in the output window. Copy all or selected code to your asm file. You can edit the templates to suit your programming style.<BR>
+<BR>
+<B>DlgToWin addin.</B><BR>
+<BR>
+You can choose from four templates:<BR>
+<BR>
+<font color="#008080"><b>
+1. DlgToWin.rad</b></font><BR>
+Creates a running app using CreateWindowEx on window and controls from a RadASM dialogbox.<BR>
+Also creates a WM_COMMAND section on buttons and menu items.<BR>
+<BR>
+<b><font color="#008080">
+2. DlgAsMain.rad</font></b><BR>
+Creates a running app using dialogbox template as main window from a RadASM dialogbox.<BR>
+Also creates a WM_COMMAND section on buttons and menu items.<BR>
+<BR>
+<b><font color="#008080">
+3. DialogApp.rad</font></b><BR>
+Creates a running app using dialogbox template from a RadASM dialogbox.<BR>
+Also creates a WM_COMMAND section on buttons and menu items.<BR>
+<BR>
+<b><font color="#008080">
+4. Dialog.rad</font></b><BR>
+Creates a dialogbox proc to be included in a larger project.<BR>
+Also creates a WM_COMMAND section on buttons and menu items.<BR>
+<BR>
+You can also export individual sections, change the proc name and add a menu.<BR>
+</P>
+
+</BODY>
+</HTML>

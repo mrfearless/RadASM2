@@ -1,0 +1,139 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Editing command line options</title>
+</head>
+
+<BODY>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="0=project.rap \n" +
+"1=project.rc \n" +
+"2=project.asm \n" +
+"3=project.obj \n" +
+"4=project.res \n" +
+"5=project.exe \n" +
+"6=project.def \n" +
+"7=project.dll \n" +
+"8=project.txt \n" +
+"9=project.lib \n" +
+"10=project.mak \n" +
+"11=project.hla "
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+text_variable3="1 = Resource compiler \n" +
+"2 = Assembler \n" +
+"3 = Linker \n" +
+"4 = Executable command line \n" +
+"5 = CVTRES (convert Res to Object) \n" +
+"6 = Assemble modules \n" +
+"7 = Run with debugger \n" +
+"Add 10 for debug version"
+</SCRIPT></CODE><font color="#0000FF" size="5"><b>Editing command line options</b></font></p>
+<p>The Project Options dialog displays a list of commands that correspond to the
+Make Menu items. These command lines are built by RadASM from the variables that
+you enter in Project Options or those that are specified as default for the
+project type you chose when you created the project.</p>
+<p>The link command will be used to demonstrate how to modify these entries.</p>
+<p>Link command line from MASM Win32 App release:</p>
+<pre>3=5,O,$B\LINK.EXE /FILEALIGN:512 /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:&quot;$L&quot;,3,4</pre>
+<p>Let's break down the <a href="rah_assembler_ini.htm#projecttype">masm.ini</a>
+entry, the commands in Project Options are identical.</p>
+<p><font color="#0000FF"><b>3=</b></font> - <CODE><A HREF="JavaScript:popup.TextPopup(text_variable3,font_variable2,9,9,-1,-1)">This</a></CODE> specifies that this command
+line is the link command<br>
+<font color="#0000FF"><b>5</b></font> - In the project ini (rap) file there is a
+section called <a href="rah_proj_files.htm#makefiles">MakeFiles</a>, this number
+corresponds to the <CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">file number</a></CODE> for the exe file. RadASM will delete this file
+before executing the command and will generate an error if it is not present
+once the command has finished.<br>
+<font color="#0000FF"><b>,O</b></font> - This specifies that all messages will
+be directed to RadASM's <font color="#0000FF"><b>O</b></font>utput window. The
+other option &quot;C&quot; will direct output to the <font color="#0000FF"><b>C</b></font>onsole.
+Adding a <font color="#0000FF"><b>T</b></font> to this parameter (<font color="#0000FF"><b>,OT</b></font>)
+will cause the command line to be output to the RadASM output window.<br>
+<font color="#0000FF"><b>,$B</b></font> - This variable corresponds to the BIN
+folder specified in the <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$_</a></CODE> variables
+in assembler.ini<br>
+<font color="#0000FF"><b>\Link.exe</b></font> - this is the actual name of the
+link program to be used<br>
+<font color="#0000FF"><b> /FILEALIGN:512 /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0</b></font>
+- Command switches<br>
+<font color="#0000FF"><b>/LIBPATH:&quot;$L&quot;</b></font> - in this case the
+$L will be replaced by the value of $L in the paths section of your assemblers
+ini file. The quotes will cause it to be encased in quotes.<br>
+<font color="#0000FF"><b>,3</b></font><font color="#0000FF"><b>,4</b></font> -
+these numbers correspond to the <CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">file numbers</a></CODE> in the project ini (rap) file and
+will be replaced by those file names. In this case project.obj and project.res</p>
+<p>After the link command the presence of a comma will signal two things to the
+RadASM parser, first that the next number represents a file in the project ini
+(rap) file, and second that it should be encased in quotes. The quotes will be preceded
+by a space. The quotes will encase everything up to the end of the line or until
+it reaches another comma. for example if you had :</p>
+<p><b>1,3 /hello /there,4</b></p>
+<p>It would be parsed as follows :</p>
+<p><b>1 &quot;project.obj /hello /there&quot; &quot;project.res&quot;</b></p>
+<p>The preceding rule creates two problems when generating command lines, first
+how to include a dynamic filename without the use of quotes and second how to
+include a comma in a command line.</p>
+<p>As can be seen in the example above if you use the 1 without a comma before
+it it will be treated as a literal number however if you wish to use the
+represented file in the rap file you can use the $ to indicate that the number
+is to be treated as a variable :</p>
+<p><b>$1,3 /hello /there,4</b></p>
+<p>It would be parsed as follows :</p>
+<p><b>project.rc &quot;project.obj /hello /there&quot; &quot;project.res&quot;</b></p>
+<p>Notice that file name for 1 (project.rc) is not encased in quotes. If you
+need it encased in quotes you can use &quot;$1&quot; and the filename will be
+included with quotes. Using this method can allow switches to be used after the
+file name has been included. In the first example the switches were encased in
+the quotes with the file name and would generate an error, if you replaced the <font color="#008000"><b>,3</b></font>
+with <font color="#008000"><b>&quot;$3&quot;</b></font> everything would be
+correct.</p>
+<p>The other problem presented by the parser rules is the inclusion of a comma.
+As has been demonstrated a comma is used by the parser to signal that the text
+should be quoted, in order to use a comma in the command line the parser allows
+for the pipe | symbol. When the parser encounters a | it will replace it with a
+comma. There is no replacement available for the pipe symbol. For example if you
+needed the following command line.</p>
+<p><b>Something.exe /Switch &quot;project.rc&quot;,3</b></p>
+<p>First the inclusion of a comma before the 1 would quote the whole line so the
+<font color="#008000"><b>,1</b></font> would be replaced with the alternative <font color="#008000"><b>&quot;$1&quot;</b></font>,
+second, the comma after the quoted file name would quote 3 and convert it to a
+file name if it was included directly so it is replaced with the pipe symbol.
+Without the comma or $ the 3 will be treated as a literal numeric value. So the
+command line would look like this :</p>
+<p><b>Something.exe /Switch &quot;$1&quot;|3</b></p>
+<p style="border: 2 solid #008080"><font color="#FF0000"><b>NOTE</b></font> : In
+the case of the compile RC command line the inclusion of a .exe on the name of
+the executable will remove any generated quotes from the command line.</p>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</body>
+
+</html>

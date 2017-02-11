@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Project Files</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="0=project.rap \n" +
+"1=project.rc \n" +
+"2=project.asm \n" +
+"3=project.obj \n" +
+"4=project.res \n" +
+"5=project.exe \n" +
+"6=project.def \n" +
+"7=project.dll \n" +
+"8=project.txt \n" +
+"9=project.lib \n" +
+"10=project.mak \n" +
+"11=project.hla "
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+</SCRIPT></CODE><B><font color="#0000FF" size="5">Project Files</font></B></P>
+
+<P>
+<font size="4">
+<B><font color="#800080"><a name="project"></a>Section [Project]</font></B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM project wizard and project options.</font><BR>
+<BR>
+<font color="#0000FF"><b>Assembler</b></font>=Assembler is masm, tasm or fasm and tells RadASM which assembler the project is intended for.<BR>
+<font color="#0000FF"><b>Type</b></font>=Project type. See section <a HREF="rah_assembler_ini.htm#projecttype">[ProjectType]</a><BR>
+<font color="#0000FF"><b>Description</b></font>=Text entered when project was created.<BR>
+<font color="#0000FF"><b>Backup</b></font>=Where the backups are put. Usually <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$P</a></CODE>\Bak\<BR>
+<font color="#0000FF"><b>Debug</b></font>=Debug build, TRUE or FALSE<BR>
+<font color="#0000FF"><b>Group</b></font>=Use project groups, TRUE or FALSE<BR>
+<font color="#0000FF"><b>GroupExpand</b></font>=Expand groups, TRUE or FALSE<BR>
+<BR>
+<font size="4">
+<B><font color="#800080"><a name="makedef"></a>Section [MakeDef]</font></B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM project wizard and project options.</font><BR>
+<BR>
+<font color="#0000FF"><b>Menu</b></font>=See <A HREF="rah_assembler_ini.htm">Assembler.ini </A> section
+<a HREF="rah_assembler_ini.htm#projecttype">[ProjectType]</a><BR>
+<font color="#0000FF"><b>x</b></font>=DelCheck,Out,Command,F1[,F2[,Fx]] - See <A HREF="rah_assembler_ini.htm">Assembler.ini </A> section
+<a HREF="rah_assembler_ini.htm#projecttype">[ProjectType]</a><BR>
+<BR>
+<a name="makefiles"></a><B><font color="#800080" size="4">Section [MakeFiles]</font></B><BR>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM project wizard.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=ProjectName.ext - See <A HREF="rah_assembler_ini.htm">Assembler.ini </A>section
+<a HREF="rah_assembler_ini.htm#makefiles">[MakeFiles]</a><BR>
+<BR>
+<a name="files"></a><B><font color="#800080" size="4">Section [Files]</font></B><BR>
+<BR>
+Maintained by RadASM project wizard and project menu.<BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=File.ext<br>
+<font color="#0000FF"><b>x </b></font> is a number from 1 to 1000 for normal files, and 1001 and up for modules. File.ext is a file included in the project.<BR>
+<BR>
+<font color="#800080" size="4">
+<B><a name="size"></a>Section [Size]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<b><font color="#800000">Left</font><font color="#0000FF">,Top,</font><font color="#000080">Right</font><font color="#0000FF">,</font><font color="#FF0000">Bottom</font></b>[,<font color="#008080"><b>FilePos</b></font>] see section
+<a HREF="#files">[Files]</a><BR>
+<b><font color="#800000">
+Left</font></b> is mdi childs left position in pixels<BR>
+<font color="#0000FF"><b>
+Top</b></font> is mdi childs top position in pixels<BR>
+<b><font color="#000080">Right </font></b>is mdi childs width in pixels<BR>
+<b><font color="#FF0000">Bottom </font></b>is mdi childs height in pixels<BR>
+<font color="#008080"><b>
+FilePos</b></font> is the carets character position in an edit window. <BR>
+<BR>
+<font color="#800080" size="4">
+<a name="bookmark"></a><B>Section [BookMark]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM named bookmarks.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>nFile</b></font>,<b><font color="#000080">Line<br>
+</font> <font color="#0000FF">x</font></b> is a number between 0 and 9<BR>
+<font color="#FF0000"><b>
+nFile</b></font> see section <a HREF="#files">[Files]</a>,<BR>
+<font color="#000080"><b>Line</b></font> = Line is the line number where the bookmark is set.<BR>
+<BR>
+<font color="#800080" size="4">
+<a name="breakpoint"></a><B>Section [BreakPoint]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM breakpoints.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>nFile</b></font>,<b><font color="#000080">Line<br>
+</font> <font color="#0000FF">x</font></b> is a number between 0 and 255<BR>
+<font color="#FF0000"><b>
+nFile</b></font> see section <a HREF="#files">[Files]</a>&nbsp;<br>
+<font color="#000080"><b>Line</b></font> = Line is the line number where the breakpoint is set.<BR>
+<BR>
+<font color="#800080" size="4">
+<B><a name="autoload"></a>Section [AutoLoad]</B><BR>
+</font>
+<BR>
+Maintained by RadASM project context menu.<BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>AutoLoad</b></font> see section
+<a HREF="#files">[Files]</a>,&nbsp;<br>
+<font color="#FF0000"><b>AutoLoad</b></font>= <b>TRUE</b> or <b> FALSE</b><BR>
+<BR>
+<font color="#800080" size="4">
+<B><a name="verinf"></a>Section [VerInf]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM project versioninfo.</font><BR>
+<BR>
+<font color="#0000FF"><b>
+Nme</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>ID</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>FV</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>PV</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>
+VerOS</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>
+VerFT</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>
+VerLNG</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>
+VerCHS</b></font>=See section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a><BR>
+<font color="#0000FF"><b>Text</b></font>=ValueText see  section <a HREF="rah_radasm_ini.htm#verinf">[VerInf]</a> ; Value is text set by user.<BR>
+<BR>
+<font color="#800080" size="4">
+<B><a name="resource"></a>Section [Resource]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM project resource.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Name</b></font>,<font color="#000080"><b>ID</b></font>,<font color="#800000"><b>Type</b></font>,<b><font color="#008000">File<br>
+</font> <font color="#0000FF">x</font></b> is a number 1 and up<BR>
+<font color="#FF0000"><b>
+Name</b></font> is the name of the resource<BR>
+<font color="#000080"><b>
+ID</b></font> is the id number of the resource<BR>
+<font color="#800000"><b>
+Type</b></font> is a number 0 to 5<BR>
+<font color="#008000"><b>Filex </b></font>is the resource file<BR>
+<BR>
+Resource types<BR>
+<font color="#0000FF"><b>0</b></font>=Bitmap<BR>
+<font color="#0000FF"><b>1</b></font>=Cursor<BR>
+<font color="#0000FF"><b>2</b></font>=Icon<BR>
+<font color="#0000FF"><b>3</b></font>=Image<BR>
+<font color="#0000FF"><b>4</b></font>=Midi<BR>
+<font color="#0000FF"><b>5</b></font>=Wave<BR>
+<BR>
+<font color="#800080" size="4">
+<a name="stringtable"></a><B>Section [StringTable]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM project stringtable.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Name</b></font>,<font color="#000080"><b>ID</b></font>,<b><font color="#800000">String<br>
+</font> <font color="#0000FF">x</font></b> is a number 1 and up<BR>
+<font color="#FF0000"><b>
+Name</b></font> is the name of the string resource<BR>
+<font color="#000080"><b>
+ID</b></font> is the id number of the string resource<BR>
+<font color="#800000"><b>String </b></font>is the text<BR>
+<BR>
+<font color="#800080" size="4">
+<B><a name="find"></a>Section [Find]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM Find / Replace dialog.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=&quot;Find text"x is a number 1 to 10. "Find text" is one of the most recent searches.<BR>
+<BR>
+<font color="#800080" size="4">
+<B><a name="tlink"></a>Section [TLink]</B><BR>
+</font>
+<BR>
+<font color="#FF0000">
+Maintained by RadASM</font><BR>
+<BR>
+<font color="#0000FF"><b>1</b></font>=xBug link - x is the number of the next link (ie number of bug links + 1)<BR>
+<font color="#0000FF"><b>2</b></font>=xText Link - x is the number of the next link (ie number of text links + 1)<BR>
+<font color="#0000FF"><b>3</b></font>=xToDo link - x is the number of the next link (ie number of ToDo links + 1)<BR>
+</P>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

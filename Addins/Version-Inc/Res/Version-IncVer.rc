@@ -1,0 +1,24 @@
+#define VERINF1 1
+VERINF1 VERSIONINFO
+FILEVERSION 1,0,0,6
+PRODUCTVERSION 1,0,0,6
+FILEOS 0x00000004
+FILETYPE 0x00000000
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904E4"
+    BEGIN
+      VALUE "CompanyName", "X05\0"
+      VALUE "FileVersion", "1.0.6\0"
+      VALUE "FileDescription", "Version-Inc addin for RadASM by X05\0"
+      VALUE "LegalCopyright", "X05\0"
+      VALUE "ProductName", "Version-Inc\0"
+      VALUE "ProductVersion", "1.0.6\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04E4
+  END
+END

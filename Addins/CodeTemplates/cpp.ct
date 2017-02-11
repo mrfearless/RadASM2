@@ -1,0 +1,66 @@
+[*WndProc*]
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	int wmId, wmEvent;
+	PAINTSTRUCT ps;
+	HDC hdc;
+	TCHAR szHello[MAX_LOADSTRING];
+
+	switch (message) 
+	{
+		case WM_COMMAND:
+			wmId    = LOWORD(wParam); 
+			wmEvent = HIWORD(wParam); 
+			// Parse the menu selections:
+			switch (wmId)
+			{
+				case IDM_ABOUT:
+				   DialogBox(hInst, (LPCTSTR)IDD_ABOUTBOX, hWnd, (DLGPROC)About);
+				   break;
+				case IDM_EXIT:
+				   DestroyWindow(hWnd);
+				   break;
+				default:
+				   return DefWindowProc(hWnd, message, wParam, lParam);
+			}
+			break;
+		case WM_PAINT:
+			LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
+			hdc = BeginPaint(hWnd, &ps);
+			RECT rt;
+			// TODO: Add any drawing code here...
+			rt.left=10;
+			GetClientRect(hWnd, &rt);
+			DrawText(hdc, szHello, strlen(szHello), &rt, DT_CENTER);
+			EndPaint(hWnd, &ps);
+			break;
+		case WM_DESTROY:
+			PostQuitMessage(0);
+			break;
+		default:
+			return DefWindowProc(hWnd, message, wParam, lParam);
+   }
+   return 0;
+}
+[*RegisterClass*]
+ATOM MyRegisterClass(HINSTANCE hInstance)
+{
+	WNDCLASSEX wcex;
+
+	wcex.cbSize = sizeof(WNDCLASSEX); 
+
+	wcex.style			= CS_HREDRAW | CS_VREDRAW;
+	wcex.lpfnWndProc	= (WNDPROC)WndProc;
+	wcex.cbClsExtra		= 0;
+	wcex.cbWndExtra		= 0;
+	wcex.hInstance		= hInstance;
+	wcex.hIcon			= LoadIcon(hInstance, (LPCTSTR)IDI_WIN32APP);
+	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
+	wcex.hbrBackground	= (HBRUSH)(COLOR_WINDOW+1);
+	wcex.lpszMenuName	= (LPCSTR)IDC_WIN32APP;
+	wcex.lpszClassName	= szWindowClass;
+	wcex.hIconSm		= LoadIcon(wcex.hInstance, (LPCTSTR)IDI_SMALL);
+
+	return RegisterClassEx(&wcex);
+}
+[**]

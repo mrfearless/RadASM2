@@ -1,0 +1,3 @@
+#include "Res/PreviewRes.rc"
+#include "Res/PreviewVer.rc"
+#include "Res/PreviewMnu.rc"

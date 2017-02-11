@@ -1,0 +1,4 @@
+LIBRARY AutoCorrect.dll
+EXPORTS
+	InstallDll
+	DllProc

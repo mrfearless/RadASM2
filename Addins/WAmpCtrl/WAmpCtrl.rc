@@ -1,0 +1,36 @@
+#include <Res\ControlDlg.rc>
+#define IDB_AMP							600
+#define IDB_BACKWARD					601
+#define IDB_FORWARD						602
+#define IDB_PLAY						603
+#define IDB_PAUSE						604
+#define IDB_STOP						605
+#define IDB_CLOSE						606
+IDB_AMP					BITMAP DISCARDABLE Res\winamp.bmp
+IDB_BACKWARD			BITMAP DISCARDABLE Res\back.bmp
+IDB_FORWARD				BITMAP DISCARDABLE Res\forward.bmp
+IDB_PLAY				BITMAP DISCARDABLE Res\play.bmp
+IDB_PAUSE				BITMAP DISCARDABLE Res\pause.bmp
+IDB_STOP				BITMAP DISCARDABLE Res\stop.bmp
+IDB_CLOSE				BITMAP DISCARDABLE Res\close.bmp
+#define VERINF1 1
+VERINF1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEOS 0x00000004
+FILETYPE 0x00000000
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileVersion", "1.0.0.0\0"
+      VALUE "FileDescription", "WinAmp Control Panel - RadASM AddIn\0"
+      VALUE "LegalCopyright", "Eviloid (C) 2oo2, Just for Fun !\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04B0
+  END
+END

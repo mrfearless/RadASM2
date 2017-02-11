@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Using modules</title>
+</head>
+
+<body>
+
+<p style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<b><font color="#0000FF" size="5">Using modules</font></b></p>
+<p>Large projects can be hard to handle when using the single source file approach.
+The list of includes can get very long if you have several hundred files. To
+answer this concern RadASM is capable of separately assembling multiple asm source
+files to individual object files and bringing them together in the link process.
+The last edit time of the source file is checked against it's object file and
+the source is only compiled if necessary, this reduces compile time as only
+those modules that need to be recompiled will be.</p>
+<p>You must enable <b>Assemble Modules</b> in <a href="rah_opt_proj.htm">Project
+Options</a> in order to activate module support for a particular project. To add
+a module to a project requires two steps. First you must select <b>Add New</b>
+from the <a href="rah_add_proj_file.htm">Project Menu</a> and add a new module.
+You will be prompted to create an asm source file. Once you are finished editing
+the source file you select <b>Assemble Modules</b> form the <a href="rah_compile_proj.htm">Make
+Menu</a> to assemble it. For the linker to see your file you must add it to the
+list of linked files by adding it's object file to the project using <b>Add
+Existing</b> and selecting the newly created module.</p>
+<p>As an alternative to adding the object files to your project you can also
+change the link command to the following in order to have all object files
+included in the link, note that this will not work with linkers that do not
+permit wildcards in file names, for those you will have to add the object file
+manually.</p>
+<pre>For masm
+5,OT,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:&quot;$L&quot; *.obj,4</pre>
+<p>The required structure for a module varies from assembler to assembler but
+generally it must not have an entry point and you must declare any commonly used
+variables as public. This is an example of a module file written for MASM</p>
+<pre style="border: 2 solid #008080">.586
+.mmx
+.model flat,stdcall
+option casemap:none
+
+;#########################################################################
+; Include files
+
+include \masm32\include\windows.inc
+include \masm32\include\user32.inc
+include \masm32\include\kernel32.inc
+
+;#########################################################################
+; Libraries
+
+includelib \masm32\lib\user32.lib
+includelib \masm32\lib\kernel32.lib
+
+PUBLIC datalabel ; exported to other modules
+EXTERN extlabel:DWORD ; imported from another module
+
+.data?
+datalabel dd ?
+
+.code
+
+; note no entry point
+
+end</pre>
+
+</body>
+
+</html>

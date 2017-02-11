@@ -1,0 +1,26 @@
+
+Code by X05
+email: X05_44960@hotmail.com
+date: 13.01.2003
+rev: 2
+
+This small addin creates a new menu entry in project menu named Version-Inc.
+When the user build a project and the menu is checked,
+the version resource numbers are increased.
+Version numbers are only increased if the project has a resource file (.rc)
+
+This addin requires RadASM 1.2.1.6 or above.
+
+
+Options for [AddIns] in RadASM.ini are:
+
+0 for disabled
+1 for enabled
+
+The user can HOLD shift when clicking Version-Inc menu for options
+OR HOLD control to see about box :)
+
+
+Thanks to bitRAKE for the Date/Time code in .data section
+
+

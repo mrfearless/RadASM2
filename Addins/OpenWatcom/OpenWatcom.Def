@@ -1,0 +1,5 @@
+LIBRARY OpenWatcom
+EXPORTS
+	DllEntry
+	DllProc
+	InstallDll

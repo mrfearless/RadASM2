@@ -1,0 +1,6 @@
+#define IDB_MNUARROW					500
+IDB_MNUARROW			BITMAP DISCARDABLE Res\MNUARROW.bmp
+
+#include <Res\TbrCreateDlg.rc>
+#include "Res/TbrCreateVer.rc"
+

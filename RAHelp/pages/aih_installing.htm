@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Installing an AddIn</title>
+</head>
+
+<body>
+
+<p style="background-color: #99CCFF; border-style: solid; border-width: 1"><font color="#0000FF" size="5"><b>Installing an AddIn</b></font></p>
+<p>AddIns are small utility DLLs that extend the capability of RadASM or add new
+functionality to the IDE. All AddIns have an entry in the <a href="rah_radasm_ini.htm#addins">AddIns</a>
+section of RadASM.ini. The entry takes this form:</p>
+<p><font color="#000080"><b>XX</b></font>=<font color="#008000"><b>AddIn.dll</b></font>,<font color="#FF0000"><b>YY</b></font></p>
+<p><font color="#000080"><b>XX</b></font> is the next available AddIn number<br>
+<font color="#008000"><b>AddIn.dll</b></font> is the name of the dll that
+resides in the AddIns folder<br>
+<font color="#FF0000"><b>YY</b></font> is an option number that is passed to the
+AddIn. Set this to 0 if none are required</p>
+<p>There will generally be a readme file that will detail the options for the
+particular AddIn you are installing.</p>
+
+<p>Beginning with RadASM version 2.0.3.3 you can also use the <a href="aih_addin_manager.htm">AddIn
+Manager</a>, a GUI AddIn that allows you to dynamically load and unload AddIns
+in real time and enable options by simply checking them. The AddIn must be AddIn
+Manager compatible in order to work properly with the manager.</p>
+
+</body>
+
+</html>

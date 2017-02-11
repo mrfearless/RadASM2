@@ -1,0 +1,13 @@
+#define IDM_FILE_EXIT 10001
+#define IDM_HELP_ABOUT 10002
+TreeViewDir MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "E&xit",IDM_FILE_EXIT
+  END
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&About",IDM_HELP_ABOUT
+  END
+END

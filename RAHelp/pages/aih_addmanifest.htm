@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>AddManifest by QvasiModo</title>
+</head>
+
+<body>
+
+<p style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">AddManifest by QvasiModo</font></B></p>
+<p><b>Add XP Manifest AddIn for RadAsm</b><br>
+By <b> QvasiModo</b> (Mario Vilas)<br>
+Version 1.02<br>
+Last update 25-Sep-03</p>
+<hr>
+<p>This Addin will generate the manifest data for your application. It will attempt to auto generate the data from the project options, but you still have the chance to change it as needed. The data is optionally exported to a .Manifest file and/or the resource script.</p>
+<hr>
+<p><b>Installing the AddIn (using AddIn Manager):</b><br>
+    1) Copy AddManifest.Dll to your addin folder (typically C:\RadAsm\AddIns)<br>
+    2) Launch RadAsm, and go to Option -> Addin Manager<br>
+    3) Select AddManifest from the list, click "Install"<br>
+    4) Choose the options you want for the AddIn, then click "OK"<br>
+<br>
+<b>Installing the AddIn (manually editing RadAsm.Ini):</b><br>
+    1) Copy AddManifest.Dll to your addin folder (typically C:\RadAsm\AddIns)<br>
+    2) Open RadAsm.Ini with a text editor (for example Notepad.exe)<br>
+    3) Add the following entry to the [AddIns] section:<br>
+        x=AddManifest.Dll,y,1<br>
+       Where "x" is the next available number, and y is a number that represent the options. It is calculated by adding the following numbers:<br>
+        1:  Enable the addin<br>
+        2:  Add to resource script<br>
+        4:  Use manifest file<br>
+        8:  Use Unicode<br>
+        16: Autorun on project open<br>
+    4) Restart RadAsm<br>
+<br>
+The addin will store manifest data in the project file under the key [Manifest]. When this data is not found, the default settings are taken from the [Manifest] section in RadAsm.Ini, and additionally the [VerInf] section in the project file, and the project description.<br>
+<br>
+The code inserted into the resource script is enclosed in comment tags. <font color="#FF0000"><b> DO NOT</b></font> edit or remove those lines, as they are used by the addin to find the inserted part.</p>
+<p style="border: 2 solid #008080"><font color="#FF0000"><b>Author's note</b></font>:
+This program is freeware, and you are free to use, copy or redistribute in any way, provided no modifications are made to the original package, and I am given the proper credit. :)
+</p>
+
+</body>
+
+</html>

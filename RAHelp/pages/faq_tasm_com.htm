@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>FAQ Building COM files with TASM</title>
+</head>
+
+<body>
+
+<p style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<font color="#0000FF" size="5"><b>Building COM files with TASM</b></font></p>
+<p><b><i><font color="#800080">Originally posted by wasily</font></i></b><br>
+I'm using tasm and I'm still writing dos code, so i'd like to use tlink.exe instead of tlink32.exe which is always used whenever
+I try to link my .obj ... how can I tell RADasm to use tlink.exe?</p>
+<p><b><i><font color="#800080">Answer from cakmak</font></i></b><br>
+for .com files...<br>
+<br>
+if you dont care .txt file type, in your last project file (.rap)<br>
+<br>
+    [MakeDef]<br>
+    Menu=0,1,1,1,1,1,1,1,0,0<br>
+    1=4,O,$B\brcc32.exe -r -i"$I" -v,1<br>
+    2=3,O,$B\tasm32.EXE /I"$I" $2<br>
+    3=8,C,$B\tlink.exe /t $3 ; &lt;&lt; notice "8" and without "," or "$"<br>
+    4=0,0,,5<br>
+    5=<br>
+    7=0,0,C:\Program Files\OllyDebug\OllyDbg,5<br>
+<br>
+    and,<br>
+<br>
+    [MakeFiles]<br>
+    0=aaa.rap<br>
+    1=aaa.rc<br>
+    2=aaa.asm<br>
+    3=aaa.obj<br>
+    4=aaa.res<br>
+    5=aaa.com<br>
+    6=aaa.def<br>
+    7=aaa.dll<br>
+    8=aaa.com ; &lt;&lt; here is yours<br>
+    9=aaa.lib<br>
+    10=aaa.mak<br>
+    11=aaa.hla<br>
+<br>
+The same thing for .exe. Notice commandline parser. And i suggest you create a .pif file for tlink.exe, this is better.</p>
+
+</body>
+
+</html>

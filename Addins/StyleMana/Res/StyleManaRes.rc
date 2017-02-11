@@ -1,0 +1,2 @@
+#define IDB_COLLAPSE					100
+IDB_COLLAPSE			BITMAP    DISCARDABLE "Res/Bookmark.bmp"

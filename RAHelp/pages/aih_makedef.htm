@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>MakeDef by Donkey</title>
+</head>
+
+<body>
+
+<p style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<img border="0" src="../images/cool_donkey.gif" width="80" height="80"><font color="#0000FF" size="5"><b>MakeDef
+by Donkey</b></font></p>
+<p><font color="#0000FF" size="4"><b>Installation:</b></font></p>
+<p>
+copy the dll to your AddIn folder then add the following line to <A HREF="rah_radasm_ini.htm">RadASM.INI</A> in the <A HREF="rah_radasm_ini.htm#addins">[AddIns] </A>section<BR>
+<BR>
+<B>XX=MakeDef.DLL,Y</B><BR>
+<BR>
+Where <B>XX</B> is the next available add in number and <B>Y</B>  has one of the
+following values:</p>
+<p><b>Y=0&nbsp;</b>&nbsp;&nbsp; The AddIn is loaded but does nothing<br>
+<b>Y=1</b>&nbsp;&nbsp;&nbsp; The AddIn will output to the output window<br>
+<b>Y=2</b>&nbsp;&nbsp;&nbsp; The AddIn will output to your projects def file</p>
+<p><font color="#0000FF" size="4"><b>Usage:</b></font></p>
+<p>MakeDef will manage your exports for a DLL project. It adds two items to the
+context menu in the Project Properties window. The items allow you to add or
+remove a procedure as well as removing all exports. The AddIn also adds a new
+list to the properties list, Exports will list the exports in your program and
+allow you to remove them using the context menu. Double-clicking an export in
+the export list will jump to that procedure in the edit window. The def file is
+built when you refresh the .code listbox or build your program. The .code list
+should be refreshed occasionally as it will refresh the internal list of
+procedures available for the AddIn. The list is also refreshed every time you
+change from one listbox to the .code listbox.</p>
+<p>The AddIn will verify that a procedure exists in it's internal list before it
+will add it to the def file, if the procedure is not found in the internal list
+it will be removed from the list of exports and not written to the def file.</p>
+<p>The list of exports is kept in the rap file so it only needs to be set once,
+each time you open the project it will be loaded.</p>
+<p>Projects that do not have a def file will have the menu items disabled and
+the Export list is not made available.</p>
+
+</body>
+
+</html>

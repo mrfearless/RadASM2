@@ -1,0 +1,2846 @@
+L1001 option : option name ambiguous
+A unique option name did not appear after the option indicator.
+An option is specified by a forward slash (/) and a name. The name can be specified by
+an abbreviation of the full name, but the abbreviation must be unambiguous.
+For example, since many options begin with the letter N, the following command causes
+this error:
+LINK /N main;
+This error can also occur if the wrong version of the linker is being used. Check the
+directories in the PATH environment variable for other versions of LINK.EXE.
+
+L1003 /Q and /EXEPACK incompatible
+LINK cannot be given both the /Q option and the /EXEPACK option.
+
+L1004 value : invalid numeric value
+An incorrect value was specified with a LINK option.
+For example, this error occurs if a nonnumeric string is specified with an option that
+requires a number.
+
+L1005 option : packing limit exceeds 64K
+The value specified with the /PACKC or /PACKD option exceeded the limit of 65,536
+bytes.
+
+L1006 number : stack size exceeds 64K-2
+One of the following may have occurred:
+  - The given value specified with the /STACK option exceeded the limit of 65,534
+    bytes.
+  - A space appeared before or after the colon (:) between /STACK and the argument
+    specified with it.
+
+L1007 /OVERLAYINTERRUPT : interrupt number exceeds 255
+An overlay interrupt number greater than 255 was specified with the /OV option value.
+Check the Microsoft MS-DOS Programmer's Reference or other MS-DOS technical
+manual for information about interrupts.
+
+L1008 /SEGMENTS : segment limit set too high
+The value specified with the /SEG option exceeded 16,375.
+
+L1009 value : /CPARM : illegal value
+The value specified with the /CPARM option was not in the range 1-65,535
+
+L1020 no object files specified
+The object-files field was empty.
+LINK requires the name of at least one object file.
+
+L1021 cannot nest response files
+A response file was specified in a response file.
+
+L1022 response line too long
+A line in a response file was longer than 255 characters.
+To extend a field to another line, put a plus sign (+) at the end of the current line.
+
+L1023 terminated by user
+The LINK session was halted by CTRL+C or CTRL+BREAK.
+
+L1024 nested right parentheses
+The parentheses for assigning overlays were specified incorrectly.
+
+L1025 nested left parentheses
+The parentheses for assigning overlays were specified incorrectly.
+
+L1026 unmatched right parenthesis
+The parentheses for assigning overlays were specified incorrectly.
+
+L1027 unmatched left parenthesis
+The parentheses for assigning overlays were specified incorrectly.
+
+L1030 missing internal name
+An IMPORTS statement specified an ordinal value but not an internal name for the
+routine or data item being imported.
+An item imported by ordinal must be given an internal name.
+
+L1031 module description redefined
+The module-definition (.DEF) file contained more than one DESCRIPTION statement.
+
+L1032 module name redefined
+The module-definition (.DEF) file contained more than one NAME or LIBRARY
+statement.
+
+L1033 input line too long; number characters allowed
+The LINK command line cannot exceed the given number of characters
+
+L1034 name truncated to string
+A name specified either on the LINK command line or in a module-definition (.DEF) file
+exceeded 255 characters. The name was truncated to the given string.
+This is a warning, not a fatal error. However, it indicates a serious problem. This
+message may be followed by another error as LINK tries to use the specified name. For
+example, if the string is a filename, LINK issues an error when it cannot open the file.
+
+L1035 syntax error in module-definition file
+A statement in the module-definition (.DEF) file was incorrect.
+
+L1040 too many exported entries
+The program exceeded the limit of 65,535 exported names.
+
+L1041 resident names table overflow
+The size of the resident names table exceeded 65,535 bytes.
+An entry in the resident names table is made for each exported routine designated
+RESIDENTNAME and consists of the name plus three bytes of information. The first
+entry is the module name.
+Reduce the number of exported routines or change some to nonresident status.
+
+L1042 nonresident names table overflow
+The size of the nonresident names table exceeded 65,535 bytes.
+An entry in the nonresident names table is made for each exported routine not designated
+RESIDENTNAME and consists of the name plus three bytes of information. The first
+entry is the DESCRIPTION statement.
+Reduce the number of exported routines or change some to resident status.
+
+L1043 relocation table overflow
+More than 32,768 long calls, long jumps, or other long pointers appeared in the program.
+Replace long references with short references wherever possible.
+
+L1044 imported names table overflow
+The size of the imported names table exceeds 65,535 bytes.
+An entry in the imported names table is made for each new name given in the IMPORTS
+section, including the module names, and consists of the name plus one byte.
+Reduce the number of imports
+
+L1045 too many TYPDEF records
+An object file contained more than 255 TYPDEF records.
+TYPDEF records describe communal variables. (TYPDEF is an MS-DOS term. It is
+explained in the Microsoft MS-DOS Programmer's Reference and in other reference
+books on MS-DOS.)
+This error appears only with programs created by the Microsoft FORTRAN Compiler or
+other compilers that support communal variables.
+
+L1046 too many external symbols in one module
+An object file specified more than 1023 external symbols.
+Break the object file into smaller files.
+
+L1047 too many group, segment, and class names in one module
+An object file contained too many group, segment, and class names.
+Reduce the number of groups, segments, or classes in the object file, or break the object
+file into smaller files.
+
+L1048 too many segments in one module
+An object file had more than 255 segments.
+Either create fewer segments or break the object file into smaller files.
+
+L1049 too many segments
+The program contained more than the maximum number of segments.
+The maximum number of segments is set with the /SEG option (in the range
+1-16,384). If /SEG is not specified, the default is 128.
+If this error occurs when linking a p-code program, recompile and use CL's /NQ option
+to combine the temporary p-code segments.
+
+L1050 too many groups in one module
+An object file contained more than 21 group definitions (GRPDEF).
+Reduce the number of group definitions or split the module.
+(Group definitions are explained in the Microsoft MS-DOS Programmer's Reference and
+in other reference books on MS-DOS.)
+
+L1051 too many groups
+The program defined more than 20 groups, not counting DGROUP.
+Reduce the number of groups.
+
+L1052 too many libraries
+An attempt was made to link with more than 32 libraries.
+Combine libraries, or use modules that require fewer libraries
+
+L1053 out of memory for symbol table
+The program had more symbolic information than could fit in available memory.
+Symbolic information includes public, external, segment, group, class, and file names.
+One of the following may be a solution:
+  - Eliminate as many public symbols as possible.
+  - Combine object files or segments.
+  - Link from the command line instead of from a makefile or PWB.
+  - Remove terminate-and-stay-resident programs or otherwise free some memory.
+
+L1054 requested segment limit too high
+LINK did not have enough memory to allocate tables describing the requested number of
+segments. The number of segments is the value specified with the /SEG option or the
+default of 128.
+One of the following may be a solution:
+  - Assemble with /c and link in a separate step.
+  - Link again using the /SEG option to set fewer segments.
+  - Remove terminate-and-stay-resident programs or otherwise free some memory.
+
+L1056 too many overlays
+The program defined more than 127 overlays.
+
+L1057 data record too large
+An LEDATA record in an object module contained more than 1024 bytes of data. This
+is a translator error. (LEDATA is an MS-DOS term explained in the Microsoft MS-DOS
+Programmer's Reference and in other MS-DOS reference books.)
+Note which translator (compiler or assembler) produced the incorrect object module.
+Please report the circumstances of the error to Microsoft Corporation by following the
+instructions in the <Microsoft Support Services> section of the introduction to this book.
+
+L1063 out of memory for debugging information
+LINK ran out of memory for processing debugging information.
+Reduce the amount of debugging information by compiling some object files with /Zd
+instead of /Zi or with neither option
+
+L1064 out of memory near/far heap exhausted
+LINK was not able to allocate enough memory for the given heap.
+One of the following may be a solution:
+  - Reduce the size of code, data, and symbols in the program.
+  - If the program is a segmented executable file, put some code into a dynamic-link
+    library.
+
+L1065 too many interoverlay calls
+use /DYNAMIC:nnn; current limit is number
+The program had more than the given limit of interoverlay calls.
+The maximum number of interoverlay calls is set with the /DYNAMIC option (in the
+range 1-10,922). If /DYNAMIC is not specified, the default is 256.
+To determine the setting needed by the program, run LINK with the /INFO option. The
+output gives the number of interoverlay calls that are generated and the current limit.
+
+L1066 size of overlaynumber overlay exceeds 64K
+The overlay represented by the given number exceeded the MOVE size limit of 65,535
+bytes.
+
+L1067 memory allocation error
+Note the circumstances of the error and notify Microsoft Corporation by following the
+instructions in the <Microsoft Support Services> section of the introduction to this book.
+
+L1070 segment : segment size exceeds 64K
+A single segment contained more than 65,536 bytes of code or data.
+Try changing the memory model to use far code or data as appropriate. If the program is
+in C, use CL's /NT option or the _ _based keyword (or its predecessor, the alloc_text
+pragma) to build smaller segments.
+
+L1071 segment _TEXT exceeds 64K-16
+The segment named _TEXT grew larger than 65,520 bytes. This error is likely to occur
+only in small-model C programs, but it can occur when any program with a segment
+named _TEXT is linked using the LINK /DOSSEG option.
+Small-model C programs must reserve code addresses 0 and 1; this range is increased to
+16 for alignment purposes.
+Try compiling and linking using the medium or large model. If the program is in C, use
+CL's /NT option or the _ _based keyword (or its predecessor, the alloc_text pragma) to
+build smaller segments
+
+L1072 common area exceeds 64K
+The program had more than 65,536 bytes of communal variables. This error occurs only
+with programs produced by the Microsoft FORTRAN optimizing compiler or other
+compilers that support communal variables.
+
+L1073 file-segment limit exceeded
+The number of physical or file segments exceeded the limit of 255 imposed by the
+Windows operating system for each application or dynamic-link library.
+A file segment is created for each group definition, nonpacked logical segment, and set of
+packed segments.
+Reduce the number of segments, or put more information into each segment. Use the
+/PACKC option or the /PACKD option or both.
+
+L1074 group : group exceeds 64K
+The given group exceeds the limit of 65,536 bytes.
+Reduce the size of the group, or remove any unneeded segments from the group. Refer
+to the map file for a listing of segments.
+
+L1075 entry table exceeds 64K-1
+The entry table exceeded the limit of 65,535 bytes.
+The table contains an entry for each exported routine and for each address that is the
+target of a far relocation, when PROTMODE is not enabled and the target segment is
+designated MOVABLE.
+Declare PROTMODE if applicable, reduce the number of exported routines, or make
+some segments FIXED if possible.
+
+L1078 file-segment alignment too small
+The segment-alignment size specified with the /ALIGN option was too small.
+
+L1080 cannot open list file
+The disk or the root directory was full.
+Delete or move files to make space.
+
+L1081 out of space for run file
+The disk or the root directory was full.
+Delete or move files to make space.
+
+L1082 filename : stub file not found
+LINK could not open the file given in the STUB statement in the module-definition
+(.DEF) file.
+The file must be in the current directory or in a directory specified by the PATH
+environment variable
+
+L1083 cannot open run file
+One of the following may have occurred:
+  - The disk or the root directory was full.
+  - Another process opened or deleted the file.
+  - A read-only file existed with the same name.
+  - The floppy disk containing the file was removed.
+  - A hard-disk error occurred.
+
+L1084 cannot create temporary file
+One of the following may have occurred:
+  - The disk or the root directory was full.
+  - The directory specified in the TMP environment variable did not exist.
+
+L1085 cannot open temporary file message
+LINK could not open a temporary file for the given reason.
+One of the following may have occurred:
+  - The disk or the root directory was full.
+  - The directory specified in the TMP environment variable did not exist.
+
+L1086 temporary file missing
+An internal error has occurred.
+Note the circumstances of the error and notify Microsoft Corporation by following the
+instructions in the <Microsoft Support Services> section of the introduction to this book.
+
+L1087 unexpected end-of-file on temporary file
+A problem occurred with the temporary linker-output file.
+One of the following may have occurred:
+  - The disk that holds the temporary file was removed.
+  - The disk or directory specified in the TMP environment variable was full.
+
+L1088 out of space for list file
+The disk or the root directory was full.
+Delete or move files to make space
+
+L1089 filename : cannot open response file
+LINK could not find the given response file.
+One of the following may have occurred:
+  - The response file does not exist.
+  - The name of the response file was incorrectly specified.
+  - An old version of LINK was used. Check your path. To see the version number of
+    LINK, run LINK with the /? option.
+
+L1090 cannot reopen list file
+The original floppy disk was not replaced at the prompt.
+Restart the LINK session.
+
+L1091 unexpected end-of-file on library
+The floppy disk containing the library was probably removed.
+Replace the disk containing the library and run LINK again.
+
+L1092 cannot open module-definition file
+LINK could not find the specified module-definition (.DEF) file.
+Check that the name of the .DEF file is spelled correctly.
+
+L1093 filename : object file not found
+LINK could not find the given object file.
+Check that the name of the object file is spelled correctly.
+
+L1094 filename : cannot open file for writing
+LINK was unable to open the given file with write permission.
+Check the attributes for the file.
+
+L1095 filename : out of space for file
+LINK ran out of disk space for the specified output file.
+Delete or move files to make space.
+
+L1096 unexpected end-of-file in response file
+LINK encountered a problem while reading the response file.
+One of the following may be a cause:
+  - The response file is corrupt.
+  - The file was deleted between reads.
+
+L1097 I/O error message
+LINK encountered the given input or output error
+
+L1098 cannot open include file filename message
+LINK could not open the given include file for the given reason.
+An include file is specified in an INCLUDE statement in the module-definition (.DEF)
+file.
+
+L1100 stub .EXE file invalid
+The file specified in the STUB statement in the module-definition (.DEF) file is not a
+valid MS-DOS executable file.
+
+L1101 invalid object module
+LINK could not link one of the object files.
+Check that the correct version of LINK is being used.
+If the error persists after recompiling, note the circumstances of the error and notify
+Microsoft Corporation by following the instructions in the <Microsoft Support Services>
+section of the introduction to this book.
+
+L1102 unexpected end-of-file
+The given library or object file had an invalid format.
+
+L1103 attempt to access data outside segment bounds
+A data record in an object file specified data extending beyond the end of a segment.
+This is a translator error.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report the error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L1104 filename : invalid library
+The given file had an invalid format for a library.
+
+L1105 invalid object due to interrupted incremental compile
+Delete the object file, recompile the program, and relink.
+
+L1106 unknown COMDAT allocation type for symbol; record ignored
+This is a translator error. The given symbol is either a routine or a data item.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book
+
+L1107 unknown COMDAT selection type for symbol; record ignored
+This is a translator error. The given symbol is either a routine or a data item.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L1108 invalid format of debugging information
+This is a translator error.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L1113 unresolved COMDEF; internal error
+This is a translator error.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L1114 unresolved COMDAT symbol; internal error
+This is a translator error. The given symbol is either a routine or a data item.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L1115 option : option incompatible with overlays
+The given option cannot be used when linking an overlaid program.
+
+L1117 unallocated COMDAT symbol; internal error
+This is a translator error. The given symbol is either a routine or a data item.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L1123 segment : segment defined both 16-bit and 32-bit
+Define the segment as either 16-bit or 32-bit
+
+L1127 far segment references not allowed with /TINY
+The /TINY option for producing a .COM file was used in a program that has a far
+segment reference.
+Far segment references are not compatible with the .COM file format. High-level-language
+programs cause this error unless the language supports the tiny memory model.
+An assembly-language program that references a segment address also causes this error.
+For example, the following causes this error:
+mov ax, seg mydata
+
+L1128 too many nested include files in module-definition file
+Nesting of INCLUDE statements in a module-definition (.DEF) file is limited to 10
+levels.
+
+L1129 missing or invalid include file name
+The file specification in an INCLUDE statement in the module-definition (.DEF) file was
+missing or was not a valid filename.
+
+L2000 imported starting address
+The program starting address as specified in the END statement in an assembly-language
+file is an imported routine. This is not supported by the Windows operating system.
+
+L2002 fixup overflow at number in segment segment
+This error message is followed by one of these strings:
+  - target external symbol
+  - frm seg name1, tgt seg name2, tgt offset number
+A fixup overflow is an attempted reference to code or data that is impossible because the
+source location (where the reference is made <from>) and the target address (where the
+reference is made <to>) are too far apart. Usually the problem is corrected by examining
+the source location.
+For information about frame and target segments, see the Microsoft MS-DOS
+Programmer's Reference.
+
+L2003 near reference to far target at offset in segment segment
+pos: offset target external name
+The program issued a near call or jump to a label in a different segment.
+This error occurs most often when specifically declaring an external procedure as near
+that should be declared as far.
+This error can be caused by compiling a small-model C program with CL's /NT option
+
+L2005 fixup type unsupported at number in segment segment
+A fixup type occurred that is not supported by LINK. This is probably a translator error.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L2010 too many fixups in LIDATA record
+The number of far relocations (pointer- or base-type) in an LIDATA record exceeds the
+limit imposed by LINK.
+The cause is usually a DUP statement in an assembly-language program. The limit is
+dynamic: a 1,024-byte buffer is shared by relocations and the contents of the LIDATA
+record. There are 8 bytes per relocation.
+Reduce the number of far relocations in the DUP statement.
+
+L2011 identifier : NEAR/HUGE conflict
+Conflicting NEAR and HUGE attributes were given for a communal variable. This error
+can occur only with programs produced by the Microsoft FORTRAN optimizing
+compiler or other compilers that support communal variables.
+
+L2012 arrayname : array-element size mismatch
+A far communal array was declared with two or more different array-element sizes (for
+instance, an array was declared once as an array of characters and once as an array of
+real numbers). This error occurs only with the Microsoft FORTRAN optimizing compiler
+and any other compiler that supports far communal arrays.
+
+L2013 LIDATA record too large
+An LIDATA record contained more than 512 bytes. This is probably a translator error.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L2022 entry (alias internalname) : export undefined
+The internal name of the given exported routine or data item is undefined.
+
+L2023 entry (alias internalname) : export imported
+The internal name of the given exported routine or data item conflicts with the internal
+name of a previously imported routine or data item
+
+L2024 symbol : special symbol already defined
+The program defined a symbol name already used by LINK for one of its own low-level
+symbols. For example, LINK generates special symbols used in overlay support and
+other operations.
+Choose another name for the symbol to avoid conflict.
+
+L2025 symbol : symbol defined more than once
+The same symbol has been found in two different object files.
+
+L2026 entry ordinal number, name name : multiple definitions for same ordinal
+The given exported name with the given ordinal number conflicted with a different
+exported name previously assigned to the same ordinal. Only one name can be associated
+with a particular ordinal.
+
+L2027 name : ordinal too large for export
+The given exported name was assigned an ordinal that exceeded the limit of 65,535
+(64K-1).
+
+L2028 automatic data segment plus heap exceed 64K
+The size of the sum of the following exceeds 64K:
+  - Data declared in DGROUP
+  - The size of the heap specified in the HEAPSIZE statement in the module-definition
+    (.DEF) file
+  - The size of the stack specified in either the /STACK option or the STACKSIZE
+    statement in the .DEF file
+Reduce near-data allocation, HEAPSIZE, or stack.
+
+L2029 symbol : unresolved external
+A symbol was declared to be external in one or more modules, but it was not publicly
+defined in any module or library.
+The name of the unresolved external symbol is given, followed by a list of object
+modules that contain references to this symbol. This message and the list of object
+modules are written to the map file, if one exists.
+One cause of this error is using the /NOI option for files that use case inconsistently in
+identifiers.
+This error can also occur when a program compiled with C/C++ version 7.0 (or later) is
+linked using /NOD. The /NOD option tells LINK to ignore all default libraries named in
+object files. C/C++ 7.0 embeds in an object file both the name of the default run-time
+library and OLDNAMES.LIB. To avoid this error, either specify OLDNAMES.LIB in
+the libraries field or specify /NOD:library where library is the name of the default run-time
+library to be excluded from the search
+
+L2030 starting address not code (use class 'CODE')
+The program starting address, as specified in the END statement of an .ASM file, should
+be in a code segment. Code segments are recognized if their class name ends in
+<CODE>. This is an error in a segmented-executable file.
+The error message can be disabled by including the REALMODE statement in the
+module-definition (.DEF) file.
+
+L2041 stack plus data exceed 64K
+If the total of near data and requested stack size exceeds 64K, the program will not run
+correctly. LINK checks for this condition only when /DOSSEG is enabled, which is the
+case in the library startup module for Microsoft language libraries.
+For object modules compiled with the Microsoft C or FORTRAN optimizing compilers,
+recompile with the /Gt command-line option to set the data-size threshold to a smaller
+number.
+This is a fatal LINK error.
+
+L2043 Quick library support module missing
+The required file QUICKLIB.OBJ was missing. QUICKLIB.OBJ must be linked in when
+creating a Quick library.
+
+L2044 symbol : symbol multiply defined, use /NOE
+LINK found what it interprets as a public-symbol redefinition, probably because a
+symbol defined in a library was redefined.
+Relink with the /NOE option. If error L2025 results for the same symbol, then this is a
+genuine symbol-redefinition error.
+
+L2046 share attribute conflict segment segment in group group
+The given segment has a different sharing attribute than other segments that are assigned
+to the given group.
+All segments assigned to a group must have the same attribute, either SHARED or
+NONSHARED. The attributes cannot be mixed.
+
+L2047 IOPL attribute conflict segment segment in group group
+The specified segment is a member of the specified group but has an IOPL attribute that
+is different from other segments in the group
+
+L2048 Microsoft Overlay Manager module not found
+Overlays were designated, but an overlay manager was missing.
+By default, the overlay manager is the Microsoft Overlay Virtual Environment (MOVE).
+This is provided in MOVE.LIB, which is a component library of the default combined
+libraries provided with Microsoft C/C++ version 7.0. The error occurs when LINK
+cannot find the _moveinit routine.
+If the /OLDOVERLAY option is specified, the overlay manager is the Microsoft Static
+Overlay Manager, which is also provided in the default combined libraries.
+
+L2050 USE16/USE32 attribute conflict segment segment in group group
+You cannot group 16-bit segments with 32-bit segments.
+
+L2052 symbol : unresolved external; possible calling convention mismatch
+A symbol was declared to be external in one or more modules, but LINK could not find
+it publicly defined in any module or library.
+The name of the unresolved external symbol is given, followed by a list of object
+modules that contain references to this symbol. The error message and the list of object
+modules are written to the map file, if one exists.
+This error occurs in a C-language program when a prototype for an externally defined
+function is omitted and the program is compiled with CL's /Gr option. The calling
+convention for _ _fastcall does not match the assumptions that are made when a
+prototype is not included for an external function.
+Either include a prototype for the function, or compile without the /Gr option.
+
+L2057 duplicate of function with different size found; record ignored
+An inconsistent class definition was found.
+Check the include files and recompile.
+
+L2058 different duplicate of function found; record ignored
+An inconsistent class definition was found.
+Check the include files and recompile.
+
+L2060 size of data block associated with symbol (16-bit segment) exceeds 64K
+A class had too many virtual functions. The given symbol is the v-table for the class, in
+the form of a decorated name.
+
+L2061 no space for data block associated with function inside segment segment
+The given function was allocated to the given segment, but the segment was full
+
+L2062 continuation of COMDAT function has conflicting attributes; record ignored
+This is a translator error.
+Note which translator (compiler or assembler) produced the incorrect object module and
+the circumstances in which it was produced. Please report this error to Microsoft
+Corporation by following the instructions in the <Microsoft Support Services> section of
+the introduction to this book.
+
+L2063 function is allocated in undefined segment
+The given function was allocated to a nonexistent segment.
+
+L2064 starting address not in the root overlay
+The segment or object file that contains the starting address for the program was placed
+into an overlay.
+The starting address in a C-language program is provided by the main function.
+
+L4000 segment displacement included near offset in segment segment
+This is the warning generated by the /W option.
+
+L4001 frame-relative fixup, frame ignored near offset in segment segment
+A reference was made relative to a segment or group that is different from the target
+segment of the reference.
+For example, if _id1 is defined in segment _TEXT, the instruction call DGROUP:_id1
+produces this warning. The frame DGROUP is ignored, so LINK treats the call as if it
+were call _TEXT:_id1.
+
+L4002 frame-relative absolute fixup near offset in segment segment
+A reference was made relative to a segment or group that was different from the target
+segment of the reference, and both segments are absolute (defined with AT).
+LINK assumed that the executable file will be run only with MS-DOS.
+
+L4004 possible fixup overflow at offset in segment segment
+A near call or jump was made to another segment that was not a member of the same
+group as the segment from which the call or jump was made.
+This can cause an incorrect real-mode address calculation when the distance between the
+paragraph address (frame number) of the segment group and the target segment is greater
+than 64K, even though the distance between the segment where the call or jump was
+actually made and the target segment is less than 64K.
+
+L4010 invalid alignment specification
+The number specified in the /ALIGN option must be a power of 2 in the range 2-32,768
+
+L4011 /PACKC value exceeding 64K-36 unreliable
+The packing limit specified with the /PACKC option was in the range 65,501-65,536
+bytes. Code segments with a size in this range are unreliable on some versions of the
+80286 processor.
+
+L4012 /HIGH disables /EXEPACK
+The /HIGH and /EXEPACK options cannot be used at the same time.
+
+L4013 option : option ignored for segmented executable file
+The given option is not allowed for segmented-executable programs.
+
+L4014 option : option ignored for DOS executable file
+The given option is not allowed for MS-DOS programs.
+
+L4015 /CO disables /DSALLOC
+The /CO and /DSALLOC options cannot be used at the same time.
+
+L4016 /CO disables /EXEPACK
+The /CO and /EXEPACK options cannot be used at the same time.
+
+L4017 option : unrecognized option name; option ignored
+The given option was not a valid LINK option. LINK ignored the option specification.
+One of the following may be a cause:
+  - An obsolete option was specified to the current version of LINK. For example, the
+    /INCR option is obsolete in LINK version 5.30. The current options are described in 
+    the manual and in online Help. To see a list of options, run LINK with the /? option.
+  - An old version of LINK was used. Check your path. To see the version number of
+    LINK, run LINK with the /? option.
+  - The name was incorrectly specified. For example, the option specification
+    /NODEFAULTLIBSEARCH is an invalid abbreviation of the
+    /NODEFAULTLIBRARYSEARCH option. Option names can be shortened by
+    removing letters only from the end of the name.
+
+L4018 missing or unrecognized application type; option option ignored
+The /PM option accepts only the keywords PM, VIO, and NOVIO.
+
+L4020 segment : code-segment size exceeds 64K-36
+Code segments that are 65,501 through 65,536 bytes in length may be unreliable on
+some versions of the 80286 processor
+
+L4021 no stack segment
+The program did not contain a stack segment defined with the STACK combine type.
+Normally, every program should have a stack segment with the combine type specified
+as STACK. You can ignore this message if you have a specific reason for not defining a
+stack or for defining one without the STACK combine type. Linking with versions of
+LINK earlier than version 2.40 might cause this message since these linkers search
+libraries only once.
+
+L4022 group1, group2 : groups overlap
+The given groups overlap. Since a group is assigned to a physical segment, groups cannot
+overlap in segmented-executable files.
+Reorganize segments and group definitions so the groups do not overlap. Refer to the
+map file.
+
+L4023 entry(internalname) : export internal name conflict
+The internal name of the given exported function or data item conflicted with the internal
+name of a previous import definition or export definition.
+
+L4024 name : multiple definitions for export name
+The given name was exported more than once, an action that is not allowed.
+
+L4025 modulename.entry(internalname) : import internal name conflict
+The internal name of the given imported function or data item conflicted with the internal
+name of a previous export or import. (The given entry is either a name or an ordinal
+number.)
+
+L4026 modulename.entry(internalname) : self-imported
+The given function or data item was imported from the module being linked. This error
+can occur if a module tries to import a function or data item from itself or from another
+source (such as a DLL) that has the same name.
+
+L4027 name : multiple definitions for import internal name
+The given internal name was imported more than once. Previous import definitions are
+ignored.
+
+L4028 segment : segment already defined
+The given segment was defined more than once in a SEGMENTS statement of the
+module-definition (.DEF) file.
+
+L4029 segment : DGROUP segment converted to type DATA
+The given logical segment in the group DGROUP was defined as a code segment.
+DGROUP cannot contain code segments because LINK always considers DGROUP to
+be a data segment. The name DGROUP is predefined as the automatic (or default) data
+segment.
+LINK converted the named segment to type DATA
+
+L4030 segment : segment attributes changed to conform with automatic data segment
+The given logical segment in the group DGROUP was given sharing attributes
+(SHARED/NONSHARED) that differed from the automatic data attributes as declared
+by the DATA instance specification (SINGLE/MULTIPLE). The attributes are
+converted to conform to those of DGROUP.
+The name DGROUP is predefined as the automatic (or default) data segment. DGROUP
+cannot contain code segments because LINK always considers DGROUP to be a data
+segment.
+
+L4031 segment : segment declared in more than one group
+A segment was declared to be a member of two different groups.
+
+L4032 segment : code-group size exceeds 64K-36
+The given code group has a size in the range 65,501-65,536 bytes, a size that is
+unreliable on some versions of the 80286 processor.
+
+L4033 first segment in mixed group group is a USE32 segment
+A 16-bit segment must be first in a group created with both USE16 and USE32
+segments.
+LINK continued to build the executable file, but the resulting file may not run correctly.
+
+L4034 more than 1024 overlay segments; extra put in root
+The limit on the number of segments that can go into overlays is 1024. Segments starting
+with the 1025th segment are assigned to the permanently resident portion of the program
+(the root).
+
+L4036 no automatic data segment
+The application did not define a group named DGROUP.
+DGROUP has special meaning to LINK, which uses it to identify the automatic (or
+default) data segment used by the operating system. Most segmented-executable
+applications require DGROUP.
+This warning will not be issued if DATA NONE is declared or if the executable file is a
+dynamic-link library.
+
+L4037 group : both USE16 and USE32 segments in group; assuming USE32
+The given group was allocated contributions from both 16-bit segments and 32-bit
+segments
+
+L4038 program has no starting address
+The segmented-executable application had no starting address. A missing starting address
+will usually cause the program to fail.
+High-level languages automatically specify a starting address. In a C-language program,
+this is provided by the main function.
+If you are writing an assembly-language program, specify a starting address with the
+END statement.
+MS-DOS programs and dynamic-link libraries should never receive this message,
+regardless of whether they have starting addresses.
+
+L4040 stack size ignored for /TINY
+LINK ignores stack size if the /TINY option is used and if the stack segment has been
+defined in front of the code segment.
+
+L4042 cannot open old version
+The file specified in the OLD statement in the module-definition (.DEF) file could not be
+opened.
+
+L4043 old version not segmented executable format
+The file specified in the OLD statement in the module-definition (.DEF) file was not a
+valid segmented-executable file.
+
+L4045 name of output file is filename
+LINK used the given filename for the output file.
+If the output filename is specified without an extension, LINK assumes the default
+extension .EXE. Creating a Quick library, DLL, or .COM file forces LINK to use a
+different extension. In the following cases, if either .EXE or no extension is specified,
+LINK assumes the appropriate extension:
+/TINY option: .COM
+/Q option: .QLB
+LIBRARY statement: .DLL
+
+L4050 file not suitable for /EXEPACK; relink without
+The size of the packed load image plus packing overhead was larger than it would be for
+the unpacked load image. There is no advantage to packing this program.
+Remove /EXEPACK from the LINK command line. In PWB, clear the Pack EXE File
+check box in the Additional Debug/Release Options dialog box under Link Options.
+This warning also occurs if the name specified in the LIBRARY statement in the
+module-definition (.DEF) file does not match the name specified in the exefile field
+
+L4051 filename : cannot find library
+LINK could not find the given library file.
+One of the following may be a cause:
+  - The specified file does not exist. Enter the name or full path specification of a library
+    file.
+  - The LIB environment variable is not set correctly. Check for incorrect directory
+    specifications, mistyping, or a space, semicolon, or hidden character at the end of the
+    line.
+  - An earlier version of LINK is being run. Check the path environment variable and
+    delete or rename earlier linkers.
+
+L4053 VM.TMP : illegal filename; ignored
+VM.TMP appeared as an object-file name.
+Rename the file and rerun LINK.
+
+L4054 filename : cannot find file
+LINK could not find the specified file.
+Enter a new filename, a new path specification, or both.
+
+L4055 start address not equal to 0x100 for /TINY
+The starting address for a .COM file must be 100 hexadecimal.
+Put the following line of assembly source code in front of the code segment:
+ORG 100h
+
+L4056 /EXEPACK valid only for OS/2 and real-mode DOS; ignored
+The /EXEPACK option is incompatible with Windows-based programs.
+
+L4057 stack specified for DLL; ignored
+A stack was specified for a dynamic-link library (DLL). Either the /STACK option was
+used on the command line or the STACKSIZE statement was used in the module-definition
+(.DEF) file. LINK ignored the specification and did not create a stack.
+A DLL does not have a stack.
+
+L4058 ignoring alias for already defined symbol symbol
+The specified symbol was redefined in the program. However, it is an identifier from a C
+run-time library that has an alias to a new name in OLDNAMES.LIB. LINK ignored the
+alias for the symbol.
+This warning appears only when the /INFO option is specified
+
+L4067 changing default resolution for weak external symbol from oldresolution to
+newresolution
+LINK found conflicting default resolutions for a weak external. It ignored the first
+resolution and used the second.
+
+L4068 ignoring stack size greater than 64K
+A stack was defined with an invalid size. LINK assumed 64K.
+
+L4069 filename truncated to filename
+A filename specification exceeded the length allowed. LINK assumed the given filename.
+
+L4070 too many public symbols for sorting
+LINK uses the stack and all available memory in the near heap to sort public symbols for
+the /MAP option. This warning is issued if the number of public symbols exceeds the
+space available for them. In addition, the symbols are not sorted in the map file but are
+listed in an arbitrary order.
+
+L4076 no segments defined
+There was no code in the program.
+This warning can occur if the file contains only resources.
+
+L4077 symbol function not defined; ordered allocation ignored
+The given function was specified in a FUNCTIONS statement in the module-definition
+(.DEF) file, but the function was not defined.
+
+L4079 symbol function already defined for ordered allocation; duplicate ignored
+The given function was specified twice in FUNCTIONS statements in the module-definition
+(.DEF) file.
+
+L4080 changing substitute name for alias symbol from oldalias to newalias
+LINK found conflicting alias names. It ignored the first alias and used the second.
+
+L4081 cannot execute program arguments message
+LINK could not run the given program (with the given arguments) for the given reason.
+
+L4082 changing overlay assignment for segment segment from oldnumber to newnumber
+The given segment was assigned to two overlays, represented by oldnumber and
+newnumber. LINK assumed the newnumber overlay.
+Probably a command-line overlay specification with parentheses conflicted with an
+overlay specification in the module-definition (.DEF) file
+
+L4083 changing overlay assignment for symbol symbol from oldnumber to newnumber
+The given symbol was assigned to two overlays, represented by oldnumber and
+newnumber. LINK assumed the newnumber overlay.
+Probably a command-line overlay specification with parentheses conflicted with an
+overlay specification in the module-definition (.DEF) file.
+
+L4084 option : argument missing; option ignored
+The given option requires an argument, but none was specified.
+For example, the following option specification causes this error:
+/ONERROR
+
+L4085 option : argument invalid; assuming argument
+The given option was specified with a numeric argument that was out of range for the
+option. LINK assumed the given argument.
+For example, the option specification /DYNAMIC:11000 causes the following error:
+/DYNAMIC:11000 : argument invalid; assuming 10922
+
+L4086 /r not first on command line; ignored
+This message appears if the /r option is not specified before other LINK options. /r must
+be the first option specified or it will be ignored.
+
+A1000 cannot open file: filename
+The assembler was unable to open a source, include, or output file.
+One of the following may be a cause:
+  - The file does not exist.
+  - The file is in use by another process.
+  - The filename is not valid.
+  - A read-only file with the output filename already exists.
+  - Not enough file handles exist. In MS-DOS, increase the number of file handles by
+    changing the FILES setting in CONFIG.SYS to allow a larger number of open files.
+    FILES=50 is the recommended setting.
+  - The current drive is full.
+  - The current directory is the root and is full.
+  - The device cannot be written to.
+  - The drive is not ready.
+
+A1001 I/O error closing file
+The operating system returned an error when the assembler attempted to close a file.
+This error can be caused by having a corrupt file system or by removing a disk before the
+file could be closed.
+
+A1002 I/O error writing file
+The assembler was unable to write to an output file.
+One of the following may be a cause:
+  - The current drive is full.
+  - The current directory is the root and is full.
+  - The device cannot be written to.
+  - The drive is not ready.
+
+A1003 I/O error reading file
+The assembler encountered an error when trying to read a file.
+One of the following may be a cause:
+  - The disk has a bad sector.
+  - The file-access attribute is set to prevent reading.
+  - The drive is not ready
+
+A1005 assembler limit : macro parameter name table full
+Too many parameters, locals, or macro labels were defined for a macro. There was no
+more room in the macro name table.
+Define shorter or fewer names, or remove unnecessary macros.
+
+A1006 invalid command-line option: option
+ML did not recognize the given parameter as an option.
+This error is generally caused when there is a syntax error on the command line.
+
+A1007 nesting level too deep
+The assembler reached its nesting limit. The limit is 20 levels except where noted
+otherwise.
+One of the following was nested too deeply:
+  - A high-level directive such as .IF, .REPEAT, or .WHILE
+  - A structure definition
+  - A conditional-assembly directive
+  - A procedure definition
+  - A PUSHCONTEXT directive (the limit is 10).
+  - A segment definition
+  - An include file
+  - A macro
+
+A1008 unmatched macro nesting
+Either a macro was not terminated before the end of the file, or the terminating directive
+ENDM was found outside of a macro block.
+One cause of this error is omission of the dot before .REPEAT or .WHILE.
+
+A1009 line too long
+A line in a source file exceeded the limit of 512 characters.
+If multiple physical lines are concatenated with the line-continuation character ( \ ), the
+resulting logical line is still limited to 512 characters
+
+A1010 unmatched block nesting :
+A block beginning did not have a matching end, or a block end did not have a matching
+beginning. One of the following may be involved:
+  - A high-level directive such as .IF, .REPEAT, or .WHILE
+  - A conditional-assembly directive such as IF, REPEAT, or WHILE
+  - A structure or union definition
+  - A procedure definition
+  - A segment definition
+  - A POPCONTEXT directive
+  - A conditional-assembly directive, such as an ELSE, ELSEIF, or ENDIF without a
+    matching IF
+
+A1011 directive must be in control block
+The assembler found a high-level directive where one was not expected. One of the
+following directives was found:
+  - u .ELSE without .IF
+  - u .ENDIF without .IF
+  - .ENDW without .WHILE
+  - .UNTIL[[CXZ]] without .REPEAT
+  - .CONTINUE without .WHILE or .REPEAT
+  - .BREAK without .WHILE or .REPEAT
+  - .ELSE following .ELSE
+
+A1012 error count exceeds 100; stopping assembly
+The number of nonfatal errors exceeded the assembler limit of 100.
+Nonfatal errors are in the range A2xxx. When warnings are treated as errors they are
+included in the count. Warnings are considered errors if you use the /Wx command-line
+option, or if you set the Warnings Treated as Errors option in the Macro Assembler
+Global Options dialog box of PWB.
+
+A1013 invalid numerical command-line argument : number
+The argument specified with an option was not a number or was an invalid number.
+
+A1014 too many arguments
+There was insufficient memory to hold all of the command-line arguments.
+This error usually occurs while expanding input filename wildcards (* and ?). To
+eliminate this error, assemble multiple source files separately
+
+A1015 statement too complex
+The assembler ran out of stack space while trying to parse the specified statement.
+One or more of the following changes may eliminate this error:
+  - Break the statement into several shorter statements.
+  - Reorganize the statement to reduce the amount of parenthetical nesting.
+  - If the statement is part of a macro, break the macro into several shorter macros.
+
+A1017 missing source filename
+ML could not find a file to assemble or pass to the linker.
+This error is generated when you give ML command-line options without specifying a
+filename to act upon. To assemble files that do not have a .ASM extension, use the /Ta
+command-line option.
+This error can also be generated by invoking ML with no parameters if the ML
+environment variable contains command-line options.
+
+A1901 Internal Assembler Error
+Contact Microsoft Product Support Services
+The MASM driver called ML.EXE, which generated a system error.
+Note the circumstances of the error and notify Microsoft Corporation by following the
+instructions in the <Microsoft Support Services> section of the introduction to this book.
+
+A2000 memory operand not allowed in context
+A memory operand was given to an instruction that cannot take a memory operand.
+
+A2001 immediate operand not allowed
+A constant or memory offset was given to an instruction that cannot take an immediate
+operand.
+
+A2002 cannot have more than one ELSE clause per IF block
+The assembler found an ELSE directive after an existing ELSE directive in a conditional-assembly
+block (IF block).
+Only one ELSE can be used in an IF block. An IF block begins with an IF, IFE, IFB,
+IFNB, IFDEF, IFNDEF, IFDIF, or IFIDN directive. There can be several ELSEIF
+statements in an IF block.
+One cause of this error is omission of an ENDIF statement from a nested IF block.
+
+A2003 extra characters after statement
+A directive was followed by unexpected characters
+
+A2004 symbol type conflict : identifier
+The EXTERNDEF or LABEL directive was used on a variable, symbol, data structure,
+or label that was defined in the same module but with a different type.
+
+A2005 symbol redefinition : identifier
+The given nonredefinable symbol was defined in two places.
+
+A2006 undefined symbol : identifier
+An attempt was made to use a symbol that was not defined.
+One of the following may have occurred:
+  - A symbol was not defined.
+  - A field was not a member of the specified structure.
+  - A symbol was defined in an include file that was not included.
+  - An external symbol was used without an EXTERN or EXTERNDEF directive.
+  - A symbol name was misspelled.
+  - A local code label was referenced outside of its scope.
+
+A2007 non-benign record redefinition
+A RECORD definition conflicted with a previous definition.
+One of the following occurred:
+  - There were different numbers of fields.
+  - There were different numbers of bits in a field.
+  - There was a different label.
+  - There were different initializers.
+
+A2008 syntax error :
+A token at the current location caused a syntax error.
+One of the following may have occurred:
+  - A dot prefix was added to or omitted from a directive.
+  - A reserved word (such as C or SIZE) was used as an identifier.
+  - An instruction was used that was not available with the current processor or
+    coprocessor selection.
+  - A comparison run-time operator (such as ==) was used in a conditional assembly
+    statement instead of a relational operator (such as EQ).
+  - An instruction or directive was given too few operands.
+  - An obsolete directive was used
+
+A2009 syntax error in expression
+An expression on the current line contained a syntax error. This error message may also
+be a side-effect of a preceding program error.
+
+A2010 invalid type expression
+The operand to THIS or PTR was not a valid type expression.
+
+A2011 distance invalid for word size of current segment
+A procedure definition or a code label defined with LABEL specified an address size that
+was incompatible with the current segment size.
+One of the following occurred:
+  - A NEAR16 or FAR16 procedure was defined in a 32-bit segment.
+  - A NEAR32 or FAR32 procedure was defined in a 16-bit segment.
+  - A code label defined with LABEL specified FAR16 or NEAR16 in a 32-bit segment.
+  - A code label defined with LABEL specified FAR32 or NEAR32 in a 16-bit segment.
+
+A2012 PROC, MACRO, or macro repeat directive must precede LOCAL
+A LOCAL directive must be immediately preceded by a MACRO, PROC, macro repeat
+directive (such as REPEAT, WHILE, or FOR), or another LOCAL directive.
+
+A2013 .MODEL must precede this directive
+A simplified segment directive or a .STARTUP or .EXIT directive was not preceded by a
+.MODEL directive.
+A .MODEL directive must specify the model defaults before a simplified segment
+directive, or a .STARTUP or .EXIT directive may be used.
+
+A2014 cannot define as public or external : identifier
+Only labels, procedures, and numeric equates can be made public or external using
+PUBLIC, EXTERN, or EXTERNDEF. Local code labels cannot be made public.
+
+A2015 segment attributes cannot change : attribute
+A segment was reopened with different attributes than it was opened with originally.
+When a SEGMENT directive opens a previously defined segment, the newly opened
+segment inherits the attributes the segment was defined with.
+
+A2016 expression expected
+The assembler expected an expression at the current location but found one of the
+following:
+  - A unary operator without an operand
+  - A binary operator without two operands
+  - An empty pair of parentheses, ( ), or brackets, [ ].806 ML Error Messages
+
+A2017 operator expected
+An expression operator was expected at the current location.
+One possible cause of this error is a missing comma between expressions in an expression
+list.
+
+A2018 invalid use of external symbol : identifier
+An attempt was made to compare the given external symbol using a relational operator.
+The comparison cannot be made because the value or address of an external symbol is
+not known at assembly time.
+
+A2019 operand must be RECORD type or field
+The operand following the WIDTH or MASK operator was not valid.
+The WIDTH operator takes an operand that is the name of a field or a record. The
+MASK operator takes an operand that is the name of a field or a record type.
+
+A2020 identifier not a record : identifier
+A record type was expected at the current location.
+
+A2021 record constants cannot span line breaks
+A record constant must be defined on one physical line. A line ended in the middle of the
+definition of a record constant.
+
+A2022 instruction operands must be the same size
+The operands to an instruction did not have the same size.
+
+A2023 instruction operand must have size
+At least one of the operands to an instruction must have a known size.
+
+A2024 invalid operand size for instruction
+The size of an operand was not valid.
+
+A2025 operands must be in same segment
+Relocatable operands used with a relational or minus operator were not located in the
+same segment.
+
+A2026 constant expected
+The assembler expected a constant expression at the current location. A constant
+expression is a numeric expression that can be resolved at assembly time.
+
+A2027 operand must be a memory expression
+The right operand of a PTR expression was not a memory expression.
+When the left operand of the PTR operator is a structure or union type, the right operand
+must be a memory expression
+
+A2028 expression must be a code address
+An expression evaluating to a code address was expected.
+One of the following occurred:
+  - u SHORT was not followed by a code address.
+  - u NEAR PTR or FAR PTR was applied to something that was not a code address.
+
+A2029 multiple base registers not allowed
+An attempt was made to combine two base registers in a memory expression.
+For example, the following expressions cause this error:
+[bx+bp]
+[bx][bp]
+In another example, given the following definition:
+id1 proc arg1:byte
+either of the following lines causes this error:
+mov al, [bx].arg1
+lea ax, arg1[bx]
+
+A2030 multiple index registers not allowed
+An attempt was made to combine two index registers in a memory expression.
+For example, the following expressions cause this error:
+[si+di]
+[di][si]
+
+A2031 must be index or base register
+An attempt was made to use a register that was not a base or index register in a memory
+expression.
+For example, the following expressions cause this error:
+[ax]
+[bl].808 ML Error Messages
+
+A2032 invalid use of register
+An attempt was made to use a register that was not valid for the intended use.
+One of the following occurred:
+  - u OFFSET was applied to a register. (OFFSET can be applied to a register under the
+M510 option.)
+  - A special 386 register was used in an invalid context.
+  - A register was cast with PTR to a type of invalid size.
+  - A register was specified as the right operand of a segment override
+    operator (:).
+  - A register was specified as the right operand of a binary minus operator ( - ).
+  - An attempt was made to multiply registers using the * operator.
+  - Brackets ([ ]) were missing around a register that was added to something.
+
+A2033 invalid INVOKE argument : argument number
+The INVOKE directive was passed a special 386 register, or a register pair containing a
+byte register or special 386 register. These registers are illegal with INVOKE.
+
+A2034 must be in segment block
+One of the following was found outside of a segment block:
+  - An instruction
+  - A label definition
+  - A THIS operator
+  - A $ operator
+  - A procedure definition
+  - An ALIGN directive
+  - An ORG directive
+
+A2035 DUP too complex
+A declaration using the DUP operator resulted in a data structure with an internal
+representation that was too large.
+
+A2036 too many initial values for structure: structure
+The given structure was defined with more initializers than the number of fields in the
+type declaration of the structure.
+
+A2037 statement not allowed inside structure definition
+A structure definition contained an invalid statement.
+A structure cannot contain instructions, labels, procedures, control-flow directives,
+.STARTUP, or .EXIT
+
+A2038 missing operand for macro operator
+The assembler found the end of a macro's parameter list immediately after the ! or %
+operator.
+
+A2039 line too long
+A source-file line exceeded the limit of 512 characters.
+If multiple physical lines are concatenated with the line-continuation character
+( \ ), the resulting logical line is still limited to 512 characters.
+
+A2040 segment register not allowed in context
+A segment register was specified for an instruction that cannot take a segment register.
+
+A2041 string or text literal too long
+A string or text literal, or a macro function return value, exceeded the limit of 255
+characters.
+
+A2042 statement too complex
+A statement was too complex for the assembler to parse.
+Reduce either the number of tokens or the number of forward-referenced identifiers.
+
+A2043 identifier too long
+An identifier exceeded the limit of 247 characters.
+
+A2044 invalid character in file
+The source file contained a character outside a comment, string, or literal that was not
+recognized as an operator or other legal character.
+
+A2045 missing angle bracket or brace in literal
+An unmatched angle bracket (either < or >) or brace (either { or }) was found in a literal
+constant or an initializer.
+One of the following occurred:
+  - A pair of angle brackets or braces was not complete.
+  - An angle bracket was intended to be literal, but it was not preceded by an exclamation
+    point (!) to indicate a literal character
+
+A2046 missing single or double quotation mark in string
+An unmatched quotation mark (either ' or ") was found in a string.
+One of the following may have occurred:
+  - A pair of quotation marks around a string was not complete.
+  - A pair of quotation marks around a string was formed of one single and one double
+    quotation mark.
+  - A single or double quotation mark was intended to be literal, but the surrounding
+    quotation marks were the same kind as the literal one.
+
+A2047 empty (null) string
+A string consisted of a delimiting pair of quotation marks and no characters within.
+For a string to be valid, it must contain 1-255 characters.
+
+A2048 nondigit in number
+A number contained a character that was not in the set of characters used by the current
+radix (base).
+This error can occur if a B or D radix specifier is used when the default radix is one that
+includes that letter as a valid digit.
+
+A2049 syntax error in floating-point constant
+A floating-point constant contained an invalid character.
+
+A2050 real or BCD number not allowed
+A floating-point (real) number or binary coded decimal (BCD) constant was used other
+than as a data initializer.
+One of the following occurred:
+  - A real number or a BCD was used in an expression.
+  - A real number was used to initialize a directive other than DWORD, QWORD, or
+    TBYTE.
+  - A BCD was used to initialize a directive other than TBYTE.
+
+A2051 text item required
+A literal constant or text macro was expected.
+One of the following was expected:
+  - A literal constant, which is text enclosed in < >
+  - A text macro name
+  - A macro function call
+  - A % followed by a constant expression.Error! Style not defined. 811
+
+A2052 forced error
+The conditional-error directive .ERR or .ERR1 was used to generate this error.
+
+A2053 forced error : value equal to 0
+The conditional-error directive .ERRE was used to generate this error.
+
+A2054 forced error : value not equal to 0
+The conditional-error directive .ERRNZ was used to generate this error.
+
+A2055 forced error : symbol not defined
+The conditional-error directive .ERRNDEF was used to generate this error.
+
+A2056 forced error : symbol defined
+The conditional-error directive .ERRDEF was used to generate this error.
+
+A2057 forced error : string blank
+The conditional-error directive .ERRB was used to generate this error.
+
+A2058 forced error : string not blank
+The conditional-error directive .ERRNB was used to generate this error.
+
+A2059 forced error : strings equal
+The conditional-error directive .ERRIDN or .ERRIDNI was used to generate this error.
+
+A2060 forced error : strings not equal
+The conditional-error directive .ERRDIF or .ERRDIFI was used to generate this error.
+
+A2061 [[ELSE]]IF2/.ERR2 not allowed : single-pass assembler
+A directive for a two-pass assembler was found.
+The Microsoft Macro Assembler (MASM) is a one-pass assembler. MASM does not
+accept the IF2, ELSEIF2, and .ERR2 directives.
+This error also occurs if an ELSE directive follows an IF1 directive.
+
+A2062 expression too complex for .UNTILCXZ
+An expression used in the condition that follows .UNTILCXZ was too complex.
+The .UNTILCXZ directive can take only one expression, which can contain only == or
+!=. It cannot take other comparison operators or more complex expressions using
+operators like ||.
+
+A2063 can ALIGN only to power of 2 : expression
+The expression specified with the ALIGN directive was invalid.
+The ALIGN expression must be a power of 2 between 2 and 256, and must be less than
+or equal to the alignment of the current segment, structure, or union
+
+A2064 structure alignment must be 1, 2, or 4
+The alignment specified in a structure definition was invalid.
+
+A2065 expected : token
+The assembler expected the given token.
+
+A2066 incompatible CPU mode and segment size
+An attempt was made to open a segment with a USE16, USE32, or FLAT attribute that
+was not compatible with the specified CPU, or to change to a 16-bit CPU while in a 32-bit
+segment.
+The USE32 and FLAT attributes must be preceded by one of the following processor
+directives: .386, .386C, .386P, .486, or .486P.
+
+A2067 LOCK must be followed by a memory operation
+The LOCK prefix preceded an invalid instruction. No instruction can take the LOCK
+prefix unless one of its operands is a memory expression.
+
+A2068 instruction prefix not allowed
+One of the prefixes REP, REPE, REPNE, or LOCK preceded an instruction for which it
+was not valid.
+
+A2069 no operands allowed for this instruction
+One or more operands were specified with an instruction that takes no operands.
+
+A2070 invalid instruction operands
+One or more operands were not valid for the instruction they were specified with.
+
+A2071 initializer too large for specified size
+An initializer value was too large for the data area it was initializing.
+
+A2072 cannot access symbol in given segment or group: identifier
+The given identifier cannot be addressed from the segment or group specified.
+
+A2073 operands have different frames
+Two operands in an expression were in different frames.
+Subtraction of pointers requires the pointers to be in the same frame. Subtraction of two
+expressions that have different effective frames is not allowed. An effective frame is
+calculated from the segment, group, or segment register.
+
+A2074 cannot access label through segment registers
+An attempt was made to access a label through a segment register that was not assumed
+to its segment or group
+
+A2075 jump destination too far [: by 'n' bytes]
+The destination specified with a jump instruction was too far from the instruction.
+One of the following may be a solution:
+  - Enable the LJMP option.
+  - Remove the SHORT operator. If SHORT has forced a jump that is too far, n is the
+    number of bytes out of range.
+  - Rearrange code so that the jump is no longer out of range.
+
+A2076 jump destination must specify a label
+A direct jump's destination must be relative to a code label.
+
+A2077 instruction does not allow NEAR indirect addressing
+A conditional jump or loop cannot take a memory operand. It must be given a relative
+address or label.
+
+A2078 instruction does not allow FAR indirect addressing
+A conditional jump or loop cannot take a memory operand. It must be given a relative
+address or label.
+
+A2079 instruction does not allow FAR direct addressing
+A conditional jump or loop cannot be to a different segment or group.
+
+A2080 jump distance not possible in current CPU mode
+A distance was specified with a jump instruction that was incompatible with the current
+processor mode.
+For example, 48-bit jumps require .386 or above.
+
+A2081 missing operand after unary operator
+An operator required an operand, but no operand followed.
+
+A2082 cannot mix 16- and 32-bit registers
+An address expression contained both 16- and 32-bit registers.
+For example, the following expression causes this error:
+[bx+edi]
+
+A2083 invalid scale value
+A register scale was specified that was not 1, 2, 4, or 8.
+
+A2084 constant value too large
+A constant was specified that was too big for the context in which it was used
+
+A2085 instruction or register not accepted in current CPU mode
+An attempt was made to use an instruction, register, or keyword that was not valid for the
+current processor mode.
+For example, 32-bit registers require .386 or above. Control registers such as CR0 require
+privileged mode .386P or above. This error will also be generated for the NEAR32,
+FAR32, and FLAT keywords, which require .386 or above.
+
+A2086 reserved word expected
+One or more items in the list specified with a NOKEYWORD option were not recognized
+as reserved words.
+
+A2087 instruction form requires 80386/486
+An instruction was used that was not compatible with the current processor mode.
+One of the following processor directives must precede the instruction: .386, .386C,
+.386P, .486, or .486P.
+
+A2088 END directive required at end of file
+The assembler reached the end of the main source file and did not find an .END
+directive.
+
+A2089 too many bits in RECORD : identifier
+One of the following occurred:
+  - Too many bits were defined for the given record field.
+  - Too many total bits were defined for the given record.
+The size limit for a record or a field in a record is 16 bits when doing 16-bit arithmetic or
+32 bits when doing 32-bit arithmetic.
+
+A2090 positive value expected
+A positive value was not found in one of the following situations:
+  - The starting position specified for SUBSTR or @SubStr
+  - The number of data objects specified for COMM
+  - The element size specified for COMM
+
+A2091 index value past end of string
+An index value exceeded the length of the string it referred to when used with INSTR,
+SUBSTR, @InStr, or @SubStr.
+
+A2092 count must be positive or zero
+The operand specified to the SUBSTR directive, @SubStr macro function, SHL
+operator, SHR operator, or DUP operator was negative
+
+A2093 count value too large
+The length argument specified for SUBSTR or @SubStr exceeded the length of the
+specified string.
+
+A2094 operand must be relocatable
+An operand was not relative to a label.
+One of the following occurred:
+  - An operand specified with the END directive was not relative to a label.
+  - An operand to the SEG operator was not relative to a label.
+  - The right operand to the minus operator was relative to a label, but the left operand
+    was not.
+  - The operands to a relational operator were either not both integer constants or not
+    both memory operands. Relational operators can take operands that are both addresses
+    or both non-addresses but not one of each.
+
+A2095 constant or relocatable label expected
+The operand specified must be a constant expression or a memory offset.
+
+A2096 segment, group, or segment register expected
+A segment or group was expected but was not found.
+One of the following occurred:
+  - The left operand specified with the segment override operator (:) was not a segment
+    register (CS, DS, SS, ES, FS, or GS), group name, segment name, or segment
+    expression.
+  - The ASSUME directive was given a segment register without a valid segment address,
+    segment register, group, or the special FLAT group.
+
+A2097 segment expected : identifier
+The GROUP directive was given an identifier that was not a defined segment.
+
+A2098 invalid operand for OFFSET
+The expression following the OFFSET operator must be a memory expression or an
+immediate expression.
+
+A2099 invalid use of external absolute
+An attempt was made to subtract a constant defined in another module from an
+expression.
+You can avoid this error by placing constants in include files rather than making them
+external
+
+A2100 segment or group not allowed
+An attempt was made to use a segment or group in a way that was not valid. Segments or
+groups cannot be added.
+
+A2101 cannot add two relocatable labels
+An attempt was made to add two expressions that were both relative to a label.
+
+A2102 cannot add memory expression and code label
+An attempt was made to add a code label to a memory expression.
+
+A2103 segment exceeds 64K limit
+A 16-bit segment exceeded the size limit of 64K.
+
+A2104 invalid type for data declaration : type
+The given type was not valid for a data declaration.
+
+A2105 HIGH and LOW require immediate operands
+The operand specified with either the HIGH or the LOW operator was not an immediate
+expression.
+
+A2107 cannot have implicit far jump or call to near label
+An attempt was made to make an implicit far jump or call to a near label in another
+segment.
+
+A2108 use of register assumed to ERROR
+An attempt was made to use a register that had been assumed to ERROR with the
+ASSUME directive.
+
+A2109 only white space or comment can follow backslash
+A character other than a semicolon (;) or a white-space character (spaces or TAB
+characters) was found after a line-continuation character ( \ ).
+
+A2110 COMMENT delimiter expected
+A delimiter character was not specified for a COMMENT directive.
+The delimiter character is specified by the first character that is not white space (spaces or
+TAB characters) after the COMMENT directive. The comment consists of all text
+following the delimiter until the end of the line containing the next appearance of the
+delimiter.
+
+A2111 conflicting parameter definition
+A procedure defined with the PROC directive did not match its prototype as defined with
+the PROTO directive.
+
+A2112 PROC and prototype calling conventions conflict
+A procedure was defined in a prototype (using the PROTO, EXTERNDEF, or EXTERN
+directive), but the calling convention did not match the corresponding PROC directive
+
+A2113 invalid radix tag
+The specified radix was not a number in the range 2-16.
+
+A2114 INVOKE argument type mismatch : argument number
+The type of the arguments passed using the INVOKE directive did not match the type of
+the parameters in the prototype of the procedure being invoked.
+
+A2115 invalid coprocessor register
+The coprocessor index specified was negative or greater than 7.
+
+A2116 instructions and initialized data not allowed in AT segments
+An instruction or initialized data was found in a segment defined with the AT attribute.
+Data in AT segments must be declared with the ? initializer.
+
+A2117 /AT option requires TINY memory model
+The /AT option was specified on the assembler command line, but the program being
+assembled did not specify the TINY memory model with the .MODEL directive.
+This error is only generated for modules that specify a start address or use the
+.STARTUP directive.
+
+A2118 cannot have segment address references with TINY model
+An attempt was made to reference a segment in a TINY model program.
+All TINY model code and data must be accessed with NEAR addresses.
+
+A2119 language type must be specified
+A procedure definition or prototype was not given a language type.
+A language type must be declared in each procedure definition or prototype if a default
+language type is not specified. A default language type is set using either the .MODEL
+directive, OPTION LANG, or the ML command-line options /Gc or /Gd.
+
+A2120 PROLOGUE must be macro function
+The identifier specified with the OPTION PROLOGUE directive was not recognized as
+a defined macro function.
+The user-defined prologue must be a macro function that returns the number of bytes
+needed for local variables and any extra space needed for the macro function.
+
+A2121 EPILOGUE must be macro procedure
+The identifier specified with the OPTION EPILOGUE directive was not recognized as a
+defined macro procedure.
+The user-defined epilogue macro cannot return a value
+
+A2122 alternate identifier not allowed with EXTERNDEF
+An attempt was made to specify an alternate identifier with an EXTERNDEF directive.
+You can specify an optional alternate identifier with the EXTERN directive but not with
+EXTERNDEF.
+
+A2123 text macro nesting level too deep
+A text macro was nested too deeply. The nesting limit for text macros is 40.
+
+A2125 missing macro argument
+A required argument to @InStr, @SubStr, or a user-defined macro was not specified.
+
+A2126 EXITM used inconsistently
+The EXITM directive was used both with and without a return value in the same macro.
+A macro procedure returns a value; a macro function does not.
+
+A2127 macro function argument list too long
+There were too many characters in a macro function's argument list. This error applies
+also to a prologue macro function called implicitly by the PROC directive.
+
+A2129 VARARG parameter must be last parameter
+A parameter other than the last one was given the VARARG attribute.
+The :VARARG specification can be applied only to the last parameter in a parameter list
+for macro and procedure definitions and prototypes. You cannot use multiple :VARARG
+specifications in a macro.
+
+A2130 VARARG parameter not allowed with LOCAL
+An attempt was made to specify :VARARG as the type in a procedure's LOCAL
+declaration.
+
+A2131 VARARG parameter requires C calling convention
+A VARARG parameter was specified in a procedure definition or prototype, but the C,
+SYSCALL, or STDCALL calling convention was not specified.
+
+A2132 ORG needs a constant or local offset
+The expression specified with the ORG directive was not valid.
+ORG requires an immediate expression with no reference to an external label or to a label
+outside the current segment.
+
+A2133 register value overwritten by INVOKE
+A register was passed as an argument to a procedure, but the code generated by
+INVOKE to pass other arguments destroyed the contents of the register.
+The AX, AL, AH, EAX, DX, DL, DH, and EDX registers may be used by the assembler
+to perform data conversion.
+Use a different register
+
+A2134 structure too large to pass with INVOKE : argument number
+An attempt was made with INVOKE to pass a structure that exceeded 255 bytes.
+Pass structures by reference if they are larger than 255 bytes.
+
+A2136 too many arguments to INVOKE
+The number of arguments passed using the INVOKE directive exceeded the number of
+parameters in the prototype for the procedure being invoked.
+
+A2137 too few arguments to INVOKE
+The number of arguments passed using the INVOKE directive was fewer than the
+number of required parameters specified in the prototype for the procedure being
+invoked.
+
+A2138 invalid data initializer
+The initializer list for a data definition was invalid.
+This error can be caused by using the R radix override with too few digits.
+
+A2140 RET operand too large
+The operand specified to RET, RETN, or RETF exceeded two bytes.
+
+A2141 too many operands to instruction
+Too many operands were specified with a string control instruction.
+
+A2142 cannot have more than one .ELSE clause per .IF block
+The assembler found more than one .ELSE clause within the current .IF block.
+Use .ELSEIF for all but the last block.
+
+A2143 expected data label
+The LENGTHOF, SIZEOF, LENGTH, or SIZE operator was applied to a non-data
+label, or the SIZEOF or SIZE operator was applied to a type.
+
+A2144 cannot nest procedures
+An attempt was made to nest a procedure containing a parameter, local variable, USES
+clause, or a statement that generated a new segment or group.
+
+A2145 EXPORT must be FAR : procedure
+The given procedure was given EXPORT visibility and NEAR distance.
+All EXPORT procedures must be FAR. The default visibility may have been set with the
+OPTION PROC:EXPORT statement or the SMALL or COMPACT memory models.
+
+A2146 procedure declared with two visibility attributes : procedure
+The given procedure was given conflicting visibilities.
+A procedure was declared with two different visibilities (PUBLIC, PRIVATE, or
+EXPORT). The PROC and PROTO statements for a procedure must have the same
+visibility
+
+A2147 macro label not defined : macrolabel
+The given macro label was not found.
+A macro label is defined with :macrolabel.
+
+A2148 invalid symbol type in expression : identifier
+The given identifier was used in an expression in which it was not valid.
+For example, a macro procedure name is not allowed in an expression.
+
+A2149 byte register cannot be first operand
+A byte register was specified to an instruction that cannot take it as the first operand.
+
+A2150 word register cannot be first operand
+A word register was specified to an instruction that cannot take it as the first operand.
+
+A2151 special register cannot be first operand
+A special register was specified to an instruction that cannot take it as the first operand.
+
+A2152 coprocessor register cannot be first operand
+A coprocessor (stack) register was specified to an instruction that cannot take it as the
+first operand.
+
+A2153 cannot change size of expression computations
+An attempt was made to set the expression word size when the size had been already set
+using the EXPR16, EXPR32, SEGMENT:USE32, or SEGMENT:FLAT option or the
+.386 or higher processor selection directive.
+
+A2154 syntax error in control-flow directive
+The condition for a control-flow directive (such as .IF or .WHILE) contained a syntax
+error.
+
+A2155 cannot use 16-bit register with a 32-bit address
+An attempt was made to mix 16-bit and 32-bit offsets in an expression.
+Use a 32-bit register with a symbol defined in a 32-bit segment.
+For example, if id1 is defined in a 32-bit segment, the following causes this error:
+id1[bx]
+
+A2156 constant value out of range
+An invalid value was specified for the PAGE directive.
+The first parameter of the PAGE directive can be either 0 or a value in the range 10-255.
+The second parameter of the PAGE directive can be either 0 or a value in the range 60-
+255
+
+A2157 missing right parenthesis
+A right parenthesis, ), was missing from a macro function call.
+Be sure that parentheses are in pairs if nested.
+
+A2158 type is wrong size for register
+An attempt was made to assume a general-purpose register to a type with a different size
+than the register.
+For example, the following pair of statements causes this error:
+ASSUME bx:far ptr byte ; far pointer is 4 or 6 bytes
+ASSUME al:word ; al is a byte reg, cannot hold word
+
+A2159 structure cannot be instanced
+An attempt was made to create an instance of a structure when there were no fields or
+data defined in the structure definition or when ORG was used in the structure definition.
+
+A2160 non-benign structure redefinition : label incorrect
+A label given in a structure redefinition either did not exist in the original definition or was
+out of order in the redefinition.
+
+A2161 non-benign structure redefinition : too few labels
+Not enough members were defined in a structure redefinition.
+
+A2162 OLDSTRUCT/NOOLDSTRUCT state cannot be changed
+Once the OLDSTRUCTS or NOOLDSTRUCTS option has been specified and a
+structure has been defined, the structure scoping cannot be altered or respecified in the
+same module.
+
+A2163 non-benign structure redefinition : incorrect initializers
+A STRUCT or UNION was redefined with a different initializer value.
+When structures and unions are defined more than once, the definitions must be identical.
+This error can be caused by using a variable as an initializer and having the value of the
+variable change between definitions.
+
+A2164 non-benign structure redefinition : too few initializers
+A STRUCT or UNION was redefined with too few initializers.
+When structures and unions are defined more than once, the definitions must be identical.
+
+A2165 non-benign structure redefinition : label has incorrect offset
+The offset of a label in a redefined STRUCT or UNION differs from the original
+definition.
+When structures and unions are defined more than once, the definitions must be identical.
+This error can be caused by a missing member or by a member that has a different size
+than in its original definition
+
+A2166 structure field expected
+The righthand side of a dot operator (.) is not a structure field.
+This error may occur with some code acceptable to previous versions of the assembler.
+To enable the old behavior, use OPTION OLDSTRUCTS, which is automatically
+enabled by OPTION M510 or the /Zm command-line option.
+
+A2167 unexpected literal found in expression
+A literal was found where an expression was expected.
+One of the following may have occurred:
+  - A literal was used as an initializer
+  - A record tag was omitted from a record constant
+
+A2169 divide by zero in expression
+An expression contains a divisor whose value is equal to zero.
+Check that the syntax of the expression is correct and that the divisor (whether constant
+or variable) is correctly initialized.
+
+A2170 directive must appear inside a macro
+A GOTO or EXITM directive was found outside the body of a macro.
+
+A2171 cannot expand macro function
+A syntax error prevented the assembler from expanding the macro function.
+
+A2172 too few bits in RECORD
+There was an attempt to define a record field of 0 bits.
+
+A2173 macro function cannot redefine itself
+There was an attempt to define a macro function inside the body of a macro function
+with the same name. This error can also occur when a member of a chain of macros
+attempts to redefine a previous member of the chain.
+
+A2175 invalid qualified type
+An identifier was encountered in a qualified type that was not a type, structure, record,
+union, or prototype.
+
+A2176 floating point initializer on an integer variable
+An attempt was made to use a floating-point initializer with DWORD, QWORD, or
+TBYTE. Only integer initializers are allowed.
+
+A2177 nested structure improperly initialized
+The nested structure initialization could not be resolved.
+This error can be caused by using different beginning and ending delimiters in a nested
+structure initialization
+
+A2178 invalid use of FLAT
+There was an ambiguous reference to FLAT as a group.
+This error is generated when there is a reference to FLAT instead of a FLAT subgroup.
+For example,
+mov ax, FLAT ; Generates A2178
+mov ax, SEG FLAT:_data ; Correct
+
+A2179 structure improperly initialized
+There was an error in a structure initializer.
+One of the following occurred:
+  - The initializer is not a valid expression.
+  - The initializer is an invalid DUP statement.
+
+A2180 improper list initialization
+In a structure, there was an attempt to initialize a list of items with a value or list of values
+of the wrong size.
+
+A2181 initializer must be a string or single item
+There was an attempt to initialize a structure element with something other than a single
+item or string.
+This error can be caused by omitting braces ({ }) around an initializer.
+
+A2182 initializer must be a single item
+There was an attempt to initialize a structure element with something other than a single
+item.
+This error can be caused by omitting braces ({ }) around an initializer.
+
+A2183 initializer must be a single byte
+There was an attempt to initialize a structure element of byte size with something other
+than a single byte.
+
+A2184 improper use of list initializer
+The assembler did not expect an opening brace ({) at this point.
+
+A2185 improper literal initialization
+A literal structure initializer was not properly delimited.
+This error can be caused by missing angle brackets (< >) or braces ({ }) around an
+initializer or by extra characters after the end of an initializer
+
+A2186 extra characters in literal initialization
+A literal structure initializer was not properly delimited.
+One of the following may have occurred:
+  - There were missing or mismatched angle brackets (< >) or braces ({ }) around an
+initializer.
+  - There were extra characters after the end of an initializer.
+  - There was a syntax error in the structure initialization.
+
+A2187 must use floating point initializer
+A variable declared with the REAL4, REAL8, and REAL10 directives must be initialized
+with a floating-point number or a question mark (?).
+This error can be caused by giving an initializer in integer form (such as 18) instead of in
+floating-point form (18.0).
+
+A2188 cannot use .EXIT for OS_OS2 with .8086
+The INVOKE generated by the .EXIT statement under OS_OS2 requires the .186 (or
+higher) directive, since it must be able to use the PUSH instruction to push immediates
+directly.
+
+A2189 invalid combination with segment alignment
+The alignment specified by the ALIGN or EVEN directive was greater than the current
+segment alignment as specified by the SEGMENT directive.
+
+A2190 INVOKE requires prototype for procedure
+The INVOKE directive must be preceded by a PROTO statement for the procedure
+being called.
+When using INVOKE with an address rather than an explicit procedure name, you must
+precede the address with a pointer to the prototype.
+
+A2191 cannot include structure in self
+You cannot reference a structure recursively (inside its own definition).
+
+A2192 symbol language attribute conflict
+Two declarations for the same symbol have conflicting language attributes (such as C and
+PASCAL). The attributes should be identical or compatible.
+
+A2193 non-benign COMM redefinition
+A variable was redefined with the COMM directive to a different language type, distance,
+size, or instance count.
+Multiple COMM definitions of a variable must be identical.
+
+A2194 COMM variable exceeds 64K
+A variable declared with the COMM directive in a 16-bit segment was greater than 64K
+
+A2195 parameter or local cannot have void type
+The assembler attempted to create an argument or create a local without a type.
+This error can be caused by declaring or passing a symbol followed by a colon without
+specifying a type or by using a user-defined type defined as void.
+
+A2196 cannot use TINY model with OS_OS2
+A .MODEL statement specified the TINY memory model and the OS_OS2 operating
+system. The tiny memory model is not allowed under OS/2.
+
+A2197 expression size must be 32-bits
+There was an attempt to use the 16-bit expression evaluator in a 32-bit segment. In a 32-bit
+segment (USE32 or FLAT), you cannot use the default 16-bit expression evaluator
+(OPTION EXPR16).
+
+A2198 .EXIT does not work with 32-bit segments
+The .EXIT directive cannot be used in a 32-bit segment; it is valid only when generating
+16-bit code.
+
+A2199 .STARTUP does not work with 32-bit segments
+The .STARTUP directive cannot be used in a 32-bit segment; it is valid only when
+generating 16-bit code.
+
+A2200 ORG directive not allowed in unions
+The ORG directive is not valid inside a UNION definition.
+You can use the ORG directive inside STRUCT definitions, but it is meaningless inside a
+UNION.
+
+A2201 scope state cannot be changed
+Both OPTION SCOPED and OPTION NOSCOPED statements occurred in a module.
+You cannot switch scoping behavior in a module.
+This error may be caused by an OPTION SCOPED or OPTION NOSCOPED
+statement in an include file.
+
+A2202 illegal use of segment register
+You cannot use segment overrides for the FS or GS segment registers when generating
+floating-point emulation instructions with the /FPi command-line option or OPTION
+EMULATOR.
+
+A2203 cannot declare scoped code label as PUBLIC
+A code label defined with the <label:> syntax was declared PUBLIC. Use the <label::>
+syntax, the LABEL directive, or OPTION NOSCOPED to eliminate this error.
+
+A2204 .MSFLOAT directive is obsolete : ignored
+The Microsoft Binary Format is no longer supported. You should convert your code to
+the IEEE numeric standard, which is used in the 80x87-series coprocessors
+
+A2205 ESC instruction is obsolete : ignored
+The ESC (Escape) instruction is no longer supported. All numeric coprocessor
+instructions are now supported directly by the assembler.
+
+A2206 missing operator in expression
+An expression cannot be evaluated because it is missing an operator. This error message
+may also be a side-effect of a preceding program error.
+The following line will generate this error:
+value1 = ( 1 + 2 ) 3
+
+A2207 missing right parenthesis in expression
+An expression cannot be evaluated because it is missing a right (closing) parenthesis. This
+error message may also be a side-effect of a preceding program error.
+The following line will generate this error:
+value1 = ( ( 1 + 2 ) * 3
+
+A2208 missing left parenthesis in expression
+An expression cannot be evaluated because it is missing a left (opening) parenthesis. This
+error message may also be a side-effect of a preceding program error.
+The following line will generate this error:
+value1 = ( ( 1 + 2 ) * 3 ) )
+
+A2209 reference to forward macro redefinition
+A macro cannot be accessed because it has not been yet defined.
+Move the macro definition ahead of all references to the macro.
+
+A2901 cannot run ML.EXE
+The MASM driver could not spawn ML.EXE.
+One of the following may have occurred:
+  - ML.EXE was not in the path.
+  - The READ attribute was not set on ML.EXE.
+  - There was not enough memory.
+
+A4000 cannot modify READONLY segment
+An attempt was made to modify an operand in a segment marked with the READONLY
+attribute
+
+A4002 non-unique STRUCT/UNION field used without qualification
+A STRUCT or UNION field can be referenced without qualification only if it has a
+unique identifier.
+This conflict can be resolved either by renaming one of the structure fields to make it
+unique or by fully specifying both field references.
+The NONUNIQUE keyword requires that all references to the elements of a STRUCT
+or UNION be fully specified.
+
+A4003 start address on END directive ignored with .STARTUP
+Both .STARTUP and a program load address (optional with the END directive) were
+specified. The address specification with the END directive was ignored.
+
+A4004 cannot ASSUME CS
+An attempt was made to assume a value for the CS register. CS is always set to the
+current segment or group.
+
+A4005 unknown default prologue argument
+An unknown argument was passed to the default prologue.
+The default prologue understands only the FORCEFRAME and LOADDS arguments.
+
+A4006 too many arguments in macro call
+There were more arguments given in the macro call than there were parameters in the
+macro definition.
+
+A4007 option untranslated, directive required : option
+There is no ML command-line equivalent for the given MASM option. The desired
+behavior can be obtained by using a directive in the source file.
+Option Directive
+/A .ALPHA
+/P OPTION READONLY
+/S .SEQ
+
+A4008 invalid command-line option value, default is used : option
+The value specified with the given option was not valid. The option was ignored, and the
+default was assumed.
+
+A4009 insufficient memory for /EP : /EP ignored
+There is not enough memory to generate a first-pass listing.
+
+A4010 expected '>' on text literal
+A macro was called with a text literal argument that was missing a closing angle bracket
+
+A4011 multiple .MODEL directives found : .MODEL ignored
+More than one .MODEL directive was found in the current module. Only the first
+.MODEL statement is used.
+
+A4012 line number information for segment without class 'CODE'
+There were instructions in a segment that did not have a class name that ends with
+<CODE.> The assembler did not generate CodeView information for these instructions.
+CodeView cannot process modules with code in segments with class names that do not
+end with <CODE.>
+
+A4013 instructions and initialized data not supported in AT segments
+An instruction or initialized data was found in a segment defined with the AT attribute.
+The code or data will not be loaded at run time.
+Data in AT segments must be declared with the ? initializer.
+
+A4910 cannot open file: filename
+The given filename could not be in the current path.
+Make sure that filename was copied from the distribution disks and is in the current path.
+
+A5000 @@: label defined but not referenced
+A jump target was defined with the @@: label, but the target was not used by a jump
+instruction.
+One common cause of this error is insertion of an extra @@: label between the jump and
+the @@: label that the jump originally referred to.
+
+A5001 expression expected, assume value 0
+There was an IF, ELSEIF, IFE, IFNE, ELSEIFE, or ELSEIFNE directive without an
+expression to evaluate. The assembler assumes a 0 for the comparison expression.
+
+A5002 externdef previously assumed to be external
+The OPATTR or .TYPE operator was applied to a symbol after the symbol was used in
+an EXTERNDEF statement but before it was declared. These operators were used on a
+line where the assembler assumed that the symbol was external.
+
+A5003 length of symbol previously assumed to be different
+The LENGTHOF, LENGTH, SIZEOF, or SIZE operator was applied to a symbol after
+the symbol was used in an EXTERNDEF statement but before it was declared. These
+operators were used on a line where the assembler assumed that the symbol had a
+different length and size.
+
+A5004 symbol previously assumed to not be in a group
+A symbol was used in an EXTERNDEF statement outside of a segment and then was
+declared inside a segment
+
+A5005 types are different
+The type given by an INVOKE statement differed from that given in the procedure
+prototype. The assembler performed the appropriate type conversion.
+
+A6001 no return from procedure
+A PROC statement generated a prologue, but there was no RET or IRET instruction
+found inside the procedure block.
+
+A6003 conditional jump lengthened
+A conditional jump was encoded as a reverse conditional jump around a near
+unconditional jump.
+You may be able to rearrange code to avoid the longer form.
+
+A6004 procedure argument or local not referenced
+You passed a procedure argument or created a variable with the LOCAL directive that
+was not used in the procedure body.
+Unnecessary parameters and locals waste code and stack space.
+
+A6005 expression condition may be pass-dependent
+Under the /Zm command-line option or the OPTION M510 directive, the value of an
+expression changed between passes.
+This error message may indicate that the code is pass-dependent and must be rewritten.
+
+RC1000 UNKNOWN FATAL ERROR
+Note the circumstances of the error, try to isolate the problem, and create a reproducible
+test case, then report this information to technical support.
+
+RC1002 out of heap space
+The Resource Compiler ran out of storage for items that it stores in its heap. One of the 
+following may be a solution:
+- Increase the Windows swap file space. Consider using the Control Panel, System icon, 
+  Performance tab to increase your system's virtual memory, reboot, and retry. 
+- Split the current file into two or more files and compile them separately. 
+
+RC1003 error count exceeds number; stopping compilation
+The number of errors was too great to continue compilation. Fix some errors and recompile.
+
+RC1004 unexpected end of file found
+This error can be caused by omitting the linefeed and carriage return characters on the 
+last line of a text file.
+
+RC1005 file not found: filename
+The file specified in the RC command line was not found. Check to see whether the file 
+has been moved to another directory and whether the filename or path is typed correctly. 
+Files are searched for using the INCLUDE environment variable or the Directories setting.
+
+RC1007 unrecognized option 'option' in 'filename'
+The specified option is not valid.
+
+RC1008 no input file specified
+One or more source files must be specified on the Resource Compiler command line.
+
+RC1009 compiler limit : macros too deeply nested 'macro'
+The Resource Compiler limit for macro nesting was exceeded. Revise the specified source 
+file to decrease the nesting depth of its macros.
+
+RC1010 no output file specified
+The Resource Compiler command line did not specify a filename for the compiled resource 
+file.
+
+RC1011 compiler limit : 'identifier' : macro definition too big
+The macro definition was longer than allowed. Try to split the definition into shorter 
+definitions.
+
+RC1012 unmatched parenthesis : missing 'character'
+The parentheses in a preprocessor directive were not matched. The missing character is 
+either a left or right parenthesis.
+
+RC1013 mismatched parentheses
+Make sure that every open parenthesis has a matching closing parenthesis.
+
+RC1014 too many include files : depth = 'level'
+The nesting depth of #include directives was too great. Open files can be included by the 
+use of nested directives. The source file containing the directive is counted as one of 
+the files.
+
+RC1015 cannot open include file 'filename'
+The given include file either did not exist, could not be opened, or was not found. Make 
+sure that the environment settings are valid and that the correct path for the file is 
+specified. Ensure that sufficient file handles are available to the Resource Compiler. 
+If the file is on a network drive, make sure that you have permissions to open the file.
+
+RC1016 #if[n]def expected an identifier
+The #ifdef or #ifndef conditional compilation directive was not supplied with an identifier 
+to evaluate. An identifier must be specified with the #ifdef and #ifndef directives.
+
+RC1017 invalid integer constant expression
+The expression in an #if directive either did not exist or did not evaluate to a constant.
+
+RC1018 unexpected '#elif'
+The #elif directive did not appear within an #if, #ifdef, or #ifndef construct. Make sure 
+that there is an #if, #ifdef, or #ifndef statement in effect before this statement.
+
+RC1019 unexpected '#else'
+The #else directive did not appear within an #if, #ifdef, or #ifndef construct. Make sure 
+that there is an #if, #ifdef, or #ifndef statement in effect before this statement.
+
+RC1020 unexpected '#endif'
+An #endif directive appeared without a matching #if, #ifdef, or #ifndef directive. Make sure 
+that there is a matching #endif for each #if, #ifdef, and #ifndef statement.
+
+RC1021 invalid preprocessor command 'string'
+The characters following the number sign (#) did not form a valid preprocessor directive. 
+The number sign cannot be used as the first character in an identifier.
+
+RC1022 expected '#endif'
+An #if, #ifdef, or #ifndef directive was not terminated with an #endif directive. Make sure 
+that there is an #if, #ifdef, or #ifndef statement in effect before this statement.
+
+RC1023 cannot open source file 'filename'
+The specified file either did not exist, could not be opened, or was not found. Make sure 
+that the environment settings are valid and that the correct path for the file is specified. 
+If this error appears without an error message, the Resource Compiler has run out of file 
+handles.
+
+RC1047 "too many option options, 'string'"
+The given option was specified too many times. The given string is the argument to the 
+option that caused the error.
+
+RC1048 unknown option 'character' in 'option'
+The given character was not a valid letter for the option.
+
+RC1049 invalid numerical argument 'string'
+The Resource Compiler expected a numerical argument but received the given string. This 
+error may be caused by giving a hexadecimal number without the necessary \x prefix or by 
+a misformed floating-point number.
+
+RC1052 compiler limit : #if or #ifdef blocks nested too deeply
+The program exceeded the maximum allowable nesting levels for #if and #ifdef directives. 
+This error can be caused by include files that use these preprocessor directives.
+
+RC1067 compiler limit : identifier overflowed internal buffer
+An internal compiler limit was exceeded.
+
+RC1101 no resource binary filename specified 
+The Rename Output (/fo) option was specified, but was not followed by filename. 
+The following syntax must be used with the /fo option:
+RC /fooutfilename infilename.rc
+
+RC1102 internal error : too many arguments to RCPP
+Too many arguments were passed to the Resource Compiler preprocessor. Reduce the number 
+of symbols defined with the Define Symbols (/d) option by defining them in your source. 
+This error can also be caused by specifying too many include file search paths using 
+the Include Search Path option (/i).
+
+RC1103 invalid switch, option
+The specified option is not a valid Resource Compiler option.
+
+RC1105 invalid switch, option: too many /d switches
+Too many symbols were defined using the Define Symbols (/d) option. Define some symbols 
+in your source and recompile.
+
+RC1106 invalid switch: option
+The specified option is not a valid Resource Compiler option. The following options are valid:
+/r	Emit .RES file	
+/v	Verbose (print progress messages)	
+/d	Define a symbol	
+/fo	Rename .RES file	
+/l	Default language ID in hex	
+/I	Add a path for INCLUDE searches	
+/x	Ignore INCLUDE environment variable	
+/c	Define a code page used by NLS Conversion	
+
+RC1107 invalid usage; use RC /? for Help
+An invalid Resource Compiler option was specified. Valid options are one of the following: 
+/r, /v, /d, /fo, /l, /i, /x, or /c:
+
+RC1109 error creating resource-name
+Could not create specified .RES file. Make sure it is not being created on a read-only drive. 
+Use the /V option to find out whether the file is being created.
+
+RC1110 could not open filename
+RC could not open the specified resource script file. Make sure that the file exists.
+
+RC1116 RC terminating after preprocessor errors
+The Resource Compiler halted due to other errors. Fix the other errors and recompile.
+
+RC1120 out of memory, needed number bytes
+The Resource Compiler ran out of storage for items that it stores in its heap. 
+Usually this is the result of having too many symbols. One of the following may 
+be a solution:
+- Increase the Windows swap file space. Consider using the Control Panel, System icon, 
+  Performance tab to increase your system's virtual memory, reboot, and retry. 
+- Eliminate unnecessary include files, especially unneeded #defines and function prototypes. 
+- Split the current file into two or more files and compile them separately. 
+
+RC1121 I/O error reading file 
+The Resource Compiler was not able to read a file. Check that the drive containing the file 
+is available and that the file is valid.
+
+RC1122 I/O error writing file
+The Resource Compiler could not write to a file. This error may be caused by insufficient 
+disk space. You must have free space equivalent to about twice the size of the executable 
+file you are creating. Other possible reasons for this error are:
+- Writing to a read-only volume 
+- Writing to a bad sector 
+- A sharing violation 
+
+RC1123 I/O error seeking in file 
+The compiler was unable to complete an I/O operation.
+
+RC1201 invalid switch - missing include path after /i 
+The Specify Include Path (/i) option was specified, but was not followed by a path.
+
+RC1202 invalid switch - missing default language ID after /l
+The Specify Default Language (/l) option was specified, but was not followed by 
+a hexadecimal language ID.
+
+RC1203 invalid hexadecimal default language ID specified.
+The Specify Default Language (/l) option was specified, but was followed by an invalid 
+hexadecimal language ID. See the Platform SDK for a list of valid language IDs.
+
+RC1204 Invalid switch - missing code page after /c
+The Specify Code Page (/c) option was specified, but it was not followed by a code page.
+
+RC1205 invalid code page
+The Specify Code Page (/c) option was specified, but was followed by an invalid code page. 
+See Code Pages in the the online documentation for more information.
+
+RC1206 specified code page at cmd line does not exist in registry
+The Specify Code Page (/c) option was specified, but was followed by a code page whose 
+location is not specified in the registry.
+
+RC1207 default code page is invalid
+The code page specified by the RCCODEPAGE environment variable is not valid. 
+See Code Pages in the online documentation for more information.
+
+RC1208 input file has .RES extension
+The .RES extension is used for Resource Compiler output. The .RC extension should be used 
+for Resource Compiler scripts.
+
+RC2001 newline in constant
+A string constant was continued on a second line without either a backslash (\) or closing 
+and opening double quotation marks ("). To break a string constant that is on two lines 
+in the source file, do one of the following:
+- End the first line with the line-continuation character, a backslash. 
+- Close the string on the first line with a double quotation mark and open the string on 
+  the next line with another quotation mark. 
+It is not sufficient to end the first line with \n, the escape sequence for embedding 
+a newline character in a string constant. 
+
+RC2003 expected 'defined id'
+An identifier was expected after the specified preprocessing keyword.
+
+RC2004 expected 'defined(id)'
+An identifier was expected after the left parenthesis following the specified 
+preprocessing keyword.
+
+RC2005 #line expected a line number, found 'token'
+A #line directive lacked the required line-number specification.
+
+RC2006 #include expected a filename, found 'token'
+An #include directive lacked the required filename specification.
+
+RC2007 #define syntax
+An identifier was expected following #define in a preprocessing directive.
+
+RC2008 'character' : unexpected in macro definition
+The given character was found immediately following the name of the macro.
+
+RC2009 reuse of macro formal 'identifier'
+The given identifier was used more than once in the formal parameter list 
+of a macro definition.
+
+RC2010 'character' : unexpected in formal list
+The given character was used incorrectly in the formal parameter list 
+of a macro definition.
+
+RC2012 missing name following '<'
+An #include directive lacked the required filename specification.
+
+RC2013 missing '>'
+The closing angle bracket (>) was missing from an #include directive.
+
+RC2014 preprocessor command must start as first non-whitespace
+Non-white-space characters appeared before the number sign (#) of a preprocessor 
+directive on the same line.
+
+RC2015 too many chars in constant
+A character constant contained more than two characters. Character constants are limited to 
+one character (standard character constants) or two characters (long character constants). 
+Note that an escape sequence (for example, \t for tab) is converted to a single character.
+
+RC2016 no closing single quote
+A newline character was found before the closing single quotation mark of 
+a character constant.
+
+RC2017 illegal escape sequence
+An escape sequence appeared where one was not expected. An escape sequence - a backslash 
+( \ ) followed by a number or letter - may occur only in a character or string constant.
+
+RC2018 unknown character 'hexnumber'
+The ASCII character corresponding to the given hexadecimal number appeared in the 
+source file but is an illegal character. One possible cause of this error is corruption 
+of the source file.
+
+RC2019 expected preprocessor directive, found 'character'
+The given character followed a number sign (#), but it was not the first letter of 
+a preprocessor directive.
+
+RC2020 illegal digit number for base radix
+The specified digit is not a valid digit for the base specified by radix. Either the 
+digit or the radix could be incorrect. Octal digits must be numbers from 0 to 7, and 
+hexadecimal digits must be numbers from 0 to 9 or letters from A through E.
+
+RC2021 expected exponent value, not 'character'
+The given character was used as the exponent of a floating-point constant but was 
+not a valid number.
+
+RC2022 'number' : too big for character
+The octal number following a backslash (\) in a character or string constant was too large 
+to be represented as a character.
+
+RC2101 Invalid directive in preprocessed RC file
+The RC file contains a #pragma directive. Use the #ifndef preprocessor directive 
+with the RC_INVOKED constant that the Resource Compiler defines when it processes 
+an include file. Place the #pragma directive inside a block of code that is not 
+processed when the RC_INVOKED constant is defined. Code in the block is processed 
+only by the C/C++ compiler and not by the Resource Compiler. The following sample 
+code demonstrates this technique: 
+  #ifndef RC_INVOKED
+  #pragma pack(2)  // C/C++ only, ignored by Resource Compiler
+  #endif
+The #pragma preprocessor directive has no meaning in an .RC file. The #include 
+preprocessor directive is used frequently in an .RC file to include a header file 
+(either a project-based custom header file or a standard header file provided by 
+Microsoft with one of its products). Some of these include files contain the 
+#pragma directive. Because a header file can include one or more other header 
+files, the file that contains the offending #pragma directive may not be immediately 
+obvious. The #ifndef RC_INVOKED technique can control including header files in 
+project-based header files. 
+
+RC2102 string literal too long
+An RCDATA string exceeded the maximum allowable length.
+
+RC2103 unexpected end of file in string literal
+An end of file was found before the end of a string. The string is probably missing 
+a closing double quotation mark (").
+
+RC2104 undefined keyword or key name: key
+The specified keyword or key name was not defined. If you encounter the following error 
+message: "undefined keyword or key name: MFT_STRING" Open the file ...\mfc\include\AfxRes.h 
+and add the following include directive:  #include <winresrc.h>
+
+RC2105 BEGIN expected in string table
+The BEGIN keyword must immediately follow the ACCELERATORS keyword.
+
+RC2106 BEGIN expected in accelerator table
+The BEGIN keyword must immediately follow the ACCELERATORS keyword.
+
+RC2107 expected numeric command value
+RC was expecting a numeric idvalue field in the ACCELERATORS statement. Make sure 
+that you have used a #define constant to specify the value and that the constant 
+is spelled correctly.
+
+RC2108 unbalanced parentheses
+An open parenthesis was not matched with a closing parenthesis.
+
+RC2109 expected numerical dialog constant
+A DIALOG statement requires integer values for the x, y, width, and height fields. 
+Make sure these values are included after the DIALOG keyword and that they are 
+not negative.
+
+RC2110 expected numerical dialog constant
+A DIALOG statement requires integer values for the x, y, width, and height fields. 
+Make sure these values are included after the DIALOG keyword and that they are 
+not negative.
+
+RC2111 invalid control type
+Each CONTROL statement in a DIALOG statement must be one of the following: 
+3STATE, AUTO3, AUTOCHECK, AUTORADIO, BEDIT, CHECKBOX, COMBOBOX, CONTROL, 
+CTEXT, DEFPUSHBUTTON, EDITTEXT, GROUPBOX, HEDIT, ICON, IEDIT, LISTBOX, 
+LTEXT, PUSHBOX, PUSHBUTTON, RADIOBUTTON, RTEXT, SCROLLBAR, USERBUTTON. 
+Make sure these CONTROL statements are spelled correctly.
+
+RC2112 BEGIN expected in dialog
+The BEGIN keyword must immediately follow the DIALOG keyword.
+
+RC2113 END expected in dialog
+The END keyword must occur at the end of a DIALOG statement. Make sure there are 
+no open quotes left from the preceding statement.
+
+RC2114 expected control class name
+The class field of a CONTROL statement in the DIALOG statement must be one of the following 
+types: BUTTON, COMBOBOX, EDIT, LISTBOX, SCROLLBAR, STATIC, or user-defined. 
+Make sure the class is spelled correctly.
+
+RC2115 text string or ordinal expected in control
+The text field of a CONTROL statement in the DIALOG statement must be either a text string 
+or an ordinal reference to the type of control is expected. If using an ordinal, make sure 
+that you have a #define statement for the control.
+
+RC2116 expecting number for ID
+Expecting a number for the id field of a control statement in the DIALOG statement. 
+Make sure you have a number or #define statement for the control ID.
+
+RC2117 expected numeric point size
+The pointsize field of the FONT option in the DIALOG statement must be an integer 
+point size value.
+
+RC2118 expected font face name
+The typeface field of the FONT option in the DIALOG statement must be an ASCII character 
+string enclosed in double quotation marks. This field specifies the name of a font.
+
+RC2119 expecting quoted string in dialog title
+The captiontext field of the CAPTION option in the DIALOG statement must be an 
+ASCII character string enclosed in double quotation marks.
+
+RC2120 expecting quoted string in dialog class
+The class field of the CLASS option in the DIALOG statement must be an integer 
+or a string, enclosed in double quotation marks.
+
+RC2121 BEGIN expected in menu
+The BEGIN keyword must immediately follow the MENU keyword.
+
+RC2122 unknown menu subtype
+The item-definition field of the MENU statement can contain only MENUITEM and 
+POPUP statements.
+
+RC2123 END expected in menu
+The END keyword must come at the end of a MENU statement. Make sure you do not have any 
+open quotation marks or a mismatched pair of BEGIN and END statements.
+
+RC2124 empty menus not allowed
+An END keyword appears before any menu items are defined in the MENU statement. 
+Empty menus are not permitted by the Resource Compiler. Make sure you do not 
+have any open quotation marks within the MENU statement.
+
+RC2125 expected ID value for menuitem
+The MENU statement must contain a menuID field, which specifies the name or number 
+that identifies the menu resource.
+
+RC2126 expected menu string
+Each MENUITEM and POPUP statement must contain a text field, which is a string enclosed 
+in double quotation marks that specifies the name of the menu item or pop-up menu. 
+A MENUITEM SEPARATOR statement requires no quoted string.
+
+RC2127 version WORDs separated by commas expected
+Version numbers in a version resource should be of type WORD, and separated by commas.
+
+RC2128 DWORD expected
+A valid version number was not found. It must be a DWORD type.
+
+RC2129 BEGIN expected in VERSIONINFO resource
+The BEGIN keyword must immediately follow the VERSIONINFO keyword.
+
+RC2130 #line expected a string containing the file name, found 'token'
+A #line directive was missing a required filename.
+
+RC2131 expecting quoted string for key
+The field for this statement must be a character string enclosed in double quotation marks.
+
+RC2132 expected VALUE, BLOCK, or, END keyword
+A block in a VERSION resource doesn't end properly, or a new block doesn't begin properly. 
+This results in a VERSION statement that is not a valid block.
+
+RC2133 unexpected value in value data
+The raw-data values in the RCDATA statement must be integers or strings, each separated 
+by a comma. Make sure you did not leave out a comma or leave out a quotation mark 
+around a string.
+
+RC2134 BEGIN expected in RCDATA
+The BEGIN keyword must immediately follow the RCDATA keyword.
+
+RC2135 file not found: filename
+The file specified in the RC command line was not found. Check to see whether the file 
+has been moved to another directory and whether the filename or path is typed correctly. 
+Files are searched for using the INCLUDE environment variable or the visual development 
+environment INCLUDE directory setting (Tools menu, Options item, Directories tab).
+
+RC2136 missing '=' in EXSTYLE=<flags>
+An equal sign (=) was missing from an EXSTYLE (Extended Style Flags) statement. When the 
+EXSTYLE is embedded in the DIALOG or MENU statement it must have the following form: 
+EXSTYLE=FLAGS
+
+RC2137 empty character constant
+A pair of single quotes was found with no character specified between them.
+
+RC2138 unmatched close comment '/*'
+An open comment sequence (/*) was not matched with a close comment sequence (*/) 
+This error can be caused by nesting comments.
+
+RC2139 VERSION not a number
+A VERSION resource must be a number.
+
+RC2140 CHARACTERISTICS not a number
+A CHARACTERISTICS resource must be a number.
+
+RC2141 invalid type
+A different type was expected.
+
+RC2142 ellipsis requires three periods
+An incorrect number of periods (.) was used in an ellipsis.
+
+RC2143 font names must be ordinals
+The pointsize field in the FONT statement must be an integer, not a string.
+
+RC2144 PRIMARY LANGUAGE ID not a number
+The PRIMARY LANGUAGE ID must be a hexadecimal language ID. See Language and 
+Country Strings in the online documentation for a list of valid Language IDs.
+
+RC2145 PRIMARY LANGUAGE ID too large
+The PRIMARY LANGUAGE ID must be a valid hexadecimal language ID. See Language and 
+Country Strings in the Ronline documentation for a list of valid Language IDs.
+
+RC2146 missing COMMA in LANGUAGE statement
+The comma separating the primary language and secondary language is missing. 
+The LANGUAGE statement must use the following syntax: 
+LANGUAGE primary_language_ID,secondary_language_ID
+
+RC2147 SUBLANGUAGE ID not a number
+The SUBLANGUAGE ID value must be a number. The LANGUAGE statement must use the 
+following syntax: LANGUAGE primary_language_ID,secondary_language_ID
+Valid SUBLANGUAGE IDs are defined as SUBLANG_ constants in the WINNT.H file.
+
+RC2148 SUBLANGUAGE ID too large
+The SUBLANGUAGE ID value was out of range. The LANGUAGE statement must use the 
+following syntax: LANGUAGE primary_language_ID,secondary_language_ID
+Valid SUBLANGUAGE IDs are defined as SUBLANG_ constants in the WINNT.H file.
+
+RC2149 expected numeric constant in string table
+A numeric constant, defined in a #define statement, must immediately follow the 
+BEGIN keyword in a STRINGTABLE statement.
+
+RC2150 expected string in STRINGTABLE
+A string is expected after each stringid value in a STRINGTABLE statement.
+
+RC2151 cannot re-use string constants
+You are using the same value twice in a STRINGTABLE statement. Make sure you are not 
+mixing overlapping decimal and hexadecimal values. Each ID in a STRINGTABLE must be 
+unique. For maximum efficiency use contiguous constants that start on a multiple of 16.
+
+RC2152 invalid control character
+A control character in the ACCELERATORS statement is invalid. A valid control character 
+consists of one letter (only) following a caret (^).
+
+RC2153 hex constants must have at least 1 hex digit
+An empty hexadecimal constant was found.
+
+RC2154 control character out of range [^A - ^Z]
+A control character in the ACCELERATORS statement is invalid. The character following 
+the caret (^) must be between A and Z, inclusive.
+
+RC2155 invalid accelerator
+An event field in the ACCELERATORS statement was not recognized or was more than two 
+characters in length.
+
+RC2156 expected string or constant accelerator command
+RC was not able to determine what kind of key is being set up for the accelerator. 
+The event field in the ACCELERATORS statement might be invalid.
+
+RC2157 expected comma in accelerator table
+The Resource Compiler requires a comma between the event and idvalue fields in 
+the ACCELERATORS statement.
+
+RC2159 invalid accelerator type [ASCII or VIRTKEY]
+The type field in the ACCELERATORS statement must contain either the ASCII or 
+VIRTKEY value.
+
+RC2160 ## cannot occur at the beginning of a macro definition
+A macro definition began with a token-pasting operator (##).
+
+RC2161 ## cannot occur at the end of a macro definition
+A macro definition ended with a token-pasting operator (##).
+
+RC2162 expected macro formal parameter
+The token following a stringizing operator (#) was not a formal parameter name.
+
+RC2163 accelerator type required [ASCII or VIRTKEY]
+The type field in the ACCELERATORS statement must contain either the ASCII or 
+VIRTKEY value.
+
+RC2164 unexpected value in RCDATA
+The raw-data values in the RCDATA statement must be integers or strings, each separated 
+by a comma. Make sure you did not leave out a comma or leave out a quotation mark 
+around a string.
+
+RC2165 string not found in DLGINCLUDE statement
+The statement did not specify a valid include file. The DLGINCLUDE statement must use 
+the following syntax:
+DLGINCLUDE "filename.h"
+
+RC2166 numeric value expected at line
+The resource on the specified line must be a numeric value.
+
+RC2167 unrecognized VERSIONINFO field; BEGIN or comma expected
+An unrecognized field was found in the FIXED part of a VERSIONINFO structure declaration. 
+A VERSIONINFO field must be DWORDS separated by a comma.
+
+RC2168 resource too large
+The size limitation of a resource was exceeded. This limit does not apply to cursors, 
+icons, bitmaps, or other file-based resources.
+
+RC2169 resource file filename is not in 2.03 format
+The specified resource used a format earlier than version 2.03. The resource file 
+must be converted or re-created using the format for version 3.00 or later.
+
+RC2170 bitmap file filename is not in 3.00 format
+Bitmaps using the Windows version 2.x format cannot be used in version 3.x resource files. 
+The bitmap must be redrawn or converted to 3.x format.
+
+RC2171 unknown DIB header format
+The bitmap header is not a BITMAPCOREHEADER or BITMAPINFOHEADER structure.
+
+RC2174 bitmap file filename is not in 2.03 format
+A bitmap used a format earlier than version 2.03. The bitmap must be converted or 
+redrawn using the format for version 3.00 or later.
+
+RC2175 resource file filename is not in 3.00 format
+The specified resource used a format earlier than version 3.00. The resource file 
+must be converted or recreated using the format for version 3.00 or later.
+
+RC2176 old DIB in filename. 
+An old format Device Independent Bitmap was found in the specified file. 
+It should be converted to the current format.
+
+RC2177 constant too big
+A constant value was too large to be represented in the type to which it was assigned.
+
+RC2180 unable to open temporary file
+The Resource Compiler was unable to open a temporary file. The probable cause is either 
+that you do not have write permissions for the directory, or that the directory does 
+not exist. The Resource Compiler attempts to use these files in the directory specified 
+by the TMP (or GetSystemTempDirectory) environment variable or the current directory 
+if none is specified.
+
+RC2181 duplicate font ID fontID
+The specified font ID was already defined.
+
+RC2189 #error : error
+This error is used to display other error messages.
+
+RC2235 too many arguments supplied
+An expression contained more formal parameters than expected.
+
+RC2236 required parameter missing
+An expression contained fewer formal parameters than expected.
+
+RC2237 numeric value expected
+A numeric value, which was expected, cannot be found
+
+
+RC4000 UNKNOWN WARNING
+Note the circumstances of the warning, try to isolate the problem and create a 
+reproducible test case, then consult the technical-support help file or the 
+technical-support section in one of your manuals.
+
+RC4002 too many actual parameters for macro 'identifier'
+The number of actual parameters specified with the given identifier was greater than 
+the number of formal parameters given in the macro definition of the identifier. 
+The additional actual parameters were collected but ignored during expansion of 
+the macro.
+
+RC4003 not enough actual parameters for macro 'identifier'
+The number of actual parameters specified with the given identifier was less than 
+the number of formal parameters given in the macro definition of the identifier. 
+When a formal parameter is referenced in the definition and the corresponding 
+actual parameter has not been provided, empty text is substituted in the 
+macro expansion.
+
+RC4004 missing close parenthesis after 'defined'
+An opening parenthesis was not matched with a closing parenthesis.
+
+RC4005 'identifier' : macro redefinition
+The given identifier was defined twice. The compiler used the second macro definition. 
+This warning can be caused by defining a macro on the command line and in the code 
+with a #define directive. It also can be caused by macros imported from include files. 
+To eliminate the warning, either remove one of the definitions or use an 
+#undef directive before the second definition.
+
+RC4006 #undef expected an identifier
+The name of the identifier whose definition was to be removed was not given with the 
+#undef directive. The #undef directive was ignored.
+
+RC4009 string too big, trailing chars truncated
+A string was too large to fit in a buffer. Trailing characters were truncated and 
+the remaining string was used.
+
+RC4011 identifier truncated to 'identifier'
+An identifier was too long and was truncated to the name shown in the warning.
+
+RC4012 float constant in a cross compilation
+A float constant may not have the same value on different target platforms.
+
+RC4067 unexpected characters following 'token' directive - newline expected
+A newline character should follow the specified token.
+
+RC4079 unexpected token 'token'
+Check the syntax of the line containing the specified token.
+
+RC4093 unescaped newline in character constant in inactive code
+The constant expression of an #if, #elif, #ifdef, or #ifndef preprocessor directive 
+evaluated to zero, making the code that follows inactive. Within that inactive code, 
+a newline character appeared within a set of single or double quotation marks. 
+All text until the next double quotation mark was considered to be within a 
+character constant.
+
+RC4111 unexpected token 'string'
+Check the syntax of the line containing the specified token.
+
+RC4117 macro name 'macro' is reserved, macro ignored
+The specified macro was given a reserved name.
+
+RC4203 SHIFT or CONTROL used without VIRTKEY
+In an accelerator table resource, SHIFT or CONTROL require VIRTKEY. Because SHIFT and 
+CONTROL are indicated as flag bits in a VIRTKEY type accelerator, they cannot exist 
+independent from a VIRTKEY.
+
+RC4204 ASCII character not equivalent to virtual key code
+A string literal was used for the virtual key code in a VIRTKEY type accelerator. 
+This warning lets you continue, but be aware that the accelerator keys generated 
+may not match the string you indicated. (VIRTKEYs use different key codes than 
+ASCII accelerators.) While string literals are syntactically valid, you can only 
+ensure that you get the accelerator you want by using the VK_* #define values 
+in WINDOWS.H.
+
+RC4205 string literal longer than 256 - stored anyway
+A literal sting exceeded 256 characters. It was stored intact.
+
+RC4206 name string too long - truncated at 256
+A name string exceeded the limit of 256 characters. It was truncated to 256 characters.
+
+RC4207 type string too long - truncated at 256
+A type string exceeded the limit of 256 characters. It was truncated to 256 characters.
+
+RC4208 title string too long - truncated at 256
+A title string exceeded the limit of 256 characters. It was truncated to 256 characters.
+
+RC4413 cannot determine file type for 'filename' : assuming 8-bit ASCII
+The type of specified file is not known to the Resource Compiler. It was compiled as 
+an 8-bit ASCII file.

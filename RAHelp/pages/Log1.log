@@ -1,0 +1,23 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\RadASM\Help\RAHelp\RadASM.chm
+
+HHC5003: Error: Compilation failed while compiling pages\rah_opt_enviroment.htm.
+
+
+The following files were not compiled:
+pages\rah_opt_enviroment.htm
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\RadASM\Help\RAHelp\RadASM.chm
+
+
+Compile time: 0 minutes, 2 seconds
+114	Topics
+461	Local links
+43	Internet links
+56	Graphics
+
+
+Created c:\RadASM\Help\RAHelp\RadASM.chm, 568,346 bytes
+Compression decreased file by 266,361 bytes.

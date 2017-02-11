@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>RadASM.ini</TITLE>
+</HEAD>
+
+<BODY>
+
+<pre style="background-color: #CC99FF; border-style: solid; border-width: 1"><B><font color="#0000FF" size="5">RadASM.ini</font></B></pre>
+
+<pre><font color="#008000"><B>RadASM.ini documentation. (Version 2.2.0.8)</B>
+</font>
+<font color="#000080"><b>Path acronyms</b></font>
+These acronyms are set in the <A HREF="rah_assembler_ini.htm#paths">[Paths]</A> section of <A HREF="rah_assembler_ini.htm">Assembler.ini</A>
+
+<font color="#0000FF"><b>$A</b></font>&nbsp;&nbsp;&nbsp; Masm32 path (C:\Masm32)
+<font color="#0000FF"><b>$B</b></font>&nbsp;&nbsp;&nbsp; Binary path where rc.exe, ml.exe and link.exe is found ($A\Bin)
+<font color="#0000FF"><b>$C</b></font>&nbsp;&nbsp;&nbsp; Current project path
+<font color="#0000FF"><b>$D</b></font>&nbsp;&nbsp;&nbsp; Addins path ($R\AddIns)
+<font color="#0000FF"><b>$E</b></font>&nbsp;&nbsp;&nbsp; Debug path (C:\OllyDbg)
+<font color="#0000FF"><b>$H&nbsp;</b></font>&nbsp;&nbsp; Help file path ($A\Help)
+<font color="#0000FF"><b>$I</b></font>&nbsp;&nbsp;&nbsp; Include path ($A\Include)
+<font color="#0000FF"><b>$L</b></font>&nbsp;&nbsp;&nbsp; Library path ($A\Lib)
+<font color="#0000FF"><b>$M</b></font>&nbsp;&nbsp;&nbsp; Keyboard macro path ($R\Macro)
+<font color="#0000FF"><b>$P</b></font>&nbsp;&nbsp;&nbsp; Projects path ($R\Projects)
+<font color="#0000FF"><b>$R</b></font>&nbsp;&nbsp;&nbsp; Path where RadASM is started (\RadASM)
+<font color="#0000FF"><b>$S&nbsp;</b></font>&nbsp;&nbsp; Sniplets path ($R\Sniplets)
+<font color="#0000FF"><b>$T</b></font>&nbsp;&nbsp;&nbsp; Templates path ($R\Templates)
+
+<B><font color="#800080" size="4"><a name="window"></a>Section [Window]</font></B>
+
+<font color="#000080"><b>Mdi frame and tool windows.</b></font>
+<font color="#FF0000">Maintained by RadASM, and Option / Tool Windows.</font>
+
+<span style="font-size: 10.0pt"><font color="#0000FF"><b>Maximized=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">	</span>Is mdi frame maximized, TRUE or FALSE
+</span><span style="font-size: 10.0pt"><font color="#0000FF"><b>TopMost=</b></font></span><span style="font-size:10.0pt;color:black">	Is mdi frame topmost, TRUE or FALSE
+</span><span style="font-size: 10.0pt"><font color="#0000FF"><b>SingleInstance=</b></font></span><span style="font-size:10.0pt;color:black">	Open RadASM in single instance, TRUE or FALSE<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Left=</b></font></span><span style="font-size:10.0pt;color:black">		Mdi frame left position in pixels<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Top=</b></font></span><span style="font-size:10.0pt;color:black">		Mdi frame top position in pixels<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Width=</b></font></span><span style="font-size:10.0pt;color:black">		Mdi frame width in pixels<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Height=</b></font></span><span style="font-size:10.0pt;color:black">		Mdi frame height in pixels<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>ToolBar=</b></font></span><span style="font-size:10.0pt;color:black">	Is toolbar visible, TRUE or FALSE<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>StatusBar=</b></font></span><span style="font-size:10.0pt;color:black">	Is statusbar visible, TRUE or FALSE<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Find=</b></font></span><span style="font-size:10.0pt;color:black">		Position of Find dialog. Left, Top
+</span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Goto=</b></font></span><span style="font-size:10.0pt;color:black">        	Position of Goto dialog. Left, Top<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>ProWiz=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">		</span>Position of Project Wizard dialog. Left, Top
+</span><span style="font-size: 10.0pt"><font color="#0000FF"><b>RightCaption=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">	</span>Right caption on TOP and BOTTOM tool windows<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Divider=</b></font></span><span style="font-size:10.0pt;color:black">	The mdi frame has a divider line below the toolbar<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>MultiLine=</b></font></span><span style="font-size:10.0pt;color:black">	Tab select tool window has multi-line tabs<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>AutoLoad=</b></font></span><span style="font-size:10.0pt;color:black">	Last project auto loaded, TRUE or FALSE<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Project=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">	</span>&lt;ToolWinDes&gt;<span style="mso-tab-count: 1">	</span>Project tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Output=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">		</span>&lt;ToolWinDes&gt;<span style="mso-tab-count: 1">	</span>Output tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>ToolBox=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">	</span>&lt;ToolWinDes&gt;	ToolBox tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Property=</b></font></span><span style="font-size:10.0pt;color:black">	&lt;ToolWinDes&gt;<span style="mso-tab-count: 1">	</span>Property tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>TabTool=</b></font></span><span style="font-size:10.0pt;color:black"><span style="mso-tab-count: 1">	</span>&lt;ToolWinDes&gt;	TabTool tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>InfoTool=</b></font></span><span style="font-size:10.0pt;color:black">	&lt;ToolWinDes&gt;	TabTool tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Tool1=</b></font></span><span style="font-size:10.0pt;color:black">		&lt;ToolWinDes&gt;	TabTool tool window description<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Tool2=</b></font></span><span style="font-size:10.0pt;color:black">		&lt;ToolWinDes&gt;	TabTool tool window description
+</span><span style="font-size: 10.0pt"><font color="#0000FF"><b>ToolClipping=</b></font></span><span style="font-size:10.0pt;color:black">	&lt;ToolWinDes&gt;	The order in which the tools are created and hence clipped<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Font=</b></font></span><span style="font-size:10.0pt;color:black">		Font used on dialogs. Font (Tahoma), Size (-11), Italics (0), Weight (400), CharSet (0)<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Magnify=</b></font></span><span style="font-size:10.0pt;color:black">	Magnify 32 equals x 1, 40 equals x 1.25<o:p>
+</o:p></span><span style="font-size: 10.0pt"><font color="#0000FF"><b>Language=</b></font></span><span style="font-size:10.0pt;color:black">	Language file (RadXXX.lng)<o:p>
+</span></pre>
+
+<pre><font color="#008080"><b>Tool window description</b></font>
+<b><font color="#0000FF">ToolWindow</font></b>	Project, Output, ToolBox, Property or TabTool
+<font color="#0000FF"><b>Visible</b></font>		tool window visible, <b>TRUE</b> or <b>FALSE</b>
+<font color="#0000FF"><b>Docked</b></font>		tool window docked, <b>TRUE</b> or <b>FALSE</b>
+<font color="#0000FF"><b>Position</b></font>	Docked position, Left=1, Top=2, Right=3, Bottom=4
+<font color="#0000FF"><b>IsChildOf</b></font>	0=Not a child, 1 to 5 child of tool window 1 to 5
+<font color="#0000FF"><b>DockedWidth</b></font>	Width of docked tool window
+<font color="#0000FF"><b>DockedHeight</b></font>	Height of docked tool window
+<font color="#0000FF"><b>FloatingLeft</b></font>	Floating tool window left position in pixels
+<font color="#0000FF"><b>FloatingTop</b></font>	Floating tool window top position in pixels
+<font color="#0000FF"><b>FloatingWidth</b></font>	Floating tool window width in pixels
+<font color="#0000FF"><b>FloatingHeight</b></font>	Floating tool window height in pixels
+
+<font color="#008080"><b>Tool window clipping</b></font>
+<font color="#0000FF"><b>t1</b></font>,First tool created
+<font color="#0000FF"><b>t2</b></font>,.
+<font color="#0000FF"><b>t3</b></font>,.
+<font color="#0000FF"><b>t4</b></font>,.
+<b><font color="#0000FF">t5</font></b>,.
+<font color="#0000FF"><b>t6</b></font>,.
+<b><font color="#0000FF">t7</font></b>,.
+<font color="#0000FF"><b>t8</b></font><font color="#000000">,.</font>Last tool created and will be clipped by all others.
+
+<font color="#008080"><b>Tool window numbering used in ToolClipping</b></font>
+<font color="#0000FF"><b>1</b></font>= Project
+<b><font color="#0000FF">2</font></b>= Output
+<b><font color="#0000FF">3</font></b>= ToolBox
+<b><font color="#0000FF">4</font></b>= Property
+<b><font color="#0000FF">5</font></b>= TabTool
+<font color="#0000FF"><b>6</b></font>= Infotool
+<font color="#0000FF"><b>7</b></font>= Tool1
+<font color="#0000FF"><b>8</b></font>= Tool2
+
+<B><font color="#800080" size="4"><a name="filebrowser"></a>Section [FileBrowser]</font></B>
+
+<font color="#000080"><b>File browser.
+</b></font><font color="#FF0000">Maintained by RadASM option settings.</font>
+
+<font color="#0000FF"><b>Filter</b></font>=.Ext1.[Ext2.[Ext3.]]
+<font color="#FF0000"><b>Note</b></font>: the use of ' . ' before and after file extension
+<font color="#0000FF"><b>x</b></font>=Path
+<font color="#0000FF"><b>x </b></font>is a number between 0 and 9. No holes allowed. Path acronym allowed
+
+<B><font color="#800080" size="4"><a name="open"></a>Section [Open]</font></B>
+
+<font color="#000080"><b>Files to be opened in external programs.
+</b></font><font color="#FF0000">Maintained by RadASM option settings.</font>
+
+<font color="#0000FF"><b>x</b></font>=.Ext1.[Ext2.[Ext3.]],<font color="#0000FF"><b>Command</b></font>
+<font color="#FF0000"><b>Note</b></font>: the use of ' . ' before and after file extension
+<b><font color="#0000FF">x</font></b>	is a number between 1 and 32. No holes allowed
+<b><font color="#0000FF">Command</font></b>	is the program to launch. Path acronym allowed
+
+<B><font color="#800080" size="4"><a name="splash"></a>Section [Splash]</font></B>
+
+<font color="#000080"><b>RadASM splash screen.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>Bmp</b></font>=Bitmap filename. Path acronym allowed
+<font color="#0000FF"><b>nShow</b></font>=Time to show in 10ms steps
+<font color="#0000FF"><b>x</b></font>=Left,Top,Text
+<b><font color="#0000FF">x</font></b>	is a number between 1 and 8. No holes allowed
+<font color="#0000FF"><b>Left</b></font> 	is offset in pixels from the left
+<b><font color="#0000FF">Top</font></b>	is offset in pixels from the top
+<b><font color="#0000FF">Text</font></b>	is the text to draw on bitmap.
+<b><font color="#0000FF">$V</font></b>	is the RadASM version
+
+<B><font color="#800080" size="4"><a name="assembler"></a>Section [Assembler]</font></B>
+
+<font color="#000080"><b>Assemblers supported by RadASM.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>Assembler</b></font>=asm1[,asm2[,asm3[,asm4]]]List of supported assemblers.
+The first in the list is the default.
+
+<B><font color="#800080" size="4"><a name="sniplet"></a>Section [Sniplet]</font></B>
+
+<font color="#000080"><b>Sniplet window options.
+</b></font><font color="#FF0000">Maintained by RadASM option settings.</font>
+
+<b><font color="#0000FF">Expanded</font></b>	Open with file tree expanded, TRUE or FALSE
+<b><font color="#0000FF">SelAll</font></b>		Double click action, select all text, TRUE or FALSE
+<b><font color="#0000FF">CopyTo</font></b>		Double click action, 0=Editor, 1=Clipboard, 2=Output
+<b><font color="#0000FF">Close</font></b>		Double click action, close when done, TRUE or FALSE
+<b><font color="#0000FF">Left</font></b>		Sniplet window left position in pixels
+<b><font color="#0000FF">Top</font></b>		Sniplet window top position in pixels
+<b><font color="#0000FF">Width</font></b>		Sniplet window width in pixels
+<b><font color="#0000FF">Height</font></b>		Sniplet window height in pixels
+<b><font color="#0000FF">Split</font></b>		Sniplet window split in pixels
+
+<A NAME="addins"></A><B><font color="#800080" size="4">Section [AddIns]</font></B>
+
+<font color="#000080"><b>RadASM AddIns.
+</b></font><font color="#FF0000">Maintained by addin manager.</font>
+
+<font color="#0000FF"><b>x</b></font>=<b><font color="#FF0000">AddIn.dll,</font><font color="#008080">y[,z]
+</font><font color="#0000FF">x</font></b> is a number between 1 and 64. No holes allowed
+The dll must be in the AddIns folder.
+The parameter y is passed to the dll for option settings.
+The parameter z is optional, if FALSE then dll will not be loaded
+
+<B><font color="#800080" size="4"><a name="mru-project"></a>Section [MRU-Projects]</font></B>
+
+<font color="#000080"><b>Most recent list of projects.
+</b></font><font color="#FF0000">Maintained by RadASM.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>MenuText</b></font>,<font color="#800000"><b>P</b></font>,<b><font color="#000080">ProjectFile
+</font><font color="#0000FF">x</font></b> is a number between 1 and 4. No holes allowed
+<font color="#FF0000"><b>MenuText</b></font>	is the text shown on the file menu
+<font color="#800000"><b>P</b></font>		is used by RadASM
+<font color="#000080"><b>ProjectFile</b></font>	is the project file with full path.
+
+<a name="recentfiles"></a><B><font color="#800080" size="4">Section [RecentFiles]</font></B>
+
+<font color="#000080"><b>Recent files.</b></font>
+<font color="#FF0000">Maintained by RadASM.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>FileName</b></font>
+<font color="#0000FF"><b>x</font></b> is a number between 0 and 9. No holes allowed
+<font color="#FF0000"><b>FileName</font></b> is the file including full path.
+
+<a name="menutools"></a><B><font color="#800080" size="4">Section [MenuTools]</font></B>
+
+<font color="#000080"><b>Tools menu.
+</b></font><font color="#FF0000">Maintained by RadASM option settings.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>MenuText</b></font>,<font color="#000080"><b>Accel</b></font>,<font color="#00FFFF"><b>T</b></font>,<b><font color="#008080">Command
+</font><font color="#0000FF">x</font></b>		is a number between 1 and 32. No holes allowed
+<b><font color="#FF0000">MenuText</font></b>	is the text shown on the menu
+<b><font color="#000080">Accel</font></b>		is the asigned accelerator key
+<b><font color="#00FFFF">T</font></b>		is used by RadASM
+<b><font color="#008080">Command</font></b>		is the program to run. Path acronym allowed
+
+<B><font color="#800080" size="4"><a name="menumacro"></a>Section [MenuMacro]</font></B>
+
+<font color="#000080"><b>Keyboard macro menu.
+</b></font><font color="#FF0000">Maintained by RadASM option settings.</font>
+
+<font color="#0000FF"><b>x</b></font>=MenuText,Accel,M,KbMacroToRun See <a HREF="#menutools">Tools menu</a>
+
+<a name="menuhelp"></a><B><font color="#800080" size="4">Section [MenuHelp]</font></B>
+
+<font color="#000080"><b>Help menu.
+</b></font><font color="#FF0000">Maintained by RadASM option settings.</font>
+
+<font color="#0000FF"><b>x</b></font>=MenuText,Accel,H,HelpFile.hlp See <a HREF="#menutools">Tools menu</a>
+
+<B><font color="#800080" size="4"><a name="f1-help"></a>Section [F1-Help]</font></B>
+
+<font color="#000080"><b>F1-help key asignment.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>F1</b></font>=HelpFile.hlp - Help file assigned to F1. Path acronym allowed
+<font color="#0000FF"><b>CF1</b></font>=HelpFile.hlp - Help file assigned to Ctrl+F1
+<font color="#0000FF"><b>SF1</b></font>=HelpFile.hlp - Help file assigned to Shift+F1
+<font color="#0000FF"><b>CSF1</b></font>=HelpFile.hlp - Help file assigned to Ctrl+Shift+F1
+
+<B><font color="#800080" size="4"><a name="template"></a>Section [Template]</font></B>
+
+<font color="#000080"><b>Template file types.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>Txt</b></font>=.Ext1.[Ext2.[Ext3.]] - Files that should be handled as text files
+<font color="#0000FF"><b>Bin</b></font>=.Ext1.[Ext2.[Ext3.]] - Files that should be handled as binary files
+<font color="#FF0000"><b>Note:</b></font> the use of ' . ' before and after extension.
+
+<B><font color="#800080" size="4">Section [CustomControl] (Obsolete, see [CustCtrl]]</font></B>
+
+<font color="#000080"><b>Custom controls addins.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>x		</b></font>a number between 1 and 32. No holes allowed
+<b><font color="#0000FF">ToolTip</font></b>		Toolbox button tool tip text.
+<b><font color="#0000FF">DllName.dll</font></b>	Filename for the dll.
+<b><font color="#0000FF">ClassName</font></b>	Controls class name.
+<b><font color="#0000FF">ID name</font></b>		Default ID name.
+<b><font color="#0000FF">Caption</font></b>		Default caption.
+<b><font color="#0000FF">Style</font></b>		Default Style.
+<b><font color="#0000FF">ExStyle</font></b>		Default ExStyle.
+<b><font color="#0000FF">Disable child</font></b>	If the control has child windows, try 1 or 2, else 0.
+<font color="#0000FF"><b>Properties description1</b></font> - 1'st 32 bits binary number for properties handling.
+<font color="#0000FF"><b>Properties description2</b></font> - 2'nd 32 bits binary number for properties handling.
+<font color="#0000FF"><b>IndexOptional</b></font>. If the dll has more than one control then specify index (0 is first control)
+
+<font color="#008080"><b>Properties description1 starting with bit 31</b></font>
+
+(Name)*
+(ID)*
+Left*
+Top*
+Width*
+Height*
+Caption*
+Border*
+SysMenu
+MaxButton
+MinButton
+Enabled*
+Visible*
+Clipping*
+ScrollBar*
+Default
+Auto
+Alignment
+Mnemonic
+WordWrap
+MultiLine
+Type
+Locked
+Child*
+SizeBorder
+TabStop*
+Font
+Menu
+Class
+Notify
+AutoScroll
+WantCr
+
+<font color="#008080"><b>Properties description2 starting with bit 31</b></font>
+
+Sort
+Flat
+(StartID)
+TabIndex*
+Format
+SizeGrip
+Group*
+Icon
+UseTabs
+StartupPos
+Orientation
+SetBuddy
+MultiSelect
+HideSel
+TopMost
+xExStyle*
+xStyle*
+IntegralHgt
+Image
+Buttons
+PopUp
+OwnerDraw
+
+<b><font color="#FF0000">Note:</font></b> Only some of the properties are general and can be used by the custom control. These properties are marked with *
+
+<B><font color="#800080" size="4"><a name="custctrl"></a>Section [CustCtrl]</font></B>
+
+<font color="#000080"><b>Custom controls addins.
+</b></font><font color="#FF0000">Maintained by RadASM option setting.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>DllName</b></font>,<b><font color="#000080">NoOfControls</font>
+<font color="#0000FF"><b>x</b></font>=		a number between 1 and 32. No holes allowed
+<font color="#FF0000"><b>DllName.dll</b></font>	Filename for the dll.
+<b><font color="#000080">NoOfControls</font></b>	Optional. No of controls in the dll.
+
+<a name="color"></a><B><font color="#800080" size="4">Section [Color]</font></B>
+
+<font color="#000080"><b>Color themes.</b></font>
+<font color="#FF0000">Maintained by  Colors & KeyWords option.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Name</b></font>,<b><font color="#000080">List of colors</font>
+<font color="#0000FF"><b>x</b></font>=		a number between 0 and 15. No holes allowed
+<font color="#FF0000"><b>Name</b></font>		Name for the color theme.
+<font color="#000080"><b>List of colors</b></font>	List of 36 color values.
+
+<a name="verinf"></a><B><font color="#800080" size="4">Section [VerInf]</font></B>
+
+<font color="#000080"><b>Default versioninfo values.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>Nme	</b></font>Default name
+<b><font color="#0000FF">ID</font></b>	Default ID
+<b><font color="#0000FF">FV</font></b>	Default file version
+<b><font color="#0000FF">PV</font></b>	Default product version
+<b><font color="#0000FF">VerOS</font></b>	Default OS
+<b><font color="#0000FF">VerFT</font></b>	Default file type
+<b><font color="#0000FF">VerLNG</font></b>	Default language
+<b><font color="#0000FF">VerCHS</font></b>	Default character set
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Text</b></font>,<b><font color="#000080">Value
+</font><font color="#0000FF">x</font></b>	is a number between 1 and 99. No holes allowed
+<b><font color="#FF0000">Text</font></b>	is the type you want a value for
+<b><font color="#000080">Value</font></b>	is the default value
+
+<B><font color="#800080" size="4"><a name="veros"></a>Section [VerOS]</font></B>
+
+<font color="#000080"><b>Versioninfo OS'es.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Text</b></font>,<b><font color="#000080">Value
+</font><font color="#0000FF">x</font></b>	is a number between 1 and 99. No holes allowed
+<b><font color="#FF0000">Text</font></b>	is the type you want a value for
+<font color="#000080"><b>Value</b></font>	is the default value
+
+<B><font color="#800080" size="4"><a name="verft"></a>Section [VerFT]</font></B>
+
+<font color="#000080"><b>Versioninfo file types.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Text</b></font>,<b><font color="#000080">Value
+</font><font color="#0000FF">x</font></b>	is a number between 1 and 99. No holes allowed
+<b><font color="#FF0000">Text</font></b>	is the type you want a value for
+<font color="#000080"><b>Value</b></font>	is the default value
+
+<B><font color="#800080" size="4"><a name="verlng"></a>Section [VerLNG]</font></B>
+
+<font color="#000080"><b>Versioninfo languages.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Text</b></font>,<b><font color="#000080">Value
+</font><font color="#0000FF">x</font></b>	is a number between 1 and 99. No holes allowed
+<b><font color="#FF0000">Text</font></b>	is the type you want a value for
+<font color="#000080"><b>Value</b></font>	is the default valueue
+
+<B><font color="#800080" size="4"><a name="verchs"></a>Section [VerCHS]</font></B>
+
+<font color="#000080"><b>Versioninfo character sets.
+</b></font><font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>Text</b></font>,<b><font color="#000080">Value
+</font><font color="#0000FF">x</font></b>	is a number between 1 and 99. No holes allowed
+<b><font color="#FF0000">Text</font></b>	is the type you want a value for
+<font color="#000080"><b>Value</b></font>	is the default value
+
+<a name="style"></a><B><font color="#800080" size="4">Section [Style]</font></B>
+
+<font color="#000080"><b>Dialog edit style bits description.</b></font>
+<font color="#FF0000">Manually maintained.</font>
+
+<font color="#0000FF"><b>x</b></font>=<font color="#FF0000"><b>List</b></font>
+<font color="#0000FF"><b>x</b></font>=	a number between 0 and 32.
+<font color="#FF0000"><b>List</b></font>	List of style bits description.
+
+</pre>
+
+</BODY>
+</HTML>

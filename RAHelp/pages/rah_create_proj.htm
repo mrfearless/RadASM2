@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Creating a project</TITLE>
+</HEAD>
+
+<BODY>
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="Supported assemblers are MASM, FASM, TASM, NASM GoAsm and HLA" 
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+</SCRIPT>
+</CODE>
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1"><B><font color="#0000FF" size="5">Creating a project</font></B></P>
+
+<P>
+Select <B>New Project</B> from the file menu to create a new project, the create project wizard will appear.<BR>
+<B><I><br>
+</I></B>
+&nbsp;&nbsp;<img border="0" src="../images/projwiz_1.gif" width="441" height="362">
+</P>
+
+<P> The first property sheet of the New Project Wizard allows you to select the
+<CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">ASSEMBLER</a></CODE> you wish to use, in this case it is MASM, use the drop down combobox to choose an assembler. The next thing to choose is the type of project you wish to create, the number of types and their names will vary depending on the assembler you use.  Once you have chosen an assembler and a project type you need to give a name for your project, this will also be the name of the folder that is created to hold your project files. Pick a unique, descriptive name so it is easy to find when browsing for the folder. The project description is a brief description of the project that will appear at the top of the project window when the project is open. You can change the path to place the project folder in. Press <B>Next</B> when you are done</P>
+
+<P>&nbsp;&nbsp;<img border="0" src="../images/projwiz_2.gif" width="441" height="362"></P>
+
+<P>  The next property sheet in the wizard is to choose a <A HREF="rah_templates.htm">template</A> from your template folder. Press <B>Next</B> when you are done</P>
+
+<P>&nbsp;&nbsp;<img border="0" src="../images/projwiz_3.gif" width="441" height="362"></P>
+
+<P> The next property sheet in the wizard is to select the types of files you wish to include in your project. Check off the types of files you will need. In the folders section if you are going to use resources you should have a RES folder created. The Mod folder is for modules that you can add in order to break large projects up into smaller more manageable pieces, if you create a Mod folder be sure to select enable Compile Modules in the next property sheet. If you choose to create a Bak folder, RadASM will automatically back up your project each time you save it, the number of backups is selectable and is covered in the customizing section of this help file.</P>
+
+<P>&nbsp;&nbsp;<img border="0" src="../images/projwiz_4.gif" width="441" height="362"></P>
+
+<P> The last property sheet in the wizard is perhaps the most important. In this sheet you set up the commands that will be available on the <B>Make</B> menu as well as make any modifications you need to the command lines used to build your project. The default command lines are generally fine, however if you are using a resource file make sure that the LINK command line has a <B>,4</B> at the end of it or else it will not link the RES file to your program. This is mainly for DLL's that use resources because the default LINK command line for DLLs does not assume a resource file.
+</P>
+
+<P> For a more detailed look at the command lines see <a href="adv_cmd_lines.htm">Editing
+command line options</a><br>
+<BR>
+The numbers in the command lines correspond to files in your project, see the <a HREF="rah_proj_files.htm#makefiles">RAP file</a> explanation for details on what each number represents. The
+<CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$_</a></CODE> variables are used to represent folders the values of these variables can be found in the
+<a HREF="rah_assembler_ini.htm">Assembler.ini</a> file<BR>
+</P>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

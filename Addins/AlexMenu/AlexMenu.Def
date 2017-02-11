@@ -1,0 +1,5 @@
+LIBRARY AlexMenu
+EXPORTS
+DllProc
+InstallDll
+GetOptions

@@ -1,0 +1,99 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=Version-Inc
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Debug=0
+Ver.rc=1
+[MakeDef]
+Menu=1,1,1,1,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+[MakeFiles]
+0=Version-Inc.rap
+1=Version-Inc.rc
+2=Version-Inc.asm
+3=Version-Inc.obj
+4=Version-Inc.res
+5=Version-Inc.exe
+6=Version-Inc.def
+7=Version-Inc.dll
+8=Version-Inc.txt
+9=Version-Inc.lib
+10=Version-Inc.mak
+[Files]
+1=Version-Inc.Asm
+2=Version-Inc.Inc
+3=Version-Inc.Def
+4=Version-Inc.Txt
+5=Version-Inc.rc
+6=Version-Inc.dlg
+[VerInf]
+Nme=VERINF1
+ID=1
+FV=1.0.0.6
+PV=1.0.0.6
+VerOS=0x00000004
+VerFT=0x00000000
+VerLNG=0x00000409
+VerCHS=0x000004E4
+ProductVersion=1.0.6
+ProductName=Version-Inc
+OriginalFilename=
+LegalTrademarks=
+LegalCopyright=X05
+InternalName=
+FileDescription=Version-Inc addin for RadASM by X05
+FileVersion=1.0.6
+CompanyName=X05
+[Resource]
+[Size]
+1=0,0,0,0,5855
+3=0,0,0,0,58
+4=0,0,0,0,0
+2=0,0,0,0,1225
+5=0,0,0,0,66
+6=0,0,0,0
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+
+[AutoLoad]
+1=1
+[Version-Inc]
+Options=18
+[BreakPoint]
+[F[F[F[Find]
+1="szVersionInc"
+
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[Find]
+1="lpUpdate"

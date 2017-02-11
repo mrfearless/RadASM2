@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Project Zipper by KetilO</title>
+</head>
+
+<body>
+
+<P style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5"><img border="0" src="../images/ketil.gif" width="60" height="90">Project
+Zipper by KetilO</font></B></P>
+
+<P>
+<B><font color="#0000FF" size="5"><img border="0" src="../images/proj_zipper.gif" width="391" height="255"></font></B></P>
+
+<p><font color="#0000FF"><b>Installing Project zipper</b></font><br>
+<br>
+Copy ProjectZip.dll to C:\RadASM\Addins<br>
+In RadASM.ini section [Addin] add:<br>
+<br>
+x=ProjectZip.dll,y<br>
+<br>
+Where x is next free number any y is the options<br>
+(y=1 enable, y=3 enable and add date to zipname).<br>
+<br>
+<font color="#0000FF"><b>How to use.</b></font><br>
+<br>
+On RadASM's Project menu select Project zipper.<br>
+The upper editbox shows the zip path &amp; filename and can be changed.<br>
+The next editbox shows current path.<br>
+The listview shows the files in current path. You can select<br>
+individual files by clicking on the filename. Holding down Ctrl or Shift<br>
+while clicking will multiselect. Selecting a folder will zip all files in<br>
+that folder. Double clicking on a folder will open that folder. Double<br>
+click on back arrow to go up one level. Push Select All button to select<br>
+all files and folders in the listview. Push Zip button to create<br>
+the archive or push Zip &amp; e-mail button to send as e-mail. Push Exit<br>
+to close project zipper.<br>
+<br>
+<font color="#0000FF"><b>Project zipper options</b></font><br>
+<br>
+In RadASM.ini add section [ProjectZip]<br>
+<br>
+[ProjectZip]<br>
+;Optional. Default mail address<br>
+mail=mymail@mail.com<br>
+;Optional. Skip all files in folder \bak. Skip *.obj and *.res files<br>
+skip=\bak;.obj;.res<br>
+;Optional. Folder where to put zip files<br>
+folder=D:\RadASM\Projects\Archive<br>
+<br>
+KetilO</p>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+This addin saves and loads undo information on project code files.
+
+How does it work:
+-----------------
+
+Saving:
+When a project code file is saved its undo information is stored in ram.
+The dos filetime is also saved in case a file is modified outside RadASM.
+You can close the file at any time without loosing the undo information.
+When the project is closed the undo information for all files is stored in
+the file [PROJECTNAME].undo. This file can grow large over time. You can
+use Edit / Empty Undo Buffer on individual files or you can just delete
+the [PROJECTNAME].undo file if you dont need it anymore.
+
+Loading:
+When a project is opened and a [PROJECTNAME].undo file is found the file
+is read into ram. When a project code file is opened and its dos filetime
+matches then the undo information is restored from ram.
+
+KetilO

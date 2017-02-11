@@ -1,0 +1,4 @@
+LIBRARY UpdateChecker
+EXPORTS
+	InstallDll
+	DllProc

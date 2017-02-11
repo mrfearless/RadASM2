@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Style Manager by X05</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Style Manager by X05</font></B></P>
+
+<P><font color="#008080" size="4"><b>
+styler-manager 0.98 ( Rev 4 ) for RadASM 1.2.0.0+</b></font><BR>
+<BR>
+Code by X05<BR>
+Email: X05_44960@hotmail.com<BR>
+Date: 03.10.2002<BR>
+Rev: 4<BR>
+Complete: 98%<BR>
+<BR>
+<font color="#0000FF" size="4"><b>
+Installation</b></font><BR>
+Copy style-manager.dll to \RadASM\AddIns<BR>
+then add:<BR>
+<BR>
+x=style-manager.dll,y<BR>
+<BR>
+to <A HREF="rah_radasm_ini.htm#addins">[AddIns] </A>section of RadASM.ini, replace x with next unused number.<BR>
+Replace y with number.<BR>
+<BR>
+0 = default window position<BR>
+1 = not used yet<BR>
+2 = 400 x 600<BR>
+4 = 600 x 600<BR>
+<BR>
+<font color="#0000FF" size="4"><b>
+Introduction</b></font><BR>
+This is a RadASM AddIn that allows the user to change window and control styles from a list.<BR>
+When the user selects a new style the DWORD value is updated.<BR>
+What ever value is in the DWORD box is used when the user clicks OK.<BR>
+<BR>
+Features:<BR>
+- Tab Control<BR>
+- Transparent Icons in Tab Control<BR>
+- Styles &amp; ExStyles<BR>
+- Tools drop down button<BR>
+- Style presets (Shows correct preset for selected object)<BR>
+- Clear list selections<BR>
+- Manual DWORD entry<BR>
+- Copy Window style names selected to clipboard<BR>
+- Copy Window style DWORD to clipboard<BR>
+- Efficient use of space when storing string names + flag values<BR>
+- Support for: STATIC, EDIT, BUTTON, LISTBOX, COMBOBOX, Listview, Treeview, Tab
+Control, Progress Bar, Status Bar, Up Down Control, TrackBar, Toolbar, Header Control,
+Spreadsheet, Custom Control<BR>
+- Owner Draw Listbox with colour for items with 0 value<BR>
+<BR>
+<BR>
+<font color="#0000FF" size="4"><b>
+Known Issues</b></font><BR>
+- LBS_MULTIPLESEL causes LBN_SELCHANGE to act differently. (ODA_FOCUS?)<BR>
+- WS_GROUPBOX (contains more than 1 style) style is not shown<BR>
+- Styles values that are not in list can be hi-lighted incorrectly, when user clicks update<BR>
+<BR>
+<b><font color="#0000FF" size="4">
+To do</font></b><BR>
+1. SELCHANGE listbox notification problem<BR>
+2. Fix wrong style listbox selections (WS_GROUPBOX)<BR>
+3. Right click &gt; Copy flag name / Copy flag value / Copy flag name + flag value<BR>
+4. Colour to show which styles names contain multiple styles<BR>
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Mnu file format</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Mnu file format</font></B></P>
+
+<P>
+The mnu files used to store menus are another format that is specific to RadASM. It consists of a header (MNUHEAD) structure followed by a MNUITEM structure for each menu item. The structures are detailed as follows :
+</P>
+
+<pre style="border: 2 solid #008080">MNUHEAD struct
+&nbsp;&nbsp;&nbsp; menuname&nbsp;&nbsp;&nbsp; db 32 dup(?)
+&nbsp;&nbsp;&nbsp; menuid&nbsp;&nbsp;&nbsp; dd ?
+&nbsp;&nbsp;&nbsp; startid&nbsp;&nbsp;&nbsp; dd ?
+MNUHEAD ends</pre>
+
+<pre style="border: 2 solid #008080">MNUITEM struct
+&nbsp;&nbsp;&nbsp; itemflag&nbsp;&nbsp;&nbsp; dd ?
+&nbsp;&nbsp;&nbsp; itemname&nbsp;&nbsp;&nbsp; db 32 dup(?)
+&nbsp;&nbsp;&nbsp; itemid&nbsp;&nbsp;&nbsp; dd ?
+&nbsp;&nbsp;&nbsp; itemcaption&nbsp;&nbsp;&nbsp; db 64 dup(?)
+&nbsp;&nbsp;&nbsp; level&nbsp;&nbsp;&nbsp; dd ?
+&nbsp;&nbsp;&nbsp; checked&nbsp;&nbsp;&nbsp; dd ?
+&nbsp;&nbsp;&nbsp; grayed&nbsp;&nbsp;&nbsp; dd ?
+&nbsp;&nbsp;&nbsp; shortcut&nbsp;&nbsp;&nbsp; dd ?
+MNUITEM ends</pre>
+
+</BODY>
+</HTML>

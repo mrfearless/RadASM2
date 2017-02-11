@@ -1,0 +1,75 @@
+Installing Addin Manager
+------------------------
+IMPORTANT:
+You need RadASM 2.0.3.6 or higher.
+
+Copy AddinMana.dll to C:\RadASM\Addins
+In RadASM.ini section [Addin] add:
+
+x=AddinMana.dll,1
+
+Where x is next free number.
+
+How to use.
+-----------
+From RadASM's Option menu select Addin Manager.
+The listbox to the left will show all the available addins.
+To Install / Uninstall addin double click in listbox or push
+Install / Uninstall button.
+The Options groupbox will show the options available for the
+selected addin. The Info groupbox will show some info for the
+selected addin. To update RadASM push OK or Apply. To cancel
+and exit push Cancel.
+
+How to make your addin 'Addin Manager compatible'.
+--------------------------------------------------
+
+AIM_CLOSE
+---------
+
+Your addin must respond to AIM_CLOSE by cleaning
+up what has been added to RadASM such as:
+
+- Deleting menu items.
+- Deleting toolbar buttons.
+- Undo subclassing of RadASM windows.
+
+GetOptions proc
+---------------
+
+This proc returns a pointer to two or more ADDINOPT
+structures. The last structure must be all zeros.
+There is a AND and a OR value to support check groups.
+There can be max 16 check boxes.
+
+Example (masm):
+
+ADDINOPT struct
+ lpStr dd ? ;Pointer to CheckBox text
+ nAnd  dd ? ;Option AND value
+ nOr   dd ? ;Option OR value
+ADDINOPT ends
+
+.data
+szText1 db 'Option#1',0
+szText2 db 'Option#2',0
+AddinOpt ADDINOPT <offset szText1,1,1>
+         ADDINOPT <offset szText2,2,2>
+         ADDINOPT <0,0,0>
+
+.code
+;This proc must be exported
+GetOptions proc
+  mov eax,offset AddinOpt
+  ret
+GetOptions endp
+
+Supported help files.
+---------------------
+File extentions: txt, hlp, chm and htm
+
+Trend Micro virus alert.
+Date: 2005.10.04
+Case ID: 1004057004
+
+KetilO

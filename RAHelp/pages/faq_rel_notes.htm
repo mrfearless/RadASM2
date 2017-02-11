@@ -1,0 +1,514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Release Notes</TITLE>
+</HEAD>
+
+<BODY>
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable1="General Protection Fault"
+text_variable2="double-byte character set"
+</SCRIPT>
+</CODE>
+
+<P style="border-style: solid; border-width: 1"><B><font color="#0000FF" size="5">Release Notes</font></B></P>
+
+<P><a href="file:///radasm/WhatsNew.txt">Latest What's New</a><a href="file:///radasm/readme.txt"><br>
+RadASM Readme File</a></P>
+
+<P><font color="#000080"><b>This page is only updated periodically.<br>
+For the most up to date information use the link above</b></font></P>
+
+<P><font color="#000080"><b>For other important information see the Readme file<br>
+The Readme file may or may not be present.</b></font></P>
+
+<P><font color="#FF0000"><b>2.0.3.7</b></font><br>
+- Added tool to change RadASM menu caption and accelerators.<br>
+- Added accelerator resource.<br>
+- Improved segment collapsing in RAEdit.<br>
+  Assembler.ini section [CodeBlock] must be changed to take adventage of this improvement.<br>
+(GoAsm users should refer to the<a href="asm_goasm_inst_notes.htm#newgoasm">
+installation notes</a> for changes to code structure)<br>
+- Fixed template bug where some resource files was not renamed.<br>
+- Fixed Export ID equates bug where some resource files was not included.<br>
+- Fixed a bug in RAGrid that caused constant repaint on some systems.<br>
+- Fixed a bug where modules was not assembled if in a sub folder.<br>
+- Included e-help addin.</P>
+
+<P><font color="#FF0000"><b>2.0.3.6</b></font><br>
+- Added project groups and a tool to maintain groups.<br>
+- Menu editor now uses MENUEX resource type.<br>
+- Fixed prototype bugs.</P>
+
+<P><font color="#FF0000"><b>2.0.3.5</b></font><br>
+- Fixed a menu on dialog problem.<br>
+- Edit control can now have caption.<br>
+- Several hla support improvements / bugfixes.<br>
+- Fixed a few minor bugs.</P>
+
+<P><font color="#FF0000"><b>2.0.3.4</b></font><br>
+- A projects main filenames / build commands are now stored in the template when it is created.<br>
+- When you create a new project using a template, build commands and main files are taken from the template.<br>
+- Added [*PROJECTNAME*] command to template. Every occurrence of this keyword is replaced with the
+project name.<br>
+- ReallyRad now checks if obj file is newer than the source when assembling modules.<br>
+  (Works safely on single file modules only. Included files and libraries are NOT checked).<br>
+- Improved Undo / Redo in RAEdit.<br>
+- Added Inactive, Right aligned and Help checkboxes to menu editor.<br>
+- Added VersionControl addin by WillASM. Combines Version-Inc and ProjectZip addins + much more.<br>
+- Added Edit / Open (Alt+Ctrl+O) opens file with the filename under the caret.<br>
+  Current path and include path are checked for the file.<br>
+- Fixed several serious bugs.</P>
+
+<P><font color="#FF0000"><b>2.0.3.3</b></font><br>
+- Updated / added AddinMana, ProjectZip, ReallyRad and Version-inc addins.<br>
+- Added RAGrid custom control. The source code for RAGrid can be found at the website.<br>
+- Changed add resource dialog. (Uses RAGrid).<br>
+- Changed add stringtable dialog. (Uses RAGrid).<br>
+- Resources (bitmaps, icons, ...) are stored in it's own file and are no longer added to main rc file.<br>
+- Versioninfo are stored in it's own file and are no longer added to main rc file.<br>
+- Exported update resource and stringtable calls to addins.<br>
+- Added masm dos projects. Big thanks to Cip.<br>
+- Added Main Project Files dialog.<br>
+- Fixed a few bugs.</P>
+
+<P><font color="#FF0000"><b>2.0.3.2</b></font><br>
+- Integrated hex editor (remove HexVU addin).<br>
+- Fixed Versioninfo bug (only partially updated the .rc file).<br>
+- Made changes to how dialog editor saves controls to the .rc file.<br>
+-- All controls saved as type CONTROL.<br>
+-- Important: If changing old dialogs then listboxes might need Notify to be set to TRUE.<br>
+- Added Notify option to several controls.<br>
+- Added more dialog editor controls (HotKey, Pager, ReBar).<br>
+- The dialog controls caption is updated while typing.<br>
+- Added new styles to toolbar and statusbar controls.<br>
+- Added more functions to info tool (dialog and hex edit).<br>
+- Improved hla support.<br>
+- Several minor changes / bug fixes.</P>
+
+<P><font color="#FF0000"><b>2.0.3.1</b></font><br>
+- Added Delete project<br>
+- Added Color themes<br>
+- Added new info tool window.<br>
+- Added donkeys RADToolBar addin. Lets you customize the RadASM toolbar. (Dbl click on the toolbar).<br>
+- Made code properties more flexible. Assembler.ini section [Code] changed.<br>
+- Made code write macros more flexible. Assembler.ini section [CodeMacro] changed.<br>
+- Made collapsible code blocks more flexible. Assembler.ini section [CodeBlock] added.<br>
+- Improved auto brackets. Works on both [ and ]. Auto brackets a word, left or right.<br>
+- Several minor improvements and bug fixes.</P>
+
+<P><font color="#FF0000"><b>2.0.3.0</b></font><br>
+- Improved huge project support.<br>
+  - Projects loads faster.<br>
+  - Projects code properties refreshes faster.<br>
+- Multi file select on template creation and add existing files to project.<br>
+- Convert tab to space and space to tab now works on whole line, not only on the indent.<br>
+- Export ID equates now supports both ver 1.00 and ver 1.01 dialogs. Also autosaves before exporting.<br>
+- Non existing projects on MRU projects list is removed on startup.</P>
+
+<P><font color="#FF0000"><b>2.0.2.9</b></font><br>
+- Several bugs fixed in RadASM and RAEdit.<br>
+- Added NoteTools and HexVU addins.<br>
+- Updated BitMask, ButtonChanger and Colref addins.<br>
+- Exported more RadASM functions/data/handles to addins.</P>
+
+<P><font color="#FF0000"><b>2.0.2.8</b></font><br>
+- Options to set default dialog ID and controls start ID.<br>
+- You can now Run with debug from the make menu.<br>
+  Note: You must update the assembler.ini files to get this feature.<br>
+- Several minor bugs fixed.</P>
+
+<P><font color="#FF0000"><b>2.0.2.7</b></font><br>
+- Option to auto open last project.<br>
+- Assembler errors are now bookmarked and line with error is hilited.<br>
+  From edit menu you can goto next error and clear all errors.<br>
+  See RadASMini.rtf section [Error] for options.<br>
+- From Format menu you can now hide selected lines.</P>
+
+<P><font color="#FF0000"><b>2.0.2.6</b></font><br>
+- Fixed a few bugs in RAEdit<br>
+- Added support for enviroment variables read from assembler.ini.<br>
+&nbsp;&nbsp;&nbsp; See RadASMini.rtf section [Enviroment] for more info.<br>
+- Made several changes to fasm.ini, hla.ini and goasm.ini<br>
+- Added addin message AIM_COMMAND and AIM_COMMANDDONE to properties context menu.<br>
+- Debugger can be run from the run command</P>
+
+<P><font color="#FF0000"><b>2.0.2.5</b></font><br>
+- Bug in CreateProject addin fixed.<br>
+- F1-Help files can now be defined in Assembler.ini<br>
+- Several fixes to hla support.<br>
+- Fixed a bug where code complete listbox could go off screen.</P>
+
+<P><font color="#FF0000"><b>2.0.2.4</b></font><br>
+- Fixed a bug with local procs tooltip. Also works with GoAsm.<br>
+- Added bitRAKE's api constants.<br>
+- WARNING: There is a bug in the CreateProject addin created by minor28.<br>
+  The bug seem to be related to (Untitled) files and will cause RadASM to GPF.</P>
+
+<P><font color="#FF0000"><b>2.0.2.3</b></font><br>
+- Fixed a bug where RadASM would GPF after saving (Untitled) file.<br>
+- Added support for structure item code complete in hla projects.<br>
+- Macro menu definitions moved from RadASM.ini to assembler.ini.<br>
+- Tools menu definitions moved from RadASM.ini to assembler.ini. Defaults read from RadASM.ini.<br>
+- Help menu definitions moved from RadASM.ini to assembler.ini. Defaults read from
+RadASM.ini.</P>
+
+<P><font color="#FF0000"><b>2.0.2.2</b></font><br>
+- Support for melt 2.0.10<br>
+- Support for GoAsm<br>
+- Fixed a scroll bug when DBCS font in RAEdit.<br>
+- Fixed a Macro / Manage bug (removed path from macro filename).&nbsp;</P>
+
+<P><font color="#FF0000"><b>2.0.2.1</b></font><br>
+- More color highlighting<br>
+  - Color group 13: Window messages and API constants<br>
+  - Color group 14: API 's<br>
+  - Color group 15: Structures<br>
+- If a help menu command contains .exe, then it is treated as a tools menu
+command.<br>
+- Fixed a bug on tools menu (removed a space at the end of the command).<br>
+- Fixed a bug in RAEdit (could <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE> when height of edit control less than font height).<br>
+- Fixed TASM **Warning** bug.<br>
+- It is no longer possible to have more than one instance of a file open.</P>
+
+<P>
+<B><font color="#FF0000">2.0.2.0</font></B><font size="4"><BR>
+</font>
+- Fixed an auto horizontal scroll paint bug. (Last entered character was not painted)<BR>
+- You can now set the assembler without opening a project. (Project / Set Assembler)<BR>
+- Custom colors from the color dialog are now saved to INI file.<BR>
+<BR>
+<B><font color="#FF0000">2.0.1.9</font></B><font color="#FF0000" size="4"><BR>
+</font>
+- Fixed too fast selection scroll problem.<BR>
+- Fixed a bug with out-dent on collapsed procs.<BR>
+- Fixed comment highlighting on include / includelib line bug.<BR>
+- Changed comment (F10 to Alt+F9) and uncomment (Ctrl+F10 to Alt+Ctrl+F9) to free F10 for the standard menu functions.<BR>
+<BR>
+<B><font color="#FF0000">2.0.1.8</font></B><font color="#FF0000" size="4"><BR>
+</font>
+- RadASM can now support more than 5 assemblers / hll's.<BR>
+- Several minor bug fixes.<BR>
+<BR>
+<B><font color="#FF0000">2.0.1.7</font></B><font color="#FF0000" size="4"><BR>
+</font>
+- There are now 16 keyword groups<BR>
+- Some groups can be used for .RC files<BR>
+- Support for uppercase keywords (precede keyword with a '^').<BR>
+- New Color &amp; Keyword option dialog<BR>
+- New Printer Option dialog<BR>
+- Fixed a template bug (filenames in main RC file was not changed).<BR>
+- Improved support for nested procs expand/collapse.<BR>
+- Fixed a splash screen left margin problem.<BR>
+<BR>
+<B><font color="#FF0000">2.0.1.6</font></B><font color="#FF0000" size="4"><BR>
+</font>
+- Several improvements for HLA support.<BR>
+<BR>
+<B><font color="#FF0000">2.0.1.5</font></B><font color="#FF0000" size="4"><BR>
+</font>
+- Added support for nested procs collapse / expand.<BR>
+- Added support for comment blocks.<BR>
+- Added support for Randall Hyde's HLA.<BR>
+<BR>
+<B><font color="#FF0000">2.0.1.4</font></B><font color="#FF0000" size="4"><BR>
+</font>
+- Made changes to how Ctrl+Up / Down works in RAEdit.<BR>
+- Project scanner now uses RAEdit's character table.<BR>
+- Sniplet edit window now processes keyboard input.<BR>
+- Fixed proc properties parse and find bugs.<BR>
+- Added <a href="aih_pathexplore.htm">PthExpl++</a> AddIn.<BR>
+- Added <a href="aih_buttonchanger.htm"> ButtonChanger</a> AddIn.<BR>
+- Added <a href="aih_res2dlg.htm"> Res2Dlg</a> AddIn.<BR>
+- Added <a href="aih_bitmask.htm"> BitMask</a> AddIn.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.1.3</B><BR>
+</font>
+- Fixed a few bugs.<BR>
+- Added Recent files to File menu.<BR>
+- Added keyboard commands to RAEdit:<BR>
+  - Ctrl+Alt+ or AltGr+<BR>
+  - InsertShow/Hide line numbers<BR>
+  - HomeJump between splits<BR>
+  - EndOpen/Closes split<BR>
+  - Page UpCollapse all procs<BR>
+  - Page DownExpand all procs<BR>
+  - Up / DownSizes splits<BR>
+- Included enhanced version of Milos <a href="aih_asmvars.htm"> asmvars</a> AddIn.<BR>
+  A must for medium / large projects. You can dblclick in output window<BR>
+  to jump to the unreferenced variable.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.1.2</B><BR>
+</font>
+- Fixed bug make menu enabling when tools menu changed<BR>
+- Fixed bug codewrite macro not always working<BR>
+- Sniplet window now processes keyboard commands (Esc, Tab &amp; Enter)<BR>
+- Added possibility for sub menus on tools, macro and help menu.<BR>
+  See included file ConfigMenu.txt<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.1.1</B><BR>
+</font>
+- Fixed a bug that caused ToolBox button icons to turn black on win95<BR>
+- AddIns can now override RadASM's default toolbar tooltips (RAM_TBRTOOLTIP).<BR>
+- Fixed a minor codewrite macro bug.<BR>
+- Fixed a bug in RAEdit that caused character table to not always be used.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.1.0</B><BR>
+</font>
+- Fixed a bug that caused Ctrl+Z / Ctrl+Y to not work on some keyboards<BR>
+- Added option to open code files with procs collapsed.<BR>
+- Code and text font style is now saved to INI.<BR>
+- Improved word select / jump (Ctrl+&lt;Right / Left Arrow&gt;)functions.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.9</B><BR>
+</font>
+- Better support for <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable,9,9,-1,-1)">DBCS</a></CODE> fonts (Chinese, Japanese, Korean).<BR>
+- Better support for Western and Cyrillic character sets.<BR>
+- Fixed bugs related to edit overwrite mode.<BR>
+- It is now possible to setup how RadASM handles individual characters.<BR>
+  See <a href="rah_assembler_ini.htm#chartab">[CharTab]</a> for more info. Should make it possible<BR>
+  for RadASM to handle other programming languages than assembly.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.8a</B><BR>
+</font>
+- Fixed an accelerator bug (Ctrl+C / Ctrl+V).<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.8</B><BR>
+</font>
+- Fixed an output window bug that could cause RadASM to <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE>.<BR>
+- Fixed an Alt Gr key problem in RAEdit<BR>
+- Changed Alt+Ctrl accelerators to Shift+Ctrl in RadASM<BR>
+  (Alt Gr key problems on some keyboards)<BR>
+- Fixed double click on error in ouput window bug for tasm / fasm.<BR>
+- Added support for <a href="aih_melt.htm"> melt</a> (Masm Error Lookup Tool)<BR>
+  Double click on error number in output will launch melt.<BR>
+  See included melt.txt for more info.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.7</B><BR>
+</font>
+- You can now select which pages to print.<BR>
+- Shift+Space to show word list is now an option.<BR>
+- You must now press Ctrl+Shift+Space to copy text from api tool tip. Ctrl/Shift+Space activates word list.<BR>
+- Fixed a bug with Ctrl+Space when api list has focus.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.6</B><BR>
+</font>
+- Fixed a resource leak in RAEdit (Button bitmaps)<BR>
+- Fixed a few minor bugs in RAEdit (Replace selection in overwrite mode, caret positioning in upper split window)<BR>
+- Added Shift+Delete (Cut)<BR>
+- Added Ctrl+Delete (Extend selection to end of word and delete selection)<BR>
+- Added Ctrl+Backspace (Extend selection to start of word and delete selection)<BR>
+- Fixed a minor bug in RadASM (Slow edit after large selection jump)<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.5</B><BR>
+</font>
+- Fixed a scrollbar bug in RAEdit.<BR>
+- Fixed a MDI restore bug in RadASM.<BR>
+- Added page break marker to selection bar in RAEdit. Page size can be set in Code Editor Options<BR>
+- Made changes to how bitmaps are added to toolbox buttons.<BR>
+- Made changes to dialog editor grid brush. Should now work on Win95 if set to 4x4<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.4</B><BR>
+</font>
+- Speed optimized painting in RAEdit.<BR>
+- Added option for flicker free drawing. Disable if you have a paint speed problem.<BR>
+- Fixed a bug where code blocks was not marked on paste/undo.<BR>
+- Included X05's <a href="aih_version_inc.htm"> Version-Inc</a> AddIn.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.3</B><BR>
+</font>
+- Fixed a find and replace bug.<BR>
+- Made some speed optimizations.<BR>
+- Added double click on splitter bar/button to close/open a split.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.2</B><BR>
+</font>
+- Fixed a sniplet tool bug.<BR>
+- Fixed a proc argument parse bug.<BR>
+- Fixed a tools menu problem (spaces in filenames).<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.1</B><BR>
+</font>
+- Fixed a bug that could cause NT 4.0 to <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE><BR>
+- Added option for proc divider line.<BR>
+- Expand / collapse no longer goes to first line.<BR>
+<BR>
+<font color="#FF0000">
+<B>2.0.0.0</B><BR>
+</font>
+- Got rid of richedit and used my own edit control (RAEdit).<BR>
+-- Flicker free highlighting.<BR>
+-- Support for <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable,9,9,-1,-1)">DBCS</a></CODE> fonts.<BR>
+-- Expand / collapse procs.<BR>
+-- Line numbers.<BR>
+- Fixed prototype bug.<BR>
+<BR>
+<font color="#FF0000">
+<B>1.2.2.0</B><BR>
+</font>
+- Fixed a codemacro bug that could cause FASM projects to <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE><BR>
+- Fixed a project wizard bug that made NT4.0 <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE>.<BR>
+<BR>
+<font color="#FF0000">
+<B>1.2.1.9</B><BR>
+</font>
+- Fixed a project scan bug. (Caused <a href="aih_reallyrad.htm"> ReallyRad</a> to fail on control dblclick)<BR>
+- Fixed a show output window bug in FlipCase.dll. (You had to click show output twice.)<BR>
+- Fixed a dialog editor bug. Deleting an IP-address control would also destroy the dialogs font.<BR>
+- If auto show / hide output option is not set (<a href="aih_flipcase.htm">FlipCase</a> option 32), then a click on right pane of status bar shows / hides output window.<BR>
+- Fixed large selection while API constants listbox visible bug. (Caused a <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE>)<BR>
+- Fixed missing scrollbar in resource combo.<BR>
+- Right click on a tab button now selects the tab.<BR>
+- Fixed double click in code properties with no selection bug.<BR>
+- Fixed font not set when switching assembler bug.<BR>
+- Ctrl+Tab selects next tab.<BR>
+- Shift+Ctrl+Tab selects previous tab.<BR>
+- Fixed about box.<BR>
+- Fixed a nasty bug with wordlist parsing. Caused RadASM to enter infinitive loop when wordlist listbox was about to show.<BR>
+- Added Create proto to Properties popup menu.<BR>
+<BR>
+<font color="#FF0000">
+<B>1.2.1.8</B><BR>
+</font>
+- Fixed a highlighting bug that would leave a "box" character at the end of a comment line.<BR>
+- Fixed unions in structure problems.<BR>
+- Fixed a bug with goto declare on empty line.<BR>
+<BR>
+<font color="#FF0000">
+<B>1.2.1.7</B><BR>
+</font>
+- Improved Code Editor Options dialog and added option to set code file extensions.<BR>
+- Added many new options to Code Editor Colors to improve font handling.<BR>
+-- Shift highlight down:<BR>
+--- Some fonts makes the highlighting misalign (font height confusion).<BR>
+-- Use <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable,9,9,-1,-1)">DBCS</a></CODE>:<BR>
+--- To support Chinese characters in strings and comments.<BR>
+-- Exact italic draw:<BR>
+--- Draws italic characters one at a time.<BR>
+-- Shift italic up.<BR>
+--- Draws italic 1 pixel up to prevent loss of underscore on some fonts.<BR>
+-- Shrink italic.<BR>
+--- Shrinks the italic font. You must also use Exact italic draw.<BR>
+-- Exact bold draw.<BR>
+--- Draws bold characters one at a time.<BR>
+- Option to select <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable,9,9,-1,-1)">DBCS</a></CODE> font (Chinese).<BR>
+- Option dialog to set internal file browser options (filter and folders).<BR>
+- Option dialog to set external file handling.<BR>
+- Added two user buttons to toolbar. They connect to top items in tools menu.<BR>
+- Fixed a bug regarding code complete on structure items.<BR>
+- You can now set breakpoints on a selection to single step parts of the code.<BR>
+<BR>
+<font color="#FF0000">
+<B>Whats new since 1.2.0.6</B><BR>
+</font>
+- RadASM now supports spaces in filenames.<BR>
+- RadASM detects if resources needs to be recompiled. (Build and Go command)<BR>
+- Source code breakpoints.<BR>
+-- Close to source code debugging.<BR>
+-- Does not clutter your code.<BR>
+-- As easy as setting a bookmark<BR>
+- Copy project or file browser filenames to code. (Right click menu)<BR>
+- Expand / collapse project groups on dbl click.<BR>
+- Code properties combo holds selection during refresh.<BR>
+- Help, Tools and Macro menu options dialog now has a file browse button.<BR>
+- Project options dialog made sizeable.<BR>
+- Made some changes to breakpoints handling. Added log capability.<BR>
+- Added drag and drop files. Dragging and dropping a file from Explorer will open it in RadASM.<BR>
+- Fixed a print bug.<BR>
+- Add any file to help menu.<BR>
+- Added more API constants to <a href="rah_api_edit.htm"> xxxxApiConst.api</a> files.<BR>
+- Code properties right click menu.<BR>
+-- Goto declare<BR>
+-- Find / Find Next / Find Previous<BR>
+-- Copy to code<BR>
+- Latest version of <a href="rah_debug.htm"> VKim's</a> debug macros.<BR>
+- Latest demo version of my spread sheet / grid custom control.<BR>
+- Fixed context menu position when using keyboard.<BR>
+- RadASM now handles relative paths.<BR>
+- Dragging and dropping a project file now opens the project.<BR>
+- Included X05's PathExplore AddIn.<BR>
+- Added AVI and RCDATA resource types.<BR>
+- Updated <a href="aih_reallyrad.htm"> ReallyRad</a> AddIn to support new resource types.<BR>
+- Added animate control.<BR>
+-- Plays your avi at design time.<BR>
+- Added IP-Address control.<BR>
+- Added more styles to monthview control.<BR>
+- Added a few more constants to ****ApiConst.api files.<BR>
+- More intuitive tool window docking.<BR>
+- Added Tool Windows options.<BR>
+- Support for Chinese characters. See RadAsmini.rtf for more info.<BR>
+- New code property, messages.<BR>
+-- Lets you go directly to a window message handling such as WM_PAINT or WM_COMMAND.<BR>
+-- Uses a xxxxMessage.api file, so customizing to your needs is easy.<BR>
+-- You can press F3 to go to the next occurrence.<BR>
+-- Note: Add Message=Masm\masmMessage.api to section [Api] in masm.ini<BR>
+-- See RadAsmini.rtf for more info.<BR>
+- Included Eviloid's <a href="aih_insert_color.htm"> InsertColor</a> AddIn.<BR>
+- Updated ****ApiConst.api and ****ApiStruct.api files.<BR>
+- You can now use Alt+0..9 to select a tab.<BR>
+_ Your projects procs are added to API list and API tool tip.<BR>
+-- Very useful on medium and large projects.<BR>
+- Code properties right click menu now has Scan Project<BR>
+-- Scans project for occurrences of the word. A list is output<BR>
+   to Output window #1. You can dbl click on a line to go to code.<BR>
+- Fixed a bug that caused RadASM to <CODE><A HREF="JavaScript:popup.TextPopup(text_variable1,font_variable,9,9,-1,-1)">GPF</a></CODE> on files that contained Chinese.<BR>
+<BR>
+KetilO<BR>
+<BR>
+<b><font color="#0000FF">
+Source code breakpoints:</font></b><BR>
+<BR>
+Add RADbg.dll to AddIns.<BR>
+<BR>
+x=RADbg.dll,y<BR>
+<BR>
+x=Next free number<BR>
+y=0Source code breakpoints.<BR>
+y=1Int 3 breakpoints. No interaction with RadASM.<BR>
+y=16Also shows results in RadASM output window#1.<BR>
+y=17-31Only shows result in RadASM output window#1. Delay y-16 seconds.<BR>
+<BR>
+<font color="#0000FF"><b>
+Limitations to source code breakpoints.</b></font><BR>
+<BR>
+1. Add RADbg.inc to your project.<BR>
+2. Running old exe with breakpoints in a newly opened project will not work.<BR>
+   RadASM's current window handle is assembled into your code. Always rebuild exe.<BR>
+<BR>
+Tip: Create a keyboard macro to include RADbg.inc to your code.<BR>
+<BR>
+The above does not apply if you are using int 3 breakpoints and a debugger.<BR>
+<BR>
+<font color="#FF0000"><b>
+Note;</b></font><BR>
+You must use RADbg.dll and RADbg.inc version 1.0.0.2 or higher with this version of RadASM.<BR>
+</P>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

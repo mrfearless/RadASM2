@@ -1,0 +1,3 @@
+#include "Res/BitMaskDlg.rc"
+#include "Res/BitMaskVer.rc"
+#include "Res/BitMaskRes.rc"

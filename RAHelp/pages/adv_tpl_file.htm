@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>TPL file format</TITLE>
+</HEAD>
+
+<BODY>
+
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="Supported assemblers are MASM, FASM, TASM, NASM, GoAsm and HLA" 
+</SCRIPT>
+</CODE>
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">TPL file format</font></B></P>
+
+<P>
+The TPL extension is used for template scripts by RadASM. Generally it is easier to use the Create Template function from the project menu to create a template script.<BR>
+<BR>
+All template files must be in the \RadASM\[<CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">ASSEMBLER</a></CODE>]\Template folder.<BR>
+<BR>
+<B><font color="#008000" size="4">Beginner's guide to the Template file</font></B><BR>
+<BR>
+<B><font color="#000080" size="4">Step 1</font></B><BR>
+The first entries in a tpl script describe the file to the RadASM template selector in the New Project wizard.<BR>
+Line 1 : indicate the type of application which you want the template listed for<BR>
+Line 2 : the working name of the application in the script (this is replaced by the name you give your app)<BR>
+Line 3 : A brief description of the template.<BR>
+<BR>
+<B><font color="#000080" size="4">Step 2</font></B><BR>
+Next the actual project is generated, this is signaled by the following command<BR>
+<BR>
+<B><font color="#0000FF">[*BEGINPRO*]</font></B><BR>
+<BR>
+<B><font color="#000080" size="4">Step 3</font></B><BR>
+You can optionally create a definition section that will define certain default parameters for your template, the allowable sections in the DEF part of the script correspond to entries in the RAP file<BR>
+<BR>
+<B><font color="#0000FF">[*BEGINDEF*]</font></B><BR>
+[makedef]; this is the same as the makedef section of your project file<BR>
+[VerInf]<BR>
+[Resource]<BR>
+etc...<BR>
+<BR>
+End the RAP file definition with the following command :<BR>
+<B><font color="#0000FF">[*ENDDEF*]</font></B><BR>
+<BR>
+<B><font color="#000080" size="4">Step 4</font></B><BR>
+The main project file is the first one to be created, you can add text to the file by specifying :<BR>
+<BR>
+<B><font color="#0000FF">[*BEGINTXT*]</font></B><BR>
+Line 1 : always contains the name of the file, if this is the main file use the working name specified in line 2 above (+ extension)<BR>
+<BR>
+The actual file contents follow the filename and continue until<BR>
+<B><font color="#0000FF">[*ENDTXT*]</font></B><BR>
+<BR>
+To create another file use [*BEGINTXT*] again and repeat the process.<BR>
+<BR>
+<B><font color="#000080" size="4">Step 5</font></B><BR>
+You can include binary data in a TPL file with the following syntax, this will create a binary file named Test.bin and write the specified data into it.<BR>
+<BR>
+<B><font color="#0000FF">[*BEGINBIN*]</font></B><BR>
+Test.bin ; Name of the file<BR>
+6400000001000000; hex data to be included (bytes)<BR>
+<B><font color="#0000FF">[*ENDBIN*]</font></B><BR>
+<BR>
+<B><font color="#000080" size="4">Step 6</font></B><BR>
+The project ends when it encounters :<BR>
+<B><font color="#0000FF">[*ENDPRO*]</font></B><BR>
+<BR>
+You can add files after the ENDPRO command using BEGINTXT or BEGINBIN, this is generally used for generated RC files that RadASM would generate at compile time such as the RC for a dialog or string table.<BR>
+</P>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

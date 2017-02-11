@@ -1,0 +1,24 @@
+#define VERINF1 1
+VERINF1 VERSIONINFO
+FILEVERSION 1,0,0,1
+PRODUCTVERSION 1,0,0,1
+FILEOS 0x00000004
+FILETYPE 0x00000002
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904E4"
+    BEGIN
+      VALUE "FileVersion", "1.0.0.1\0"
+      VALUE "FileDescription", "masm code parser for RadASM\0"
+      VALUE "InternalName", "masmParse.dll\0"
+      VALUE "OriginalFilename", "masmParse.dll\0"
+      VALUE "ProductName", "masmParse.dll\0"
+      VALUE "ProductVersion", "1.0.0.1\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04E4
+  END
+END

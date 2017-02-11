@@ -1,0 +1,156 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=raASCII
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Res.rc=1
+Ver.rc=1
+[Files]
+1=raASCII.Asm
+2=raASCII.Inc
+3=raASCII.Rc
+4=raASCII.Def
+5=
+6=ASCII.dlg
+7=ASCII.asm
+8=ASCII.inc
+[MakeFiles]
+0=raASCII.rap
+1=raASCII.rc
+2=raASCII.asm
+3=raASCII.obj
+4=raASCII.res
+5=raASCII.exe
+6=raASCII.def
+7=raASCII.dll
+8=raASCII.txt
+9=raASCII.lib
+10=raASCII.mak
+11=raASCII.hla
+12=raASCII.com
+13=raASCII.ocx
+14=raASCII.idl
+15=raASCII.tlb
+[MakeDef]
+Menu=1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:$L,3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=0,0,"$E\OllyDbg",5
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L" /OUT:"$7",3
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+17=0,0,"$E\OllyDbg",5
+[Resource]
+1=,101,2,text_rich_colored.ico
+2=,1,8,raASCII.xml
+[StringTable]
+[VerInf]
+Nme=VERINF1
+ID=1
+FV=1.0.0.0
+PV=1.0.0.0
+VerOS=0x00000004
+VerFT=0x00000002
+VerLNG=0x00000409
+VerCHS=0x000004B0
+ProductVersion=1.0.0
+ProductName=raASCII
+OriginalFilename=ASCII
+LegalTrademarks=
+LegalCopyright=Andrey Gruber (aka lamer) (C) 2005
+InternalName=ASCII
+FileDescription=Enhanced ASCII table
+FileVersion=1.0.0
+CompanyName=Andrey Gruber
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=3
+4=4
+5=
+6=1
+7=1
+8=1
+[Find]
+1="hClient"
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=25
+MilestoneOnDateTimeYear=2005
+MilestoneOnDateTimeMonth=6
+MilestoneOnDateTimeDate=25
+MilestoneOnDateTimeHour=12
+MilestoneOnDateTimeMin=44
+MilestoneOnDateTimeSec=35
+MilestoneOnDateTimeStatus=0
+BackupLocation=C:\RadASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[Collapse]
+1=0
+8=0
+7=0,0
+2=0
+4=0
+3=0
+[Size]
+1=0,0,0,0,2168
+8=0,0,0,0,1474
+7=0,0,0,0,10185
+2=0,0,0,0,455
+4=0,0,0,0,15
+6=0,0,0,0
+3=0,0,0,0,85
+5=
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=

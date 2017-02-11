@@ -1,0 +1,23 @@
+; AsmVars - RadASM AddIn
+;
+; Coded by Milos Tziotas, greatly enhanced by KetilO
+;   Web :    http://tziotas.cjb.net
+;            http://darklight-software.cjb.net
+;   Mail:    tziotas@gmx.net
+;   ICQ :    71895226
+;
+; This addin adds AsmVars menu item to the Project menu. When
+; clicked it will run asmvars for the current project and
+; display results in the 2nd output window.
+;
+; Sunday, March 9th, 2003
+
+
+Move AsmVars.exe to \RadAsm\AddIns\AsmVars\
+
+
+Add the Following line to RadASM.INI, [AddIns] secion
+
+XX=AsmVars.dll,1
+
+Where XX is the next available addin number.

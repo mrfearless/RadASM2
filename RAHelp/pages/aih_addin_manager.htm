@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Addin Manager by KetilO</title>
+</head>
+
+<body>
+
+<P style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5"><img border="0" src="../images/ketil.gif" width="60" height="90">Addin
+Manager by KetilO</font></B></P>
+
+<P>
+<img border="0" src="../images/addinmanager.gif" width="426" height="276"></P>
+
+<p><b><font color="#0000FF">Installing Addin Manager</font></b><br>
+<br>
+IMPORTANT:<br>
+You need RadASM 2.0.3.6 or higher.<br>
+<br>
+Copy AddinMana.dll to C:\RadASM\Addins<br>
+In RadASM.ini section [Addin] add:<br>
+<br>
+x=AddinMana.dll,1<br>
+<br>
+Where x is next free number.<br>
+<br>
+<b><font color="#0000FF">How to use</font></b><br>
+<br>
+From RadASM's Option menu select Addin Manager.<br>
+The listbox to the left will show all the available addins.<br>
+To Install / Uninstall addin double click in listbox or push<br>
+Install / Uninstall button.<br>
+The Options groupbox will show the options available for the<br>
+selected addin. The Info groupbox will show some info for the<br>
+selected addin. To update RadASM push OK or Apply. To cancel<br>
+and exit push Cancel.<br>
+<br>
+<b><font color="#0000FF">How to make your addin 'Addin Manager compatible'</font></b><br>
+<br>
+<b><font color="#0000FF">AIM_CLOSE</font></b><br>
+<br>
+Your addin must respond to AIM_CLOSE by cleaning<br>
+up what has been added to RadASM such as:<br>
+<br>
+- Deleting menu items.<br>
+- Deleting toolbar buttons.<br>
+- Undo subclassing of RadASM windows.<br>
+<br>
+<font color="#0000FF"><b>GetOptions proc</b></font><br>
+<br>
+This proc returns a pointer to two or more ADDINOPT<br>
+structures. The last structure must be all zeros.<br>
+There is a AND and a OR value to support check groups.<br>
+There can be max 16 check boxes.</p>
+
+<pre>GetOptions proc
+
+mov eax,offset AddinOpt
+ret
+
+GetOptions endp
+
+ADDINOPT struct
+lpStr dd ? ;Pointer to CheckBox text
+nAnd dd ? ;Option AND value
+nOr dd ? ;Option OR value
+ADDINOPT ends
+
+AddinOpt ADDINOPT &lt;offset szText1,1,1&gt;
+ADDINOPT &lt;offset szText2,2,2&gt;
+ADDINOPT &lt;0,0,0&gt;</pre>
+
+<p>KetilO</p>
+
+</body>
+
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Assembler.ini</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Assembler.ini</font></B></P>
+
+<P>
+<B><font color="#008000" size="4">masm.ini, tasm.ini, fasm.ini, nasm.ini, hla.ini,GoAsm.ini</font></B><BR>
+
+<BR>
+<B><font color="#800080" size="4"><a name="codemacro"></a>Section [Description]</font></B><BR>
+<BR>
+<b><font color="#000080">Description of the assembler / programming language.</font></b>
+<BR>
+<font color="#FF0000">Manually maintained.</font>
+<BR>
+<BR>
+1=Text
+<BR>
+Text is a description text. Supports \r (Cr) and \n (Lf)
+<BR>
+
+<BR>
+<B><font color="#800080" size="4"><a name="codemacro"></a>Section [CodeMacro]</font></B><BR>
+<BR>
+<b><font color="#000080">
+Code writing macros.</font></b>
+<font color="#FF0000">
+<BR>
+Manually maintained.</font><BR>
+<BR>
+x=KeyWord,InsBefore,InsAfterx is a number between 1 and 32. No holes allowed<BR>
+Keyword (.if, .else, .elseif, proc, struct)<BR>
+InsBefore. Use one or more of the special commands.<BR>
+InsAfter. Use one or more of the special commands.<BR>
+<BR>
+Special commands<BR>
+<b><font color="#0000FF">{I}</font></b>=Copy indent from keyword line<BR>
+<b><font color="#0000FF">{C}</font></b>=Cr<BR>
+<b><font color="#0000FF">{S}</font></b>=Space<BR>
+<b><font color="#0000FF">{T}</font></b>=Tab<BR>
+<b><font color="#0000FF">{$}</font></b>=Copy proc / struct name<BR>
+<BR>
+<B><font color="#800080" size="4"><a name="code"></a>Section [Code]</font></B><BR>
+<BR>
+<b><font color="#000080">
+Used to find and get code properties.</font></b>
+<font color="#FF0000">
+<BR>
+Manually maintained.</font><BR>
+<BR>
+<font color="#0000FF"><b>ParseDll</b></font>=DllName.dll<BR>
+<font color="#0000FF"><b>nAsm</b></font>=Number<BR>
+<font color="#0000FF"><b>Skip</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Code</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Const</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Data</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Macro</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Struct</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Local</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Label</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Other</b></font>=[Name0,10[,Name1,11[,Name2,12[,Name3,13]]]]<BR>
+<font color="#0000FF"><b>Name0</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Name1</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Name2</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<font color="#0000FF"><b>Name3</b></font>=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]<BR>
+<BR>
+<font color="#0000FF"><b>
+ParseDll</b></font> Currently only CppParse.dll can be used to parse C(C++.<BR>
+<font color="#0000FF"><b>
+nAsm</b></font> Needed if your assembler / programming language  is a clone. See RadASM.inc for a list of values.<BR>
+<font color="#0000FF"><b>
+KeyEnd</b></font> is the keyword that ends the scope. Can also be {C} for end of the line.<BR>
+<font color="#0000FF"><b>
+KeyStart</b></font> is the keyword that starts the scope. Can be a list of several keywords.<BR>
+<font color="#0000FF"><b>
+Other</b></font>  is a list of optional properties. There can be max 4 and has an ID ranged from 10 to 13<BR>
+<font color="#0000FF"><b>
+Name0 to Name3</b></font> is the names defined in the Other list.<BR>
+</P>
+
+<P>
+<B><font color="#800080" size="4"><a name="codeblock"></a>Section [CodeBlock]</font></B>
+</P>
+<p style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#000080"><b>Used
+to mark collapsible code blocks</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">.<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000">Manually
+maintained.</font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">x=Start,End,DontHide1,DontHide2,flag<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>x</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is a number between 1 and 10. No holes allowed<o:p>
+</o:p>
+<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>Start<span style="mso-spacerun: yes; mso-ansi-language: NO-BOK">&nbsp;</span></b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><span style="mso-spacerun: yes; color: black; mso-ansi-language: NO-BOK">
+</span>($ proc, .if, .while, $ macro, $ struct)<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>End</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+($ endp, .endif, .endw, $ endm, $ ends)<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>DontHide1</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+(.elseif)<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>DontHide2</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+(.else)<br>
+* can be used as a wildcard in any of the abowe.<br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>flags:</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+(use Boolean OR to combine flag values)<br>
+&nbsp;&nbsp;&nbsp; 1=No nesting,&nbsp;<br>
+&nbsp;&nbsp;&nbsp; 2=Draws a divider line<br>
+&nbsp;&nbsp;&nbsp; 4=Ending line is also collapsed<br>
+&nbsp;&nbsp;&nbsp; 8=Look ahead for ending.<br>
+&nbsp;&nbsp;&nbsp; 16=Segment block (collapse till next segment </span><span style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; color: black; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK">block
+or to EOF)</span></p>
+
+<P>
+<B><font color="#800080" size="4"><a name="api"></a>Section [Api]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Code write helpers. (Listbox and tool tip)</b></font>
+<font color="#FF0000">
+<BR>
+Manually maintained.</font><BR>
+<BR>
+<font color="#0000FF"><b>Trig</b></font>=Keyword that triggers the API&nbsp; list and tool tip<BR>
+<font color="#0000FF"><b>Call</b></font>=Filename of API&nbsp; list<BR>
+<font color="#0000FF"><b>Const</b></font>=Filename of API&nbsp; constants list<BR>
+<font color="#0000FF"><b>Struct</b></font>=Filename of structures list<BR>
+<font color="#0000FF"><b>Word</b></font>=Filename of word list for auto case convert<BR>
+<font color="#0000FF"><b>Message</b></font>=Filename for list of window messages<BR>
+<BR>
+<B><font color="#800080" size="4"><a name="edit"></a>Section [Edit]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Code editor and print options.<BR>
+</b></font>
+<font color="#FF0000">
+Maintained by RadASM options, except for CodeFiles.</font><BR>
+<BR>
+<font color="#0000FF"><b>Font</b></font>=Code editor font<BR>
+<font color="#0000FF"><b>FontHeight</b></font>=Code editor font size<BR>
+<font color="#0000FF"><b>FontWeight</b></font>=Code editor font weight<BR>
+<font color="#0000FF"><b>FontCharSet</b></font>=Code editor character set<BR>
+<font color="#0000FF"><b>TxtFont</b></font>=Text editor font<BR>
+<font color="#0000FF"><b>TxtFontHeight</b></font>=Text editor font size<BR>
+<font color="#0000FF"><b>TxtFontWeight</b></font>=Text editor font weight<BR>
+<font color="#0000FF"><b>TxtFontCharSet</b></font>=Text editor character set<BR>
+<font color="#0000FF"><b>PrnFont</b></font>=Printer font<BR>
+<font color="#0000FF"><b>PrnFontHeight</b></font>=Printer font size<BR>
+<font color="#0000FF"><b>PrnFontWeight</b></font>=Printer font weight<BR>
+<font color="#0000FF"><b>PrnFontCharSet</b></font>=Printer character set<BR>
+<font color="#0000FF"><b>PrnPage</b></font>=Printer page setup<BR>
+<font color="#0000FF"><b>PrnOption</b></font>=Printer options<BR>
+<font color="#0000FF"><b>PrnColor</b></font>=Printer colors<BR>
+<font color="#0000FF"><b>TabSize</b></font>=Editor tab size<BR>
+<font color="#0000FF"><b>Backup</b></font>=Number of backups 0 to 9<BR>
+<font color="#0000FF"><b>AutoSave</b></font>=Auto save before build, TRUE or FALSE<BR>
+<font color="#0000FF"><b>BacupPath</b></font>=Backup path<BR>
+<font color="#0000FF"><b>AutoIndent</b></font>=Copy indent from above line, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ApiList</b></font>=Show API&nbsp; listbox, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ApiToolTip</b></font>=Show API&nbsp; tool tip, TRUE or FALSE<BR>
+<font color="#0000FF"><b>Properties</b></font>=Show code properties, TRUE or FALSE<BR>
+<font color="#0000FF"><b>MouseWheel</b></font>=Use mouse wheel, TRUE or FALSE<BR>
+<font color="#0000FF"><b>SaveSize</b></font>=Save window size on close, TRUE or FALSE<BR>
+<font color="#0000FF"><b>Maximize</b></font>=Maximize windows, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ApiConst</b></font>=Show API&nbsp; constants listbox, TRUE or FALSE<BR>
+<font color="#0000FF"><b>CodeWrite</b></font>=Use code write macros, TRUE or FALSE<BR>
+<font color="#0000FF"><b>TabToSpc</b></font>=Convert tab to space as you type, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ApiStruct</b></font>=Show api struct listbix, TRUE or FALSE<BR>
+<font color="#0000FF"><b>SingleInstance</b></font>=Open RadASM in single instance, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ApiWordConv</b></font>=Use word list case convert, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ApiWordLocal</b></font>=Add code properties to wordlist, TRUE or FALSE<BR>
+<font color="#0000FF"><b>CodeFiles</b></font>=List of file extensions RadASM will handle as code<BR>
+files. Note: List must end with a '.'<BR>
+Example: <font color="#0000FF"><b>CodeFiles</b></font>=.asm.inc.rc.tpl.rad.api.<BR>
+<font color="#0000FF"><b>ProcsToApi</b></font>=TRUE or FALSE. Your projects procs will be added to<BR>
+API&nbsp; list and API&nbsp; tool tip.<BR>
+<font color="#0000FF"><b>LnrFont</b></font>=Linenumber font name.<BR>
+<font color="#0000FF"><b>LnrFontHeight</b></font>=Linenumber font size.<BR>
+<font color="#0000FF"><b>LnrFontColor</b></font>=Linenumber font color.<BR>
+<font color="#0000FF"><b>LnrWidth</b></font>=Width of linenumber bar.<BR>
+<font color="#0000FF"><b>LnrOnOpen</b></font>=TRUE / FALSE. Linenumber bar shown on open.<BR>
+<font color="#0000FF"><b>PageSize</b></font>=Page size (lines).<BR>
+<font color="#0000FF"><b>ApiShiftSpace</b></font>=TRUE / FALSE. Shift+Space active.<BR>
+<font color="#0000FF"><b>CmntBlock</b></font>=comment+,-(masm)<BR>
+/*,*/(hla)<BR>
+<BR>
+<B><font color="#800080" size="4"><a name="dialog"></a>Section [Dialog]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Dialog editor options.<BR>
+</b></font>
+<font color="#FF0000">
+Maintained by RadASM options.</font><BR>
+<BR>
+<font color="#0000FF"><b>Grid</b></font>=Show grid, TRUE or FALSE<BR>
+<font color="#0000FF"><b>GridX</b></font>=Grid x size, 2 to 20<BR>
+<font color="#0000FF"><b>GridY</b></font>=Grid y size, 2 to 20<BR>
+<font color="#0000FF"><b>SnapToGrid</b></font>=Snap controls to grid, TRUE or FALSE<BR>
+<font color="#0000FF"><b>ShowSize</b></font>=Show size / pos tool tip, TRUE or FALSE<BR>
+<font color="#0000FF"><b>SaveRC</b></font>=Save to RC file, TRUE or FALSE<BR>
+<font color="#0000FF"><b>Simpleproperty</b></font>=RadASM omits most properties. TRUE or FALSE<br>
+<span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>DlgID</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><span style="color: black; mso-ansi-language: NO-BOK">=
+Default Dialog ID<o:p>
+</o:p>
+<br>
+</span></span><span style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK"><font color="#0000FF"><b>CtrlID</b></font></span><span style="color: black; mso-ansi-language: NO-BOK; font-family: Times New Roman; mso-fareast-font-family: Times New Roman; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK">=<span>
+</span>Default Controls start ID</span>
+</P>
+
+<P>
+<B><font color="#800080" size="4"><a name="error"></a>Section [Error]</font></B><BR>
+<BR>
+<font color="#000080"><b>How RadASM bookmarks assembler errors.<BR></b></font>
+<font color="#FF0000">Manually maintained.</font><BR><BR>
+
+<font color="#0000FF"><b>BookMark</span></b></font>=Number<BR>
+<font color="#0000FF"><b>nAsm</font></b>=Number<BR>
+<font color="#0000FF"><b>Identify</font></b>=KeyWord<BR>
+<font color="#0000FF"><b>Skip</font></b>=Number<BR>
+<BR>
+<font color="#0000FF"><b>Bookmark</font></b> How RadASM bookmarks assembler errors.<BR>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>0=</b>No handling<span style="mso-tab-count:2"><br>
+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>1=</b>Shows bookmark<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span lang="NO-BOK" style="color: black; mso-ansi-language: NO-BOK"><span style="mso-tab-count:1">
+</span><b>2=</b></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">Hilites
+line<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span lang="NO-BOK" style="color: black; mso-ansi-language: NO-BOK"><b>3=</b>Shows
+bookmark and hilites line (default)<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; color: black; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK">
+</span><span lang="NO-BOK" style="font-family: Times New Roman; mso-fareast-font-family: Times New Roman; color: black; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><b>4=</b>No
+visual error marking, goto next error still works</span><BR>
+
+<font color="#0000FF"><b>nAsm</font></b> Assembler to emulate (if none is given then Identify and Skip must be specified.)<BR>
+<font color="#0000FF"><b>Identify</font></b> Keyword that identifies a line with an error<BR>
+<font color="#0000FF"><b>Skip</font></b>Number of words to skip before filename<BR>
+</P>
+
+<P>
+<B><font color="#800080" size="4"><a name="chartab"></a>Section [CharTab]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Character table definitions.<BR>
+</b></font>
+<font color="#FF0000">
+Manually maintained.</font><BR>
+<BR>
+Default character table for characters 0 to 127<BR>
+<font color="#0000FF"><b>0</b></font>=0000000000000000;00-0F<BR>
+<b><font color="#0000FF">1</font></b>=0000000000000000;10-1F<BR>
+<b><font color="#0000FF">2</font></b>=0251222522222232;20-2F<BR>
+<b><font color="#0000FF">3</font></b>=1111111111242221;30-3F<BR>
+<b><font color="#0000FF">4</font></b>=1111111111111111;40-4F<BR>
+<b><font color="#0000FF">5</font></b>=1111111111122221;50-5F<BR>
+<b><font color="#0000FF">6</font></b>=0111111111111111;60-6F<BR>
+<b><font color="#0000FF">7</font></b>=1111111111122200;70-7F<BR>
+<BR>
+Character 128 to 255 is taken from IsCharAlphaNumeric api.<BR>
+<BR>
+Table entry meanings.<BR>
+<b><font color="#0000FF">0</font></b>=No special handling.<BR>
+<b><font color="#0000FF">1</font></b>=Treated as alphanumeric by highlighter and word selector<BR>
+<b><font color="#0000FF">2</font></b>=Treated as operator by highlighter<BR>
+<b><font color="#0000FF">3</font></b>=Treated as alphanumeric by highlighter<BR>
+<b><font color="#0000FF">4</font></b>=Character initiates comments<BR>
+<b><font color="#0000FF">5</font></b>=Character initiates strings.<BR>
+<b><font color="#0000FF">6</font></b>=Character initiates comments if double. Example: //<BR>
+<BR>
+<A NAME="paths"></A><B><font color="#800080" size="4">Section [Paths]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Paths needed by RadASM.<BR>
+</b></font>
+<font color="#FF0000">
+Maintained by RadASM options.</font><BR>
+<BR>
+<font color="#0000FF"><b>$A</b></font>=Where masm32 is installed, usually C:\Masm32<BR>
+<b><font color="#0000FF">$B</font></b>=Where RadASM finds bins, usually $A\Bin<BR>
+<b><font color="#0000FF">$D</font></b>=Where RadASM finds AddIns, usually $R\AddIns<BR>
+<b><font color="#0000FF">$E</font></b>=Where your debugger is found, usually C:\OllyDbg<BR>
+<b><font color="#0000FF">$H</font></b>=Where RadASM finds help files, usually $A\Help<BR>
+<b><font color="#0000FF">$I</font></b>=Where RadASM finds includes, usually $A\Include<BR>
+<b><font color="#0000FF">$L</font></b>=Where RadASM finds libraries, usually $A\Lib<BR>
+<b><font color="#0000FF">$P</font></b>=Where RadASM finds projects, usually $R\Projects<BR>
+<b><font color="#0000FF">$S</font></b>=Where RadASM finds sniplets, usually $R\Sniplets<BR>
+<b><font color="#0000FF">$T</font></b>=Where RadASM finds templates, usually $R\Templates<BR>
+<b><font color="#0000FF">$M</font></b>=Where RadASM finds keyboard macros, usually $R\Macro<BR>
+<BR>
+<a name="makefiles"></a><B><font color="#800080" size="4">Section [MakeFiles]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Used to create new RadASM projects.<BR>
+</b></font>
+<font color="#FF0000">
+Manually maintained.<BR>
+</font>
+<BR>
+<font color="#0000FF"><b>x</b></font>=<font color="#800000"><b>FileExt</b></font><br>
+<font color="#0000FF"><b>
+x</b></font> is a number between 0 and 32. No holes allowed<BR>
+<BR>
+Current <font color="#800000"><b>extensions</b></font><BR>
+<b><font color="#0000FF">0</font></b>=.rap, <font color="#0000FF"><b>1</b></font>=.rc,
+<font color="#0000FF"><b>2</b></font>=.asm, <font color="#0000FF"><b>3</b></font>=.obj,
+<font color="#0000FF"><b>4</b></font>=.res,<BR>
+<b><font color="#0000FF">5</font></b>=.exe, <b><font color="#0000FF">6</font></b>=.def,
+7=.dll, 8=.txt, 9=.lib, 10=.mak<BR>
+
+<BR>
+<B><font color="#800080" size="4"><a name="codemacro"></a>Section [Group]</font></B><BR>
+<BR>
+<b><font color="#000080">Used to create default project file groups.</font></b>
+<BR>
+<font color="#FF0000">Manually maintained.</font>
+<BR>
+<BR>
+Group=List of groups.
+<BR>
+<BR>
+Example masm:
+<BR>
+[Group]
+<BR>
+Group=Added files,Assembly,Resources,Misc,Modules
+<BR>
+
+<BR>
+<B><font color="#800080" size="4"><a name="project"></a>Section [Project]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Used to create new RadASM projects.<BR>
+</b></font>
+<font color="#FF0000">
+Manually maintained.</font><BR>
+<BR>
+<font color="#0000FF"><b>Type</b></font>=List of project types that can be created<BR>
+<font color="#0000FF"><b>Files</b></font>=List of project files that can be created<BR>
+<font color="#0000FF"><b>Folders</b></font>=List of folders that can be created<BR>
+<font color="#0000FF"><b>MenuMake</b></font>=List of menu commands<BR>
+<font color="#0000FF"><b>Group</b></font>=Default use grouping, TRUE or FALSE<BR>
+<font color="#0000FF"><b>GroupExpand</b></font>=Default expand groups, TRUE or FALSE<BR>
+<BR>
+<B><font color="#800080" size="4"><a name="makedefnoproject"></a>Section [MakeDefNoProject]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Used to build when no project is opened.<BR>
+</b></font>
+<font color="#FF0000">
+Manually maintained.</font><BR>
+<BR>
+<font color="#0000FF"><b>MenuMake</b></font>=List of <b> TRUE</b> or <b> FALSE</b> to activate make menu.<BR>
+<font color="#0000FF"><b>x</b></font>=DelCheck,Out,Command,F1[,F2[,Fx]] <b><font color="#0000FF">x</font></b> is a number between 1 and 9 for normal build<BR>
+or between 11 and 19 for debug build.<BR>
+<font color="#0000FF"><b>
+DelCheck</b></font> is the file to delete before build and the file to check if exist after build. Use 0 to
+avoid this check. If this is a number then it represents one of the <b> [MakeFiles]</b><BR>
+<font color="#0000FF"><b>
+Out</b></font> is where to send output, O for RadASM output window or C for console. Use 0 if there
+are no output. Use OT to see the command in the output window.<br>
+<font color="#0000FF"><b>
+Command</b></font> is the command to run. Can be blank.<BR>
+<font color="#0000FF"><b>
+Fx</b></font> is the list of files to process. If this is a number then it represents one of the
+<b> [MakeFiles]</b><BR>
+<BR>
+<font color="#FF0000">
+Special characters</font><BR>
+' <font color="#FF0000"><b> $</b></font> ' Gets the filename from topmost editor window without
+extension.<BR>
+' <b><font color="#FF0000"> |</font></b><font color="#FF0000"> </font> ' Is replaced by a '
+<font color="#FF0000"><b> ,</b></font> ' in the final stage.<BR>
+' <font color="#FF0000"><b> *</b></font> ' Is used to build modules.<BR>
+<BR>
+<a name="projecttype"></a><B><font color="#800080" size="4">Section [ProjectType]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Used to create defaults in a new RadASM project.<BR>
+</b></font>
+<font color="#FF0000">
+Manually maintained.<br>
+</font><BR>
+Note that '<font color="#0000FF"><b>ProjectType</b></font>' is one of the Type= in section
+<a HREF="#project">[Project]</a><BR>
+<BR>
+<font color="#0000FF"><b>Files</b></font>=List of TRUE or FALSE to create files.<BR>
+<font color="#0000FF"><b>Folders</b></font>=List of TRUE or FALSE to create folders.<BR>
+<font color="#0000FF"><b>MenuMake</b></font>=List of TRUE or FALSE to activate make menu.<BR>
+<font color="#0000FF"><b>x</b></font>=DelCheck,Out,Command,F1[,F2[,Fx]] See <b> [MakeDefNoProject]</b><BR>
+<BR>
+<font color="#FF0000">
+Special characters</font><BR>
+' <font color="#FF0000"><b> $</b></font> ' Gets the filename from topmost editor window without
+extension.<BR>
+' <font color="#FF0000"><b> |</b></font> ' Is replaced by a ' , ' in the final stage.<BR>
+' <font color="#FF0000"><b> *</b></font> ' Is used to build modules.<BR>
+<BR>
+<B><font color="#800080" size="4"><a name="menumake"></a>Section [MenuMake]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Make menu.<BR>
+</b></font>
+<font color="#FF0000">
+Maintained by RadASM options.</font><BR>
+<BR>
+<font color="#0000FF"><b>x</b></font>=MenuText,Accel,M,Command See <b> Tools menu</b><BR>
+<BR>
+Command can be a series of numbers as described by x= in the<b>  [ProjectType]</b><BR>
+<BR>
+<B><font color="#800080" size="4"><a name="color"></a>Section [Color]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Code editor colors.<BR>
+</b></font>
+<font color="#FF0000">
+Maintained by RadASM options.</font><BR>
+<BR>
+<font color="#0000FF"><b>UseColor</b></font>=Use syntax highlighting, <b>TRUE</b> or
+<b> FALSE</b><br>
+<font color="#0000FF"><b>DivLine</b></font>=Show procedure dividing line<br>
+<font color="#0000FF"><b>NoFlicker</b></font>=No flicker scroll 0 = off / 1 = on<br>
+<font color="#0000FF"><b>Back</b></font>=Code editor background color<br>
+<font color="#0000FF"><b>Fore</b></font>=Code editor text color<br>
+<font color="#0000FF"><b>SelBack</b></font>=Selected background color<br>
+<font color="#0000FF"><b>SelText</b></font>=Selected text color<br>
+<font color="#0000FF"><b>HiLine1</b></font>=Highlighted line 1 color<br>
+<font color="#0000FF"><b>HiLine2</b></font>=Highlighted line 2 color<br>
+<font color="#0000FF"><b>HiLine3</b></font>=Highlighted line 3 color<br>
+<font color="#0000FF"><b>Bar</b></font>=Code editor selection bar color<br>
+<font color="#0000FF"><b>BarPen</b></font>=Code editor selection bar pen<br>
+<font color="#0000FF"><b>LnrFontColor</b></font>=Line number color<br>
+<font color="#0000FF"><b>Cmnt</b></font>=Comment highlight color<br>
+<font color="#0000FF"><b>Str</b></font>=String highlight color<br>
+<font color="#0000FF"><b>Oper</b></font>=Operator highlight color<BR>
+<font color="#0000FF"><b>C0</b></font>=C0 Keyword group<BR>
+.<BR>
+.<BR>
+<font color="#0000FF"><b>C15</b></font>=C15 Keyword group<br>
+<font color="#0000FF"><b>Output</b></font>=Output window<BR>
+<font color="#0000FF"><b>Project</b></font>=Project window<BR>
+<font color="#0000FF"><b>Property</b></font>=Property window<BR>
+<font color="#0000FF"><b>Dialog</b></font>=Dialog editor<BR>
+<BR>
+The most significant byte in C0 to C15 is used for font type setting.<BR>
+<font color="#0000FF"><b>0</b></font>=Normal<BR>
+<font color="#0000FF"><b>1</b></font>=Bold<BR>
+<font color="#0000FF"><b>2</b></font>=Italics<BR>
+<font color="#0000FF"><b>3</b></font>=Bold italics<BR>
+<font color="#0000FF"><b>16</b></font>=RC file entry<br>
+<BR>
+<B><font color="#800080" size="4"><a name="keywords"></a>Section [KeyWords]</font></B><BR>
+<BR>
+<font color="#000080"><b>
+Keywords used to highlight words in code editor.<BR>
+</b></font>
+<font color="#FF0000">
+Maintained by RadASM options.</font><BR>
+<BR>
+<font color="#0000FF"><b>C0</b></font>=C0 List of keywords, separated by space<BR>
+.<BR>
+.<BR>
+<font color="#0000FF"><b>C15</b></font>=C15 List of keywords<BR>
+<font color="#0000FF"><b>C16</b></font>=On hold keywords
+</P>
+
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span lang="NO-BOK" style="font-size: 14.0pt; mso-ansi-language: NO-BOK"><font color="#800080"><b><a name="environment"></a>Section
+[Enviroment]</b></font></span><span lang="NO-BOK" style="font-size:10.0pt;color:black;mso-ansi-language:NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><font color="#000080"><b><span lang="NO-BOK" style="font-size: 10.0pt; mso-ansi-language: NO-BOK">&nbsp;</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK">Enviroment
+variables.</span></b></font><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000"><br>
+Manually maintained.</font></span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#000080"><b>x</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">=</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>key</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">,</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000"><b>var</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">&nbsp;&nbsp;
+<span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#000080"><b>
+x</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is a number from 1 and up. No holes allowed<br>
+&nbsp;&nbsp; <span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>Key</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is the variable name</span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><span style="mso-tab-count: 1; color: black; mso-ansi-language: NO-BOK"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000"><b>Var</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is the new value. NOTE if Var ends with a ';' then<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">the old
+value is added to the new value.<o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">&nbsp;</span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">Example:<o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">[Enviroment]<br>
+1=path,c:\hla;c:\masm32\bin;<br>
+2=lib,c:\hla\hlalib</span><span style="mso-fareast-font-family: Times New Roman; color: black; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK"><br>
+3=hlainc,c:\hla\include</span></p>
+
+<BR>
+<B><font color="#800080" size="4"><a name="codemacro"></a>Section [Open]</font></B><BR>
+<BR>
+<b><font color="#000080">Open file dialog definitions.</font></b>
+<BR>
+<font color="#FF0000">Manually maintained.</font>
+<BR>
+<BR>
+x=Text,Filter
+<BR>
+x is a number from 0 and up. No holes allowed. Text is the text displayed. Filter is the file filter.
+<BR>
+src=Text,Filter,DefExt
+<BR>
+hdr=Text,Filter,DefExt
+<BR>
+mod=Text,Filter,DefExt
+<BR>
+Text is the text displayed. Filter is the file filter. DefExt is the default file extention.
+<BR>
+<BR>
+Example (hla):
+<BR>
+[Open]
+<BR>
+0="Hla Files (*.hla;*.hhf),*.hla;*.hhf"
+<BR>
+1="Resource Files (*.rc),*.rc"
+<BR>
+2="Assembly Files (*.asm;*.inc),*.asm;*.inc"
+<BR>
+3="Text Files (*.txt),*.txt"
+<BR>
+4="All Files (*.*),*.*"
+<BR>
+src="Source (*.hla),*.hla,hla"
+<BR>
+hdr="Header (*.hhf),*.hhf,hhf"
+<BR>
+mod="Module (*.hla),*.hla,hla"
+<BR>
+
+<p class="MsoNormal" style="mso-pagination: none; mso-layout-grid-align: none; text-autospace: none; border: 2 solid #008080"><b><span style="mso-fareast-font-family: Times New Roman; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK"><font color="#FF0000">Note</font></span><span style="mso-fareast-font-family: Times New Roman; color: black; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK">:
+if the following are not included in the assembler.ini file the defaults will be
+loaded from Radasm.ini</span></b></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span lang="NO-BOK" style="font-size: 14.0pt; mso-ansi-language: NO-BOK"><font color="#800080">Section
+[MenuTools]</font></span><span lang="NO-BOK" style="font-size:10.0pt;color:black;mso-ansi-language:NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#000080"><b><a name="menutools"></a>Tools
+menu.</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><br>
+</span><font color="#FF0000"><span style="mso-ansi-language: NO-BOK" lang="NO-BOK">Maintained
+by RadASM option settings.</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK">&nbsp;</span></font><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><b><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#800080">x</font></span></b><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">=</span><b><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF">MenuText</font></span></b><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">,</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000"><b>Accel</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">,</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#00FF00"><b>T</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">,<b>Command</b>&nbsp;&nbsp;
+<span style="mso-tab-count: 1"> </span><span style="mso-tab-count: 1">&nbsp; </span></span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#800080"><b>x</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is a number between 1 and 32. No holes allowed<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>MenuText</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is the text shown on the menu<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000"><b>Accel</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is the asigned accelerator key<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#00FF00"><b>T</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is used by RadASM<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#000000"><b>Command</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">
+is the program to run. Path acronym allowed<o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">&nbsp;</span><span lang="NO-BOK" style="font-size: 14.0pt; mso-ansi-language: NO-BOK"><font color="#800080">Section
+[MenuHelp]</font></span><span lang="NO-BOK" style="font-size:10.0pt;color:black;
+mso-ansi-language:NO-BOK">&nbsp;</span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#000080"><b>Help
+menu.</b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000">Maintained
+by RadASM option settings.</font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#0000FF"><b>x=MenuText,Accel,H,HelpFile.hlp<span style="mso-tab-count: 1; mso-ansi-language: NO-BOK">
+</span></b></font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><span style="mso-tab-count: 1; color: black; mso-ansi-language: NO-BOK">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>See MenuTools</span><span lang="NO-BOK" style="font-size:10.0pt;color:black;
+mso-ansi-language:NO-BOK"><o:p>
+</o:p>
+<o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><span lang="NO-BOK" style="font-size:10.0pt;color:black;
+mso-ansi-language:NO-BOK">&nbsp;</span><span lang="NO-BOK" style="font-size: 14.0pt; mso-ansi-language: NO-BOK"><font color="#800080">Section
+[MenuMacro]</font></span><span lang="NO-BOK" style="font-size:10.0pt;color:black;mso-ansi-language:NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+text-autospace:none"><font color="#000080"><b><span lang="NO-BOK" style="font-size: 10.0pt; mso-ansi-language: NO-BOK">&nbsp;</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK">Keyboard
+macro menu.</span></b></font><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><br>
+</span><span style="mso-ansi-language: NO-BOK" lang="NO-BOK"><font color="#FF0000">Maintained
+by RadASM option settings.</font></span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK"><o:p>
+</o:p>
+</span></p>
+<p><span style="mso-fareast-font-family: Times New Roman; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK"><font color="#0000FF"><b>x=MenuText,Accel,M,KbMacroToRun</b></font></span><span style="mso-fareast-font-family: Times New Roman; color: black; mso-ansi-language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="NO-BOK"><span style="mso-tab-count: 1; color: black; mso-ansi-language: NO-BOK">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>See </span><span style="color: black; mso-ansi-language: NO-BOK" lang="NO-BOK">MenuTools</span></p>
+
+<BR>
+<B><font color="#800080" size="4"><a name="project"></a>Section [F1-Help]</font></B>
+<BR>
+<BR>
+<b><font color="#000080">F1-help key asignment.</font></b>
+<BR>
+<font color="#FF0000">Manually maintained.</font>
+<BR>
+<BR>
+F1=HelpFile.hlp
+<BR>
+Help file asigned to F1. Path acronym allowed
+<BR>
+CF1=HelpFile.hlp
+<BR>
+Help file asigned to Ctrl+F1
+<BR>
+SF1=HelpFile.hlp
+<BR>
+Help file asigned to Shift+F1
+<BR>
+CSF1=HelpFile.hlp
+<BR>
+Help file asigned to Ctrl+Shift+F1
+<BR>
+
+<P>
+&nbsp;
+</P>
+
+</BODY>
+</HTML>

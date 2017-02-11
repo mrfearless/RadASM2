@@ -1,0 +1,5 @@
+LIBRARY solParse
+EXPORTS
+	FindInFile
+	InstallDll
+	ParseFile

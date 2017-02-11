@@ -1,0 +1,25 @@
+#define VERINF1 1
+VERINF1 VERSIONINFO
+FILEVERSION 0,3,0,8
+PRODUCTVERSION 0,3,0,8
+FILEOS 0x00000004
+FILETYPE 0x00000002
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileVersion", "0.3.0.8\0"
+      VALUE "FileDescription", "RadASM menu addin\0"
+      VALUE "InternalName", "AlexMenu\0"
+      VALUE "LegalCopyright", "NTS (C) 2004 inprj21@mail.ru\0"
+      VALUE "OriginalFilename", "AlexMenu.dll\0"
+      VALUE "ProductName", "AlexMenu\0"
+      VALUE "ProductVersion", "0.3.0.8\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04B0
+  END
+END

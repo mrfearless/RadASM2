@@ -1,0 +1,4 @@
+#include "Res/SourceSafeVer.rc"
+#include "Res/AddProjectDlg.rc"
+#include "Res/GetProjectDlg.rc"
+#include "Res/CheckInDlg.rc"

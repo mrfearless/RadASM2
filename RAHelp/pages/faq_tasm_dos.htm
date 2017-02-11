@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>FAQ TASM DOS mode</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">TASM DOS mode</font></B></P>
+
+<P><B><I><font color="#800080">Originally posted by holly</font></I></B><BR>
+How do I set up RadASM to link my DOS mode programs with TASM<BR>
+(this wasn't the exact question but it was the jist of the thread)</P>
+
+<P><B><I><font color="#800080">Answer from cakmak</font></I></B><BR>
+in Tasm.ini:<BR>
+<BR>
+1) Add Dos App new section name as below<BR>
+<BR>
+<b>
+<a href="rah_assembler_ini.htm#project">
+[Project]</a></b> <BR>
+Type=Win32 App,Dos App &lt;&lt;- add this 2. section name<BR>
+<BR>
+2) Create this new section. This works for me. Except, for linker output option, it must choice
+Console (not Output). So in 3 and 13 lines, these are "C" beside "O". So you have to close linker DOS box after finish, via Ctrl+C keys.<BR>
+<BR>
+after <B>[Win32 App]</B> section add this "new" section;<BR>
+<BR>
+<b>
+[Dos App]</b><BR>
+Files=1,1,0,0,0<BR>
+Folders=1,0,0<BR>
+MenuMake=0,1,1,1,1,1,0,0<BR>
+;x=FileToDelete/CheckExistsOnExit,<BR>
+;(O)utput/(C)onsole/0,Command,<BR>
+;MakeFile1[,MakeFile2[,MakeFile3...]]<BR>
+1=4,O,$B.exe -r -i"$I" -v,1<BR>
+2=3,O,$B.EXE /I"$I",2<BR>
+3=5,C,$B.EXE /L"$L",3 &lt;&lt;---notice "C", this means console output. Very important!<BR>
+4=0,0,,5<BR>
+5=<BR>
+6=*.obj,O,$B.EXE /I"$I",*.asm<BR>
+11=4,OT,$B.exe -r -i"$I" -v,1<BR>
+12=3,OT,$B.EXE /I"$I",2<BR>
+13=5,C,$B.EXE /L"$L",3 &lt;&lt;---- Also here "C". Else RadAsm crashes.<BR>
+14=0,0,,5<BR>
+15=<BR>
+16=*.obj,O,$B.EXE /I"$I",*.asm</P>
+
+</BODY>
+</HTML>

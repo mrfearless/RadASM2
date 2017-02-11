@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>FAQ</TITLE>
+</HEAD>
+
+<BODY>
+
+<p style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">FAQ</font></B></p>
+
+<P><font color="#0000FF"><b>
+Q: The output windows in RadASM is opened every time the mouse passes the status bar. How do I disable this
+behavior?</b></font><BR>
+<font color="#FF0000"><b>
+A: </b></font> Open <a HREF="rah_radasm_ini.htm#addins">RadASM.ini</a> and change 1=FlipCase.dll,63 to 1=FlipCase.dll,31<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: I can't make the visual icon / image control work.</b></font><BR>
+<font color="#FF0000"><b>
+A: </b></font> You have to add the icon / bitmap to the rc file by using the tool <B>Project / Resource</B>. Note that after changing the resource you must make a fake change to the dialogs using the icons / bitmaps to update the xxxDlg.rc file.<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: My resources are not available in my DLL</b></font><BR>
+<font color="#FF0000"><b>
+A: </b></font> The default link command for DLLs does not link resources. In <B>Project Options</B> add <B>,4</B> to the end of the link command, be sure to enable the <B>Compile Resources</B> menu item as well.<BR>
+<BR>
+<font color="#0000FF"><b>
+Q : Feature request: Could there be mouse-wheel support in RadASM?</b></font><BR>
+<b><font color="#FF0000">
+A:</font></b> Check Options / Code Editor Options / Use Mouse Wheel.<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: When I open a lot of files sometimes it is impossible to view all the tabs so I have to close some windows. Is it possible to add some navigation arrows</b></font><BR>
+<font color="#FF0000"><b>
+A:</b></font> There are left and right arrows that appear on the tab bar to scroll it when there are too many tabs to display at once (small buttons on the far right of the tab bar). If you want them all to be displayed at once you can select <B>Tool Windows</B> from the <B>Options</B> menu and enable
+multi-line tabs then adjust the height of the tab bar to fit all of the tabs.<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: Is it possible to run also a batch file from within' the menu tools?</b></font><BR>
+<font color="#FF0000"><b>
+A:</b></font> Yes, example : 8=Masm32 &amp;Build,0,T,$B.bat,$<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: How do I add a button to the toolbar in the RadASM IDE?</b></font><BR>
+<font color="#FF0000"><b>
+A:</b></font> The only way to add buttons to the toolbar is by <a href="adv_create_addin.htm"> creating an
+AddIn</a>.<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: What's the difference between an ASM file and a module?</b></font><BR>
+<font color="#FF0000"><b>
+A: </b></font> Modules can be assembled into separate OBJ files<BR>
+<BR>
+<font color="#0000FF"><b>
+Q: What command line do I specify to use GoRC instead of RC.exe?</b></font><BR>
+<font color="#FF0000"><b>
+A:</b></font> The Compile RC command should read :<b>4,O,$B\GORC.EXE /r,1</b>
+</P>
+
+<P><b><font color="#0000FF">Q: I have tried to setup paths for HLA using
+Option&gt;Setpaths but it is not working.<br>
+</font></b><font color="#FF0000"><b>A:</b></font> You probably need to set the environment
+variables that HLA requires.
+</P>
+
+<P style="border: 2 solid #008080"><b><font color="#FF0000">
+TIP</font>  </b> : To make RadASM handle both masm <B>STRUC</B> and <B>STRUCT</B> definitions, make the following changes in assembler.ini:<BR>
+Add this line to section <B>[CodeMacro]</B><BR>
+xx=struc,T,CI$ ends<BR>
+xx is next free number.<BR>
+Change this line in section <B>[Code]</B><BR>
+Struct=$-,ends,struct,struc
+</P>
+
+</BODY>
+</HTML>

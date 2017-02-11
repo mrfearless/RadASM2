@@ -1,0 +1,18 @@
+Digital Photo Frame.
+--------------------
+
+I recently bought a digital photo frame and soon discowered two problems.
+
+1. The filesisze of my photos is huge and takes up a lot of unneccessary space on the memory card.
+2. The width / height ratio from my pocket camera does not match, leaving portraits with the top of
+   their head chopped off. I am really not that bad a photographer. My professional camera has the
+   correct ratio but the filesize is huge.
+
+To solve this problems I made this program to scale and size the pictures.
+It converts jpeg pictures found in the source folder (including sub folders) and puts them in the
+destination folder. The files is renamed to Imgxxxxx.jpg.
+
+If you know the resolution of your digital photo frame, then you should change the PIXWT and PIXHT
+constants and rebuild the project.
+
+KetilO

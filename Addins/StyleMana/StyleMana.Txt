@@ -1,0 +1,17 @@
+RadASM Style manager addin
+
+Installing the addin:
+---------------------
+Copy StyleMana.dll to C:\RadASM\Addins
+Copy StyleMana.txt to C:\RadASM\Addins\Help
+Use AddinManager to install.
+
+Using the addin:
+----------------
+Use style manager to set styles of dialogs and controls.
+The visual result of changing a style is immediatly shown.
+
+If you find any styles missing or groups not working
+then notify me at radasmide@hotmail.com
+
+KetilO

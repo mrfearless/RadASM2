@@ -1,0 +1,4 @@
+LIBRARY UndoSave
+EXPORTS
+	InstallDll
+	DllProc

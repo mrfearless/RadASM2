@@ -1,0 +1,14 @@
+This addin auto exports resource id's to the file rsrc.xxx when any of the
+resource scripts are updated. At the same time code properties are refreshed.
+This means that code complete on resource id's will work immediatly after any
+resource script is saved.
+The export is done ONLY if the rsrc.xxx file exists in the projects root folder.
+
+rsrc.xxx:
+------------------------
+Assembly		rsrc.inc
+Hla				rsrc.hhf
+C/C++			rsrc.h
+bcet, fb		rsrc.bi
+
+KetilO

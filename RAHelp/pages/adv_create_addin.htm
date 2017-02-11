@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Creating AddIns</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<font color="#0000FF" size="5"><B>Creating AddIns</B></font></P>
+
+<P>
+One of the most powerful features of RadASM is its ability to use AddIns. An AddIn is simply put a DLL that is loaded when RadASM starts that can be used to perform tasks that are not available to the IDE. In some cases an AddIn will be installed to alter the way an existing feature of RadASM works and in some cases it will add a completely new function to the IDE. Creating your own AddIns requires a knowledge of how to make a DLL, for the purposes of this tutorial that will be assumed.<BR>
+<BR>
+RadASM recognizes 2 exports from an AddIn DLL :<BR>
+<BR>
+<B>InstallDll</B>: This function is called when RadASM loads the DLL, it allows the DLL to perform the necessary setup for your program and to tell RadASM what aspects of the program the DLL will monitor.<BR>
+<B>DllProc</B>: This function is called depending on what functions are monitored. The DLL can perform tasks based on values passed to it.<BR>
+<BR>
+<B>InstallDll hWin, fOpt </B><BR>
+<BR>
+<B>hWin</B> is a handle to the RadASM main window, you will send messages to this window in order to extract the information you need for your AddIn, <B>fOpt</B> is the DWORD parameter that was specified in the RadASM.ini entry for your AddIn.<BR>
+<BR>
+During the installation process you would most likely want to get the pointers to the various structures in RadASM. These structures are filled by RadASM with key information that your DLL will need to modify RadASM. The pointers to the structures are obtained by sending the following messages to RadASM.<BR>
+<BR>
+<font color="#008080"><b>
+ADDINHANDLES</b></font><BR>
+Contains a list of handles used in RadASM<BR>
+Send the message <B>AIM_GETHANDLES</B> to hWin to obtain a pointer to this structure<BR>
+<BR>
+<font color="#008080"><b>
+ADDINPROCS</b></font><BR>
+Contains a list of pointers to procedures used in RadASM<BR>
+Send the message <B>AIM_GETPROCS</B> to hWin to obtain a pointer to this structure<BR>
+<BR>
+<font color="#008080"><b>
+ADDINDATA</b></font><BR>
+Contains a list of useful data variables used in RadASM<BR>
+Send the message <B>AIM_GETDATA</B> to hWin to obtain a pointer to this structure<BR>
+<BR>
+In addition to getting the pointers to the structures you can get a unique ID for your application to use for inserting a menu item or toolbar button, use the <B>AIM_GETMENUID</B> message to obtain an ID.<BR>
+<BR>
+On return from this procedure your DLL places the information it would like to monitor in eax using the <B>RAM_</B> flags. To use more than one flag simply <B>OR</B> the values. The available flags are detailed in the \radasm\masm\inc\radasm.inc include file. Whichever flags you return to RadASM, when an event occurs that triggers that flag RadASM will call your DllProc with information concerning the event.<BR>
+<BR>
+<B>DllProc hWin, uMsg,  wParam , lParam </B><BR>
+<BR>
+The DllProc is called each time RadASM needs to pass information to the DLL based on the RAM_ flags that were specified when the DLL was installed. This is the only permanent interface that is supplied to
+RadASM so your AddIn must use this procedure as a jumping point to everything it does. The DllProc procedure should be treated as if it is a DialogProc, returning
+FALSE if it does not process a message or wishes RadASM to continue with default processing once it's done. Generally this procedure can be viewed as a standard Dialog procedure in that it's only function is to take action based on messages it receives from RadASM. The messages and their constants are found in the \radasm\masm\inc\radasm.inc include file, all messages passed to your AddIn have the prefix <B>AIM_</B>. The following is an example of a DllProc message proc.
+</P>
+
+<pre style="border: 2 solid #008080">DllProc PROC hWin :DWORD, uMsg :DWORD, wParam :DWORD, lParam :DWORD
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp uMsg, AIM_COMMAND
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jnz @F
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov eax, wParam
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp MyAddInID, eax
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jnz _end
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov eax,lpHandles
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov eax,[eax].ADDINHANDLES.hWnd
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; invoke DialogBoxParam,hInstance,200,eax,addr DialogProc,NULL
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; The message has been processed
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov eax,TRUE
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ret
+&nbsp;&nbsp;&nbsp; @@:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cmp uMsg, AIM_INITMENUPOPUP
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jnz _end
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ; Enable the menu item
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov eax, lpData
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mov eax, [eax].ADDINDATA.fProject
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xor eax, 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or eax, MF_BYCOMMAND
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; invoke EnableMenuItem, hSubMenu, MyAddInID, eax
+&nbsp;&nbsp;&nbsp; _end:
+&nbsp;&nbsp;&nbsp; xor eax, eax
+&nbsp;&nbsp;&nbsp; ret
+DllProc ENDP</pre>
+
+<P>
+The ADDINPROCS structure gives your AddIn direct access to some key procedures in RadASM, you may want to perform certain functions like opening a file or a search, this ADDINPROCS allow you to do these tasks using
+RadASM's built in functionality. Two functions that are used frequently are lpTextOut and lpClearOut, they send text to the output window and clear that window respectively.<BR>
+<br>
+Example of calling a Procedure :<BR>
+mov edi,lpProcs<BR>
+push Param2<BR>
+push Param1<BR>
+call [edi].ADDINPROCS.lpProc<br>
+<BR>
+In some cases the procedure will require that prerequisite data be set up before it is called. Read the remarks beside the structure elements, they detail the parameters and prerequisites. The most common prerequisite is lpFileName, if this is required you must first set ADDINDATA.lpFile to the appropriate filename before calling the procedure.
+</P>
+
+<P>
+<b><font size="4" color="#008080">How to make your addin 'Addin Manager compatible'.<br>
+</font></b><br>
+<b>AIM_CLOSE</b><br>
+Your addin must respond to AIM_CLOSE by cleaning<br>
+up what has been added to RadASM such as:<br>
+<br>
+- Deleting menu items.<br>
+- Deleting toolbar buttons.<br>
+- Undo subclassing of RadASM windows.<br>
+<br>
+<b>GetOptions proc</b><br>
+This proc returns a pointer to two or more ADDINOPT<br>
+structures. The last structure must be all zeros.<br>
+There is a AND and a OR value to support check groups.<br>
+There can be max 16 check boxes.
+</P>
+
+<pre style="border: 2 solid #008080">Example (masm):
+
+ADDINOPT struct
+lpStr dd ? ;Pointer to CheckBox text
+nAnd dd ? ;Option AND value
+nOr dd ? ;Option OR value
+ADDINOPT ends
+
+.data
+szText1 db 'Option#1',0
+szText2 db 'Option#2',0
+AddinOpt ADDINOPT &lt;offset szText1,1,1&gt;
+ADDINOPT &lt;offset szText2,2,2&gt;
+ADDINOPT &lt;0,0,0&gt;
+
+.code
+;This proc must be exported
+GetOptions proc
+mov eax,offset AddinOpt
+ret
+GetOptions endp</pre>
+
+<P style="border: 2 solid #008080"><B><font color="#FF0000">TIP</font>:</B> The FlipCase
+AddIn demonstrates almost all of the features of an AddIn and makes an excellent
+tutorial. You can download source code for many AddIns at <a href="http://radasm.visualassembler.com"> KetilO's website</a></P>
+
+<P><BR>
+</P>
+
+</BODY>
+</HTML>

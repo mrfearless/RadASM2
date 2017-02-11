@@ -1,0 +1,62 @@
+{assume}
+assume ~:ptr 
+{assume nothing}
+assume ~:nothing
+{dialog close}
+call SendMessage,hWnd,WM_CLOSE,0,0
+{forever loop }
+.while TRUE
+	
+	.break .if ~
+	
+.endw
+{ifdef block}
+IFDEF 
+	
+ELSE
+	
+ENDIF
+{message box}
+call MessageBox,0,T('~'),0,0
+{repeat ge? inc ecx}
+xor ecx,ecx
+.repeat
+
+	inc ecx
+.until ecx >= ~
+{repeat s? dec ecx}
+mov ecx,~
+.repeat
+	
+	dec ecx
+.until sign?
+{repeat z? dec ecx}
+mov ecx,~
+.repeat
+	
+	dec ecx
+.until zero?
+{uses esi edi ebx}
+uses esi edi ebx 
+{while a? dec ecx}
+.while ecx > ~
+	
+	dec ecx
+.endw
+{while be? inc ecx}
+mov ecx,~
+.while ecx <= 
+	
+	inc ecx
+.endw
+{while be? macro}
+xi = 0
+while xi lt
+	~
+	xi = xi + 1 
+endm
+{}
+
+tasm32 /ml /m2 /z /jmasm51 /jquirks
+
+

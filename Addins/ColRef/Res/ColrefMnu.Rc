@@ -1,0 +1,9 @@
+#define IDM_NEW 10001
+#define IDM_PIC 10003
+#define IDM_EXIT 10002
+MyMenu MENU
+BEGIN
+  MENUITEM "New color",IDM_NEW
+  MENUITEM "Pic color",IDM_PIC
+  MENUITEM "Exit",IDM_EXIT
+END

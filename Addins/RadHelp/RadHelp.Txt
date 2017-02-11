@@ -1,0 +1,7 @@
+RadHelp 3.1.1 by Ronald Volgers (aka Qweerdy)
+
+To install, just copy the contents of the AddIns directory in RadHelp.zip 
+to the RadASM addins directory. Then select Addin Manager from the Option menu
+and check the appropriate options for RadHelp. You may need to restart RadASM.
+RadHelp is loaded when a "RadHelp options" menu entry is added to the Option
+menu. You can use this menu entry to change RadHelp's settings.

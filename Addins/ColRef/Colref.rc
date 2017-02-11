@@ -1,0 +1,12 @@
+#include "Res/ChooseColorDlg.rc"
+#include "Res/ColrefVer.rc"
+
+#define IDR_ICON						2002
+#define IDR_BITMAP						2001
+#define IDR_PICCUR						2003
+;#define IDR_PICBMP						2004
+IDR_ICON				ICON   DISCARDABLE Res\Colref.ico
+IDR_BITMAP				BITMAP DISCARDABLE Res\Colref.bmp
+IDR_PICCUR				CURSOR DISCARDABLE Res\Pic.cur
+;IDR_PICBMP				CURSOR DISCARDABLE Res\Pic.bmp
+

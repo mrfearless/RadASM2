@@ -1,0 +1,1 @@
+This addin saves the collapse state to the project file.

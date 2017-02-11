@@ -1,0 +1,262 @@
+Masm-specific keywords
+Masm-specific keywords
+!=Comparison run-time operators
+!=Comparison run-time operators
+$=Location Counter $
+&=Comparison run-time operators
+&&=Comparison run-time operators
+.break
+.code
+.const
+.continue
+.cref
+.data
+.data?
+.else=.IF
+.elseif=.IF
+.endif=.IF
+.endw=.while
+.err
+.errb
+.errdef
+.errdif
+.erre
+.erridn
+.errnb
+.errndef
+.errnz
+.if
+.list
+.listall
+.listif
+.listmacro
+.listmacroall
+.model
+.model=.MODEL directive
+.nocref
+.nolist
+.nolistif
+.nolistmacro
+.radix
+.repeat
+.tfcond
+.while
+?=Data Initialisation ?
+@@:=Local Code Labels
+@argrev=Macro Function Reverse Ordering
+@b=Local Code Labels
+@f=Local Code Labels
+\=Line Continuation
+<=Comparison run-time operators
+<=Comparison run-time operators
+=Name Assignment
+=Comparison run-time operators
+>=Comparison run-time operators
+>=Comparison run-time operators
+ac=Processor Flags
+addr=INVOKE
+af=Processor Flags
+ah=Register Summary
+al=Register Summary
+align
+argi=Macro Function ArgI
+assume
+basic=Calling Conventions
+bh=Register Summary
+bl=Register Summary
+bp=Register Summary
+byte=Data Types
+c=Calling Conventions
+casemap=OPTION CASEMAP
+catstrinstr
+cf=Processor Flags
+ch=Register Summary
+cl=Register Summary
+comment
+compact=Memory model
+cr0=Register Summary
+cr1=Register Summary
+cr2=Register Summary
+cr3=Register Summary
+cs=Register Summary
+db=Data Types
+dd=Data Types
+df=Data Types
+df=Processor Flags
+dh=Register Summary
+di=Register Summary
+dl=Register Summary
+dotname=OPTION DOTNAME
+dq=Data Types
+dr0=Register Summary
+dr1=Register Summary
+dr2=Register Summary
+dr3=Register Summary
+dr4=Register Summary
+dr5=Register Summary
+dr6=Register Summary
+dr7=Register Summary
+ds=Register Summary
+dt=Data Types
+dup
+dw=Data Types
+dword=Data Types
+eax=Register Summary
+ebp=Register Summary
+ebx=Register Summary
+echo
+ecx=Register Summary
+edi=Register Summary
+edx=Register Summary
+eip=Register Summary
+elseif=[ELSE]IF
+elseifb=[ELSE]IFB
+elseifdef=[ELSE]IFDEF
+elseifdif=[ELSE]IFDIF[I]
+elseifdifi=[ELSE]IFDIF[I]
+elseife=[ELSE]IF
+elseifidn=[ELSE]IFDIF[I]
+elseifidni=[ELSE]IFDIF[I]
+elseifnb=[ELSE]IFB
+elseifndef=[ELSE]IFDEF
+emulator=OPTION EMULATOR
+end
+endm
+endp=proc
+ends=STRUCT
+epilogue=OPTION EPILOGUE
+eq=Relational Operators
+equ
+es=Register Summary
+esi=Register Summary
+esp=Register Summary
+exitm
+expr16=OPTION EXPR16
+expr32=OPTION EXPR32 	
+extern
+externdef
+flat=Flat memory model
+for
+forc
+fortran=Calling Conventions
+fs=Register Summary
+fword=Data Types
+gdtr=Register Summary
+ge=Relational Operators
+goto
+gs=Register Summary
+gt=Relational Operators
+high
+highword
+huge=Memory model
+idtr=Register Summary
+if=Processor Flags
+if=[ELSE]IF
+if
+ifb=[ELSE]IFB
+ifdef=[ELSE]IFDEF
+ifdif=[ELSE]IFDIF[I]
+ifdifi=[ELSE]IFDIF[I]
+ife=[ELSE]IF
+ifidn=[ELSE]IFDIF[I]
+ifidni=[ELSE]IFDIF[I]
+ifnb=[ELSE]IFB
+ifndef=[ELSE]IFDEF
+include
+includelib
+invoke
+iopl=Processor Flags
+ip=Register Summary
+label
+language=OPTION LANGUAGE
+large=Memory model
+ldtr=Register Summary
+le=Relational Operators
+length
+lengthof
+ljmp=OPTION LJMP
+local
+low
+lowword
+lroffset
+lt=Relational Operators
+macro
+macro local
+mask
+medium=Memory model
+ne=Relational Operators
+nf=Processor Flags
+nodotname=OPTION NODOTNAME
+noemulator=OPTION NOEMULATOR
+nokeyword=OPTION NOKEYWORD
+noljmp=OPTION NOLJMP
+noreadonly=OPTION NOREADONLY
+noscoped=OPTION NOSCOPED
+nosignextend=OPTION NOSIGNEXTEND
+of=Processor Flags
+offset
+opattr
+option oldmacros=Nested Macros
+org
+pascal=Calling Conventions
+pf=Processor Flags
+popcontext
+proc
+prologue=OPTION PROLOGUE
+proto
+ptr
+public
+purge
+pushcontext
+qword=Data Types
+readonly=OPTION READONLY
+real10=Data Types
+real4=Data Types
+real8=Data Types
+record
+repeat
+rf=Processor Flags
+sbyte=Data Types
+scoped=OPTION SCOPED
+sdword=Data Types
+segment=OPTION SEGMENT
+sf=Processor Flags
+short
+si=Register Summary
+size
+size
+size
+sizeof
+sizestr
+small=Memory model
+sp=Register Summary
+ss=Register Summary
+stdcall=Calling Conventions
+struct
+substr
+sword=Data Types
+syscall=Calling Conventions
+tbyte=Data Types
+textequ
+tf=Processor Flags
+this
+tiny=Memory model
+tr=Register Summary
+tr3=Register Summary
+tr4=Register Summary
+tr5=Register Summary
+tr6=Register Summary
+tr7=Register Summary
+type
+type
+typedef=TYPEDEF Directive
+union
+uses
+vararg=VARARG (Proc)
+vm=Processor Flags
+while
+width
+width
+word=Data Types
+zf=Processor Flags
+||=Comparison run-time operators

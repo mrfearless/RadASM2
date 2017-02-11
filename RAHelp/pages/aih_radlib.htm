@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>RadLib By Irving W.</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">RadLib By Irving W.</font></B>
+</P>
+
+<P>
+RadASM is very flexible and you can extend it with things like support for making static libraries. If you want to make a library of functions without messing with a DLL, you can use a static LIB Instead (with includelib). I did this for a small library I was planning to write, and KetilO suggested I post my modifications here in case other people wanted to write .LIB files too. I'll describe exactly how to modify the INI files to do this with MASM (but you can probably use the same techniques with FASM). If it's more convenient or easier to understand, I also have copies of the default <A HREF="rah_radasm_ini.htm">RadASM.INI</A> and <A HREF="rah_assembler_ini.htm">MASM.INI</A> files that I modified this way in RadLib.zip. You can replace your old files with these, but it'll overwrite your other settings. If you don't want to overwrite your other settings in the INI files, read on to see how to modify them in 3 easy steps.<BR>
+<BR>
+1. There's just one tiny modification to RadASM.INI, so I'll describe it first. In the [Makefiles] section, there should be a list of file extensions (0=.rap, 1=.rc, 2=.asm, 3=.obj, etc.) RadASM uses. Just add .lib at the end of the list. In the default RadASM.INI, the last entry is "8=.txt" so .lib would be number 9. Add this to the
+<a HREF="rah_assembler_ini.htm#makefiles"><b>[Makefiles]</b></a> section of MASM.INI: <BR>
+<BR>
+--------------------------------------------------------------------------------<BR>
+9=.lib<BR>
+--------------------------------------------------------------------------------<BR>
+<BR>
+2. This won't do anything yet though. The next step is to edit <A HREF="rah_assembler_ini.htm">MASM.INI</A>. There is one section that needs to be modified and a new section will need to be added. First, the name of the project type has to be added to the list that RadASM will display in the "New Project" window. I chose "LIB Project" as the name, but it doesn't matter if you prefer a different name. In the <B><a href="rah_assembler_ini.htm#project">[Project]</a></B> section of MASM.INI, add the project name to the list like this: <BR>
+<BR>
+--------------------------------------------------------------------------------<BR>
+Type=Win32 App,Console App,Dll Project,LIB Project<BR>
+--------------------------------------------------------------------------------<BR>
+<BR>
+3. Finally, you have to add a section with the settings for LIB Projects. I copied/pasted the Dll Project settings and used them as a model, for consistency. The only lines you need to change are the name of the section (should be the name of the project type, "LIB Project" or whatever you chose) and the "link" command. Add this new section to MASM.INI: <BR>
+<BR>
+--------------------------------------------------------------------------------<BR>
+<B>[LIB Project] </B><BR>
+Files=1,1,0,1,0 <BR>
+Folders=1,0,0 <BR>
+MenuMake=0,1,1,0,0,0,0,0 <BR>
+1=4,O,$B\RC.EXE /v,1 <BR>
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I$I,2 <BR>
+3=9,O,$B\LIB.EXE,3 <BR>
+4=0,0,,5 <BR>
+--------------------------------------------------------------------------------<BR>
+<BR>
+(In the actual file there are comments; if you're interested go read them since they explain the format more) <BR>
+<BR>
+I put the parts that are different from the Dll project in bold. As you can see, the name is different. The other line that's different is the "3=" line (link command). The 9 is a reference to the "9=.lib" line in RadASM.ini. It lets RadASM know to delete the old .lib file if it exists before linking, and check to see if it exists after linking. If the file exists, it means the project linked OK. The O means to put the output into the Output window, so you can see any messages the linker generates. The $B gets replaced with the path to your Masm32\Bin directory, and the 3 means to use the name of your .OBJ file as a command line argument (3=.obj in the list of file types) to the linker. If you're
+interested in this stuff, you should look at the comments in the INI files. This is only part of what you can do with RadASM (good job KetilO!). <BR>
+<BR>
+Once you have your INI files set up, you can create a new LIB Project the same way you'd create any other new project in RadASM. It's a good idea to put your function PROTOs in a separate file so you can include it in any projects that use the library. Then just use the include and includelib directives and you're ready to use the library's functions in your other projects. <BR>
+<BR>
+I've also modified the "Tools" menu to include a tool that automatically copies the include and library files from your project directory to the masm32\Include and masm32\Lib directories. I might work on it a little so it's not
+hard-coded to C:\masm32\Include<BR>
+</P>
+
+</BODY>
+</HTML>

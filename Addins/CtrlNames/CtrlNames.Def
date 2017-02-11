@@ -1,0 +1,5 @@
+LIBRARY CtrlNames.dll
+EXPORTS
+	DllEntry
+	DllProc
+	InstallDll

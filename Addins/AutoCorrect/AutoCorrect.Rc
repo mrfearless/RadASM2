@@ -1,0 +1,3 @@
+#include "Res/AutoCorrectVer.rc"
+#include "Res/AutoCorrectDlg.rc"
+#include "Res/MultiLineDlg.rc"

@@ -1,0 +1,2 @@
+#define IDB_BLACK						100
+IDB_BLACK				BITMAP    DISCARDABLE "Res/black.bmp"

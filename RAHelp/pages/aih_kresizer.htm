@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Kresizer by Kir</title>
+</head>
+
+<body>
+
+<p style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<b><font color="#0000FF" size="5">Kresizer by Kir</font></b></p>
+<p><b>Kirsoft © Easy Resizer ver 1.01</b></p>
+<p>Available from Kir's <a href="http://www.kirsoft.com.ru/download/asm/KSresizer/">website</a></p>
+<p>This AddIn creates all the code needed to move and resize controls in
+dialogbox in RadASM.<br>
+(Only for masm)</p>
+<p><font color="#008080" size="4"><b>Installation</b></font></p>
+<p>Copy KSresizer.dll to C:\RadASM\AddIns<br>
+Copy KSresizer.exe to C:\RadASM\AddIns<br>
+<br>
+Copy KSresizer.chm to C:\RadASM\Help<br>
+<br>
+Copy KSresInc.inc to C:\Masm32\Include<br>
+Copy KSresInc.lib to C:\Masm32\Lib<br>
+<br>
+Edit RadASM.ini and add the following:<br>
+<br>
+[AddIns]<br>
+xx=KSresizer.dll,1<br>
+<br>
+Where xx is the next available AddIn</p>
+<p><font color="#008080" size="4"><b>Usage</b></font></p>
+<p>From the <b>Project</b> menu select <b>KSresizer</b>. Select your <i>Dialog
+Window File (*.dlg)</i> and click OK.<br>
+<br>
+In KSresizer:</p>
+<p><img border="0" src="../images/kresizer.gif" width="543" height="454"></p>
+
+<p><b>Window Size:<br>
+</b><br>
+Set min Window Width and min Window Height. If you don't need to limit this
+window size type 0.<br>
+<br>
+<b>Set and Restore Window Location</b> save current window size and position
+when window close and restore it when window open.<br>
+<br>
+<b>Controls:<br>
+</b><br>
+Select control that you need to resize and(or) move.<br>
+<br>
+<b>Control Strategies:<br>
+<br>
+</b>Set Horizontal and(or) Vertical Position/Resize Strategies for the selected
+control.<br>
+<br>
+<b>Dialog Window:<br>
+</b><br>
+After making your changes press <b>Save</b> button. Then press <b>Export </b>button.<br>
+In KSresizer Export Window you can see all code you need to insert to your .asm
+module:</p>
+
+<p><img border="0" src="../images/kresizer2.gif" width="527" height="577"></p>
+
+<p><i>At the beginning of your module you should include:<br>
+</i><br>
+; KSresizer: &nbsp;Include &amp; Lib<br>
+include KSresInc.Inc<br>
+includelib KSresInc.Lib<br>
+<br>
+; KSresizer: Include file for this dialog window<br>
+include KSrExRsz.Inc<br>
+<br>
+; KSresizer: Name of your INI File Name<br>
+.data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;szINIFName db &quot;.\MyExeName.ini&quot;,0<br>
+<br>
+<i>At the beginning of your Dialog proc you should include:<br>
+</i><br>
+&nbsp;; KSresizer: resize this dialog window<br>
+&nbsp;invoke KS_resize,hWin,uMsg,wParam,lParam,\<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADDR
+KSrExRsz_0,\<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADDR
+szINIFName</p>
+
+<p><font color="#008080" size="4"><b>Example</b></font></p>
+<p>For additional information see KSrEx example. This is a sample on how to use
+KSresizer RadAsm AddIn.</p>
+
+</body>
+
+</html>

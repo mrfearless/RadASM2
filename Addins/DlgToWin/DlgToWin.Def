@@ -1,0 +1,5 @@
+LIBRARY DlgToWin
+EXPORTS
+InstallDll
+DllProc
+GetOptions

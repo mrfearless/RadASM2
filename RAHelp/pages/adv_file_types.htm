@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Modifying project file list</title>
+</head>
+
+<body>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="0=project.rap \n" +
+"1=project.rc \n" +
+"2=project.asm \n" +
+"3=project.obj \n" +
+"4=project.res \n" +
+"5=project.exe \n" +
+"6=project.def \n" +
+"7=project.dll \n" +
+"8=project.txt \n" +
+"9=project.lib \n" +
+"10=project.mak \n" +
+"11=project.hla "
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+</SCRIPT></CODE><B><font color="#0000FF" size="5">Adding to the default file types</font></B></P>
+
+<P>
+All RadASM <a href="adv_cmd_lines.htm"> command lines</a> used to build a project use
+$ variables to dynamically specify&nbsp; a <CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">file</a></CODE>
+name. This list is kept in your <a href="rah_proj_files.htm"> RAP</a> file and can be modified by using the
+<b>
+Main Project Files </b> selection from the <b> Project</b> menu. There are 20 available file
+types though 0 through 11 are generally used for the RadASM defaults.</P>
+
+<P>
+<img border="0" src="../images/project_files.gif" width="228" height="219"></P>
+
+<P>
+As an example where this might be useful is in creating an OCX file. You would
+add Project.ocx to the list in for example position 12 then change the link
+command to the following:</P>
+
+<pre><b><font color="#000080">12</font></b>,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL <b><font color="#000080">/OUT:$12</font></b> /DEF:$6 /LIBPATH:&quot;$L&quot;,3,4
+
+<CODE><OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+></OBJECT></CODE></pre>
+
+</body>
+
+</html>

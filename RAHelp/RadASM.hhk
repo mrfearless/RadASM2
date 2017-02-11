@@ -1,0 +1,751 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Accelerator">
+		<param name="Name" value="AddAccel by QvasiModo">
+		<param name="Local" value="pages\aih_addaccel.htm">
+		<param name="Name" value="Accelerator table">
+		<param name="Local" value="pages\rah_accel_table.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Accelerator Table">
+		<param name="Name" value="Accelerator table">
+		<param name="Local" value="pages\rah_accel_table.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Add dialog">
+		<param name="Name" value="Adding a dialog">
+		<param name="Local" value="pages\rah_add_dlg.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Add file">
+		<param name="Name" value="Adding file to a project">
+		<param name="Local" value="pages\rah_add_proj_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Addin">
+		<param name="Name" value="AddAccel by QvasiModo">
+		<param name="Local" value="pages\aih_addaccel.htm">
+		<param name="Name" value="Addin Manager by KetilO">
+		<param name="Local" value="pages\aih_addin_manager.htm">
+		<param name="Name" value="AddManifest by QvasiModo">
+		<param name="Local" value="pages\aih_addmanifest.htm">
+		<param name="Name" value="Ascii Tab by Martial Code">
+		<param name="Local" value="pages\aih_ascii_tab.htm">
+		<param name="Name" value="ASMVars by Milos Tziotas">
+		<param name="Local" value="pages\aih_asmvars.htm">
+		<param name="Name" value="BitMask by Donkey">
+		<param name="Local" value="pages\aih_bitmask.htm">
+		<param name="Name" value="ButtonChanger by Milos Tziotas">
+		<param name="Local" value="pages\aih_buttonchanger.htm">
+		<param name="Name" value="Color Reference by minor28">
+		<param name="Local" value="pages\aih_color_ref.htm">
+		<param name="Name" value="Creating AddIns">
+		<param name="Local" value="pages\adv_create_addin.htm">
+		<param name="Name" value="DlgToWin by Ketil">
+		<param name="Local" value="pages\aih_dlgtowin.htm">
+		<param name="Name" value="EHelp by elisabeth">
+		<param name="Local" value="pages\aih_ehelp.htm">
+		<param name="Name" value="FlipCase by KetilO">
+		<param name="Local" value="pages\aih_flipcase.htm">
+		<param name="Name" value="Insert Color by Eviloid">
+		<param name="Local" value="pages\aih_insert_color.htm">
+		<param name="Name" value="Kresizer by Kir">
+		<param name="Local" value="pages\aih_kresizer.htm">
+		<param name="Name" value="MakeDef by Donkey">
+		<param name="Local" value="pages\aih_makedef.htm">
+		<param name="Name" value="Melt By Gunner">
+		<param name="Local" value="pages\aih_melt.htm">
+		<param name="Name" value="MsdnHelp V2.0 by Qweerdy">
+		<param name="Local" value="pages\aih_msdnhelp.htm">
+		<param name="Name" value="NoteTools By Donkey">
+		<param name="Local" value="pages\aih_notetools.htm">
+		<param name="Name" value="PathExplore++ by Milos Tziotas">
+		<param name="Local" value="pages\aih_pathexplore.htm">
+		<param name="Name" value="Project Zipper by KetilO">
+		<param name="Local" value="pages\aih_project_zipper.htm">
+		<param name="Name" value="Rad Toolbar By Donkey">
+		<param name="Local" value="pages\aih_rad_toolbar.htm">
+		<param name="Name" value="RadLib By Irving W.">
+		<param name="Local" value="pages\aih_radlib.htm">
+		<param name="Name" value="RadToolbarPaint By Donkey">
+		<param name="Local" value="pages\aih_radtoolbarpaint.htm">
+		<param name="Name" value="Really Rad by KetilO">
+		<param name="Local" value="pages\aih_reallyrad.htm">
+		<param name="Name" value="Res2Dlg by Donkey">
+		<param name="Local" value="pages\aih_res2dlg.htm">
+		<param name="Name" value="Style Manager by X05">
+		<param name="Local" value="pages\aih_style_manager.htm">
+		<param name="Name" value="Toolbar creator by KetilO">
+		<param name="Local" value="pages\aih_toolbar_creator.htm">
+		<param name="Name" value="Version Control by WillAsm">
+		<param name="Local" value="pages\aih_version_control.htm">
+		<param name="Name" value="Version-Inc by X05">
+		<param name="Local" value="pages\aih_version_inc.htm">
+		<param name="Name" value="WAmpCtrl By Eviloid">
+		<param name="Local" value="pages\aih_wampctrl.htm">
+		<param name="Name" value="WinErr by QvasiModo">
+		<param name="Local" value="pages\aih_winerr.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Addin Manager">
+		<param name="Name" value="Addin Manager by KetilO">
+		<param name="Local" value="pages\aih_addin_manager.htm">
+		<param name="Name" value="Creating AddIns">
+		<param name="Local" value="pages\adv_create_addin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ADDINDATA">
+		<param name="Name" value="Creating AddIns">
+		<param name="Local" value="pages\adv_create_addin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Adding to the toolbar">
+		<param name="Name" value="Creating AddIns">
+		<param name="Local" value="pages\adv_create_addin.htm">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		<param name="Name" value="Rad Toolbar By Donkey">
+		<param name="Local" value="pages\aih_rad_toolbar.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ADDINHANDLES">
+		<param name="Name" value="Creating AddIns">
+		<param name="Local" value="pages\adv_create_addin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="asm and module files">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Assembler.ini">
+		<param name="Name" value="Assembler.ini">
+		<param name="Local" value="pages\rah_assembler_ini.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Auto complete">
+		<param name="Name" value="Code Editor options">
+		<param name="Local" value="pages\rah_opt_code_edit.htm">
+		<param name="Name" value="Editing the API and Message Files">
+		<param name="Local" value="pages\rah_api_edit.htm">
+		<param name="Name" value="FAQ autocomplete">
+		<param name="Local" value="pages\faq_auto_complete.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Avi">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Batch files">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bitmap">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bookmarks">
+		<param name="Name" value="Using Bookmarks">
+		<param name="Local" value="pages\rah_ui_bookmarks.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Code editor">
+		<param name="Name" value="Code Editor options">
+		<param name="Local" value="pages\rah_opt_code_edit.htm">
+		<param name="Name" value="The Code Editor">
+		<param name="Local" value="pages\rah_code_editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Collapsing procs">
+		<param name="Name" value="FAQ Collapsing procs in FASM">
+		<param name="Local" value="pages\faq_fasm_proc.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Command line">
+		<param name="Name" value="Adding to the default project types">
+		<param name="Local" value="pages\adv_add_proj_type.htm">
+		<param name="Name" value="Editing command line options">
+		<param name="Local" value="pages\adv_cmd_lines.htm">
+		<param name="Name" value="Modifying project file list">
+		<param name="Local" value="pages\adv_file_types.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Command line options">
+		<param name="Name" value="FAQ Default command line options">
+		<param name="Local" value="pages\faq_opt_make.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Compile">
+		<param name="Name" value="Compiling a project">
+		<param name="Local" value="pages\rah_compile_proj.htm">
+		<param name="Name" value="Compiling resources">
+		<param name="Local" value="pages\rah_compile_res.htm">
+		<param name="Name" value="Minor files">
+		<param name="Local" value="pages\rah_minor_files.htm">
+		<param name="Name" value="Using modules">
+		<param name="Local" value="pages\rah_modules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Control properties">
+		<param name="Name" value="Adding controls">
+		<param name="Local" value="pages\rah_add_cntrl.htm">
+		<param name="Name" value="Control properties">
+		<param name="Local" value="pages\rah_prop_cntrl.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Control styles">
+		<param name="Name" value="FAQ Setting control styles">
+		<param name="Local" value="pages\faq_cntrl_styles.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Controls">
+		<param name="Name" value="Adding controls">
+		<param name="Local" value="pages\rah_add_cntrl.htm">
+		<param name="Name" value="Control properties">
+		<param name="Local" value="pages\rah_prop_cntrl.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Cursor">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Customizing RadASM">
+		<param name="Name" value="Adding to and modifying menus">
+		<param name="Local" value="pages\rah_opt_ra_menu.htm">
+		<param name="Name" value="Assembler.ini">
+		<param name="Local" value="pages\rah_assembler_ini.htm">
+		<param name="Name" value="Code Editor options">
+		<param name="Local" value="pages\rah_opt_code_edit.htm">
+		<param name="Name" value="Colors and Keywords">
+		<param name="Local" value="pages\rah_opt_keyword.htm">
+		<param name="Name" value="Dialog Editor Options">
+		<param name="Local" value="pages\rah_opt_dlg_edit.htm">
+		<param name="Name" value="Editing the API and Message Files">
+		<param name="Local" value="pages\rah_api_edit.htm">
+		<param name="Name" value="External File Options">
+		<param name="Local" value="pages\rah_opt_extrn_file.htm">
+		<param name="Name" value="Modifying menu accelerators">
+		<param name="Local" value="pages\rah_opt_ra_menu_accel.htm">
+		<param name="Name" value="Modifying project options">
+		<param name="Local" value="pages\rah_opt_proj.htm">
+		<param name="Name" value="Printer Options">
+		<param name="Local" value="pages\rah_opt_print.htm">
+		<param name="Name" value="Rad Toolbar By Donkey">
+		<param name="Local" value="pages\aih_rad_toolbar.htm">
+		<param name="Name" value="RadASM.ini">
+		<param name="Local" value="pages\rah_radasm_ini.htm">
+		<param name="Name" value="Setting paths">
+		<param name="Local" value="pages\rah_opt_paths.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Debug">
+		<param name="Name" value="Compiling a project">
+		<param name="Local" value="pages\rah_compile_proj.htm">
+		<param name="Name" value="Integrated Debugging">
+		<param name="Local" value="pages\rah_debug.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Default assembler">
+		<param name="Name" value="FAQ Setting default assembler">
+		<param name="Local" value="pages\faq_def_asm.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dialog">
+		<param name="Name" value="Introduction to Dialogs">
+		<param name="Local" value="pages\rah_dlg_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dialog editor">
+		<param name="Name" value="Adding a dialog">
+		<param name="Local" value="pages\rah_add_dlg.htm">
+		<param name="Name" value="Adding controls">
+		<param name="Local" value="pages\rah_add_cntrl.htm">
+		<param name="Name" value="Control properties">
+		<param name="Local" value="pages\rah_prop_cntrl.htm">
+		<param name="Name" value="Dialog Editor Options">
+		<param name="Local" value="pages\rah_opt_dlg_edit.htm">
+		<param name="Name" value="The View menu">
+		<param name="Local" value="pages\rah_opt_view.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DIALOG Structure">
+		<param name="Name" value="Dlg file format">
+		<param name="Local" value="pages\adv_dlg_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DLG file format">
+		<param name="Name" value="Dlg file format">
+		<param name="Local" value="pages\adv_dlg_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DLGHEAD Structure">
+		<param name="Name" value="Dlg file format">
+		<param name="Local" value="pages\adv_dlg_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Environment variables">
+		<param name="Local" value="pages\rah_opt_enviroment.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="External files">
+		<param name="Name" value="External File Options">
+		<param name="Local" value="pages\rah_opt_extrn_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FAQ">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		<param name="Name" value="FAQ autocomplete">
+		<param name="Local" value="pages\faq_auto_complete.htm">
+		<param name="Name" value="FAQ Building COM files with TASM">
+		<param name="Local" value="pages\faq_tasm_com.htm">
+		<param name="Name" value="FAQ Collapsing procs in FASM">
+		<param name="Local" value="pages\faq_fasm_proc.htm">
+		<param name="Name" value="FAQ Commas in link command">
+		<param name="Local" value="pages\faq_comma_link.htm">
+		<param name="Name" value="FAQ Default command line options">
+		<param name="Local" value="pages\faq_opt_make.htm">
+		<param name="Name" value="FAQ Menu separators">
+		<param name="Local" value="pages\faq_menu_sep.htm">
+		<param name="Name" value="FAQ RadASM and Opcode support">
+		<param name="Local" value="pages\faq_opcode_support.htm">
+		<param name="Name" value="FAQ Setting control styles">
+		<param name="Local" value="pages\faq_cntrl_styles.htm">
+		<param name="Name" value="FAQ Setting default assembler">
+		<param name="Local" value="pages\faq_def_asm.htm">
+		<param name="Name" value="FAQ TASM DOS mode">
+		<param name="Local" value="pages\faq_tasm_dos.htm">
+		<param name="Name" value="FAQ Toolbar control">
+		<param name="Local" value="pages\faq_add_tool_bar.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FASM">
+		<param name="Name" value="FAQ Collapsing procs in FASM">
+		<param name="Local" value="pages\faq_fasm_proc.htm">
+		<param name="Name" value="FASM COFF Example">
+		<param name="Local" value="pages\asm_fasm_example.htm">
+		<param name="Name" value="FASM Installation notes">
+		<param name="Local" value="pages\asm_fasm_inst_notes.htm">
+		<param name="Name" value="Tips for FASM users">
+		<param name="Local" value="pages\asm_fasm_tips.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="File browser">
+		<param name="Name" value="Using the File Browser">
+		<param name="Local" value="pages\rah_file_browser.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="File groups">
+		<param name="Name" value="Modifying project file groups">
+		<param name="Local" value="pages\rah_opt_groups.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="File types">
+		<param name="Name" value="Modifying project file list">
+		<param name="Local" value="pages\adv_file_types.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Gif">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GoAsm">
+		<param name="Name" value="GoAsm install notes">
+		<param name="Local" value="pages\asm_goasm_inst_notes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Help menu">
+		<param name="Name" value="Adding to and modifying menus">
+		<param name="Local" value="pages\rah_opt_ra_menu.htm">
+		<param name="Name" value="Modifying menu accelerators">
+		<param name="Local" value="pages\rah_opt_ra_menu_accel.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hex editor">
+		<param name="Name" value="Integrated Hex Editor">
+		<param name="Local" value="pages\rah_hex_editor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="HLA">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		<param name="Name" value="HLA Installation notes">
+		<param name="Local" value="pages\asm_hla_inst_notes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Icon">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Image">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Jpg">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keyboard shortcuts">
+		<param name="Name" value="Keyboard Shortcuts">
+		<param name="Local" value="pages\rah_ui_keyboard.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keywords">
+		<param name="Name" value="Colors and Keywords">
+		<param name="Local" value="pages\rah_opt_keyword.htm">
+		<param name="Name" value="Editing the API and Message Files">
+		<param name="Local" value="pages\rah_api_edit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Macro menu">
+		<param name="Name" value="Adding to and modifying menus">
+		<param name="Local" value="pages\rah_opt_ra_menu.htm">
+		<param name="Name" value="Modifying menu accelerators">
+		<param name="Local" value="pages\rah_opt_ra_menu_accel.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Macros">
+		<param name="Name" value="Keyboard Macros">
+		<param name="Local" value="pages\rah_macros.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Make menu">
+		<param name="Name" value="Adding to and modifying menus">
+		<param name="Local" value="pages\rah_opt_ra_menu.htm">
+		<param name="Name" value="Modifying menu accelerators">
+		<param name="Local" value="pages\rah_opt_ra_menu_accel.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MASM">
+		<param name="Name" value="MASM Installation notes">
+		<param name="Local" value="pages\asm_masm_inst_notes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Menu">
+		<param name="Name" value="Creating and editing menus">
+		<param name="Local" value="pages\rah_create_menu.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Midi">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Minor files">
+		<param name="Name" value="Minor files">
+		<param name="Local" value="pages\rah_minor_files.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MNU file format">
+		<param name="Name" value="Mnu file format">
+		<param name="Local" value="pages\adv_mnu_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MNUITEM Structure">
+		<param name="Name" value="Mnu file format">
+		<param name="Local" value="pages\adv_mnu_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Modify link command">
+		<param name="Name" value="FAQ Commas in link command">
+		<param name="Local" value="pages\faq_comma_link.htm">
+		<param name="Name" value="FAQ Menu separators">
+		<param name="Local" value="pages\faq_menu_sep.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Module">
+		<param name="Name" value="Using modules">
+		<param name="Local" value="pages\rah_modules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Mouse wheel">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NASM">
+		<param name="Name" value="NASM install notes">
+		<param name="Local" value="pages\asm_nasm_inst_notes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Object file">
+		<param name="Name" value="Using modules">
+		<param name="Local" value="pages\rah_modules.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Opcode support">
+		<param name="Name" value="FAQ RadASM and Opcode support">
+		<param name="Local" value="pages\faq_opcode_support.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Output window">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		<param name="Name" value="The output windows">
+		<param name="Local" value="pages\rah_ui_output_win.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Phoenity">
+		<param name="Name" value="Rad Toolbar By Donkey">
+		<param name="Local" value="pages\aih_rad_toolbar.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Printer setup">
+		<param name="Name" value="Printer Options">
+		<param name="Local" value="pages\rah_opt_print.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Program paths">
+		<param name="Name" value="Setting paths">
+		<param name="Local" value="pages\rah_opt_paths.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Project">
+		<param name="Name" value="Adding file to a project">
+		<param name="Local" value="pages\rah_add_proj_file.htm">
+		<param name="Name" value="Adding to the default project types">
+		<param name="Local" value="pages\adv_add_proj_type.htm">
+		<param name="Name" value="Compiling a project">
+		<param name="Local" value="pages\rah_compile_proj.htm">
+		<param name="Name" value="Editing command line options">
+		<param name="Local" value="pages\adv_cmd_lines.htm">
+		<param name="Name" value="Minor files">
+		<param name="Local" value="pages\rah_minor_files.htm">
+		<param name="Name" value="Modifying project file groups">
+		<param name="Local" value="pages\rah_opt_groups.htm">
+		<param name="Name" value="Modifying project file list">
+		<param name="Local" value="pages\adv_file_types.htm">
+		<param name="Name" value="Modifying project options">
+		<param name="Local" value="pages\rah_opt_proj.htm">
+		<param name="Name" value="Project Properties window">
+		<param name="Local" value="pages\rah_ui_proj_prop.htm">
+		<param name="Name" value="Projects overview">
+		<param name="Local" value="pages\rah_proj_intro.htm">
+		<param name="Name" value="Using modules">
+		<param name="Local" value="pages\rah_modules.htm">
+		<param name="Name" value="Version Info">
+		<param name="Local" value="pages\rah_ver_info.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Project properties">
+		<param name="Name" value="Project Properties window">
+		<param name="Local" value="pages\rah_ui_proj_prop.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Project setup">
+		<param name="Name" value="Adding to the default project types">
+		<param name="Local" value="pages\adv_add_proj_type.htm">
+		<param name="Name" value="Editing command line options">
+		<param name="Local" value="pages\adv_cmd_lines.htm">
+		<param name="Name" value="Modifying project file groups">
+		<param name="Local" value="pages\rah_opt_groups.htm">
+		<param name="Name" value="Modifying project file list">
+		<param name="Local" value="pages\adv_file_types.htm">
+		<param name="Name" value="Modifying project options">
+		<param name="Local" value="pages\rah_opt_proj.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Project types">
+		<param name="Name" value="Adding to the default project types">
+		<param name="Local" value="pages\adv_add_proj_type.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RAD tools">
+		<param name="Name" value="Keyboard Macros">
+		<param name="Local" value="pages\rah_macros.htm">
+		<param name="Name" value="Sniplets">
+		<param name="Local" value="pages\rah_sniplets.htm">
+		<param name="Name" value="Templates">
+		<param name="Local" value="pages\rah_templates.htm">
+		<param name="Name" value="Text links">
+		<param name="Local" value="pages\rah_text_links.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RadASM Help">
+		<param name="Name" value="HLP Creating help file additions">
+		<param name="Local" value="pages\hlp_add_page.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RadASM menus">
+		<param name="Name" value="Adding to and modifying menus">
+		<param name="Local" value="pages\rah_opt_ra_menu.htm">
+		<param name="Name" value="Modifying menu accelerators">
+		<param name="Local" value="pages\rah_opt_ra_menu_accel.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RadASM.ini">
+		<param name="Name" value="RadASM.ini">
+		<param name="Local" value="pages\rah_radasm_ini.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RAP file format">
+		<param name="Name" value="Project Files">
+		<param name="Local" value="pages\rah_proj_files.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RCData">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Resources">
+		<param name="Name" value="Accelerator table">
+		<param name="Local" value="pages\rah_accel_table.htm">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Compiling resources">
+		<param name="Local" value="pages\rah_compile_res.htm">
+		<param name="Name" value="Creating and editing menus">
+		<param name="Local" value="pages\rah_create_menu.htm">
+		<param name="Name" value="Creating and editing string tables">
+		<param name="Local" value="pages\rah_create_stringtable.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Resources in a DLL">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sniplets">
+		<param name="Name" value="Sniplets">
+		<param name="Local" value="pages\rah_sniplets.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="String table">
+		<param name="Name" value="Creating and editing string tables">
+		<param name="Local" value="pages\rah_create_stringtable.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Supported API calls">
+		<param name="Name" value="Editing the API and Message Files">
+		<param name="Local" value="pages\rah_api_edit.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tab control">
+		<param name="Name" value="FAQ">
+		<param name="Local" value="pages\faq_faq.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TASM">
+		<param name="Name" value="FAQ Building COM files with TASM">
+		<param name="Local" value="pages\faq_tasm_com.htm">
+		<param name="Name" value="FAQ TASM DOS mode">
+		<param name="Local" value="pages\faq_tasm_dos.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Templates">
+		<param name="Name" value="Templates">
+		<param name="Local" value="pages\rah_templates.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Text links">
+		<param name="Name" value="Text links">
+		<param name="Local" value="pages\rah_text_links.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Themes">
+		<param name="Name" value="Colors and Keywords">
+		<param name="Local" value="pages\rah_opt_keyword.htm">
+		<param name="Name" value="Rad Toolbar By Donkey">
+		<param name="Local" value="pages\aih_rad_toolbar.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Toolbar">
+		<param name="Name" value="FAQ Toolbar control">
+		<param name="Local" value="pages\faq_add_tool_bar.htm">
+		<param name="Name" value="Rad Toolbar By Donkey">
+		<param name="Local" value="pages\aih_rad_toolbar.htm">
+		<param name="Name" value="Toolbar">
+		<param name="Local" value="pages\rah_ui_toolbar.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tools menu">
+		<param name="Name" value="Adding to and modifying menus">
+		<param name="Local" value="pages\rah_opt_ra_menu.htm">
+		<param name="Name" value="Modifying menu accelerators">
+		<param name="Local" value="pages\rah_opt_ra_menu_accel.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TPL file format">
+		<param name="Name" value="TPL file format">
+		<param name="Local" value="pages\adv_tpl_file.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="User interface">
+		<param name="Name" value="Keyboard Shortcuts">
+		<param name="Local" value="pages\rah_ui_keyboard.htm">
+		<param name="Name" value="Navigating a project">
+		<param name="Local" value="pages\rah_ui_navigate.htm">
+		<param name="Name" value="Project Properties window">
+		<param name="Local" value="pages\rah_ui_proj_prop.htm">
+		<param name="Name" value="The output windows">
+		<param name="Local" value="pages\rah_ui_output_win.htm">
+		<param name="Name" value="Toolbar">
+		<param name="Local" value="pages\rah_ui_toolbar.htm">
+		<param name="Name" value="Using Bookmarks">
+		<param name="Local" value="pages\rah_ui_bookmarks.htm">
+		<param name="Name" value="Using the File Browser">
+		<param name="Local" value="pages\rah_file_browser.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Version">
+		<param name="Name" value="Version Control by WillAsm">
+		<param name="Local" value="pages\aih_version_control.htm">
+		<param name="Name" value="Version Info">
+		<param name="Local" value="pages\rah_ver_info.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="View">
+		<param name="Name" value="The View menu">
+		<param name="Local" value="pages\rah_opt_view.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Wav">
+		<param name="Name" value="Adding a resource">
+		<param name="Local" value="pages\rah_add_res.htm">
+		<param name="Name" value="Introduction to Resources">
+		<param name="Local" value="pages\rah_res_intro.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="XP Manifest">
+		<param name="Name" value="AddManifest by QvasiModo">
+		<param name="Local" value="pages\aih_addmanifest.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

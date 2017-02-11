@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>GoAsm install notes</title>
+</head>
+
+<body>
+
+<p style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<b><font size="5" color="#0000FF">GoAsm install notes</font></b></p>
+<p>The GoAsm support for RadASM uses a predefined directory structure in order to
+get everything up and functioning correctly. The following directory structure is expected out-of-the-box, this can be changed to suit your
+specific situation :</p>
+<pre><b><font color="#0000FF">C:\GoAsm
+    \BIN
+            GoRC.exe
+            GoAsm.exe
+            GoLink.exe
+            GFL.txt    - GFL is a text file that contains a list of DLLs
+    \IncludeA
+            Windows ANSI include files
+    \IncludeW
+            Windows UNICODE include files
+    \Help
+            Win32.hlp    - This file is an API reference see the <a href="faq_web_links.htm">Links</a> page</font></b></pre>
+
+<p>The Windows ANSI and UNICODE include files can be obtained form the url in the <a href="faq_web_links.htm">links</a>
+page.</p>
+<p>Because of the fixed nature of command lines in RadASM the GFL.txt file is
+used to list the API DLLs that a program will be using. Generally you would
+include all of the DLLs that are available in the order that they are most used.
+The GoAsm assembler uses this file as a reference when searching for API
+commands. The default command line is based on project type and can be modified
+on a project by project basis using <a href="rah_opt_proj.htm">Project
+Options</a>.</p>
+<p>The ANSI and UNICODE include files are a group of equates that convert
+the API name from character set specific wrappers to a more generic form e.g. <b>
+MessageBoxA</b> and <b> MessageBoxW</b> are both changed to <b>MessageBox</b>, pick the include
+folder that supports the character set you wish to use. All of the API names
+that require an ANSI or UNICODE suffix have been consolidated in a file called <b>all_api.inc</b>,
+there is copy of the file in each of the include folders that is specific to the
+selected character set.</p>
+<p><b>#include &quot;C:\GoAsm\IncludeA\all_api.inc&quot;
+</b>will include the ANSI version of API calls<b><br>
+#include &quot;C:\GoAsm\IncludeW\all_api.inc&quot;
+</b>will include the UNICODE version of API calls </p>
+
+<p><b><font color="#0000FF"><a name="newgoasm"></a>Limitations (v2.0.3.7):</font></b><br>
+Because the entry point must be specified on the command line the following
+defaults have been chosen:</p>
+<p>Win32 (all types) : <b><font color="#FF0000">Start<br>
+</font></b>DLLs : <font color="#FF0000"><b>DllEntryPoint</b></font></p>
+<p><b><font color="#FF0000">New to v2.0.3.7</font></b>, for FRAME to collapse correctly you must
+not specify the procedure name in the
+ENDF statement . Earlier implementations required that the ENDF statement be
+preceded by the procedure name, that is no longer the case. The USEDATA
+statement is now collapsible as well. These changes were made to conform more
+closely to the specifications in the GoAsm documentation.</p>
+<p>MyFrame <b><font color="#FF0000">FRAME</font></b><br>
+ <b><font color="#FF0000">ENDF</font></b></p>
+
+<p><font color="#FF0000"><b>USEDATA</b></font> MyFrame<br>
+<b><font color="#FF0000">ENDU</font></b></p>
+
+</body>
+
+</html>

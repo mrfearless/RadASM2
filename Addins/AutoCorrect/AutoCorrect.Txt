@@ -1,0 +1,63 @@
+About Auto Correct Addin
+
+An addin for RadAsm. For a purpose to correct or easy type. This is working like Auto Correct in MS Word(i hope).
+First write a keyword then after space, if keyw in correct list, the new string is replacing over keyword.
+
+How to create Auto Correct list:
+
+	This is simple. After adding this addin by Addin Manager in options menu, this will add a new item in
+Tools menu, Auto Correct List. Now you need to add a keyword to triggering re-typing replace string over this.
+After both edit boxes edited, click to Add/Modify button. This will add to your list. To editing existing item,
+simply double click, edit and click to Add/Modify again. If you need multiline replace string, click to "..."
+button (also near a Multiline caption). Meanwhile, if you need tab character in multiline editbox, hold CTRL
+key ,as usual, with tab key.
+	If you wish, may position caret to any place in string. You must to type ~(tilde) for this position choice.
+But warn you, because of space char behaviour, after positioning you will get a space char there. So, don't
+allocate a space for caret, this is automatically happening :) At least so far.(* see below)
+
+Where is storing Auto Correct list:
+
+	In a file in \Addins directory, AutoCorrect.dat. If this file not exist, addin creates an empty one. Else,
+uses that file.
+
+How to Install Addin:
+
+	As usual. Put the DLL in RadASm\Addins dir. Open RadAsm, from Options menu use Addin Manager and Install it. 
+Or manually,
+
+In RadASM.ini section [Addin] add:
+
+x=AutoCorrect.dll,y
+
+Where x is next free number any y is the options
+(y=1 enable, y=0 disable).
+
+ 
+Have Fun
+
+cakmak
+
+Note: 
+	0. Thanks to Ketil Olsen for RadAsm. Really like this. But i think addin documentation is not enough.
+		And also thanks to other people who sharing knowledge and work.		 
+	1. Did you like the idea? Modified or rewrite it? Please give me a copy of source.
+	2. I only tested in my w98. Almost sure that, it will need to work for Unicode systems. Sorry.
+		Already not planning todo this near future. But if you done, look at first request :)
+ 	3. I know, dialogs seems sloppy, code needs more work. Do you did, look at first request :)
+
+1.0.4 :
+
+* Listview responses enter.
+* Being sure of addins path.
+* Stopping to space behaviour after replacing. (Thanks Ketil Olsen)
+  if you comfortable with space, find below line in .asm
+
+; Comment below tree lines to allowing space char after paste. Thanks to KetilO.
+
+  and do your change. So simple :) BTW, highly nice behaves has these api functions.
+  Like EM_SCROLLCARET. To which position is scrolling in my view with no parameter?
+* Fixed a forgotten EBX register preservation.
+* Fixed a problem after dialog closed that seems not updated or bad view.
+* Fixed a problem which occurs after replacing shorter multi line strings according to previous replace.
+* Two minor fixes which because of careless and tired.
+

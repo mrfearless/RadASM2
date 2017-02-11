@@ -1,0 +1,20 @@
+Path Explore ++ Made by Tziotas Milos
+=====================================
+..........Monday, February 24th, 2003
+=====================================
+                  Assembled with MASM
+
+This RadASM addin is insipired by
+the original Path Explore Plus.
+
+#####################################
+E-Mail: tziotas@gmx.net
+ICQ # : 71895226
+
+In assembler.ini you can insert this section:
+
+[MinorFiles]
+;Used by PthExpl++ addin to delete minor files.
+MinorFiles=*.ro.inc;*.res;*.obj;*.link;*.extpub.inc;*.data.inc;*.consts.inc;*.bss.inc;
+
+This allows you to specify default files for this assemblers projects.

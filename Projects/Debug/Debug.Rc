@@ -1,0 +1,2 @@
+#include "Res/DebugDlg.rc"
+#include "Res/ChildDlg.rc"

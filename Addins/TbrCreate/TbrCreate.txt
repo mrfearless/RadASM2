@@ -1,0 +1,20 @@
+Toolbar creator.
+
+1. Copy TbrCreate.exe to C:\RadASM\AddIns
+2. Edit RadASM.ini, the section [Open] should look something like this:
+
+	[Open]
+	;Files to be opened in external programs.
+	;Note the last '.' in the extention list.
+	;x=.Ext1.Ext2.Ext3.,Program to use
+	1=.bmp.,MSPAINT.EXE
+	2=.doc.rtf.,WORDPAD.EXE
+	3=.tbr.,$D\TbrCreate.exe
+
+5. If you add a .tbr file to your project you can open it by dbl clicking
+   the file in project browser.
+6. If you associate .tbr files with TbrCreate.exe you can use explorer to
+   open the file.
+7. Have fun creating toolbars. :-D
+
+KetilO

@@ -1,0 +1,2 @@
+#define ICO_BITMASK						100
+ICO_BITMASK				ICON     DISCARDABLE "Res/bicon2.ico"

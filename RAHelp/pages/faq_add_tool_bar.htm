@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>FAQ Toolbar control</title>
+</head>
+
+<body>
+
+<p style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<font color="#0000FF" size="5"><b>How do I use a Toolbar control from the
+dialog editor</b></font></p>
+<p>The toolbar control from the dialog editor needs some setup. Once it is added
+to a dialog it is essentially a blank window. You must add buttons and an image
+list in order to use it. The following is an example of a toolbar initialization
+for a resource based toolbar.</p>
+<pre><font size="1" face="Arial">.const
+TBNumOfBtn equ 5
+; Note the IML_BTNx constants are the index# of the button in an imagelist
+TBBtnArray&nbsp; TBBUTTON &lt;IML_BTN1, IDC_TBB01, TBSTATE_ENABLED, TBSTYLE_BUTTON, 0, 0&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TBBUTTON &lt;NULL, NULL, TBSTATE_ENABLED, TBSTYLE_SEP, 0, 0&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TBBUTTON &lt;IML_BTN2, IDC_TBB02, TBSTATE_ENABLED, TBSTYLE_BUTTON, 0, 0&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TBBUTTON &lt;IML_BTN3, IDC_TBB03, TBSTATE_ENABLED, TBSTYLE_BUTTON, 0, 0&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TBBUTTON &lt;IML_BTN4, IDC_TBB04, TBSTATE_ENABLED, TBSTYLE_BUTTON, 0, 0&gt;
+IDC_TBB01 equ 101
+IDC_TBB02 equ 102
+IDC_TBB03 equ 103
+IDC_TBB04 equ 104
+
+.code
+invoke SendDlgItemMessage, hDlg, TBR1, TB_SETIMAGELIST, 0, hIML
+invoke SendDlgItemMessage, hDlg, TBR1, TB_ADDBUTTONS, TBNumOfBtn, ADDR TBBtnArray</font></pre>
+
+</body>
+
+</html>

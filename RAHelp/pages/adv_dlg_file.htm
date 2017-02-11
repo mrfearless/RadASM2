@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Dlg file format</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<font color="#0000FF" size="5"><B>Dlg file format</B></font></P>
+
+<P>
+The Dlg file format is specific to RadASM. The following is a brief summary of that format.<BR>
+<BR>
+Each Dlg file consists of a single dialog header and a series of dialog controls. In effect a Dlg file is just a series of structures written directly to a file. The header for the dialog is detailed in the DLGHEAD structure, this structure describes the general parameters of the dialog. The dialog is also represented by the first DIALOG structure in the file. Each control that is placed on the dialog is described by a DIALOG structure, the controls are added to the file in Z-Order.<BR>
+<BR>
+The only predefined constant used in Dialogs is the value of the maximum width in Chars of a caption. This number is subject to change but should never drop in order to maintain backward compatibility with older dialog files.
+</P>
+
+<pre style="border: 2 solid #008080">MaxCap&nbsp;&nbsp;&nbsp; equ&nbsp;&nbsp;&nbsp; 241
+
+DLGHEAD struct
+	ver		dd	?		;Set to 101
+	change		dd	?		;Set to FALSE
+	class		db	32 dup(?)	;Set to Null string
+	menuid		db	32 dup(?)	;Set to Null string
+	font		db	32 dup(?)	;Set to &quot;MS Sans Serif&quot;
+	fontsize	dd	?		;Set to 8
+	fontht		dd	?		;Set to -10
+	undo		dd	?		;Set to NULL
+	ctlid		dd	?		;Set to 1001
+	hmnu		dd	?		;Set to NULL
+	htlb		dd	?		;Set to NULL
+	hstb		dd	?		;Set to NULL
+	locked		dd	?		;Set to TRUE or FALSE
+	hfont		dd	?		;Set to NULL
+	spare1		dd	?		;Set to NULL
+DLGHEAD ends
+
+DIALOG struct
+	hwnd		dd	?		;Set to TRUE
+	partype		dd	?		;Dialog=1, Controls=0
+	oldproc		dd	?		;Set to NULL
+	hpar		dd	?		;Set to NULL
+	hcld		dd	?		;Set to NULL
+	style		dd	?		;Set to desired style
+	exstyle		dd	?		;Set to desired ex style
+	x		dd	?		;X position in pixels
+	y		dd	?		;Y position in pixels
+	ccx		dd	?		;Width in pixels
+	ccy		dd	?		;Height in pixels
+	caption		db	MaxCap dup(?)	;Caption max 240+1 char
+	ntype		dd	?		;Follows ToolBox buttons See <a HREF="#note">Note</a>
+	ntypeid		dd	?		;Set to NULL
+	tab		dd	?		;Tab index, Dialog=0, First index=0
+	id		dd	?		;Dialog / Controls ID
+	idname		db	32 dup(?)	;ID Name, max 31 chars
+	undo		dd	?		;Set to NULL
+	himg		dd	?		;Set to NULL
+DIALOG ends</pre>
+
+<P style="border: 2 solid #008080">
+<span style="background-color: #FFFF00">
+<a NAME="note"></a></span><font color="#FF0000"><B>Note:</B></font> The ntype field of DIALOG follows the toolbar buttons. This means that the value will be 0 for a dialog, if it is a control the number will match the button number for that control on the control toolbar of the dialog editor.
+</P>
+
+</BODY>
+</HTML>

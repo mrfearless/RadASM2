@@ -1,0 +1,2 @@
+#include "Res/CreateProtoDlg.rc"
+#include "Res/CreateProtoVer.rc"

@@ -1,0 +1,5 @@
+LIBRARY AdvEdit.dll
+EXPORTS
+	DllEntry
+	DllProc
+	InstallDll

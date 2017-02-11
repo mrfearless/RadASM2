@@ -1,0 +1,11 @@
+LIBRARY fphelp.dll
+EXPORTS
+	SymInitialize
+	SymLoadModule
+	SymGetModuleInfo
+	SymEnumTypes
+	SymEnumerateSymbols
+	SymEnumSourceFiles
+	SymEnumSourceLines
+	SymUnloadModule
+	SymCleanup

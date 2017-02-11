@@ -1,0 +1,5 @@
+LIBRARY ProjectZip.dll
+EXPORTS
+	InstallDll
+	DllProc
+	GetOptions

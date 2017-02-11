@@ -1,0 +1,2 @@
+#define IDB_FILE						100
+IDB_FILE				BITMAP   DISCARDABLE Res\file.bmp

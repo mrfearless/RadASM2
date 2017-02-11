@@ -1,0 +1,139 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=ascii table DLL
+Backup=$P\Bak\
+Debug=0
+Group=1
+GroupExpand=1
+Ver.rc=1
+Res.rc=1
+[MakeDef]
+Menu=1,1,1,1,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I$I,2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:$L,3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L",3
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+[MakeFiles]
+0=asciiTab.rap
+1=asciiTab.rc
+2=asciiTab.asm
+3=asciiTab.obj
+4=asciiTab.res
+5=asciiTab.exe
+6=asciiTab.def
+7=asciiTab.dll
+8=asciiTab.txt
+[Files]
+1=asciiTab.Asm
+2=asciiTab.Inc
+3=asciiTab.Def
+4=
+5=asciiTab.rc
+6=asciiTab.dlg
+[Size]
+2=0,0,821,620,1443
+3=0,0,821,620,54
+1=0,0,756,597,2120
+4=
+5=0,0,767,620,91
+6=0,0,583,434
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[VerInf]
+Nme=VERINF1
+ID=1
+FV=1.0.0.2
+PV=1.0.0.2
+VerOS=0x00000004
+VerFT=0x00000002
+VerLNG=0x00000409
+VerCHS=0x000004B0
+ProductVersion=1.0.0.2
+ProductName=
+OriginalFilename=asciiTab.dll
+LegalTrademarks=
+LegalCopyright=Martial Code (C) 2001
+InternalName=asciiTab
+FileDescription=RadASM addin
+FileVersion=1.0.0.2
+CompanyName=
+[BreakPoint]
+0=
+
+[Version-Inc]
+Options=52
+
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=4
+5=3
+6=3
+
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=21
+MilestoneOnDateTimeYear=2004
+MilestoneOnDateTimeMonth=10
+MilestoneOnDateTimeDate=2
+MilestoneOnDateTimeHour=18
+MilestoneOnDateTimeMin=41
+MilestoneOnDateTimeSec=57
+MilestoneOnDateTimeStatus=0
+BackupLocation=C:\RADASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Resource]
+1=IDI_ICON,2001,2,Res\asciitab.ico
+2=IDBMP_TBBMP,2000,0,Res\asciitab.bmp
+[Collapse]
+1=

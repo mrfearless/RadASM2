@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Creating and editing string tables</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Creating and editing string tables</font></B></P>
+
+<P>
+String tables are used to store text in your program that can be used by the LoadString API call. RadASM has an integrated string table editor that automates the process of adding strings to your program. The IDE will automatically generate a new RC file for the strings as well as make the necessary #include in the main RC. All of the string labels are declared in the special RC file and it is independent of the main
+RC. Since RadASM actually stores the strings in the <a HREF="rah_proj_files.htm#stringtable">project</a> file, though the string table RC is transportable to another project as is, it cannot be edited by the other project or it will be lost. See the
+<a href="rah_proj_files.htm">
+RAP file </a> entry for tips on copying string tables to other projects. It should be noted that as the LoadString API function will only accept integer parameters for the string table entry you must fill in the ID field of the String table editor. The string table editor function is similar to that of the
+<a href="rah_add_res.htm">Resource Editor</a>.
+</P>
+
+</BODY>
+</HTML>

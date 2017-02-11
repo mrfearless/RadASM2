@@ -1,0 +1,23 @@
+This addin has no real use. It is just to show how wordlist works.
+
+Structure used in Wordlist
+
+PROPERTIES	struct
+	nSize			dd ?	;Size of the text elements. There can be from 1 to 3 zero terminated elements.
+							;First element is always the name.
+	Owner			dd ?	;0 From a *.api file. >0 Project file ID. <0 Negated mdichild handle.
+	nType			db ?	;'A' From xxxxApiCall.api. 'C' From xxxxApiConst.api. 'M' From xxxxApiMessage.api.
+							;'S' From xxxxApiStruct.api. 'W' From xxxxApiWord.api 'T' From xxxxType.api.
+							;'c' Property Constant. 'd' Property Data. 'm' Property Macro. 'p' Property Proc.
+							;'s' Property Struct. 't' Property data type. 10 Property Methods. 11 Property Objects.
+							;12, 13 not used.
+PROPERTIES ends
+
+In ADDINDATA these are related to wordlist.
+
+hWordList					;Handle of wordlist memory
+lpWordList					;Pointer to wordlist memory
+rpProjectWordList			;Relative pointer into lpWordList, points to project code properties
+rpWordListPos				;Relative pointer into lpWordList, points to free
+
+KetilO

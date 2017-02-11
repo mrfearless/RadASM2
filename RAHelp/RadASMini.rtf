@@ -1,0 +1,1065 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1044{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset0 Courier New;}{\f2\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red192\green192\blue192;}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\cf1\f0\fs28 RadASM.ini, Assembler.ini and project file documentation. (Version 2.2.1.7)\par
+\par
+\cf2\fs20 In this documentation the terms \cf1 TRUE \cf2 and \cf1 FALSE\cf2  is used. In the actual ini file use 1 and 0.\par
+\cf1\fs24\par
+Path acronyms\cf2\fs20\par
+\par
+$A\tab Masm32 path (C:\\Masm32)\par
+$B\tab Binary path where rc.exe, ml.exe and link.exe is found ($A\\Bin)\par
+$C\tab Current project path.\par
+$D\tab Addins path ($R\\AddIns)\par
+$E\tab Debug path (C:\\OllyDbg)\par
+$H\tab Help file path ($A\\Help)\par
+$I\tab Include path ($A\\Include)\par
+$L\tab Library path ($A\\Lib)\par
+$M\tab Keyboard macro path ($R\\Masm\\Macro)\par
+$P\tab Projects path ($R\\Masm\\Projects)\par
+$R\tab Path where RadASM is started (\\RadASM)\par
+$S\tab Sniplets path ($R\\Masm\\Sniplets)\par
+$T\tab Templates path ($R\\Masm\\Templates)\par
+\par
+\cf1\ul\fs28 RadASM.ini\ulnone\par
+\cf2\fs20\par
+\cf1\fs28 Section [Window]\par
+\cf0\fs20\par
+Mdi frame and tool windows.\par
+\cf2 Maintauned by RadASM, and Option / Tool Windows.\par
+\cf0\par
+\cf2 Maximized=\tab\tab\tab\tab Is mdi frame maximized, TRUE or FALSE\par
+TopMost=\tab\tab\tab\tab Is mdi frame topmost, TRUE or FALSE\par
+SingleInstance=\tab\tab\tab\tab Open RadASM in single instance, TRUE or FALSE\par
+Left=\tab\tab\tab\tab\tab Mdi frame left position in pixels\par
+Top=\tab\tab\tab\tab\tab Mdi frame top position in pixels\par
+Width=\tab\tab\tab\tab\tab Mdi frame width in pixels\par
+Height=\tab\tab\tab\tab\tab Mdi frame height in pixels\par
+ToolBar=\tab\tab\tab\tab Is toolbar visible, TRUE or FALSE\par
+StatusBar=\tab\tab\tab\tab Is statusbar visible, TRUE or FALSE\par
+Find=\tab\tab\tab\tab\tab Position of Find dialog. Left, Top\par
+Goto=\tab\tab\tab\tab\tab Position of Goto dialog. Left, Top\par
+ProWiz=\tab\tab\tab\tab\tab Position of Project Wizard dialog. Left, Top\par
+ProOpt=\tab\tab\tab\tab\tab Position of Project Option dialog. Left, Top, Width\par
+RightCaption=\tab\tab\tab\tab Right caption on TOP and BOTTOM tool windows\par
+Divider=\tab\tab\tab\tab\tab The mdi frame has a divider line below the toolbar\par
+MultiLine=\tab\tab\tab\tab Tab select tool window has multiline tabs\par
+AutoLoad=\tab\tab\tab\tab Last project auto loaded, TRUE or FALSE\par
+Project=\tab\tab <ToolWinDes>\tab\tab Project tool window description\par
+Output=\tab\tab <ToolWinDes>\tab\tab Output tool window description\par
+ToolBox=\tab <ToolWinDes>\tab\tab ToolBox tool window description\par
+Property\tab =\tab <ToolWinDes>\tab\tab Property tool window description\par
+TabTool\tab =\tab <ToolWinDes>\tab\tab TabTool tool window description\par
+InfoTool\tab =\tab <ToolWinDes>\tab\tab TabTool tool window description\par
+Tool1\tab =\tab <ToolWinDes>\tab\tab TabTool tool window description\par
+Tool2\tab =\tab <ToolWinDes>\tab\tab TabTool tool window description\par
+ToolClipping=\tab <ToolWinClip>\tab\tab The order which the tools are created and hence clipped.\par
+\cf0 Font=\tab\tab\tab\tab\tab Font (Tahoma), Size (-11), Italics (0), Weight (400), CharSet (0)\par
+Magnify=\tab\tab\tab\tab Magnify 32 equals x 1, 40 equals x 1.25\par
+Language=\tab\tab\tab\tab Language file (RadXXX.lng)\par
+\par
+\cf1\fs24 Tool window description\cf2\fs20\par
+ToolWindow=\tab\tab\tab\tab Project, Output, ToolBox, Property, TabTool,InfoTool,\par
+\tab\tab\tab\tab\tab Tool1 or Tool2\par
+Visible,\tab\tab\tab\tab\tab Is tool window visible, TRUE or FALSE\par
+Docked,\tab\tab\tab\tab\tab Is tool window docked, TRUE or FALSE\par
+Position,\tab\tab\tab\tab\tab Docked position, Left=1, Top=2, Right=3, Bottom=4\par
+IsChildOf,\tab\tab\tab\tab 0=Not a child, 1 to 5 child of tool window 1 to 5\par
+DockedWidth,\tab\tab\tab\tab Width of docked tool window\par
+DockedHeight,\tab\tab\tab\tab Height of docked tool window\par
+FloatingLeft,\tab\tab\tab\tab Floating tool window left position in pixels\par
+FloatingTop,\tab\tab\tab\tab Floating tool window top position in pixels\par
+FloatingWidth,\tab\tab\tab\tab Floating tool window width in pixels\par
+FloatingHeight\tab\tab\tab\tab Floating tool window height in pixels\par
+\cf0\par
+\cf1\fs24 Tool window clipping\par
+\cf2\fs20 t1,\tab\tab\tab\tab\tab First tool created\par
+t2,\tab\tab\tab\tab\tab .\par
+t3,\tab\tab\tab\tab\tab .\par
+t4,\tab\tab\tab\tab\tab .\par
+t5,\tab\tab\tab\tab\tab .\par
+t6,\tab\tab\tab\tab\tab .\par
+t7,\tab\tab\tab\tab\tab .\par
+t8\tab\tab\tab\tab\tab Last tool created and will be clipped by all others.\par
+\cf1\fs24\par
+Tool window numbering used in ToolClipping\cf2\fs20\par
+1= Project\par
+2=Output\par
+3=ToolBox\par
+4=Property\par
+5=TabTool\par
+6=InfoTool\par
+7=Tool1\par
+8=Tool2\par
+\par
+\cf1\fs28 Section [FileBrowser]\par
+\cf2\fs20\par
+File browser.\par
+Maintained by RadASM option settings.\par
+\par
+Filter=.Ext1.[Ext2.[Ext3.]]\tab\tab\tab Note the use of ' . ' before and after file extention\par
+x=Path\tab\tab\tab\tab\tab x is a number between 0 and 9. No holes allowed\par
+\tab\tab\tab\tab\tab Path acronym allowed\par
+\par
+\cf1\fs28 Section [Open]\par
+\cf2\fs20\par
+Files to be opened in external programs.\par
+Maintained by RadASM option settings.\par
+\par
+x=.Ext1.[Ext2.[Ext3.]],Command\tab\tab x is a number between 1 and 32. No holes allowed\par
+\tab\tab\tab\tab\tab Note the use of ' . ' before and after file extention\par
+\tab\tab\tab\tab\tab Command is the program to launch.\par
+\tab\tab\tab\tab\tab Path acronym allowed\par
+\par
+\cf1\fs28 Section [Splash]\par
+\cf2\fs20\par
+RadASM splash screen.\par
+Manually maintained.\par
+\par
+Bmp=\tab\tab\tab\tab\tab Bitmap filename. Path acronym allowed\par
+nShow=\tab\tab\tab\tab\tab Time to show in 10ms steps\par
+x=Left,Top,Text\tab\tab\tab\tab x is a number between 1 and 8. No holes allowed\par
+\tab\tab\tab\tab\tab Left is offset in pixels from the left\par
+\tab\tab\tab\tab\tab Top is offset in pixels from the top\par
+\tab\tab\tab\tab\tab Text is the text to draw on bitmap.\par
+\tab\tab\tab\tab\tab $V is the RadASM version\par
+\par
+\cf1\fs28 Section [Assembler]\cf2\fs20\par
+\par
+Assemblers supported by RadASM.\par
+Maintained by RadASM option settings.\par
+\par
+Assembler=asm1[,asm2[,asm3[,asm4]]]\tab List of supported assemblers / programming languages\par
+\tab\tab\tab\tab\tab The first in the list is the default.\par
+\par
+\cf1\fs28 Section [Sniplet]\cf2\fs20\par
+\par
+Sniplet window options.\par
+Maintained by RadASM option settings.\par
+\par
+Expanded=\tab\tab\tab\tab Open with file tree expanded, TRUE or FALSE\par
+SelAll=\tab\tab\tab\tab\tab Double click action, select all text, TRUE or FALSE\par
+CopyTo=\tab\tab\tab\tab Double click action, 0=Editor, 1=Clipboard, 2=Output\par
+Close=\tab\tab\tab\tab\tab Double click action, close when done, TRUE or FALSE\par
+Left=\tab\tab\tab\tab\tab Sniplet window left position in pixels\par
+Top=\tab\tab\tab\tab\tab Sniplet window top position in pixels\par
+Width=\tab\tab\tab\tab\tab Sniplet window width in pixels\par
+Height=\tab\tab\tab\tab\tab Sniplet window height in pixels\par
+Split=\tab\tab\tab\tab\tab Sniplet window split in pixels\par
+\par
+\cf1\fs28 Section [AddIns]\cf2\fs20\par
+\par
+RadASM addins.\par
+Maintained by addin manager.\par
+\par
+x=AddIn.dll,y[,z]\tab\tab\tab\tab x is a number between 1 and 64. No holes allowed\par
+\tab\tab\tab\tab\tab The dll must be in the AddIns folder.\par
+\tab\tab\tab\tab\tab The parameter y is passed to the dll and is used\par
+\tab\tab\tab\tab\tab by the dll for option settings.\par
+\tab\tab\tab\tab\tab z is optional, if FALSE then dll will not be loaded\par
+\par
+\cf1\fs28 Section [MRU-Projects]\cf2\fs20\par
+\par
+Most recent list of projects.\par
+Maintained by RadASM.\par
+\par
+x=MenuText,P,ProjectFile\tab\tab\tab x is a number between 1 and 4. No holes allowed\par
+\tab\tab\tab\tab\tab MenuText is the text shown on the file menu\par
+\tab\tab\tab\tab\tab P is used by RadASM\par
+\tab\tab\tab\tab\tab ProjectFile is the project file with full path.\par
+\par
+\cf1\fs28 Section [RecentFiles]\cf2\fs20\par
+\par
+Most recent list of files.\par
+Maintained by RadASM.\par
+\par
+x=FileName\tab\tab\tab\tab FileName is the file with full path.\par
+\par
+\cf1\fs28 Section [MenuTools]\cf2\fs20\par
+\par
+Default Tools menu.\par
+Manually maintained. Customized menu saved to assembler.ini.\par
+\par
+x=MenuText,Accel,T,Command[,File]\tab x is a number between 1 and 32. No holes allowed\par
+\tab\tab\tab\tab\tab MenuText is the text shown on the menu\par
+\tab\tab\tab\tab\tab Accel is the asigned accelerator key\par
+\tab\tab\tab\tab\tab T is used by RadASM\par
+\tab\tab\tab\tab\tab Command is the program to run. Path acronym allowed\par
+\tab\tab\tab\tab\tab Optional File. $ Current open file without extention,\par
+\tab\tab\tab\tab\tab $$ Current open file, 0 to 19 Project file (see MakeFiles).\par
+\par
+\cf1\fs28 Section [MenuHelp]\cf2\fs20\par
+\par
+Default Help menu.\par
+Manually maintained. Customized menu saved to assembler.ini.\par
+\par
+x=MenuText,Accel,H,HelpFile.hlp\tab\tab See Tools menu\par
+\par
+\cf1\fs28 Section [F1-Help]\cf2\fs20\par
+\par
+Default F1-help key asignment. If section exist in assembler.ini then it is read from assembler.ini.\par
+Manually maintained.\par
+\par
+F1=HelpFile.hlp\tab\tab\tab\tab Help file asigned to F1. Path acronym allowed\par
+CF1=HelpFile.hlp\tab\tab\tab\tab Help file asigned to Ctrl+F1\par
+SF1=HelpFile.hlp\tab\tab\tab\tab Help file asigned to Shift+F1\par
+CSF1=HelpFile.hlp\tab\tab\tab Help file asigned to Ctrl+Shift+F1\par
+\par
+\cf1\fs28 Section [Template]\cf2\fs20\par
+\par
+Template file types.\par
+Manually maintained.\par
+\par
+Txt=.Ext1.[Ext2.[Ext3.]]\tab\tab\tab Files that shold be handeled as text files\par
+Bin=.Ext1.[Ext2.[Ext3.]]\tab\tab\tab Files that shold be handeled as binary files\par
+\tab\tab\tab\tab\tab Note the use of ' . ' before and after extention.\par
+\par
+\cf1\fs28 Section [CustomControl] (Obsoleted, see [CustCtrl])\cf2\fs20\par
+\par
+Custom controls addins.\par
+Manually maintained.\par
+\par
+x=\tab\tab\tab\tab\tab x is a number between 1 and 32. No holes allowed\par
+ToolTip,\tab\tab\tab\tab\tab Toolbox button tool tip text.\par
+DllName.dll,\tab\tab\tab\tab Filename for the dll.\par
+ClassName,\tab\tab\tab\tab Controls class name.\par
+ID name,\tab\tab\tab\tab\tab Default ID name.\par
+Caption,\tab\tab\tab\tab\tab Default caption.\par
+Style,\tab\tab\tab\tab\tab Default Style.\par
+ExStyle,\tab\tab\tab\tab\tab Default ExStyle.\par
+Disable child,\tab\tab\tab\tab If the control has child windows, try 1 or 2, else 0.\par
+Properties description1,\tab\tab\tab 1'st 32 bits binary number for properties handling.\par
+Properties description2\tab\tab\tab 2'nd 32 bits binary number for properties handling.\par
+Index\tab\tab\tab\tab\tab Optional. If the dll has more than one control then\par
+\tab\tab\tab\tab\tab specify index. (0 is first control)\par
+\cf3\lang1033\f1\fs18\par
+\cf1\lang1044\f0\fs24 Properties description1 starting with bit 31\lang1033\f1\fs20\par
+\cf2\par
+(Name)\tab\tab *\par
+(ID)\tab\tab\tab *\par
+Left\tab\tab\tab *\par
+Top\tab\tab\tab *\par
+Width\tab\tab\tab *\par
+Height\tab\tab *\par
+Caption\tab\tab *\par
+Border\tab\tab *\par
+SysMenu\par
+MaxButton\par
+MinButton\par
+Enabled\tab\tab *\par
+Visible\tab\tab *\par
+Clipping\tab\tab *\par
+ScrollBar\tab\tab *\par
+Default\par
+Auto\par
+Alignment\par
+Mnemonic\par
+WordWrap\par
+MultiLine\par
+Type\par
+Locked\par
+Child\tab\tab\tab *\par
+SizeBorder\par
+TabStop\tab\tab *\par
+Font\par
+Menu\par
+Class\par
+Notify\par
+AutoScroll\par
+WantCr\par
+\par
+\cf1\lang1044\f0\fs24 Properties description2 starting with bit 31\cf2\lang1033\f1\fs20\par
+\par
+Sort\par
+Flat\par
+(StartID)\par
+TabIndex\tab\tab *\par
+Format\par
+SizeGrip\par
+Group\tab\tab\tab *\par
+Icon\par
+UseTabs\par
+StartupPos\par
+Orientation\par
+SetBuddy\par
+MultiSelect\par
+HideSel\par
+TopMost\par
+xExStyle\tab\tab *\par
+xStyle\tab\tab *\par
+IntegralHgt\par
+Image\par
+Buttons\par
+PopUp\par
+OwnerDraw\par
+\lang1044\f0 Transp\par
+Timer\par
+AutoPlay\par
+WeekNum\par
+AviClip\par
+AutoSize\par
+ToolTip\par
+Wrap\par
+Divider\par
+\par
+Note:\par
+Only some of the properties are general and can be used by the custom control.\par
+These properties are marked with *\par
+\par
+\cf1\fs28 Section [CustCtrl]\cf2\fs20\par
+\par
+Custom controls addins.\par
+Maintained by RadASM option setting.\par
+\par
+x=\tab\tab\tab\tab\tab x is a number between 1 and 32. No holes allowed\par
+DllName.dll,\tab\tab\tab\tab Filename for the dll.\cf1\fs28\par
+\cf2\fs20 NoOfControls\tab\tab\tab\tab Optional. No of controls in the dll.\cf1\fs28\par
+\cf2\fs20\par
+\cf1\fs28 Section [Color]\cf2\fs20\par
+\par
+Color themes.\par
+Maintained by  Colors & KeyWords option.\par
+\par
+x=\tab\tab\tab\tab\tab x is a number between 0 and 15. No holes allowed\par
+Name,\tab\tab\tab\tab\tab Name for the color theme.\cf1\fs28\par
+\cf2\fs20 List of colors\tab\tab\tab\tab List of 36 color values.\cf1\fs28\par
+\cf2\fs20\par
+\cf1\fs28 Section [VerInf]\cf2\fs20\par
+\par
+Default versioninfo values.\par
+Manually maintained.\par
+\par
+Nme=\tab\tab\tab\tab\tab Default name\par
+ID=\tab\tab\tab\tab\tab Default ID\par
+FV=\tab\tab\tab\tab\tab Default file version\par
+PV=\tab\tab\tab\tab\tab Default product version\par
+VerOS=\tab\tab\tab\tab\tab Default OS\par
+VerFT=\tab\tab\tab\tab\tab Default file type\par
+VerLNG=\tab\tab\tab\tab Default language\par
+VerCHS=\tab\tab\tab\tab Default character set\par
+x=Text,Value\tab\tab\tab\tab x is a number between 1 and 99. No holes allowed\par
+\tab\tab\tab\tab\tab Text is the type you want a value for\par
+\tab\tab\tab\tab\tab Value is the default value\par
+\par
+\cf1\fs28 Section [VerOS]\cf2\fs20\par
+\par
+Versioninfo OS'es.\par
+Manually maintained.\par
+\par
+x=Text,Value\tab\tab\tab\tab x is a number between 1 and 99. No holes allowed\par
+\tab\tab\tab\tab\tab Text is the type you want a value for\par
+\tab\tab\tab\tab\tab Value is the default value\par
+\par
+\cf1\fs28 Section [VerFT]\cf2\fs20\par
+\par
+Versioninfo file types.\par
+Manually maintained.\par
+\par
+x=Text,Value\tab\tab\tab\tab x is a number between 1 and 99. No holes allowed\par
+\tab\tab\tab\tab\tab Text is the type you want a value for\par
+\tab\tab\tab\tab\tab Value is the default value\par
+\par
+\cf1\fs28 Section [VerLNG]\cf2\fs20\par
+\par
+Versioninfo languages.\par
+Manually maintained.\par
+\par
+x=Text,Value\tab\tab\tab\tab x is a number between 1 and 99. No holes allowed\par
+\tab\tab\tab\tab\tab Text is the type you want a value for\par
+\tab\tab\tab\tab\tab Value is the default value\par
+\par
+\cf1\fs28 Section [VerCHS]\cf2\fs20\par
+\par
+Versioninfo character sets.\par
+Manually maintained.\par
+\par
+x=Text,Value\tab\tab\tab\tab x is a number between 1 and 99. No holes allowed\par
+\tab\tab\tab\tab\tab Text is the type you want a value for\par
+\tab\tab\tab\tab\tab Value is the default value\par
+\par
+\cf1\fs28 Section [Style]\cf2\fs20\par
+\par
+Dialog edit style bits description.\par
+Manually maintained.\par
+\par
+x=List\tab\tab\tab\tab\tab x is a number between 0 and 32. List is a list of\par
+\tab\tab\tab\tab\tab the style bits text description.\par
+\par
+\cf1\ul\fs28 Assembler.ini\cf2\ulnone\fs20\par
+\par
+(masm.ini, tasm.ini, fasm.ini, nasm.ini, goasm.ini, hla.ini, cpp.ini, bcet.ini, fb.ini, bcc.ini, lcc.ini)\cf1\fs28\par
+\cf2\fs20\par
+\cf1\fs28 Section [Description]\par
+\cf2\fs20\par
+Manually maintained.\par
+\par
+1=Text\tab\tab\tab\tab\tab Description text. Supports \\r (Cr) and \\n (Lf)\par
+\par
+\cf1\fs28 Section [CodeMacro]\par
+\cf2\fs20\par
+Code writing macros.\par
+Manually maintained.\par
+\par
+x=KeyWord,InsBefore,InsAfter\tab\tab x is a number between 1 and 32. No holes allowed\par
+\tab\tab\tab\tab\tab Keyword (.if, .else, .elseif, $ proc, $ struct)\par
+\tab\tab\tab\tab\tab Can start with $, this means that the name comes first.\par
+\tab\tab\tab\tab\tab InsBefore. Use one or more of the special commands.\par
+\tab\tab\tab\tab\tab InsAfter. Use one or more of the special commands.\par
+\par
+\cf1\fs24 Special commands\cf2\fs20\par
+\{I\}=Copy indent from keyword line\par
+\{C\}=Cr\par
+\{S\}=Space\par
+\{T\}=Tab\par
+\{$\}=Copy proc / struct name\par
+\par
+Example (masm):\par
+[CodeMacro]\par
+1=.if,\{T\},\{C\}\{I\}.endif\par
+2=.else,\{T\},\par
+3=.elseif,\{T\},\par
+4=.while,\{T\},\{C\}\{I\}.endw\par
+5=$ macro,\{T\},\{C\}\{I\}endm\par
+6=$ proc,\{T\}\{C\}\{I\}\{T\},\{C\}\{I\}\{T\}ret\{C\}\{C\}\{I\}\{$\} endp\par
+7=$ struct,\{T\},\{C\}\{I\}\{$\} ends\par
+8=$ struc,\{T\},\{C\}\{I\}\{$\} ends\par
+9=Method,\{I\}\{T\}SetObject EDX\{C\}\{I\}\{T\},\{C\}\{I\}MethodEnd\par
+10=Object,\{I\}\{T\},\{C\}\{I\}ObjectEnd\par
+\par
+\cf1\fs28 Section [Code]\cf2\fs20\par
+\par
+Used to find and get code properties.\par
+Manually maintained.\par
+\par
+ParseDll=\tab\tab\tab\tab Dll used for parsing (if any)\par
+nAsm=\tab\tab\tab\tab\tab Overrides assembler type\par
+\tab\tab\tab\tab\tab See RadASM.inc for a list of types.\par
+Skip=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Code=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Code2=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Const=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Data=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Macro=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Struct=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Struct2=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Local=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Label=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Other=[Name0,10[,Name1,11[,Name2,12[,Name3,13]]]]\par
+Name0=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Name1=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Name2=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+Name3=KeyEnd,KeyStart1[,KeyStart2[,KeyStart3]]\par
+\par
+KeyEnd is the keyword that ends the scope. Can also be \{C\} for end of the line.\par
+Can start / end with $, this means that the name comes first / second.\par
+Can start / end with ?, this means that the optional name comes first / second.\par
+KeyStart is the keyword that starts the scope. Can be a list of several keywords.\par
+Can start with $, this means that the name comes first.\par
+Other is a list of optional properties. There can be max 4 and has an ID ranged from 10 to 13\par
+Name0 to Name3 is the names defined in the Other list.\par
+\par
+Example (masm):\par
+[Code]\par
+ParseDll=\par
+nAsm=\par
+Skip=\{C\},option\par
+Code=? endp,$ proc\par
+Const=\{C\},$ equ,$ =,$ textequ\par
+Data=\{C\},$ db,$ dw,$ dd,$ dq,$ df,$ dt,$ byte,$ word,$ dword,$ qword,$ real4,$ real8\par
+Macro=endm,$ macro\par
+Struct=? ends,$ struct,$ struc\par
+Local=\{C\},local $\par
+Label=\{C\},$ :\par
+Other=Methods,10,Objects,11\par
+Methods=MethodEnd,Method $\par
+Objects=ObjectEnd,Object $\par
+\par
+\cf1\fs28 Section [CodeBlock]\cf2\fs20\par
+\par
+Used to mark collapseable code blocks.\par
+Manually maintained.\par
+\par
+x=Start,End,DontHide1,DontHide2,flag[,wg\}\tab x is a number between 1 and 16. No holes allowed\par
+\tab\tab\tab\tab\tab Start  ($ proc, .if, .while, $ macro, $ struct)\par
+\tab\tab\tab\tab\tab End ($ endp, .endif, .endw, $ endm, $ ends)\par
+\tab\tab\tab\tab\tab DontHide1 (.elseif)\par
+\tab\tab\tab\tab\tab DontHide2 (.else)\par
+\tab\tab\tab\tab\tab * can be used as a wildcard in any of the above.\par
+\tab\tab\tab\tab\tab ? can be used instead of $ when name is optional.\par
+\tab\tab\tab\tab\tab flag 1=No nesting, 2=Draws a divider line,\par
+\tab\tab\tab\tab\tab 4=Ending line is also collapsed,\par
+\tab\tab\tab\tab\tab 8=Look ahead for ending.,\par
+\tab\tab\tab\tab\tab 16=Segment block (collapse till next segment\par
+\tab\tab\tab\tab\tab block or to EOF)\par
+\tab\tab\tab\tab\tab wg is optional word group (1=.rc file, all others are 0)\par
+\par
+\pard\nowidctlpar\lang1033\f2 Example (masm):\par
+[CodeBlock]\par
+\pard 1=$ proc,? endp,,,6\par
+2=.if,.endif,.elseif,.else,0\par
+3=.while,.endw,.break,,0\par
+4=? struct,? ends,,,2\par
+5=? struc,? ends,,,2\par
+6=? union,? ends,,,2\par
+7=$ macro,endm,,,14\par
+8=.code,,,,16\par
+9=.data,,,,16\par
+10=.data?,,,,16\par
+11=.const,,,,16\par
+12=BEGIN,END,,,0,1\par
+13=Method,MethodEnd,,,6\par
+14=Object,ObjectEnd,,,4\par
+15=Switch,endsw,Case,Default,0\par
+16=;##\\,;##/,,,4\par
+\lang1044\f0 17=comment,,,,32\par
+\par
+\cf1\fs28 Section [Api]\cf2\fs20\par
+\par
+Code write helpers. (Listbox and tooltip)\par
+Manually maintained.\par
+\par
+NOTE!\par
+For assemblers / compilers that supports several operating systems there can be more than one section with a different section name. The form [ApiXXXXX] is recomended.\par
+\par
+Trig=\tab\tab\tab\tab\tab List of keywords that triggers the api list and tooltip\par
+Call=\tab\tab\tab\tab\tab Filename of api list. Can be a commaseparated list of files.\par
+Const=\tab\tab\tab\tab\tab Filename of api constants list. Can be a commaseparated list of files.\par
+Struct=\tab\tab\tab\tab\tab Filename of structures list. Can be a commaseparated list of files.\par
+Word=\tab\tab\tab\tab\tab Filename of word list for auto case convert. Can be a commaseparated\par
+ \tab\tab\tab\tab\tab list of files.\par
+Message=\tab\tab\tab\tab Filename for list of window messages. Can be a commaseparated list\par
+ \tab\tab\tab\tab\tab of files.\par
+Type=\tab\tab\tab\tab\tab Filename for list of datatypes. Can be a commaseparated list of files.\par
+Inc=KW[,ST[,EN]]\tab\tab\tab Keyword, Start, End\par
+Lib=KW[,ST[,EN]]\tab\tab\tab Keyword, Start, End\par
+\par
+Example (masm):\par
+[Api]\par
+Trig=invoke,call,@invoke,func(,$invoke(\par
+Call=Masm\\masmApiCall.api\par
+Const=Masm\\masmApiConst.api\par
+Struct=Masm\\masmApiStruct.api\par
+Word=Masm\\masmApiWord.api\par
+Message=Masm\\masmMessage.api\par
+Type=Masm\\masmType.api\par
+inc=include\par
+lib=includelib\par
+\par
+\cf1\fs28 Section [Edit]\cf2\fs20\par
+\par
+Code editor and print options.\par
+Maintained by RadASM options.\par
+\par
+Font=\tab\tab\tab\tab\tab Code editor font\par
+FontHeight=\tab\tab\tab\tab Code editor font size\par
+FontWeight=\tab\tab\tab\tab Code editor font weight\par
+FontCharSet=\tab\tab\tab\tab Code editor character set\par
+TxtFont=\tab\tab\tab\tab Text editor font\par
+TxtFontHeight=\tab\tab\tab\tab Text editor font size\par
+TxtFontWeight=\tab\tab\tab\tab Text editor font weight\par
+TxtFontCharSet=\tab\tab\tab\tab Text editor character set\par
+HexFont=\tab\tab\tab\tab Hex editor font\par
+HexFontHeight=\tab\tab\tab\tab Hex editor font size\par
+HexFontWeight=\tab\tab\tab\tab Hex editor font weight\par
+HexFontCharSet=\tab\tab\tab\tab Hex editor character set\par
+DlgFont=\tab\tab\tab\tab Dialog editor font\par
+DlgFontHeight=\tab\tab\tab\tab Dialog editor font size\par
+DlgFontWeight=\tab\tab\tab\tab Dialog editor font weight\par
+DlgFontCharSet=\tab\tab\tab\tab Dialog editor character set\par
+ToolFont=\tab\tab\tab\tab Tool window font\par
+ToolFontHeight=\tab\tab\tab\tab Tool window font size\par
+ToolFontWeight=\tab\tab\tab Tool window font weight\par
+ToolFontCharSet=\tab\tab\tab Tool window character set\par
+PrnFont=\tab\tab\tab\tab Printer font\par
+PrnFontHeight=\tab\tab\tab\tab Printer font size\par
+PrnFontWeight=\tab\tab\tab\tab Printer font weight\par
+PrnFontCharSet=\tab\tab\tab\tab Printer character set\par
+PrnPage=\tab\tab\tab\tab Printer page setup\par
+PrnOption=\tab\tab\tab\tab Printer options\par
+PrnColor=\tab\tab\tab\tab Printer colors\par
+TabSize=\tab\tab\tab\tab Editor tab size\par
+Backup=\tab\tab\tab\tab\tab Number of backups 0 to 9\par
+AutoSave=\tab\tab\tab\tab Auto save before build, TRUE or FALSE\par
+BacupPath=\tab\tab\tab\tab Backup path\par
+AutoIndent=\tab\tab\tab\tab Copy indent from abowe line, TRUE or FALSE\par
+ApiList=\tab\tab\tab\tab\tab Show api listbox, TRUE or FALSE\par
+ApiToolTip=\tab\tab\tab\tab Show api tooltip, TRUE or FALSE\par
+Properties=\tab\tab\tab\tab Show code properties, TRUE or FALSE\par
+MouseWheel=\tab\tab\tab\tab Use mouse wheel, TRUE or FALSE\par
+SaveSize=\tab\tab\tab\tab Save window size on close, TRUE or FALSE\par
+Maximize=\tab\tab\tab\tab Maximize windows, TRUE or FALSE\par
+ApiConst=\tab\tab\tab\tab Show api constants listbox, TRUE or FALSE\par
+CodeWrite=\tab\tab\tab\tab Use code write macros, TRUE or FALSE\par
+TabToSpc=\tab\tab\tab\tab Convert tab to space as you type, TRUE or FALSE\par
+ApiStruct=\tab\tab\tab\tab Show api struct listbix, TRUE or FALSE\par
+ApiWordConv=\tab\tab\tab\tab Use word list case convert, TRUE or FALSE\par
+ApiWordLocal=\tab\tab\tab\tab Add code properties to wordlist, TRUE or FALSE\par
+CodeFiles=\tab\tab\tab\tab List of file extentions RadASM will handle as code\par
+\tab\tab\tab\tab\tab files. Note: List must end with a '.'\par
+\tab\tab\tab\tab\tab Example: CodeFiles=.asm.inc.rc.tpl.rad.api.\par
+ProcsToApi=\tab\tab\tab\tab TRUE or FALSE. Your projects procs will be added to\par
+\tab\tab\tab\tab\tab api list and api tooltip.\par
+LnrFont=\tab\tab\tab\tab Linenumber font name.\par
+LnrFontHeight=\tab\tab\tab\tab Linenumber font size.\par
+LnrFontColor=\tab\tab\tab\tab Linenumber font color.\par
+LnrWidth=\tab\tab\tab\tab Width of linenumber bar.\par
+LnrOnOpen=\tab\tab\tab\tab TRUE / FALSE. Linenumber bar shown on open.\par
+PageSize=\tab\tab\tab\tab Page size (lines).\par
+ApiShiftSpace=\tab\tab\tab\tab TRUE / FALSE. Shift+Space active.\par
+CmntBlock=\tab\tab\tab\tab comment+,-\tab (masm)\par
+\tab\tab\tab\tab\tab /*,*/\tab\tab (hla and cpp)\par
+ThreadBuild=\tab\tab\tab\tab TRUE / FALSE. The build commands are run in it's own\par
+\tab\tab\tab\tab\tab process.\par
+\pard\ri-222\tx9088 ChangeNotify=\tab\tab\tab\tab TRUE / FALSE. Notification if an open file is changed\par
+\tab\tab\tab\tab\tab outside editor.\par
+\pard HiliteLine=\tab\tab\tab\tab TRUE/FALSE\par
+HiliteCmnt=\tab\tab\tab\tab TRUE/FALSE\par
+MinimizeOnBuild=\tab\tab\tab TRUE/FALSE\par
+BraceMatch=\tab\tab\tab\tab Left,Right,Line Continuation. Example: (\{[,)\}],\\,\par
+\par
+\cf1\fs28 Section [Dialog]\cf2\fs20\par
+\par
+Dialog editor options.\par
+Maintained by RadASM options.\par
+\par
+Grid=\tab\tab\tab\tab\tab Show grid, TRUE or FALSE\par
+GridX=\tab\tab\tab\tab\tab Grid x size, 2 to 20\par
+GridY=\tab\tab\tab\tab\tab Grid y size, 2 to 20\par
+GridLine=\tab\tab\tab\tab Grid as lines, TRUE or FALSE\par
+GridColor=\tab\tab\tab\tab Grid color\par
+SnapToGrid=\tab\tab\tab\tab Snap controls to grid, TRUE or FALSE\par
+ShowSize=\tab\tab\tab\tab Show size / pos tooltip, TRUE or FALSE\par
+SaveRC=\tab\tab\tab\tab Save to RC file, TRUE or FALSE\par
+Simpleproperty=\tab\tab\tab\tab RadASM omits most properties. TRUE or FALSE\par
+LimittedFont=\tab\tab\tab\tab The fonts weight, italics and character set is not written\par
+\tab\tab\tab\tab\tab to the rc script. TRUE or FALSE\par
+DlgID=\tab\tab\tab\tab\tab Default Dialog ID\par
+CtrlID=\tab\tab\tab\tab\tab Default Controls start ID\par
+\par
+\cf1\fs28 Section [Error]\cf2\fs20\par
+\par
+Assembler errors options.\par
+Manually maintained.\par
+\par
+BookMark=\tab\tab\tab\tab How RadASM bookmarks assembler errors.\par
+\tab\tab\tab\tab\tab 0=No handling\par
+\tab\tab\tab\tab\tab 1=Shows bookmark\par
+\tab\tab\tab\tab\tab 2=Hilites line\par
+\tab\tab\tab\tab\tab 3=Shows bookmark and hilites line (default)\par
+\tab\tab\tab\tab\tab 4=No visual error marking, goto next error still works\par
+nAsm=\tab\tab\tab\tab\tab Assembler to emulate (if any)\par
+\tab\tab\tab\tab\tab Set to 98 or 99 to use Identify and Skip.\par
+\tab\tab\tab\tab\tab If set to 98 warnings can be bookmarked.\par
+Identify=\tab\tab\tab\tab Word(s) (max 2 comma separated) that identifies a line\par
+\tab\tab\tab\tab\tab with a warning or error.\par
+Skip=\tab\tab\tab\tab\tab Number of words to skip before filename.\par
+\par
+\cf1\fs28 Section [CharTab]\cf2\fs20\par
+\par
+Character table definitions.\par
+Manually maintained.\par
+\par
+Default character table for characters 0 to 127\par
+0=0000000000000000;00-0F\par
+1=0000000000000000;10-1F\par
+2=0251222522222232;20-2F\par
+3=1111111111242221;30-3F\par
+4=1111111111111111;40-4F\par
+5=1111111111122221;50-5F\par
+6=0111111111111111;60-6F\par
+7=1111111111122200;70-7F\par
+\par
+Character 128 to 255 has default entries for Western and Cyrillic character sets.\par
+On all other character sets default is all 0's\par
+\par
+Table entry meanings.\par
+0=No special handling.\par
+1=Treated as alpanumeric by hiliter and word selector\par
+2=Treated as operator by hiliter\par
+3=Treated as alpanumeric by hiliter\par
+4=Character initiates comments\par
+5=Character initiates strings.\par
+6=Character initiates comments if double. Example: //\par
+\par
+\cf1\fs28 Section [Paths]\cf2\fs20\par
+\par
+Paths needed by RadASM.\par
+Maintained by RadASM options.\par
+\par
+$A=\tab\tab\tab\tab\tab Where masm32 is installed, usually C:\\Masm32\par
+$B=\tab\tab\tab\tab\tab Where RadASM finds bins, usually $A\\Bin\par
+$D=\tab\tab\tab\tab\tab Where RadASM finds addins, usually $R\\AddIns\par
+$E=\tab\tab\tab\tab\tab Where your debugger is found, usually C:\\OllyDbg\par
+$H=\tab\tab\tab\tab\tab Where RadASM finds help files, usually $A\\Help\par
+$I=\tab\tab\tab\tab\tab Where RadASM finds includes, usually $A\\Include\par
+$L=\tab\tab\tab\tab\tab Where RadASM finds librarys, usually $A\\Lib\par
+$P=\tab\tab\tab\tab\tab Where RadASM finds projects, usually $R\\Projects\par
+$S=\tab\tab\tab\tab\tab Where RadASM finds snipplets, usually $R\\Sniplets\par
+$T=\tab\tab\tab\tab\tab Where RadASM finds templates, usually $R\\Templates\par
+$M=\tab\tab\tab\tab\tab Where RadASM finds keyboard macros, usually $R\\Macro\par
+\par
+\cf1\fs28 Section [MakeFiles]\cf2\fs20\par
+\par
+Used to create new RadASM projects.\par
+Manually maintained.\par
+\par
+x=FileExt\tab\tab\tab\tab\tab x is a number between 0 and 32. No holes allowed\par
+\par
+\cf1\fs24 Current extentions\cf2\fs20\par
+0=.rap, 1=.rc, 2=.asm, 3=.obj, 4=.res,\par
+5=.exe, 6=.def, 7=.dll, 8=.txt, 9=.lib, \par
+10=.mak, 11=.hla\par
+\par
+\cf1\fs28 Section [Group]\cf2\fs20\par
+\par
+Used to create default project file groups.\par
+Manually maintained.\par
+\par
+Group=\tab\tab\tab\tab\tab List of groups.\par
+\par
+Example masm:\par
+[Group]\par
+Group=Added files,Assembly,Resources,Misc,Modules\par
+\cf1\fs28\par
+Section [Project]\cf2\fs20\par
+\par
+Used to create new RadASM projects.\par
+Manually maintained.\par
+\par
+Type=\tab\tab\tab\tab\tab List of project types that can be created\par
+Files=\tab\tab\tab\tab\tab List of project files that can be created\par
+Folders=\tab\tab\tab\tab\tab List of folders that can be created\par
+MenuMake=\tab\tab\tab\tab List of menu commands\par
+Group=\tab\tab\tab\tab\tab Default use grouping, TRUE or FALSE\par
+GroupExpand=\tab\tab\tab\tab Default expand groups, TRUE or FALSE\par
+\par
+\cf1\fs28 Section [MakeDefNoProject]\cf2\fs20\par
+\par
+Used to build when no project is opened.\par
+Manually maintained.\par
+\par
+MenuMake=\tab\tab\tab\tab List of TRUE or FALSE to activate make menu.\par
+x=DelCheck,Out,Command,F1[,F2[,Fx]]\tab x is a number between 1 and 9 for normal build\par
+\tab\tab\tab\tab\tab or between 11 and 19 for debug build.\par
+\tab\tab\tab\tab\tab DelCheck is the file to delete before build and\par
+\tab\tab\tab\tab\tab the file to check if exist after build. Use 0 to\par
+\tab\tab\tab\tab\tab avoid this check. If this is a number then it\par
+\tab\tab\tab\tab\tab represents one of the [MakeFiles]\par
+\tab\tab\tab\tab\tab Out is where to send output, O for RadASM\par
+\tab\tab\tab\tab\tab output window or C for console. Use 0 if there\par
+\tab\tab\tab\tab\tab are no output. Use ON or CN for unquoted\par
+\tab\tab\tab\tab\tab filenames. Use O; for 16 bit programs on\par
+\tab\tab\tab\tab\tab win95, 98 or me to avoid hang.\par
+\tab\tab\tab\tab\tab Command is the command to run. Can be blank.\par
+\tab\tab\tab\tab\tab Fx is the list of files to process. If this is a\par
+\tab\tab\tab\tab\tab number then it represents one of the [MakeFiles]\par
+\par
+\cf1\fs24 Special characters\cf2\fs20\par
+' $ ' Gets the filename from topmost editor window without extention.\par
+' | ' Is replaced by a ' , ' in the final stage.\par
+' * ' Is used to build modules.\par
+\par
+\cf1\fs28 Section [ProjectType]\cf2\fs20\par
+\par
+Used to create defaults in a new RadASM project.\par
+Manually maintained.\par
+Note that 'ProjectType' is one of the Type= in section [Project] \par
+\par
+Api=\tab\tab\tab\tab\tab Name of section in Assembler.ini. It specifies,\par
+\tab\tab\tab\tab\tab among others, which api files to load.\par
+\tab\tab\tab\tab\tab The default is Api\par
+Files=\tab\tab\tab\tab\tab List of TRUE or FALSE to create files.\par
+Folders=\tab\tab\tab\tab\tab List of TRUE or FALSE to create folders.\par
+MenuMake=\tab\tab\tab\tab List of TRUE or FALSE to activate make menu.\par
+x=DelCheck,Out,Command,F1[,F2[,Fx]]\tab See [MakeDefNoProject]\par
+\par
+\cf1\fs24 Special characters\cf2\fs20\par
+' $ ' Gets the filename from topmost editor window without extention.\par
+' | ' Is replaced by a ' , ' in the final stage.\par
+' * ' Is used to build modules.\par
+\par
+\cf1\fs28 Section [MenuTools]\cf2\fs20\par
+\par
+Tools menu.\par
+Maintained by RadASM option settings.\par
+Note: Overrides settings in RadASM.ini\par
+\par
+x=MenuText,Accel,T,Command[,File]\tab x is a number between 1 and 32. No holes allowed\par
+\tab\tab\tab\tab\tab MenuText is the text shown on the menu\par
+\tab\tab\tab\tab\tab Accel is the asigned accelerator key\par
+\tab\tab\tab\tab\tab T is used by RadASM\par
+\tab\tab\tab\tab\tab Command is the program to run. Path acronym allowed\par
+\tab\tab\tab\tab\tab Optional File. $ Current open file without extention,\par
+\tab\tab\tab\tab\tab $$ Current open file, 0 to 19 Project file (see MakeFiles).\par
+\par
+\cf1\fs28 Section [MenuHelp]\cf2\fs20\par
+\par
+Help menu.\par
+Maintained by RadASM option settings.\par
+Note: Overrides settings in RadASM.ini\par
+\par
+x=MenuText,Accel,H,HelpFile.hlp\tab\tab See Tools menu\par
+\par
+\cf1\fs28 Section [MenuMake]\cf2\fs20\par
+\par
+Make menu.\par
+Maintained by RadASM options.\par
+\par
+x=MenuText,Accel,M,Command\tab\tab See Tools menu\par
+\par
+Command can be a series of numbers as described by x= in the [ProjectType]\par
+\par
+\cf1\fs28 Section [MenuMacro]\cf2\fs20\par
+\par
+Keyboard macro menu.\par
+Maintained by RadASM option settings.\par
+\par
+x=MenuText,Accel,M,KbMacroToRun\tab See Tools menu\par
+\par
+\cf1\fs28 Section [F1-Help]\cf2\fs20\par
+\par
+F1-help key asignment.\par
+Manually maintained.\par
+Note: Overrides settings in RadASM.ini\par
+\par
+F1=HelpFile.hlp\tab\tab\tab\tab Help file asigned to F1. Path acronym allowed\par
+CF1=HelpFile.hlp\tab\tab\tab\tab Help file asigned to Ctrl+F1\par
+SF1=HelpFile.hlp\tab\tab\tab\tab Help file asigned to Shift+F1\par
+CSF1=HelpFile.hlp\tab\tab\tab Help file asigned to Ctrl+Shift+F1\par
+\par
+\cf1\fs28 Section [Color]\cf2\fs20\par
+\par
+Code editor colors.\par
+Maintained by RadASM options.\par
+\par
+UseColor=\tab\tab\tab\tab Color hiliting, TRUE or FALSE\par
+Back=\tab\tab\tab\tab\tab Code editor back color\par
+Fore=\tab\tab\tab\tab\tab Code editor text color\par
+Bar=\tab\tab\tab\tab\tab Code editor selection bar\par
+Cmnt=\tab\tab\tab\tab\tab Comments\par
+Str=\tab\tab\tab\tab\tab Strings\par
+Oper=\tab\tab\tab\tab\tab Operators\par
+Num=\tab\tab\tab\tab\tab Numbers and hex values\par
+C0=\tab\tab\tab\tab\tab C0 Keyword group\par
+.\par
+.\par
+C15=\tab\tab\tab\tab\tab C9 Keyword group\par
+Output=\tab\tab\tab\tab\tab Output window back color\par
+Outputtext=\tab\tab\tab\tab Output window text color\par
+Project=\tab\tab\tab\tab\tab Project window back color\par
+Projecttext=\tab\tab\tab\tab Project window text color\par
+Property=\tab\tab\tab\tab Property window back color\par
+Propertytext=\tab\tab\tab\tab Property window text color\par
+Dialog=\tab\tab\tab\tab\tab Dialog editor back color\par
+\par
+The most significant byte in C0 to C15 is used for font type setting.\par
+0=Normal\par
+1=Bold\par
+2=Italics\par
+3=Bold italics\par
+\par
+\cf1\fs28 Section [KeyWords]\cf2\fs20\par
+\par
+Keywords used to hilite words in code editor.\par
+Maintained by RadASM options.\par
+\par
+C0=\tab\tab\tab\tab\tab C0 List of keywords, seperated by space\par
+.\par
+.\par
+C15=\tab\tab\tab\tab\tab C15 List of keywords\par
+C16=\tab\tab\tab\tab\tab List of keywords put on hold.\par
+\par
+\cf1\fs28 Section [Environment]\cf2\fs20\par
+\par
+Environment variables.\par
+Maintained by RadASM options.\par
+\par
+x=key,var\tab\tab\tab\tab x is a number from 1 and up. No holes allowed\par
+\tab\tab\tab\tab\tab Key is the variable name\par
+\tab\tab\tab\tab\tab Var is the new value. NOTE if Var ends with a ';' then\par
+\tab\tab\tab\tab\tab the old value is added to the new value.\par
+\par
+Example (hla):\par
+[Environment]\par
+1=path,c:\\hla;c:\\masm32\\bin;\par
+2=lib,c:\\hla\\hlalib\par
+3=hlainc,c:\\hla\\include\par
+\par
+\cf1\fs28 Section [Open]\par
+\cf2\fs20\par
+Open file dialog definitions.\par
+Manually maintained.\par
+\par
+x=Text,Filter\tab\tab\tab\tab x is a number from 1 and up. No holes allowed\par
+\tab\tab\tab\tab\tab Text is the text displayed. Filter is the file filter.\par
+\par
+src=Text,Filter,DefExt\tab\tab\tab Text is the text displayed.\par
+hdr=Text,Filter,DefExt\tab\tab\tab Filter is the file filter.\par
+mod=Text,Filter,DefExt\tab\tab\tab DefExt is the default file extention.\par
+\par
+Example (hla):\par
+[Open]\par
+0="Hla Files (*.hla;*.hhf),*.hla;*.hhf"\par
+1="Resource Files (*.rc),*.rc"\par
+2="Assembly Files (*.asm;*.inc),*.asm;*.inc"\par
+3="Text Files (*.txt),*.txt"\par
+4="All Files (*.*),*.*"\par
+src="Source (*.hla),*.hla,hla"\par
+hdr="Header (*.hhf),*.hhf,hhf"\par
+mod="Module (*.hla),*.hla,hla"\par
+\par
+\cf1\ul\fs28 RadASM project files. (.rap files)\cf2\ulnone\fs20\par
+\par
+\cf1\fs28 Section [Project]\par
+\cf2\fs20\par
+Maintained by RadASM project wizard and project options.\par
+\par
+Assembler=\tab\tab\tab\tab Assembler is masm, tasm or fasm and tells RadASM\par
+\tab\tab\tab\tab\tab which assembler the project is intended for.\par
+Type=\tab\tab\tab\tab\tab Project type. See Assembler.ini section [ProjectType]\par
+Description=\tab\tab\tab\tab Text entered when project was created.\par
+Backup=\tab\tab\tab\tab\tab Where the backups are put. Usually $P\\Bak\\\par
+Debug=\tab\tab\tab\tab\tab Debug build, TRUE or FALSE\par
+Group=\tab\tab\tab\tab\tab Use project groups, TRUE or FALSE\par
+GroupExpand=\tab\tab\tab\tab Expand groups, TRUE or FALSE\par
+\par
+\cf1\fs28 Section [MakeDef]\par
+\cf2\fs20\par
+Maintained by RadASM project wizard and project options.\par
+\par
+Menu=\tab\tab\tab\tab\tab See Assembler.ini section [ProjectType]\par
+x=DelCheck,Out,Command,F1[,F2[,Fx]]\tab See Assembler.ini section [ProjectType]\par
+\par
+\cf1\fs28 Section [MakeFiles]\par
+\cf2\fs20\par
+Maintained by RadASM project wizard.\par
+\par
+x=ProjectName.ext\tab\tab\tab See Assembler.ini section [MakeFiles]\par
+\par
+\cf1\fs28 Section [Files]\par
+\cf2\fs20\par
+Maintained by RadASM project wizard and project menu.\par
+\par
+x=File.ext\tab\tab\tab\tab x is a number from 1 to 1000 for normal\par
+\tab\tab\tab\tab\tab files, and 1001 and up for modules.\par
+\tab\tab\tab\tab\tab File.ext is a file included in the project.\par
+\par
+\cf1\fs28 Section [Group]\par
+\cf2\fs20\par
+Maintained by RadASM project groups.\par
+\par
+Group=a[,b[,c...]]\tab\tab\tab\tab List of groups\par
+x=y\tab\tab\tab\tab\tab x is a number from 1 to 1000 for normal\par
+\tab\tab\tab\tab\tab files, and 1001 and up for modules.\par
+\tab\tab\tab\tab\tab y is the group index starting with 1.\par
+\par
+\cf1\fs28 Section [Size]\par
+\cf2\fs20\par
+Maintained by RadASM.\par
+\par
+x=Left,Top,Right,Bottom[,FilePos]\tab\tab x see section [Files], x=\par
+\tab\tab\tab\tab\tab Left is mdi childs left position in pixels\par
+\tab\tab\tab\tab\tab Top is mdi childs top position in pixels\par
+\tab\tab\tab\tab\tab Width is mdi childs width in pixels\par
+\tab\tab\tab\tab\tab Height is mdi childs height in pixels\par
+\tab\tab\tab\tab\tab FilePos is the carets character position\par
+\tab\tab\tab\tab\tab in an edit window. \par
+\cf1\fs28 Section [BookMark]\par
+\cf2\fs20\par
+Maintained by RadASM named bookmarks.\par
+\par
+x=nFile,Line\tab\tab\tab\tab x is a number between 0 and 9\par
+\tab\tab\tab\tab\tab nFile see section [Files], x=\par
+\tab\tab\tab\tab\tab Line is the line number where the\par
+\tab\tab\tab\tab\tab bookmark is set.\par
+\par
+\cf1\fs28 Section [BreakPoint]\par
+\cf2\fs20\par
+Maintained by RadASM breakpoints.\par
+\par
+x=nFile,Line\tab\tab\tab\tab x is a number between 0 and 255\par
+\tab\tab\tab\tab\tab nFile see section [Files], x=\par
+\tab\tab\tab\tab\tab Line is the line number where the\par
+\tab\tab\tab\tab\tab breakpoint is set.\par
+\par
+\cf1\fs28 Section [AutoLoad]\par
+\cf2\fs20\par
+Maintained by RadASM project context menu.\par
+\par
+x=AutoLoad\tab\tab\tab\tab x see section [Files], x=\par
+\tab\tab\tab\tab\tab AutoLoad, TRUE or FALSE\par
+\par
+\cf1\fs28 Section [VerInf]\par
+\cf2\fs20\par
+Maintained by RadASM project versioninfo.\par
+\par
+Nme=\tab\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+ID=\tab\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+FV=\tab\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+PV=\tab\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+VerOS=\tab\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+VerFT=\tab\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+VerLNG=\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+VerCHS=\tab\tab\tab\tab See RadASM.ini section [VerInf]\par
+Text=Value\tab\tab\tab\tab Text see  RadASM.ini section [VerInf]\par
+\tab\tab\tab\tab\tab Value is text set by user.\par
+\par
+\cf1\fs28 Section [Resource]\par
+\cf2\fs20\par
+Maintained by RadASM project resource.\par
+\par
+x=Name,ID,Type,File\tab\tab\tab x is a number 1 and up\par
+\tab\tab\tab\tab\tab Name is the name of the resource\par
+\tab\tab\tab\tab\tab ID is the id number of the resource\par
+\tab\tab\tab\tab\tab Type is a number 0 to 9\par
+\tab\tab\tab\tab\tab Filename is the resource file\par
+\par
+\cf1\fs24 Resource types\cf2\fs20\par
+0=Bitmap\par
+1=Cursor\par
+2=Icon\par
+3=Image\par
+4=Midi\par
+5=Wawe\par
+6=Avi\par
+7=Rcdata\par
+8=Manifest\par
+9=Font\par
+10=AniCursor\par
+\par
+\cf1\fs28 Section [StringTable]\par
+\cf2\fs20\par
+Maintained by RadASM project stringtable.\par
+\par
+x="Name,ID,String"\tab\tab\tab x is a number 1 and up\par
+\tab\tab\tab\tab\tab Name is the name of the string resource\par
+\tab\tab\tab\tab\tab ID is the id number of the string resource\par
+\tab\tab\tab\tab\tab String is the text\par
+\cf1\fs28\par
+Section [Accel]\par
+\cf2\fs20\par
+Maintained by RadASM project accelerator.\par
+\par
+Nme=\tab\tab\tab\tab\tab The name for the table.\par
+ID=\tab\tab\tab\tab\tab The ID for the table.\par
+x=Name,ID,Asii,Ctrl+Shift+Alt\tab\tab x is a number 1 and up\par
+\tab\tab\tab\tab\tab Name is the name of the accelerator\par
+\tab\tab\tab\tab\tab ID is the id for the accelerator\par
+\tab\tab\tab\tab\tab Ascii is the ascii value for the key\par
+\tab\tab\tab\tab\tab Ctrl+Shift+Alt is the numeric sum of the keys.\par
+\par
+\cf1\fs28 Section [Language]\par
+\cf2\fs20\par
+Maintained by RadASM project language.\par
+\par
+Language=\tab\tab\tab\tab Value found in RadASM.ini section [LANGUAGE]\par
+SubLanguage=\tab\tab\tab\tab Value found in RadASM.ini section [LANGUAGE]\par
+\par
+\cf1\fs28 Section [Find]\par
+\cf2\fs20\par
+Maintained by RadASM Find / Replace dialog.\par
+\par
+x="Find text"\tab\tab\tab\tab x is a number 1 to 10. "Find text" is one\par
+\tab\tab\tab\tab\tab of the most recent searches.\par
+\cf1\fs28\par
+}
+ 

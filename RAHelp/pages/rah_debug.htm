@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Integrated Debugging</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Integrated Debugging</font></B></P>
+
+<P>
+There are two integrated debugging tools in RadASM, breakpoints and VKim's debug.<BR>
+<BR>
+<B><font color="#000080" size="4">Breakpoints</font></B><BR>
+<BR>
+To use breakpoints you must include one of the following lines in your main code.
+</P>
+
+<P style="border: 2 solid #008080">
+<b>MASM:</b>
+<BR>
+<font color="#000000">
+<B>include \RadASM\masm\inc\radbg.inc</B><BR>
+<b>GoAsm:</b><br>
+<b>#include &quot;\RadASM\GoAsm\inc\RadDbg.a&quot;<br>
+</b>
+</font>
+<b>HLA:</b><br>
+<b>#include( &quot;<font color="#000000">\RadASM\hla\inc\radbg.inc</font>&quot; )<br>
+TASM:<br>
+include \radasm\tasm\inc\radbg.inc</b>
+</P>
+
+<P>
+Breakpoints are set using the right click menu in the code editor window. Place the cursor on a line of code and right-click, select Toggle Breakpoint to set or remove a single breakpoint select Clear Breakpoints to remove all breakpoints. Once you have a breakpoint set, the Add Variable selection will be enabled for that line, you can use this to specify variables that you wish to have displayed when the breakpoint is reached. RadASM will pause the program once the line immediately before the breakpoint has executed and a dialog will display a register dump plus the variables you have specified.<BR>
+<BR>
+Breakpoints require that you run the program from the RadASM <B>Make</B> menu using the <B>Run</B> command. You must remove all breakpoints if you wish to run the program independent of RadASM.<BR>
+<BR>
+Breakpoints are saved in the <a HREF="rah_proj_files.htm#breakpoint">project</a> file and will not be lost by closing the project.
+You must re-build a program using breakpoints each time RadASM is opened as the
+MDI handle must be known for breakpoints to work properly.<BR>
+<BR>
+<span style="background-color: #FFFF00">
+There can be a maximum of 10 breakpoints in a project.</span><BR>
+<BR>
+<B><font color="#000080" size="4">VKim's Debug</font></B><BR>
+<font color="#FF0000"><b><br>
+MASM only<br>
+</b></font>
+<BR>
+There is a RadASM specific implementation of VKim's debug. To enable it insert the following lines in your
+main code.
+</P>
+
+<P style="border: 2 solid #008080">
+<B>include \RadASM\masm\inc\debug.inc<BR>
+includelib \RadASM\masm\lib\debug.lib<BR>
+<BR>
+DBGWIN_DEBUG_ON = 1 ; include debug info into the program<BR>
+DBGWIN_EXT_INFO = 1 ; include extra debug info into the program</B>
+</P>
+
+<P>
+The RadASM implementation is identical to the original except that instead of outputting to a debug window it will output to the RadASM output window.<BR>
+<BR>
+For information on using VKim's debug see the help file in \RadASM\Help\DBGWIN.HLP
+</P>
+
+<P>
+<b><font color="#FF0000">GoAsm only</font></b>
+</P>
+
+<P>
+The GoAsm includes are currently available at <a href="http://donkey.visualassembler.com/">my
+website</a>. The GoAsm implementation of VKim's debug requires a minimum of
+GoAsm 0.46i beta release and supports the following functions:
+</P>
+
+<P><b><font color="#008080">PrintDec</font></b> - Syntax = PrintDec(eax) or PrintDec([hInstance]) Only dwords are
+supported optional text is not.<br>
+<b><font color="#008080">
+PrintHex</font></b> - Same as PrintDec<br>
+<b><font color="#008080">
+PrintText</font></b> - Syntax = PrintText(&quot;Quoted text&quot;)<br>
+<b><font color="#008080">
+PrintString</font></b> - Syntax = PrintString(StringLabel) do not encase the
+label in square brackets<br>
+<b><font color="#008080">
+PrintStringByAddr</font></b> - Syntax = PrintStringByAddr(pString)<br>
+<b><font color="#008080">
+PrintLine</font></b> - Same as MASM<br>
+<b><font color="#008080">
+PrintError</font></b> - Same as MASM<br>
+<font color="#008080"><b>DumpMem</b></font> - Syntax = DumpMem(pMem,nBytes)<br>
+<font color="#008080"><b>DumpFPU</b></font> - Syntax = DumpFPU<br>
+<b><font color="#008080">Spy</font></b> - Syntax = Spy(Label) do not encase the
+label in square brackets<br>
+<b><font color="#008080">StopSpy</font></b> = Same as MASM<br>
+<font color="#008080"><b>TrapException</b></font> = TrapException(OFFSET
+CodeLabel)<br>
+<b><font color="#008080">PrintDouble</font></b> = PrintDouble(QWordLabel) do not encase the
+label in square brackets<br>
+<font color="#008080"><b>ASSERT</b></font> = ASSERT(eax,&quot;Message&quot;) if
+you wish the default message you must use &quot;&quot; in place of
+&quot;Message&quot;<br>
+<b><font color="#008080">DbgDump</font></b>  - Syntax = DbgDump(pMem,nBytes)<br>
+<font color="#008080"><b>PrintException</b></font> - Syntax =
+PrintException(pEXCEPTION_RECORD)
+</P>
+
+<P><b>Extensions for GoAsm version only:</b><br>
+<font color="#008080"><b>ShowLine</b></font> - Syntax = ShowLine - Prints the
+current line number in the output window<br>
+<b><font color="#008080">DumpEFlags</font></b> - Syntax = DumpEFlags - dumps the
+eflags register<br>
+<b><font color="#008080">DumpMMX</font></b> - Syntax = DumpMMX - Dumps the MMX
+registers<br>
+<font color="#008080"><b>Measure/EndMeasure</b></font> - returns the number of
+bytes between the two<b><font color="#008080"><br>
+PrintQWORD</font></b> - Syntax = PrintQWORD(label) do not encase the
+label in square brackets<br>
+<b><font color="#008080">
+PrintQWORDHex</font></b> - Syntax = PrintQWORDHex(label) do not encase the
+label in square brackets
+</P>
+
+<P><font color="#FF0000"><b>The Fix function is unsupported</b></font> <br>
+<br>
+To enable VKim's debug for GoAsm include the following line in your source
+code:
+</P>
+
+<P style="border: 2 solid #008080"><b>#include &quot;\RadASM\GoAsm\inc\debug.a&quot;<br>
+DBGWIN_DEBUG_ON = 1 ; use this to enable Spy/StopSpy/DbgDump and TrapException<br>
+DBGWIN_SHOWONLYERRORS = 1 ; setting this to 1 will suppress PrintError if no error
+exists</b>
+</P>
+
+<P>
+The directive <b>STRINGS UNICODE</b> will cause debug to translate the
+PrintString, PrintStringByAddr and PrintText functions from Unicode to ANSI.
+</P>
+
+<P>
+<b><font color="#000080" size="4">External Debuggers</font></b>
+</P>
+
+<P>
+You can set up the <a href="adv_cmd_lines.htm#rundebug">Run w/Debug</a> Make
+menu selection to work
+with your external debugger and you can also include it to your tools menu. For
+those debuggers that accept command line filenames you can add that with a ,5 at
+the end of the command line.<BR>
+</P>
+
+</BODY>
+</HTML>

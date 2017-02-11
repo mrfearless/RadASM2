@@ -1,0 +1,24 @@
+DlgToWin addin.
+
+You can choose from four templates:
+
+1. DlgToWin.rad
+Creates a running app using CreateWindowEx on window and controls from a RadASM dialogbox.
+Also creates a WM_COMMAND section on buttons and menu items.
+
+2. DlgAsMain.rad
+Creates a running app using dialogbox template as main window from a RadASM dialogbox.
+Also creates a WM_COMMAND section on buttons and menu items.
+
+3. DialogApp.rad
+Creates a running app using dialogbox template from a RadASM dialogbox.
+Also creates a WM_COMMAND section on buttons and menu items.
+
+4. Dialog.rad
+Creates a dialogbox proc to be included in a larger project.
+Also creates a WM_COMMAND section on buttons and menu items.
+
+You can also export individual sections, change the proc name and add a menu.
+
+KetilO
+

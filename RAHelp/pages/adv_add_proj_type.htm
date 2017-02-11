@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Adding to the default project types</TITLE>
+</HEAD>
+
+<BODY>
+<P style="background-color: #CC99FF; border-style: solid; border-width: 1">
+
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="0=project.rap \n" +
+"1=project.rc \n" +
+"2=project.asm \n" +
+"3=project.obj \n" +
+"4=project.res \n" +
+"5=project.exe \n" +
+"6=project.def \n" +
+"7=project.dll \n" +
+"8=project.txt \n" +
+"9=project.lib \n" +
+"10=project.mak \n" +
+"11=project.hla "
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+</SCRIPT></CODE><B><font color="#0000FF" size="5">Adding to the default project types</font></B></P>
+
+<P>
+When you select Create New Project, a list of project types appear, for the most part this list is fairly complete. However, you may want to modify the list to more readily reflect the types of programs you write. Each assembler has it's own <A HREF="rah_assembler_ini.htm">INI</A> file and the project types are defined in that file. A project type requires first that the name of the project is added to the list of available names and second that the creation parameters and command lines are defined.<BR>
+<BR>
+<font color="#008000" size="4">
+<B>Adding a project name</B><BR>
+</font>
+<BR>
+In your <a href="rah_assembler_ini.htm#project"> assembler.ini</a> file the list of project types is contained in the<b>
+<a href="rah_assembler_ini.htm#project"> [Project]</a></b> section. The project types are comma delimited and spaces are allowed.<BR>
+<BR>
+<b>
+[Project]</b> <BR>
+Type=Win32 App,Dos App<BR>
+<BR>
+Also of concern is file extensions you will be using. This is generally a fixed list and modifying it will affect all other projects, it is ok to add to it though. The file extensions are those that can be created by RadASM when the project is created. As we will see later there is a way to set up defaults for each project type.<BR>
+<BR>
+Files=Asm,Inc,Rc,Def,Txt,Mak<BR>
+<BR>
+The last piece of the<b> [Project]</b> section that is of general interest is the folders. This is a list of the same type as Files, and the same rules apply.<BR>
+<BR>
+Folders=Bak,Mod,Res<BR>
+<BR>
+<B><font color="#008000" size="4">Controlling the New Project Wizard</font></B><BR>
+<BR>
+Once you have named your project type in the Type list, RadASM will look for an INI section of the name you gave it. So the first thing to do is to create a new section in your
+<a href="rah_assembler_ini.htm#projecttype"> assembler.ini</a> file. INI sections are always contained in square brackets, the MyProjectType is to be replaced by the exact name you used in Type= above.<BR>
+<BR>
+[MyProjectType]<BR>
+<BR>
+The first entry of a project definition is the <B>Files=</B> key. Here you can define the default check state for the <B>File Creation</B> page in the wizard. 1 indicates that the item will be checked and 0 unchecked. The file extensions correspond to the extensions defined in the <B>Files</B> key of the Project section. If there are more extensions defined than entries in this list the file extension will default to unchecked, this way when you add a new extension to the list you don't have to modify existing project types.<BR>
+<BR>
+<b><font color="#0000FF">Files</font></b>=1,1,0,0,0<BR>
+<BR>
+The same rules apply to folders<BR>
+<BR>
+<b><font color="#0000FF">Folders</font></b>=1,0,0<BR>
+<BR>
+The MenuMake key let's you determine which commands on the make menu will be enabled by default. These commands correspond to the commands in the <B>MenuMake</B> key
+of the <B>[Project]</B> section.<BR>
+<BR>
+<b><font color="#0000FF">MenuMake</font></b>=0,1,1,1,1,1,0,0<BR>
+<BR>
+<B><font color="#008000" size="4">Setting the default build options</font></B><BR>
+<BR>
+Now on to the meat of the section, the command line defaults. There are 2 sets of six command line defaults for each project type, the first set is for standard builds and the second set is for debug builds. All command lines are built using the same template of comma
+delimited fields:<BR>
+<BR>
+<B>Field 1.</B> Enter the number of a <CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">file</a></CODE> from the RAP file. RadASM will delete this file before executing the command line and verify if it is present afterwards. For example in the RC command line it will delete the projects RES file (file #4) and make sure that a new one was created on exit.<BR>
+<BR>
+<B>Field 2.</B> Enter a letter O to output to the Output Window of RadASM, C to output to a Console or the number 0 for no output. All StdOut output from the command
+is piped to the output you specify.<BR>
+<BR>
+<B>Field 3.</B> The command you wish to execute. This file uses the <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$_</a></CODE> variables to specify the directory or you can hard-code a directory as well. In the RC field using the .EXE extension will suppress quotes around the input file name.<BR>
+<BR>
+<B>Field 4+.</B>  The command switches are next, you can use a <B>,</B> to indicates quotes around an item and the pipe symbol <B>|</B> is used to replace the comma. When building the switches it is a good idea to put parameters that need quotes such as
+file names last, this will avoid having to quote the whole line. All switches can use the <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$_</a></CODE> variables as well as file numbers. To distinguish between file numbers and digits RadASM assumes that only digits
+preceded by a comma are a file name. If you have a file name that you do not wish to encapsulate in quotes use $# instead i.e. for Project.RES use $4.</P>
+
+<P>
+For a more detailed look at command lines see <a href="adv_cmd_lines.htm">Editing
+command line options</a><BR>
+<BR>
+<B><font color="#008000" size="4">Key number and command type</font></B><BR>
+<BR>
+<B>1 &amp; 11</B> = Resource compiler<BR>
+<B>2 &amp; 12</B> = Assembler command line<BR>
+<B>3 &amp; 13</B> = Link command line (these two will usually be different as 13 will have a debug switch)<BR>
+<B>4 &amp; 14</B> = Run command (almost always 0,0,,5)<BR>
+<B>5 &amp; 15</B> = This is for the CVTRES command that converts Res files to object files<BR>
+<B>6 &amp; 16</B> = Is used for batch assembling of ASM files for building modules<BR></P>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Version Control by WillAsm</title>
+</head>
+
+<body>
+
+<p style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<b><font color="#0000FF" size="5">Version Control by WillAsm</font></b></p>
+<p>Version Control with Backup to Zip &amp; Milestones Support<br>
+By WillASM<br>
+Last Update: Oct. 17 2003<br>
+<br>
+<font color="#0000FF" size="4"><b>Installation</b></font></p>
+<p>1) Copy VersionControl.dll to your addin folder (typically C:\RadASM\AddIns)<br>
+2) Launch RadASM, and go to Option -> Addin Manager<br>
+3) Select VersionControl from the list, click "Install"<br>
+4) Choose Enable AddIn, then click "OK"<br>
+<br>
+<font color="#0000FF" size="4"><b>Usage</b></font></p>
+<p>To access Version Control addin settings, select Version Control, from the Project menu. The addin will
+display a tabbed dialog box with four tabs.<br>
+<br>
+<font color="#0000FF" size="4"><b>Version Control Settings</b></font></p>
+<p>The options group to the left will allow you to customize the behavior of the
+Version Control Addin. Adjust these to suit your preferences for your project. The File Version Format &amp; Product Version Format groups to the right allow you
+to customize how your project versions will be updated. The +/- buttons will allow you to set the version length, e.g. x -or- x.x -or- x.x.x -or- x.x.x.x
+To set the range for each versions digit's, first click on the desired digit to highlight it (The green X's), then select the range from the drop-down list.
+This range determines when a rollover will occur and cause the digit to the left to be updated. Allowed ranges are 0 to 9-99-999-unlimited. If set to
+unlimited, no rollover of the digit to the left will ever occur.<br>
+<br>
+e.g. If format length is x.x - and last digit range is 0-9, a rollover will occur
+on the tenth build. (1.9 will rollover to 2.0)<br>
+<br>
+The Update group allows you to set Update File Version Only, or both File Version &amp; Product Version.<br>
+<br>
+<font color="#0000FF" size="4"><b>Milestones</b></font></p>
+<p>The Milestone's tab allows you to automate the many features of Version Control
+addin. The Milestone's Settings group to the left allow you to select when a milestone build will occur. Select when you want a milestone to occur, and
+then select the Milestone Actions on the right you want to be performed when the milestone build is achieved. The milestone actions can be combined to perform
+more than one action. Some examples of usage are...<br>
+<br>
+Perform An Automatic Backup Every 25 Builds:<br>
+Set Milestone Settings to - On Every # Of Builds - Adjust Milestone Frequency To 25<br>
+Set Milestone Actions to - Backup Project<br>
+(A backup of your project will now be created every 25 builds automatically)<br>
+<br>
+Need to do something at a specific time and do not want to forget:<br>
+Set Milestone Settings to - Specific Date &amp; Time - Adjust Date/Time Settings<br>
+Set Milestone Actions to - Display MessageBox and/or Play Sound (You will be reminded at the date/time you set)<br>
+<br>
+<font color="#0000FF" size="4"><b>Backup Project</b></font></p>
+<p>A backup of your project can be performed from here. Note there are two fields
+for entering a backup comment. The top one (Backup Comment), if used, will always
+over-ride the other field (Backup Default Comment). The reason for having both is to help with automated backups. The Backup Default Comment, which is saved to
+the projects RAP file, can be set to what ever you prefer. Then if under settings,
+the - Prompt For Zip Comment (Else Default) - is unchecked, the default comment will be used. The buttons to the right of both comment fields will allow you to
+insert text macros which are expanded when the backup comment is created. The Exclude File Types group to the right will allow you to filter up to 4 file
+types from the backup's zip file. Note that the file extensions are also saved to the projects RAP file, allowing you to have different filters for different
+projects. The backup location can also be selected from here. The default backup<br>
+location is set to ..Projects\VCBackups\ folder.<br>
+<br>
+<b><font size="4" color="#0000FF">Restore Project</font></b></p>
+<p>Any project backup created by you can be restored from here. Select the backup
+from the Backup History list, and its comment will be displayed to the right. Press Restore Backup to restore, or Delete Backup to remove backup. Note that
+when restoring a previous backup, the current projects files will be deleted! This means any new files, code added, etc., will be lost! It is recommended to
+use the option from Version Control Settings tab, Backup Project Before Restoring.
+This will generate a backup first, with the comment... "Auto Generated Backup - Created During Project Restore"<br>
+<br>
+<font color="#0000FF"><b>Special Notes:</b></font></p>
+<p>1) A Project must be loaded for the addins menu item to be enabled.<br>
+2) Version Control settings are stored in each projects RAP file. This allows you to have different settings for every project.<br>
+3) The backup and restore features allow you to safely experiment with major code changes. Create your backup, then make your major
+code changes. If you find its not working as you thought it would, simply restore the backup!<br>
+4) The milestone action, Play Sound, requires a WAV file. Use any WAV file you prefer and copy it to
+RadASM's Addin folder, and rename the file to VersionControl.wav.</p>
+
+</body>
+
+</html>

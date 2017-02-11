@@ -1,0 +1,5 @@
+LIBRARY Res2Dlg.dll
+EXPORTS
+	DllProc
+	InstallDll
+	GetOptions

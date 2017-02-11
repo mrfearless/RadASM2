@@ -1,0 +1,49 @@
+Just to test AIM_OUTPUTDBLCLK
+
+
+Addin Manager compatible.
+-------------------------
+
+- The addin must respond to AIM_CLOSE by:
+  1. Removing menu items and toolbar buttons it has added.
+  2. Freeing resources it has created.
+  3. Destroying dialogs.
+  4. Undoing subclassing of RadASM windows.
+
+  IMPORTANT: Addin Manager can send AIM_CLOSE to your addin more than once.
+			 It is important to keep track of what has alredy been destroyed / undone.
+
+- If your addin has options, then export GetOptions function.
+  The function should return a pointer to two or more ADDINOPT structures.
+  The last structure must be all NULL's.
+
+ADDINOPT structure.
+-------------------
+
+	ADDINOPT struct
+		lpStr			dd ?	;Pointer to zero terminated string. It will be a checkbox caption.
+		nAnd			dd ?	;AND value
+		nOr				dd ?	;OR value. There is a AND and a OR value to support checkbox groups.
+	ADDINOPT ends
+
+GetOptions proc.
+----------------
+
+GetOptions proc
+
+	mov		eax,offset AddinOpt	;Return a pointer to two or more ADDINOPT structures.
+	ret
+
+GetOptions endp
+
+Initialisized ADDINOPT structures.
+----------------------------------
+
+.data
+
+	szAddinOption		db 'Enable my addin',0
+	AddinOpt			ADDINOPT <offset szAddinOption,1,1>
+						ADDINOPT <0,0,0>
+
+
+KetilO

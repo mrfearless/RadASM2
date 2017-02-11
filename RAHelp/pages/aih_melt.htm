@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Melt By Gunner</title>
+</head>
+
+<body>
+
+<p align="left" style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<font color="#0000ff" size="5"><b>Melt By Gunner</b></font></p>
+<p align="center"><b><u>MASM Error Lookup Tool</u></b><br>
+Version: 2.0.10<br>
+Last Updated: 03-05-18</p>
+<p><b>Melt</b>, though technically not an AddIn, can be integrated into RadASM,
+It is a very useful tool for tracking down problems during the compiling of a
+project.</p>
+<p>It supports all of the Microsoft Assembler tools:<br>
+<b>Ml<br>
+Cvtres<br>
+NMake<br>
+Link<br>
+Lib<br>
+Dumpbin<br>
+Editbin<br>
+RC</b><br>
+<br>
+<u><strong>What is it?<br>
+</strong></u><br>
+When you use the above tools, you will often receive cryptic error numbers.&nbsp;
+You will then have to search Microsoft and hope you can find a description of
+the error.&nbsp; I have taken that work away from you with this easy to use and
+quick program!<br>
+<br>
+<u><strong>How do I use it</strong></u></p>
+<ol>
+  <li>The pushpin is to keep MELT on top of other windows. (Click it and see
+    what happens)
+  <li>The arrow will make MELT smaller to keep out of your way. (Click it)
+  <li>The question mark describes what the error type is. (If yellow, hover
+    mouse over icon for tooltip with more info).
+  <li>The note icon.&nbsp; If it is yellow, there is a note for that error.
+    (Click to view note)<br>
+    If not, click note icon To create a note.
+  <li>Click magnifying glass icon to view all notes.</li>
+</ol>
+<p><b>Main Window:</b><br>
+<img border="0" src="../images/melt_main.gif" width="449" height="383"></p>
+<p><b>Note Browser:</b><br>
+<img border="0" src="../images/melt_browse.png"><br>
+<br>
+<a href="http://members.tripod.com/semper.fi/files/melt.zip">Download</a> 74,740
+bytes</p>
+<p><u><strong>Install:</strong></u><br>
+<b><font color="#008000">1.</font></b> Create a directory for MELT and unzip
+files to that directory.<br>
+<font color="#008000"><b>2.</b></font> Add the following to <a href="rah_assembler_ini.htm">masm.ini</a><br>
+<br>
+<b><font color="#0000ff"><a href="rah_assembler_ini.htm#error">[Error]</a></font></b><br>
+<b><font color="#800000">1=</font></b>$R\melt\melt.exe<br>
+<font color="#800000"><b>2=</b></font>A,5<br>
+<font color="#800000"><b>3=</b></font>LNK,8<br>
+<font color="#800000"><b>4=</b></font>RC,9<br>
+<font color="#800000"><b>5=</b></font>RW,10<br>
+<br>
+<font color="#ff0000"><b>TIP:</b></font> You can also add melt to Tools menu.<br>
+<br>
+<u><strong>Un-Install:</strong></u><br>
+Delete the Melt directory<br>
+Remove the entry in the masm.ini file</p>
+
+</body>
+
+</html>

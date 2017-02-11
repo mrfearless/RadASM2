@@ -1,0 +1,2 @@
+This addin creates masm prototypes for procedures.
+The prototypes are sendt to output window.

@@ -1,0 +1,133 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=Advanced edit addin
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[Files]
+1=AdvEdit.Asm
+2=AdvEdit.Inc
+3=AdvEdit.Def
+4=AdvEdit.Txt
+5=..\..\..\Inc\RadAsm.inc
+[MakeFiles]
+0=AdvEdit.rap
+1=AdvEdit.rc
+2=AdvEdit.asm
+3=AdvEdit.obj
+4=AdvEdit.res
+5=AdvEdit.exe
+6=AdvEdit.def
+7=AdvEdit.dll
+8=AdvEdit.txt
+9=AdvEdit.lib
+10=AdvEdit.mak
+11=AdvEdit.hla
+12=AdvEdit.com
+13=AdvEdit.ocx
+14=AdvEdit.idl
+15=AdvEdit.tlb
+[MakeDef]
+Menu=0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:"$L" /OUT:"$7",3
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L" /OUT:"$7",3
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=0,0,\OllyDbg\OllyDbg,5
+[Resource]
+[StringTable]
+[VerInf]
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=4
+4=4
+5=2
+[Collapse]
+5=
+3=
+1=
+2=
+4=
+[Size]
+5=0,0,0,0,0
+3=0,0,0,0,0
+1=0,0,0,0,7125
+2=0,0,0,0,715
+4=0,0,0,0,53
+[Exports]
+1=DllEntry
+2=DllProc
+3=InstallDll
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=11
+MilestoneOnDateTimeYear=2005
+MilestoneOnDateTimeMonth=9
+MilestoneOnDateTimeDate=18
+MilestoneOnDateTimeHour=20
+MilestoneOnDateTimeMin=52
+MilestoneOnDateTimeSec=7
+MilestoneOnDateTimeStatus=0
+BackupLocation=C:\RadASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=
+[AutoLoad]
+1=1
+[Find]
+1="hMnu"
+2="chrgold"
+[PTimer]
+PTimer=10481090

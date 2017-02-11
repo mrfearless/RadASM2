@@ -1,0 +1,6 @@
+LIBRARY RadHelp.dll
+EXPORTS
+DllEntry
+DllProc
+InstallDll
+GetOptions

@@ -1,0 +1,6 @@
+LIBRARY SourceSafe.dll
+EXPORTS
+	DllProc
+	DllEntry
+	InstallDll
+	GetOptions

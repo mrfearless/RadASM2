@@ -1,0 +1,72 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=Create project workspace
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Debug=0
+[MakeDef]
+Menu=1,1,1,1,0,1,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /DLL /DEF:$6 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+[MakeFiles]
+0=CreateProject.rap
+1=CreateProject.rc
+2=CreateProject.asm
+3=CreateProject.obj
+4=CreateProject.res
+5=CreateProject.exe
+6=CreateProject.def
+7=CreateProject.dll
+8=CreateProject.txt
+9=CreateProject.lib
+10=CreateProject.mak
+[Files]
+1=CreateProject.Asm
+2=CreateProject.Inc
+3=CreateProject.Rc
+4=CreateProject.Def
+5=CreateProject.Txt
+6=CreateDialog.dlg
+7=Dlg.Asm
+8=Sort.asm
+9=
+10=
+11=
+[Size]
+4=0,0,0,0,49
+6=0,0,0,0
+2=0,0,0,0,2494
+1=0,0,0,0,4057
+7=0,0,0,0,9921
+9=
+3=0,0,0,0,0
+8=0,0,0,0,286
+11=
+10=0,0,0,0,880
+5=0,0,0,0,989
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+[Version-Inc]
+Options=52

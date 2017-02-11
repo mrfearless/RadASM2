@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Creating and editing menus</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Creating and editing menus</font></B></P>
+
+<P><img border="0" src="../images/menu_dialog.gif" width="358" height="516"></P>
+
+<P>To add a resource based menu to your project select <B>Add New</B> from the <B>Project</B> menu or right click on the Project box. Double click on the new menu file to open the <B>Edit Menu</B> dialog. The first thing you must do is give your menu a name, this will be the name used by your application to identify the resource, alternatively you can identify it by a numeric value. You must also specify a starting ID for the items in the menu, all items will be numbered in order from the number you select. These numbers correspond to the command IDs that are passed to your application in the WM_COMMAND message. To add an item select <B>Insert</B> to insert a new item (the first item is created by default) and enter the specifics of the item. Complete the fields for each item you wish to add. You can move an item up or down in the menu structure and left or right. Moving an item to the left of the item above it signals that it is a sub item. The order in the editor directly corresponds to the menu that will appear in your application.</P>
+
+<P>To assign the menu to a dialog you can do so directly in the dialog editor by
+specifying the mnu file in the Menu field of the dialogs properties.</P>
+
+<P><img border="0" src="../images/menu.gif" width="263" height="514"></P>
+
+<P style="border: 2 solid #008080"><font color="#FF0000"><b>Tip:</b></font> In
+order to create a separator item give it an ID of zero, no name and use a minus
+(<b>-</b>) as the caption text</P>
+
+</BODY>
+</HTML>

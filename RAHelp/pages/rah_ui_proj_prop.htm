@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Project Properties window</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Project Properties window</font></B></P>
+
+<P>
+Generally ASM programmers are a pretty stingy bunch. More than any other language ASM lends itself to a programming style that is conservative in it's use of variables and procedures. RadASM has that in mind with the project properties window. It is a useful tool for keeping track of all aspects of a project at a single glance. The initial value of all declared variables as well as the parameters of procedures and macros and the elements of declared structures are available through it.<BR>
+<BR>
+The project properties window displays lists associated with your project. There are 6 available lists that can be selected from the drop down combo box. Selecting an element of a list will show a combo box for that item that contains information about it, the exact information depends on the type of list selected. When you open a code file the list can display all of the procedures, variables in the .data and .const segments, macros, messages and structures in your
+project. The lists in this window do not auto refresh so you may be required to refresh it from time to time by pressing the blue down arrow. You can filter the display by file using the filter buttons at the top of the window. The following is a summary of the type of information displayed for each list;<BR>
+<BR>
+Items in square brackets are available in the drop down combo box of each element in the list
+</P>
+
+<pre><B>CODE&nbsp;&nbsp;&nbsp;  : </B>Procedures [parameters]
+<B>CONST&nbsp;&nbsp; &nbsp;: </B>List of declared constants [equ value]
+<B>DATA&nbsp;&nbsp;&nbsp;  : </B>List of declared variables [initial value]
+<B>MACRO&nbsp;&nbsp; &nbsp;: </B>List of macros [parameters]
+<B>MESSAGES : </B>Procedures [List of messages referenced]
+<B>STRUCT&nbsp;&nbsp; : </B>List of structures [elements]</pre>
+
+<P>
+Right clicking on an item in the project properties window will display a menu that allows you to find all references to the item in all files (<B>Scan Project</B>). You can also find the line of code in which the item was declared. When procedures are displayed right click on a procedure and select create proto, RadASM will add a prototype line to your code at the cursor position.
+</P>
+
+<P style="border: 2 solid #008080">
+<B><font color="#FF0000">TIP</font>:</B> When you create or change a structure in MASM, it will not be added to the auto-complete list until you hit refresh in the project properties window
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,4 @@
+LIBRARY ProjectTimer.dll
+EXPORTS
+	DllProc
+	InstallDll

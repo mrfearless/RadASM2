@@ -1,0 +1,53 @@
+HWND,4,Window handle
+HDC,4,DC handle
+BYTE,1
+WORD,2
+DWORD,4
+LONG,4
+ULONG,4
+HRESULT,4
+INT,4
+UINT,4
+CHAR,1
+PChar,4
+HINSTANCE,4,Instance handle
+HMODULE,4,Module handle
+HFONT,4,Font handle
+BOOL,4,TRUE / FALSE
+LPARAM,4,lParam
+WPARAM,4,wParam
+HANDLE,4,Handle
+HMENU,4,Menu handle
+LRESULT,4
+ATOM,2,Atom
+HACCEL,4,Accelerator table handle
+TCHAR,1,String
+FLOAT,4,Float
+WCHAR,2,String
+Integer,4
+INTEGER,4
+Shortint,2
+SmallInt,1
+Longint,4
+LongInt,4
+Longword,4
+Int64,8
+Byte,1
+Word,2
+Cardinal,4
+QWord,8
+Boolean,4
+BOOLEAN,4
+ByteBool,1
+WordBool,2
+LongBool,4
+Char,1
+Real,4
+Single,4
+Double,8
+Extended,10
+Comp,4
+Currency,8
+Bool,1
+STRING,1
+ANSISTRING,1

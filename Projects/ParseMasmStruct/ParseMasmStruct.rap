@@ -1,0 +1,166 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=Parse masm struct
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Debug=0
+[Files]
+1=ParseMasmStruct.Asm
+2=ParseMasmStruct.Inc
+3=ParseMasmStruct.Rc
+4=ParseMasmStruct.dlg
+5=Misc.asm
+6=Result.dlg
+7=TypeSize.txt
+8=StructSize.txt
+9=ConstSize.txt
+AutoDelete=1
+AskMe=0
+MinorFiles=*.res;*.obj;
+10=Test.asm
+11=all.inc
+[MakeFiles]
+0=ParseMasmStruct.rap
+1=ParseMasmStruct.rc
+2=ParseMasmStruct.asm
+3=ParseMasmStruct.obj
+4=ParseMasmStruct.res
+5=ParseMasmStruct.exe
+6=ParseMasmStruct.def
+7=ParseMasmStruct.dll
+8=ParseMasmStruct.txt
+9=ParseMasmStruct.lib
+10=ParseMasmStruct.mak
+11=ParseMasmStruct.hla
+12=ParseMasmStruct.com
+[MakeDef]
+Menu=1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L" /OUT:"$5",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+7=0,0,"$E\OllyDbg",5
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /Zd /Zi /nologo /I"$I",2
+13=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /VERSION:4.0 /LIBPATH:"$L" /OUT:"$5",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+17=0,0,"$E\OllyDbg",5
+[Resource]
+[StringTable]
+[VerInf]
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=3
+4=3
+5=2
+6=3
+7=4
+8=4
+9=4
+10=2
+11=1
+[AutoLoad]
+1=1
+2=1
+4=1
+[RADebugBP]
+1=
+2=
+5=
+10=
+0=
+11=
+[Find]
+1=" = "
+2="(Test.asm, "
+3=" equ <"
+4="TVITEMEX"
+5="struct"
+6="OUTLINETEXTMETRICA"
+7="comment"
+8="PNGINFO"
+9="PNGINFO "
+10="HD_HITTESTINFO"
+[Size]
+6=0,0,0,0
+4=0,0,0,0
+9=0,0,0,0,33048
+8=0,0,0,0,19679
+7=0,0,0,0,2018
+5=0,0,0,0,16990
+2=0,0,0,0,4684
+1=0,0,0,0,1995
+10=0,0,0,0,769
+11=0,0,0,0,1962866
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=28
+MilestoneOnDateTimeYear=2009
+MilestoneOnDateTimeMonth=6
+MilestoneOnDateTimeDate=14
+MilestoneOnDateTimeHour=13
+MilestoneOnDateTimeMin=18
+MilestoneOnDateTimeSec=30
+MilestoneOnDateTimeStatus=0
+BackupLocation=D:\RadASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[Collapse]
+9=
+8=
+7=
+5=,,,,
+2=
+1=
+10=
+11=,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=

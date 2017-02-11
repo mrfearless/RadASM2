@@ -1,0 +1,3 @@
+#include "Res/UpdateCheckerDlg.rc"
+#include "Res/DownloadDlg.rc"
+#include "Res/UpdateCheckerVer.rc"

@@ -1,0 +1,25 @@
+[REPLACE]
+".IF"			, ".if"				,1
+".ENDIF"	,	".endif"		,1
+".ELSEIF"	, ".elseif"		,1
+".ELSE"		, ".else"			,1
+"ASSUME"	,	"assume"		,1
+" PROC"		,	" proc"			,1
+" ENDP"		,	" endp"			,1
+" Proc"		,	" proc"			,1
+" Endp"		,	" endp"			,1
+" DB "		,	" db "			,1
+" DW "		,	" dw "			,1
+" DD "		,	" dd "			,1
+" DQ "		,	" dq "			,1
+"EAX"			,	"eax"				,1
+"EBX"			,	"ebx"				,1
+"ECX"			,	"ecx"				,1
+"EDX"			,	"edx"				,1   
+"ESI"			,	"esi"				,1
+"EDI"			,	"edi"				,1
+"EBP"			,	"ebp"				,1
+"ESP"			,	"esp"				,1
+"$invoke"	,	"rv"				,1
+"invoke "	,	"__ "				,1
+"addr "		,	"lp "				,1

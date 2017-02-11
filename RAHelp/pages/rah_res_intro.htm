@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Introduction to Resources</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Introduction to Resources</font></B></P>
+
+<P>
+Resources are a non-code section that is added to your application when it is linked and are available at run-time. They allow you to include virtually everything that your program will use in a single executable or DLL. Application resources are added to a resource definition script called an RC file then compiled to a RES file by the resource compiler that is associated with your assembler (usually RC.EXE). Once the resource script is compiled it is in RES file format and can be added to the link command line.<BR>
+<BR>
+RadASM allows you to create resources and will handle the creation and maintenance of the RC files for you as well as automating the compiling and linking at build time. The main RC file appears in the project browser and can be edited manually if you wish to add an unsupported
+resource types. For the most part RadASM will generate a separate RC file for each type of resource, these files can be found in the \RES folder of your project. The includes in your main RC are all done automatically so it remains transparent.
+</P>
+
+<P>
+When building resources you generally&nbsp; give each resource a label, this
+label is normally assigned a numeric value that identifies the resource in your
+program. In order to make it easier to use the same labels in both your resource
+file and asm file there is a selection on the <b>Tools</b> menu called <b>Export
+Id Equates</b>. This will scan an RC file for all of it's equates and send them
+to the output window where they can be copied and pasted into your program.
+</P>
+
+<P>
+Resource types directly integrated into RadASM :<BR>
+<BR>
+<B>BITMAPS<BR>
+CURSORS<BR>
+ICONS<BR>
+IMAGES (Gif and JPG)<BR>
+AVI<BR>
+MIDI<BR>
+WAVE<BR>
+RCDATA<BR>
+STRING TABLES<BR>
+MENUS<BR>
+VERSION INFO<BR>
+DIALOGS<br>
+ACCELERATOR TABLES</B>
+</P>
+
+<P>
+Resource types integrated via AddIns:
+</P>
+
+<P><b><a href="aih_addmanifest.htm">XP Manifests</a></b><br>
+</P>
+
+</BODY>
+</HTML>

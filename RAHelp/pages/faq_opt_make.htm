@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>FAQ Default command line options</TITLE>
+</HEAD>
+
+<BODY>
+
+<p style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<font color="#0000FF" size="5"><B>Default command line options</B></font></p>
+<P><B><I><font color="#800080">Originally posted by lbxxy</font></I></B><BR>
+There are two option &quot;release&quot; and &quot;debug&quot; in project option
+window. For source-level debugging , I want to add &quot;source-debug&quot; ,
+which can add DEBUGTYPE:CV option to link.
+</P>
+
+<P><B><I><font color="#800080">Answer from Donkey</font></I></B><BR>
+If you don't mind losing the default debug option you can edit the <a HREF="rah_assembler_ini.htm#projecttype">MASM.INI</a> file and change the link command that is used by default for the debug option. Line 13 in each of the project types is the debug link command line:<BR>
+<BR>
+13=5,O,$B.EXE /FILEALIGN:512 /SUBSYSTEM:WINDOWS /DEBUG /VERSION:4.0 /LIBPATH:&quot;$L&quot;,3,4 <BR>
+As you can see mine has been modified with FILEALIGN:512 because of the version of Link that I use.</P>
+
+<p>&nbsp;</p>
+
+</BODY>
+</HTML>

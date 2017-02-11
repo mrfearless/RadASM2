@@ -1,0 +1,56 @@
+[CONFIG]		; tip:edit this in your asm editor 4 syntax hilight
+MinIndent=0		; Min Indent size (Recommended: 0) 
+MaxIndent=20		; Max Indent size (Default:10 Max:24)
+IndentRoller=0		; value is force added to current indent uses this instead of ...
+			; MinIndent to move all indents forward or backward
+StartingSize=1		; Begining Indent size (Default: 1)
+SpacesNotTabs=0 	; (tip:use Scaleupby to increase number of spaces)
+Scaleupby=0		; Valid Values are 0,2,4+8 all else will be ignored to 0
+LeftTrim=1		; Default:1 , off leaves orig indents
+RightTrim=1		; Default:1  ;TODO
+TabsToSpaces=1		; Default:1 , use this to narrow down GLOBAL replace's.
+RemoveDblSpaces=1	; Default:1 , 		----------  "  ----------------
+
+TabAfterFirstWord=0	; TODO : Replaces First Space in line with a tab (Default:0)
+TabBeforeComment=0	; TODO : Inserts a Tab Before semicolon (Default:0 **slow**)
+TrimCommaSpaces=0	; TODO : removes spaces around commas (Recommended on for PrettyupCommas)
+PrettyupCommas=0	; TODO : replaces commas with comma{space} ie.hello,goodbye -> hello, goodbye
+;-----------------------------------------------------------------------------------------
+[STRINGS]			; < Do not modify this text.IT MUST BE UPPERCASE(for faster indexing)
+" proc",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+" endp",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+".BREAK",-1,0			; outdent current line , ignore next lines
+".if",0,1			; ignore current line tab, indent on next lines
+".elseif",-1,0			; outdent current line,ignore next lines
+".else",-1,0			; outdent current line , ignore next lines
+".endif",-1,-1			; outdent current line , outdent on next lines
+"Switch ",0,1			; ignore current line tab, indent on next lines
+"Case",-1,0			; outdent current line,ignore next lines
+"Default",-1,0			; outdent current line , ignore next lines
+"Endsw",-1,-1			; outdent current line , outdent on next lines
+".while ",0,1			; ignore current line tab, indent on next lines
+".endw",-1,-1			; outdent current line , ignore next lines
+" PROTO",*0,0			; force current line tab size to 0,ignore next lines
+"macro",0,1			; ignore current line tab, indent on next lines
+"endm",-1,-1			; outdent current line , outdent on next lines
+" dq ",*1,0			; force current line tab size to 0,ignore next lines
+" dd ",*1,0			; force current line tab size to 0,ignore next lines
+" dw ",*1,0			; force current line tab size to 0,ignore next lines
+" db ",*1,0			; force current line tab size to 0,ignore next lines
+".code",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+".data",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+".const",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+" equ",*1,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+"include",*0,0			; force current line tab size to 0,next lines reset to 'StartingSize' 
+"includelib",*0,0		; 
+".386",*0,*0			; force current line tab size to 0,next lines set to zero
+".486",*0,*0			; force current line tab size to 0,next lines set to zero
+".586",*0,*0			; force current line tab size to 0,next lines set to zero 
+"casemap",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+"model ",*0,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+"LOCAL ",*1,**			; force current line tab size to 0,next lines reset to 'StartingSize' 
+"start:",*0,0			; force current line tab size to 0,ignore next lines
+"end start",*0,0		; force current line tab size to 0,ignore next lines
+"DllEntry",*0,0			; force current line tab size to 0,ignore next lines
+" struct",0,1			; 
+" ends",-1,-1			; 

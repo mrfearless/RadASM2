@@ -1,0 +1,38 @@
+Installing Project zipper
+-------------------------
+Copy ProjectZip.dll to C:\RadASM\Addins
+In RadASM.ini section [Addin] add:
+
+x=ProjectZip.dll,y
+
+Where x is next free number any y is the options
+(y=1 enable, y=3 enable and add date to zipname).
+
+How to use.
+-----------
+On RadASM's Project menu select Project zipper.
+The upper editbox shows the zip path & filename and can be changed.
+The next editbox shows current path.
+The listview shows the files in current path. You can select
+individual files by clicking on the filename. Holding down Ctrl or Shift
+while clicking will multiselect. Selecting a folder will zip all files in
+that folder. Double clicking on a folder will open that folder. Double
+click on back arrow to go up one level. Push Select All button to select
+all files and folders in the listview. Push Zip button to create
+the archive or push Zip & e-mail button to send as e-mail.
+Push All Project Files button to zip all the files in current open project.
+Push Exit to close project zipper.
+
+Project zipper options
+----------------------
+In RadASM.ini add section [ProjectZip]
+
+[ProjectZip]
+;Optional. Default mail address
+mail=mymail@mail.com
+;Optional. Skip all files in folder \bak. Skip *.obj and *.res files
+skip=\bak;.obj;.res
+;Optional. Folder where to put zip files
+folder=D:\RadASM\Projects\Archive
+
+KetilO

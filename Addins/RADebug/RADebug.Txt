@@ -1,0 +1,199 @@
+RadASM source code debug addin.
+
+The goal for this debugger.
+-----------------------------------------------------------------------------
+o The debugged program must run at full speed until a breakpoint is reached.
+o Procs that are not debugged must run at full speed.
+o It must be possible to use other assemblers / compilers than masm and VC6.
+- These goals exclude the use of hardware breakpoints.
+- The use of dbghelp must be minimized.
+
+NOTE! DbgHelp.dll hell.
+-----------------------------------------------------------------------------
+Windows Vista:
+My Vista came with version 6.0.6001.18000. It works OK.
+Windows XP:
+Download and install http://msdl.microsoft.com/download/symbols/debuggers/dbg_x86_6.11.1.404.msi
+The only thing you need is DbgHelp.dll in C:\Program Files\Debugging Tools for Windows (x86)\srcsrv
+Copy it to RadASM root (C:\RadASM).
+Windows 2000:
+Not tested.
+Windows 9x and Me:
+Not tested.
+
+Links:
+http://msdn.microsoft.com/en-us/library/ms679294.aspx
+http://www.microsoft.com/whdc/devtools/debugging/default.mspx
+
+How to install:
+-----------------------------------------------------------------------------
+o Copy RADebug.dll to C:\RadASM\Addins
+o Copy RADebug.txt to C:\RadASM\Addins\Help
+o Optional: Copy dbghelp.dll to RadASM root (C:\RadASM).
+o Start RadASM and use Options/Addin Manager to activate addin.
+  - Option to show DbgHelp output.
+    NOTE! This option slows down debug startup considerably.
+  - Option to show debug events.
+  - Option to pin output window.
+  - Option to by default show register window.
+
+How to make (masm):
+-----------------------------------------------------------------------------
+o Assemble with the /Zd and /Zi options.
+o Link with the /DEBUG option.
+
+How to make (VC6 C/C++):
+-----------------------------------------------------------------------------
+o Compile with the /Zd and /Zi options.
+o Link with the /DEBUG option.
+
+How to debug:
+-----------------------------------------------------------------------------
+o Set a breakpoint in your source using Make/Debug/Toggle Breakpoint
+0 Select Make/Debug/Run
+  - You will get a warning on unhandled breakpoints if you set a breakpoint
+    on a line that does not produce any code.
+  - You will get an error if there are unsaved source files.
+  - You will get an error if any source files are newer than the exe.
+  - Execution will halt when a breakpoint is reached.
+    Output window #1 will show some debug info if the option is enabled.
+    Output window #2 will show registers.
+    Output window #3 is the immediate window.
+  - Use Step Into, Step Over, Run To Caret or Run to continue execution.
+  - Use Toggle Breakpoint to set a new breakpoint or use Clear Breakpoints
+    to clear all breakpoints.
+  - Use Stop to end execution.
+  - Multithreading is supported. Each thread gets to execute one line
+    at a time, very confusing.
+  - Use Do Not Debug to select procs that you dont want to debug. Typically
+    you dont want to debug the WndProc and the messageloop (WinMain) in a GUI
+    application.
+o NOTE!
+  - The debug menu will be disabled if no project is open or the debugger
+    can not find any debug info.
+  - The addin will only work with RadASM 2.2.1.7 or higher.
+
+Immediate window (Output window #3):
+-----------------------------------------------------------------------------
+NOTE!
+Commands ,registers, hex values and predefined datatypes are case insensitive.
+Variables, datatypes and constants are case sensitive.
+To inspect or change a proc parameter or local variable the variable must
+be in the current scope.
+
+o Simple math.
+  - Functions: +, -, *, /, SHL, SHR, AND, OR, XOR, ADDR() and SIZEOF().
+  - An expression can contain any register, variable, datatype or constant.
+  - Example: ?((((eax+1) SHL 2)*4) AND 0FFFFh)+MAX_PATH
+  - Example: Memdump Addr(MyArray),Sizeof(MyArray),DWORD
+o Inspect variable, register, datatype, constant or a hex / dec value.
+  - ?MyVar to show info about a variable local or parameter.
+  - ?MyVar(inx) to show an array element. Index is zero based and single
+    dimension. (inx) can be any expression.
+  - ?Z:MyZString to show a ZString. Use Z:MyZString(inx) to start
+    at an offset. (inx) can be any expression.
+  - ?S:MyString to show a String.
+  - ?reg To show a register (reg: eax, ebx ...).
+  - ?123 or ?0A5Fh to convert a number to hex and decimal.
+o Change variable or register.
+  - MyVar=ebx+2 to change the variable MyVar.
+  - reg=4AB0h to change a register (reg: eax, ebx ...).
+o Commands.
+  - Help, /H or /?
+    Shows this help screen.
+  - Dump
+    Shows a hex dump of the exe.
+  - Dump Var[,Size]
+    Shows a hex dump of an array, structure or union.
+    Size is optional and can be BYTE, WORD, DWORD or QWORD.
+  - Memdump Address,Count[,Size]
+    Shows a memory dump. Address and Count can be any expression.
+    Size is optional and can be BYTE, WORD, DWORD or QWORD.
+  - Vars
+    Shows a list of all variables.
+  - Types
+    Show a list of all datatypes and constants.
+  - Watch var1,Z:MyZStr,....,var8
+    Adds a watch to specified variables.
+    To clear the watch list, type Watch without any variable list.
+  - Cls
+    Clears the immediate window.
+
+Whats new:
+-----------------------------------------------------------------------------
+o Released version 1.0.0.7
+  - Added a RadASM tool window to show regsters, fpu registers, mmx registers
+    and watch variables.
+  - The addin is now language translateable.
+  - Fixed some bugs.
+o Released version 1.0.0.6
+  - Added Break to debug menu.
+  - Access violation and division by zero is now handled by the debugger.
+  - Fixed bugs with immediate window.
+o Released version 1.0.0.5
+  - Added ?S:MyString command to immediate window to show strings.
+  - Added support for FreeBASIC.
+  - Added support for multi dimension arrays.
+o Released version 1.0.0.4
+  - Fixed bug with showing local ZString.
+  - Added support for FreePASCAL.
+o Released version 1.0.0.3
+  - Improved array size calculations.
+  - The line numbers array is now sorted.
+    This adds suport for multimodule projects.
+  - Fixed a bug in the linenumbers seach algo.
+    The bug could cause the debugger to freeze.
+  - Added support for VC6 C/C++.
+o Released version 1.0.0.2
+  - Added option to show debug events.
+  - Added option to pin output window.
+  - Added option to by default show register window.
+  - Added tooltip to show a local variables value when mouse is over a local.
+    The local must be in current scope.
+  - Added tooltip to show a proc parameters value when mouse is over a parameter.
+    The parameter must be in current scope.
+  - Added immediate window (output window #3). 
+  - Fixed bugs.
+o Released version 1.0.0.1
+  - Step Over is enabled.
+  - Do Not Debug is enabled.
+  - Added tooltip to show register value when mouse is over a register.
+  - Added tooltip to show a global variables value when mouse is over a variable.
+  - Fixed bugs.
+  - Speed optimized breakpoint handling.
+o Uploaded version 1.0.0.0
+  - Step Over is disabled (Needs size of proc).
+  - Do Not Debug is disabled (Needs size of proc).
+
+To do:
+-----------------------------------------------------------------------------
+o Support for other assemblers / compilers besides masm and VC6.
+
+Known bugs:
+-----------------------------------------------------------------------------
+o In multimodule projects global variables can have the same name.
+  Currently the debugger can not distinguish between them.
+o A proc without a stack frame will skip the first code line.
+  Examples:
+  MyProc proc
+
+	mov		eax,1
+	ret					; Wrong. The debugger will stop here
+
+  MyProc endp
+
+  MyProc proc uses ebx
+
+	mov		eax,1		; OK. The debugger will stop here
+	ret
+
+  MyProc endp
+
+  MyProc proc hWin:HWND
+
+	mov		eax,1		; OK. The debugger will stop here
+	ret
+
+  MyProc endp
+
+KetilO

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Colors and Keywords</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #99FF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Keywords</font></B></P>
+
+<P>&nbsp;&nbsp;<img border="0" src="../images/keyword_opt.gif" width="567" height="396">
+</P>
+
+<P> RadASM keeps a number keyword lists to use for highlighting text in the code editor. The keyword editor is used to manage these lists and assign colors and formatting to the keywords you choose. By default most of the keywords you will use with a particular assembly language are already assigned, you have the option to add to these lists or remove ones you do not wish to
+highlight. Type the keyword in the edit box and press the <B>Add</B> button to add it to the list, or to remove a keyword, select it and press the <B>Delete</B> button. There are 16 keyword groups, each can be assigned a list of Keywords and it's own
+highlight color and format, double click on a color box to change the color for the item you want to modify. There are also separate formatting and color for Operators (+ - * &amp; etc..), comments and strings. Use the <B>Colors &amp; Keywords</B> selection from the <B>Option</B> menu to edit keywords. <BR>
+<BR>
+Keywords can be made case sensitive by using a <B>^</B> this will cause the syntax
+highlighter to only highlight the keyword if it appears in upper-case. The <B>On Hold</B> section allows you to assign keywords to a group but not have them
+highlighted. Use the arrow buttons to move items between the lists.<BR>
+<BR>
+You can assign a group of keywords to RC files exclusively by checking the <B>RC</B> checkbox. By default RC files are not
+highlighted, this allows you to have separate keyword groups for RC files and exclude the ASM keywords. For example STRUCT can be used as a variable in an RC file (not that you would) but not in the main ASM file so you would want it
+highlighted only in the ASM file.
+</P>
+
+<P> Three of the keyword groups have special purposes, groups 13, 14 and 15 are
+used to set the color for the following code highlights:
+</P>
+
+<P> <font color="#0000FF"><b>Group 13</b></font> - Windows Messages and API
+Constants<br>
+<font color="#0000FF"><b>Group 14</b></font> - API commands<br>
+<font color="#0000FF"><b>Group 15</b></font> - Structures
+</P>
+
+<P> You can add to these lists in the normal way but they also take their list
+from the <b><a href="rah_api_edit.htm">.api</a></b> files in your assembler folder.
+</P>
+
+<P> As a general rule the conventions for the contents of each group are as
+follows :
+</P>
+
+<P><font color="#0000FF"><b>Group 0</b></font> - Registers<br>
+<font color="#0000FF"><b>Group 1</b></font> - Instructions<br>
+<font color="#0000FF"><b>Group 2</b></font> - Instructions<br>
+<font color="#0000FF"><b>Group 3</b></font> - FPU Instructions<br>
+<font color="#0000FF"><b>Group 4</b></font> - MMX Instructions<br>
+<font color="#0000FF"><b>Group 5</b></font> - Constants <b>(FALSE,NULL,TRUE)</b><br>
+<font color="#0000FF"><b>Group 6</b></font> - Types<br>
+<font color="#0000FF"><b>Group 7</b></font> - Compiler directives<br>
+<font color="#0000FF"><b>Group 8</b></font> - High level constructs<br>
+<font color="#0000FF"><b>Group 9</b></font> - Macros<br>
+<font color="#0000FF"><b>Group 10</b></font> - RC File<BR>
+<BR>
+<B>Flicker free drawing</B> will make the drawing more stable during scrolls at the expense of a slight decrease in speed.<BR>
+<BR>
+Each procedure in your program can be delimited by a divider line to allow you to visualize the structure of your program more easily. This option is controlled by the <B>Show Divider Line</B> checkbox.<BR>
+<BR>
+Syntax highlighting can be turned off by removing the check from <B>Use </B><b>highlighting</b><BR>
+</P>
+
+</BODY>
+</HTML>

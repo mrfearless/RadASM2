@@ -1,0 +1,4 @@
+#define IDI_ICON						2001
+#define IDBMP_TBBMP						2000
+IDI_ICON				ICON      DISCARDABLE "Res/asciitab.ico"
+IDBMP_TBBMP				BITMAP    DISCARDABLE "Res/asciitab.bmp"

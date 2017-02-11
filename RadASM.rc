@@ -1,0 +1,74 @@
+#define IDM_TAB1				41401
+#define IDM_TAB2				41402
+#define IDM_TAB3				41403
+#define IDM_TAB4				41404
+#define IDM_TAB5				41405
+#define IDM_TAB6				41406
+#define IDM_TAB7				41407
+#define IDM_TAB8				41408
+#define IDM_TAB9				41409
+#define IDM_TAB10				41410
+
+#define IDM_HELPF1				41902
+#define IDM_HELPCF1				41903
+#define IDM_HELPSF1				41904
+#define IDM_HELPCSF1			41905
+#define IDM_MAKE_ASSEMBLE		20002
+#define IDM_MAKE_BUILD			20004
+#define IDM_MAKE_GO				20005
+#define IDM_MAKE_RUN			20006
+
+#include "Res/MdiMenuMnu.rc"
+#include "Res/AcceptDlg.rc"
+#include "Res/ProMenuMnu.rc"
+
+#include "Res/CreateTplDlg.rc"
+#include "Res/KeyWordsDlg.rc"
+#include "Res/SnipletOptionDlg.rc"
+#include "Res/FolderOptionDlg.rc"
+#include "Res/MenuEditDlg.rc"
+#include "Res/DlgOptionDlg.rc"
+#include "Res/ProOptionDlg.rc"
+#include "Res/EditOptionDlg.rc"
+#include "Res/VerinfoDlg.rc"
+#include "Res/ExportIDDlg.rc"
+#include "Res/SnipletsDlg.rc"
+#include "Res/MenuOptionDlg.rc"
+#include "Res/PropertyDlg.rc"
+#include "Res/MacroDlg.rc"
+#include "Res/PrintOptionDlg.rc"
+#include "Res/ResourceDlg.rc"
+
+#include "Res/FindDlg.rc"
+#include "Res/GotoDlg.rc"
+#include "Res/Wiz1Dlg.rc"
+#include "Res/Wiz2Dlg.rc"
+#include "Res/Wiz3Dlg.rc"
+#include "Res/StringTableDlg.rc"
+#include "Res/AddVarDlg.rc"
+#include "Res/ToolOptionsDlg.rc"
+#include "Res/FileBrowserDlg.rc"
+#include "Res/ExternalFileDlg.rc"
+#include "Res/HexFindDlg.rc"
+#include "Res/MainFilesDlg.rc"
+#include "Res/ProjectGroupsDlg.rc"
+#include "Res/AccelOptionDlg.rc"
+#include "Res/AcceleratorDlg.rc"
+#include "Res/RadASMStr.rc"
+#include "Res/RadASMRes.rc"
+#include "Res/RadASMVer.rc"
+#include "Res/RadASMAcl.rc"
+#include "Res/AboutDlg.rc"
+#include "Res/ProjectScanDlg.rc"
+#include "Res/Wiz4Dlg.rc"
+#include "Res/LanguageDlg.rc"
+#include "Res/FontOptionDlg.rc"
+#include "Res/BlockDlg.rc"
+#include "Res/FileAssociationDlg.rc"
+#include "Res/LanguageOptionDlg.rc"
+#include "Res/ProgLanguageDlg.rc"
+#include "Res/CustomControlsDlg.rc"
+#include "Res/EnvironmentDlg.rc"
+#include "Res/WizImpDlg.rc"
+#include "Res/WizDlg.rc"
+

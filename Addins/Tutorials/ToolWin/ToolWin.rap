@@ -1,0 +1,119 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=Tool window tutorial
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[MakeDef]
+Menu=0,1,1,1,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:"$L",3
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L",3
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+[MakeFiles]
+0=ToolWin.rap
+1=ToolWin.rc
+2=ToolWin.asm
+3=ToolWin.obj
+4=ToolWin.res
+5=ToolWin.exe
+6=ToolWin.def
+7=ToolWin.dll
+8=ToolWin.txt
+9=ToolWin.lib
+10=ToolWin.mak
+11=ToolWin.hla
+[Files]
+1=ToolWin.Asm
+2=ToolWin.Inc
+3=ToolWin.Def
+4=..\..\RadAsm.inc
+5=
+[Resource]
+[StringTable]
+[VerInf]
+[Version-Inc]
+Options=52
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[Size]
+2=0,0,0,0,610
+5=
+1=0,0,0,0,2071
+3=0,0,0,0,15
+4=0,0,0,0,0
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=4
+4=2
+5=
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=10
+MilestoneOnDateTimeYear=2004
+MilestoneOnDateTimeMonth=6
+MilestoneOnDateTimeDate=23
+MilestoneOnDateTimeHour=12
+MilestoneOnDateTimeMin=29
+MilestoneOnDateTimeSec=2
+MilestoneOnDateTimeStatus=0
+BackupLocation=C:\RadASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Collapse]
+1=
+2=
+4=
+[AutoLoad]
+1=1

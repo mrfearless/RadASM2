@@ -1,0 +1,4 @@
+LIBRARY CodeComplete.dll
+EXPORTS
+	InstallDll
+	DllProc

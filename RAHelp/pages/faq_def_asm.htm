@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>FAQ Setting default assembler</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Setting default assembler</font></B></P>
+
+<P><B><I><font color="#800080">Originally posted by Green Joe</font></I></B><BR>
+1.Is it possible to add HLA files( *.hla;*.hhf) to File&gt;Open dialog box filter, like in RadHLA?<BR>
+<BR>
+2.HLA files, when opened directly (by clicking a file icon) or thru File&gt;Open dialog displayed like a plain text files - without syntax highlighting. Only while opened within a project they appears in color.</P>
+
+<P><B><I><font color="#800080">Answer from Donkey</font></I></B><BR>
+RadASM will use the file types for the first assembler in it's list as the default. In
+<a HREF="rah_radasm_ini.htm#assembler">RadASM.ini</a> you can change the sequence as follows:<BR>
+<BR>
+Change :<BR>
+<B><a href="rah_radasm_ini.htm#assembler">[Assembler]</a><BR>
+Assembler=masm,fasm,tasm,nasm,hla,GoAsm</B><BR>
+<BR>
+to<BR>
+<B>[Assembler]<BR>
+Assembler=hla,masm,fasm,tasm,nasm,GoAsm</B><BR>
+<BR>
+This should also take care of problem 2</P>
+
+<P style="border: 2 solid #008080"><font color="#FF0000"><b>NOTE</b></font>: As of RadASM 2.0.2.0 there is a menu selection that lets you specify the assembler for asm files opened directly</P>
+
+</BODY>
+</HTML>

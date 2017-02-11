@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Setting paths</TITLE>
+</HEAD>
+
+<BODY>
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="0=project.rap \n" +
+"1=project.rc \n" +
+"2=project.asm \n" +
+"3=project.obj \n" +
+"4=project.res \n" +
+"5=project.exe \n" +
+"6=project.def \n" +
+"7=project.dll \n" +
+"8=project.txt \n" +
+"9=project.lib \n" +
+"10=project.mak \n" +
+"11=project.hla "
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$E = Debugger path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+</SCRIPT></CODE>
+<P style="background-color: #99FF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Setting paths</font></B></P>
+
+<P><img border="0" src="../images/path_opt.gif" width="330" height="332">
+</P>
+
+<P>All the paths in RadASM are set to default values when it is installed. You may want to change these paths depending on the particular setup of your system. To do this select Set Paths from the Options menu. The paths that RadASM needs are all listed, you can use the <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$_</a></CODE> variables in path names you enter in this dialog. All paths used by RadASM must be correct otherwise
+unforeseen errors may occur. When you first install RadASM you should verify that your paths are correct. Since these paths are stored in the
+<a href="rah_assembler_ini.htm#paths">
+Assembler.ini</a> file they are assembler specific so you can switch between assemblers without resetting the paths.<BR>
+</P>
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

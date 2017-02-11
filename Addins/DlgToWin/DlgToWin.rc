@@ -1,0 +1,3 @@
+#include <Res\DlgToWinDlg.rc>
+#include "Res/DlgToWinVer.rc"
+

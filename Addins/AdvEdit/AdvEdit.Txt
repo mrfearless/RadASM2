@@ -1,0 +1,13 @@
+AdvEdit addin adds advanced edit commands to RadASM.
+
+Get current path
+Copy all
+Copy current line
+Delete current line
+Select current line
+Delete to start of line
+Delete to end of line
+
+Feel free to modify sources and add more commands.
+
+KetilO

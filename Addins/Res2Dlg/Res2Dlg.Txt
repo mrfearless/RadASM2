@@ -1,0 +1,57 @@
+Adding resource types
+The following is a quick explanation of how to add a resource type to Res2Dlg:
+
+There are a number of icons to choose from but you may want to create you own:
+
+Icons can be added to display for your resource but remember to add them begining
+directly after the last icon in the resource file and to add the icon to the list
+in the constants section. In all cases ICO_LAST should be equal to the last icon#
+in the list. 7000 is added to the incon index to obtain the resource number no holes
+are allowed.
+
+Section 1
+Add the resource number to the ResEnumFunction procedure in the following format:
+lParam contains either the numeric identifier of the resource
+or if the value is greater than 65535 it is a pointer to a string id
+resources with string identifiers are handled separately later in the procedure
+
+FOR NUMERIC RESOURCE TYPES
+.ELSEIF lParam == RT_ANICURSOR <- this is my numeric resource ID
+	mov IconIndex,ICO_ANI <- the icon index number to display
+	invoke lstrcpy,ADDR ResTypeName,OFFSET szRT_ANICURSOR <- the text to display in res type feild
+	mov Supported,TRUE <- this resource type is supported
+
+FOR STRING RESOURCE TYPES (after the list of numeric ones)
+IF eax > 65535
+	invoke lstrcmpi,lParam,OFFSET szRT_IMAGE <- compare the string type to my resource type
+	.IF eax == 0 <- if they are equal it's mine
+		mov IconIndex,ICO_IMAGE <- set the icon
+		invoke lstrcpy,ADDR ResTypeName,OFFSET szRT_IMAGE <- copy the description
+		mov lParam,OFFSET szRT_IMAGE <- mov the offset of the id (local) to lParam
+		mov Supported,TRUE <- this is supported
+		jmp alldone <- it was found so stop checking
+	.endif
+
+Section 2
+Add the resource to the preview and save button handlers
+In the main dialog procedure (DlgProc) the WM_COMMAND handler
+LVItem.lParam contains the resource type or pointer to the name
+hLibForRes contains the module handle that the resource is in
+LVItem.pszText contains the identifer of the individual resource
+
+.ELSEIF LVItem.lParam == RT_BITMAP
+	invoke SaveBmpResource,hLibForRes,LVItem.pszText
+
+Section 3
+When saving it is best to use the OpenFileForWrite routine to get a file handle
+it will return -1 if no handle could be created for any reason. The interface will
+also be consistent.
+
+Section 4
+When previewing a resource (except text) you should provide the means to
+display the resource as a child of the preview dialog #600 as it is designed to
+work with the scroll bars. You can modify the PreviewDialogProc procedure to allow
+your resource to display properly
+All icons should have the handle in hResIcon
+All bitmaps should have the handle in hResBmp
+Be sure to destroy anything that you create

@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>HLA Installation notes</title>
+</head>
+
+<body>
+
+<p>
+
+<b><font color="#0000FF" size="5">HLA Installation notes</font></b></p>
+<p>Randall Hyde's HLA is fully supported by RadASM. The setup is standard and
+included in the <a href="rah_assembler_ini.htm">hla.ini</a> file. The only thing of
+note is that RadASM expects to find the MASM executables in the \MASM32\BIN folder and HLA in
+\HLA, if you have changed these locations you must set the <a href="rah_opt_paths.htm">paths</a>
+accordingly.</p>
+
+<p>It is very important to set up the environment variables needed by HLA. For
+details of their setup refer to the HLA installation guide.</p>
+
+<p>For Windows 95, 98 and ME add the following lines to the <b><font color="#FF0000">end</font></b> of autoexec.bat<br>
+<br>
+<b>set lib=c:\hla\hlalib;%lib%<br>
+set hlainc=c:\hla\include<br>
+set hlalib=c:\hla\hlalib\hlalib.lib<br>
+set path=c:\hla;%path%</b></p>
+
+<p>For Windows 2000 and Windows XP environment variables are set differently. Right-click on <b>My Computer</b> and select <b>Properties</b>,
+from the <b>Advanced</b> tab select <b>Environment Variables</b> and add new
+system variables with the names and values specified above.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=FreePASCAL dbghelp emulator
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Ver.rc=1
+Debug=0
+[Files]
+1=fphelp.Asm
+2=fphelp.Inc
+3=fphelp.Def
+4=Test.bat
+AutoDelete=1
+AskMe=0
+MinorFiles=*.res;*.obj;*.lib;*.exp;
+5=
+6=fphelp.rc
+[MakeFiles]
+0=fphelp.rap
+1=fphelp.rc
+2=fphelp.asm
+3=fphelp.obj
+4=fphelp.res
+5=fphelp.exe
+6=fphelp.def
+7=fphelp.dll
+8=fphelp.txt
+9=fphelp.lib
+10=fphelp.mak
+11=fphelp.hla
+12=fphelp.com
+13=fphelp.ocx
+14=fphelp.idl
+15=fphelp.tlb
+16=fphelp.sys
+[MakeDef]
+Menu=1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:"$L" /OUT:"$7",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=0,0,"$E\OllyDbg",5
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L" /OUT:"$7",3
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+17=0,0,"$E\OllyDbg",5
+[Resource]
+[StringTable]
+[Accel]
+[VerInf]
+Nme=VERINF1
+ID=1
+FV=1.0.0.0
+PV=1.0.0.0
+VerOS=0x00000004
+VerFT=0x00000002
+VerLNG=0x00000409
+VerCHS=0x000004E4
+ProductVersion=1.0.0.0
+ProductName=
+OriginalFilename=fphelp.dll
+LegalTrademarks=
+LegalCopyright=KetilO (C) 2009
+InternalName=fphelp.dll
+FileDescription=FreePASCAL dbghelp emulator
+FileVersion=1.0.0.0
+CompanyName=
+[Group]
+Group=Added files,Assembly,Resources,Misc,Modules
+1=2
+2=2
+3=4
+4=1
+5=
+6=4
+[AutoLoad]
+1=1
+2=1
+[Collapse]
+5=
+2=
+1=,,
+4=
+[Size]
+5=
+2=0,0,0,0,1759
+1=0,0,0,0,9046
+4=0,0,0,0,0
+[VersionControl]
+Settings=1246
+Milestones=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=10
+MilestoneOnDateTimeYear=2009
+MilestoneOnDateTimeMonth=7
+MilestoneOnDateTimeDate=3
+MilestoneOnDateTimeHour=16
+MilestoneOnDateTimeMin=5
+MilestoneOnDateTimeSec=54
+MilestoneOnDateTimeStatus=0
+BackupLocation=C:\RadASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=Project $N, $Z, Backup Created On $D At $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=
+[RADebugBP]
+1=
+2=
+[Find]
+1="vartype"

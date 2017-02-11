@@ -1,0 +1,9 @@
+
+#include <Res\ReallyRadDlg.rc>
+#include <Res\TabOpt1Dlg.rc>
+#include <Res\TabOpt2Dlg.rc>
+#include <Res\TabOpt3Dlg.rc>
+#include <Res\TabOpt4Dlg.rc>
+#include <Res\AddModProcDlg.rc>
+#include <Res\ReallyRadVer.rc>
+

@@ -1,0 +1,343 @@
+### NOTE1: ###
+
+_____________________________________________________________________________
+
+You must copy your addin to C:\RadASM\AddIns
+and edit RadASM.ini and add your addin to:
+
+[AddIns]
+;FlipCase,x (1=Flip case, 2=Auto Show/Hide Output,
+;4=Auto Show/Hide ToolBox, 8=Save temp file, 16=PageBreak, 32 Output mouse show, 63=All)
+1=FlipCase.dll,63
+2=MyAddin.dll,1
+_____________________________________________________________________________
+
+	;Shows how to output text
+
+	mov		eax,[lpDStruct]
+	push	(ADDINDATA ptr [eax]).lpProjectPath
+	mov		eax,[lpPStruct]
+	call	(ADDINPROCS ptr [eax]).lpTextOut
+
+
+	;Shows how to output eax as hex
+
+	push	eax
+	mov		eax,[lpPStruct]
+	call	(ADDINPROCS ptr [eax]).lpHexOut
+
+
+	;Shows how to clear output
+
+	mov		eax,[lpPStruct]
+	call	(ADDINPROCS ptr [eax]).lpClearOut
+
+
+	;Shows how to add a project file
+
+	push	TRUE	;FALSE if not to add to TreeView 
+	push	offset szFileName
+	mov		eax,[lpPStruct]
+	call	(ADDINPROCS ptr [eax]).lpAddProjectFile
+
+
+	;Shows how to open or bring to front a file
+
+	;Copy project path to lpFile
+	mov		eax,[lpDStruct]
+	mov		edx,(ADDINDATA ptr [eax]).lpFile
+	mov		eax,(ADDINDATA ptr [eax]).lpProjectPath
+	invoke lstrcpy,edx,eax
+	;Add project path and MyFile to lpFile
+	mov		eax,[lpDStruct]
+	mov		edx,(ADDINDATA ptr [eax]).lpFile
+	invoke lstrcat,edx,addr MyFile
+	;Open the file
+	mov		eax,[lpPStruct]
+	call	(ADDINPROCS ptr [eax]).lpOpenProjectFile
+_____________________________________________________________________________
+
+Tool messages.
+
+TLM_INIT			equ	1
+TLM_CREATE			equ	2
+
+TLM_DOCKING			equ	4
+TLM_HIDE			equ	5
+TLM_MOUSEMOVE		equ	6
+TLM_LBUTTONDOWN		equ	7
+TLM_LBUTTONUP		equ	8
+TLM_PAINT			equ	9
+TLM_SIZE			equ	10
+TLM_REDRAW			equ	11
+TLM_CAPTION			equ	12
+TLM_ADJUSTRECT		equ	13
+TLM_GET_VISIBLE		equ	14
+TLM_GET_STRUCT		equ	15
+TLM_MINIMIZE		equ	16
+
+Docking positions.
+
+TL_LEFT				equ	1
+TL_TOP				equ	2
+TL_RIGHT			equ	3
+TL_BOTTOM			equ	4
+
+
+Tool structure.
+
+TOOL struct
+	ID					dd ?
+	Caption				dd ?
+	Visible				dd ?
+	Docked				dd ?
+	Position			dd ?
+	IsChild				dd ?
+	dWidth				dd ?
+	dHeight				dd ?
+	fr					RECT <> ;Floating
+	dr					RECT <> ;Docked
+	wr					RECT <> ;Child window
+	rr					RECT <> ;Resize
+	tr					RECT <> ;Top
+	cr					RECT <> ;Caption
+	br					RECT <> ;Close button
+	dFocus				dd ?
+	dCurFlag			dd ?
+	hWin				dd ?
+	hCld				dd ?
+	lpfnOldCldWndProc	dd ?
+TOOL ends
+_____________________________________________________________________________
+
+Dialogbox editor.
+
+DLGHEAD struct
+	ver			dd ?				;Set to 100
+	changed		dd ?				;Set to FALSE
+	class		db 32 dup(?)		;Set to Null string
+	menuid		db 32 dup(?)		;Set to Null string
+	font		db 32 dup(?)		;Set to "MS Sans Serif"
+	fontsize	dd ?				;Set to 8
+	fontht		dd ?				;Set to -10
+	undo		dd ?				;Set to NULL
+	ctlid		dd ?				;Set to 1001
+	hmnu		dd ?				;Set to NULL
+	htlb		dd ?				;Set to NULL
+	hstb		dd ?				;Set to NULL
+	locked		dd ?				;Set to TRUE or FALSE
+	spare1		dd ?				;Set to NULL
+	spare2		dd ?				;Set to NULL
+DLGHEAD ends
+
+DIALOG struct
+	hwnd		dd ?				;Set to TRUE
+	partype		dd ?				;Dialog=1, Controls=0
+	oldproc		dd ?				;Set to NULL
+	hpar		dd ?				;Set to NULL
+	hcld		dd ?				;Set to NULL
+	style		dd ?				;Set to desired style
+	exstyle		dd ?				;Set to desired ex style
+	x			dd ?				;X position in pixels
+	y			dd ?				;Y position in pixels
+	ccx			dd ?				;Width in pixels
+	ccy			dd ?				;Height in pixels
+	caption		db MaxCap dup(?)	;Caption max 240 char + terminating zero
+	ntype		dd ?				;Follows ToolBox buttons Dialog=0, Edit=1, Static=2, GroupBox=3
+	spare1		dd ?				;Set to NULL
+	tab			dd ?				;Tab index, Dialog=0, First index=0
+	id			dd ?				;Dialog / Controls ID
+	idname		db 32 dup(?)		;ID Name, max 31 chars
+	undo		dd ?				;Set to NULL
+	himg		dd ?				;Set to NULL
+DIALOG ends
+
+Dialog editor Mdi child data.
+
+Retrived by GetWindowLong.
+GWL_USERDATA=hDialog
+GWL_ID>=ID_FIRSTCHILD
+0=ID_DIALOG (65502)
+4=hMem
+8=ReadOnly
+16=Project file ID
+20=ScrollX
+24=ScrollY
+____________________________________________________________________________
+
+Code / text editor Mdi child data.
+
+Retrived by GetWindowLong.
+GWL_USERDATA=hEdit
+GWL_ID>=ID_FIRSTCHILD
+0=ID_EDIT (65501) or ID_EDITTXT (65503)
+4=
+8=
+12=
+16=Project file ID
+20=OverWrite
+____________________________________________________________________________
+
+Resorces
+
+MENUFILE						equ 0
+MENUEDIT						equ 1
+MENUVIEW						equ 2
+MENUFORMAT						equ 3
+MENUPROJECT						equ 4
+MENUMAKE						equ 5
+MENUTOOL						equ 6
+MENUWINDOW						equ 7
+MENUOPTIONS						equ 8
+MENUMACRO						equ 9
+MENUHELP						equ 10
+
+ID_FIRSTCHILD					equ 65001
+ID_LASTCHILD					equ 65499
+ID_EDIT							equ 65501
+ID_DIALOG						equ 65502
+ID_EDITTXT						equ 65503
+ID_EDITSPLIT					equ 65504
+
+IDOK							equ 1
+IDCANCEL						equ 2
+IDUSE							equ 10
+IDI_MDIICO						equ 100
+IDB_MDITBR						equ 101
+IDB_MDITV						equ 102
+IDB_PROWIZ						equ 103
+IDB_TOOLBOX						equ 104
+IDB_MNUARROW					equ 105
+IDB_SPLASH						equ 106
+
+IDC_SPLICURV					equ 150
+IDC_SPLICURH					equ 151
+
+IDR_MDIMENU						equ 999
+IDM_FILE_NEWPROJECT				equ 40001
+IDM_FILE_OPENPROJECT			equ 40002
+IDM_FILE_CLOSEPROJECT			equ 40003
+IDM_FILE_NEWFILE				equ 40004
+IDM_FILE_OPENFILE				equ 40005
+IDM_FILE_CLOSEFILE				equ 40006
+IDM_FILE_SAVEFILE				equ 40007
+IDM_FILE_SAVEFILEAS				equ 40008
+IDM_FILE_SAVEALLFILES			equ 40009
+IDM_FILE_EXIT					equ 40010
+
+IDM_EDIT_UNDO					equ 41001
+IDM_EDIT_REDO					equ 41002
+IDM_EDIT_CUT					equ 41003
+IDM_EDIT_COPY					equ 41004
+IDM_EDIT_PASTE					equ 41005
+IDM_EDIT_DELETE					equ 41006
+IDM_EDIT_SELECTALL				equ 41007
+IDM_EDIT_FIND					equ 41008
+IDM_EDIT_FINDNEXT				equ 41009
+IDM_EDIT_FINDPREVIOUS			equ 41010
+IDM_EDIT_REPLACE				equ 41011
+IDM_EDIT_GOTOLINE				equ 41012
+IDM_EDIT_FINDWORD				equ 41101
+IDM_EDIT_FINDPROC				equ 41102
+IDM_EDIT_RETURN					equ 41103
+IDM_EDIT_NEXTBM					equ 41105
+IDM_EDIT_PREVIOUSBM				equ 41106
+IDM_EDIT_TOGGLEBM				equ 41104
+IDM_EDIT_CLEARBM				equ 41107
+IDM_EDIT_GOTOBM0				equ 41200
+IDM_EDIT_GOTOBM1				equ 41201
+IDM_EDIT_GOTOBM2				equ 41202
+IDM_EDIT_GOTOBM3				equ 41203
+IDM_EDIT_GOTOBM4				equ 41204
+IDM_EDIT_GOTOBM5				equ 41205
+IDM_EDIT_GOTOBM6				equ 41206
+IDM_EDIT_GOTOBM7				equ 41207
+IDM_EDIT_GOTOBM8				equ 41208
+IDM_EDIT_GOTOBM9				equ 41209
+IDM_EDIT_GOTOBMM0				equ 41300
+IDM_EDIT_GOTOBMM1				equ 41301
+IDM_EDIT_GOTOBMM2				equ 41302
+IDM_EDIT_GOTOBMM3				equ 41303
+IDM_EDIT_GOTOBMM4				equ 41304
+IDM_EDIT_GOTOBMM5				equ 41305
+IDM_EDIT_GOTOBMM6				equ 41306
+IDM_EDIT_GOTOBMM7				equ 41307
+IDM_EDIT_GOTOBMM8				equ 41308
+IDM_EDIT_GOTOBMM9				equ 41309
+
+IDM_VIEW_TOOLBAR				equ 42001
+IDM_VIEW_TOOLBOX				equ 42002
+IDM_VIEW_OUTPUTWINDOW			equ 42003
+IDM_VIEW_PROJECTBROWSER			equ 42004
+IDM_VIEW_PROPERTIES				equ 42005
+IDM_VIEW_STATUSBAR				equ 42006
+
+IDM_FORMAT_INDENT				equ 43001
+IDM_FORMAT_OUTDENT				equ 43002
+IDM_FORMAT_COMMENT				equ 43003
+IDM_FORMAT_UNCOMMENT			equ 43004
+IDM_FORMAT_SPCTOTAB				equ 43501
+IDM_FORMAT_TABTOSPC				equ 43502
+IDM_FORMAT_UCASE				equ 43503
+IDM_FORMAT_LCASE				equ 43504
+IDM_FORMAT_LOCKCONTROLS			equ 43005
+IDM_FORMAT_SENDTOBACK			equ 43006
+IDM_FORMAT_BRINGTOFRONT			equ 43007
+IDM_FORMAT_SHOWGRID				equ 43008
+
+IDM_PROJECT_ADDNEWASM			equ 44101
+IDM_PROJECT_ADDNEWINC			equ 44102
+IDM_PROJECT_ADDNEWRC			equ 44103
+IDM_PROJECT_ADDNEWTXT			equ 44104
+IDM_PROJECT_ADDNEWDIALOG		equ 44105
+IDM_PROJECT_ADDNEWMENU			equ 44106
+IDM_PROJECT_ADDEXISTINGFILE		equ 44201
+IDM_PROJECT_ADDEXISTINGDIALOG	equ 44202
+IDM_PROJECT_ADDEXISTINGMENU		equ 44203
+IDM_PROJECT_ADDEXISTINGVERINF	equ 44204
+IDM_PROJECT_ADDEXISTINGOBJ		equ 44205
+IDM_PROJECT_VERINF				equ 44002
+IDM_PROJECT_EXPORTTOOUTPUT		equ 44003
+IDM_PROJECT_REMOVE				equ 44004
+IDM_PROJECT_TEMPLATE			equ 44005
+IDM_PROJECT_OPTIONS				equ 44006
+IDM_TLINK_NOTE					equ 44701
+IDM_TLINK_BUG					equ 44702
+IDM_TLINK_TODO					equ 44703
+IDM_PROJECT_REFRESH				equ 44008
+
+IDM_TOOLS_SNIPLETS				equ 46001
+IDM_TOOLS_EXPORT				equ 46002
+
+IDM_WINDOW_SPLIT				equ 47009
+IDM_WINDOW_CLOSE				equ 47001
+IDM_WINDOW_CLOSEALL				equ 47002
+IDM_WINDOW_NEXTWINDOW			equ 47003
+IDM_WINDOW_PREVIOUS				equ 47004
+IDM_WINDOW_TILEHOR				equ 47005
+IDM_WINDOW_TILEVER				equ 47006
+IDM_WINDOW_CASCADE				equ 47007
+IDM_WINDOW_ARRANGEICONS			equ 47008
+
+IDM_OPTION_COLORS				equ 48001
+IDM_OPTION_FONT					equ 48002
+IDM_OPTION_EDIT					equ 48003
+IDM_OPTION_DIALOG				equ 48004
+IDM_OPTION_SNIPLET				equ 48005
+IDM_OPTION_PATHS				equ 48006
+IDM_OPTION_TOOLMNU				equ 48007
+IDM_OPTION_HELPMNU				equ 48008
+
+IDM_HELP_ABOUT					equ 49001
+
+IDM_MAKE_ASSEMBLE				equ 20002
+IDM_MAKE_BUILD					equ 20004
+IDM_MAKE_GO						equ 20005
+IDM_MAKE_RUN					equ 20006
+
+IDM_HELPF1						equ 41902
+IDM_HELPCF1						equ 41903
+IDM_HELPSF1						equ 41904
+IDM_HELPCSF1					equ 41905
+
+### NOTE2: ###

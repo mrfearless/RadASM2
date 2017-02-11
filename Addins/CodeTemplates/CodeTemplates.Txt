@@ -1,0 +1,65 @@
+
+                              CodeTemplates v1.0.3 by drizz
+                              
+purpose:
+
+tried to make the exact same feature of Delphi,AceHtml,... and many other
+IDEs of inserting short code templates
+
+Installation:
+copy %assemler%.ct and CodeTemplates.dll to \RADasm\AddIns
+use AddinMana to register it
+
+Shortcut to popup is Ctrl+J (same as inf delphi,acehtml)
+
+Syntax of %assembler%.ct is simple 
+
+------------------------ [%assembler%.ct]
+{ListBox Item 1}
+code to insert 1 ~
+{ListBox Item 2}
+code ~ to insert 2
+{ListBox Item 3}
+code to insert 3
+{}
+------------------------ [/%assembler%.ct]
+
+ListBox Item x - indentifier inside popup box
+code to insert - code to insert
+~  - is where the caret will be
+indentation is copied from current line
+{} - empty indetifier ends parsing
+
+for cpp the syntax is:
+------------------------ [cpp.ct]
+[*ListBox Item 1*]
+code to insert 1 @
+[*ListBox Item 2*]
+code @ to insert 2
+[*ListBox Item 3*]
+code to insert 3
+[**]
+------------------------ [/cpp.ct]
+
+@  - is where the caret will be
+
+if there isn't supplied %assembler%.ct for your assemler
+rename the masm.ct file to your assembler and then edit it!
+
+History:
+	v1.0.0 - first
+	v1.0.1 - improved
+			+indentation copied
+			+caret positioning
+			+.ct file is now %assemler%.ct
+	v1.0.2 - KetilO Added cpp support
+			+uses [* and *] instead of { and } when a cpp project is opened.
+	v1.0.3 - minor update
+	        +uses @ char for caret positioning for cpp project
+	        +scans for Space char too when indenting
+	        +quiet exit if .ct file not found instead error msgbox
+	         (error printed to output window)
+	        +remembers width and height of popup box
+	         
+      
+

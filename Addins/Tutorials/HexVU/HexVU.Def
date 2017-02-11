@@ -1,0 +1,4 @@
+LIBRARY HexVU.dll
+EXPORTS
+	InstallDll
+	DllProc

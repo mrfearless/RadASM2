@@ -1,0 +1,32 @@
+Installation:
+1. Copy CreateProject.dll to \RadASM\addins
+
+2. Add text below: 
+x=CreateProject.dll,y
+
+to section named: [Addins] in file RadASM.ini
+*x is next free number
+
+y=0 :Create Project file is disabled.
+y=1 :All facilities accessible.
+y=2 :Disable the make facility.
+
+Usage:
+If you have a file opened and want it in a new 
+project workspace, you have to create a project 
+and copy the files into the new folder. Rename 
+the files to the same as the folder name and use 
+the new RAP file.
+
+With this addin you can create a new project file 
+with the opened file in the existing folder. 
+The project workspace is then automatic opened. 
+After opening you can add files and dialogs to the 
+project as usual.
+
+Clicking on a menuitem in make popupmenu first seaches 
+the folder for a *.rap file. If found you vill be asked 
+if you want to open the project workspace. If no *.rap 
+file is found you will be asked if you want to create 
+a project workspace. These actions can be disabled 
+with the option = 2 in the radasm.ini file.

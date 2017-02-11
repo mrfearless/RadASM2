@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Editing the API and Message Files</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Editing the API and Message Files</font></B></P>
+
+<P>
+RadASM has included a lot of the common API calls but there may be instances where you wish to add one or two. In the assembler folders there are files that contain the information for
+the RadASM code completion feature. This will discuss modifying these files for MASM, the procedure is identical for other assemblers.<BR>
+<BR>
+<B><font color="#0000FF">Code Completion files</font></B>
+</P>
+
+<P>
+<b>
+masmApiCall.api</b> -contains a list of API calls and their parameters<BR>
+<b>
+masmApiConst.api </b> - contains a list of constants for xxxxApiCall.api <BR>
+<b>
+masmApiWord.api</b> -contains a simple list of common statements and constants<BR>
+<b>
+masmMessage.api </b> -contains a simple list of windows messages<BR>
+<BR>
+<font color="#000080"><b>MASM</b></font>, <b><font color="#000080">TASM, GoAsm</font></b> and
+<font color="#000080"><b> NASM</b></font> also have files that contain their structures<BR>
+<b>
+nasmApiStruct.api</b><BR>
+<b>
+tasmApiStruct.api<br>
+masmApiStruct.api<br>
+GoAsmApiStruct.api<br>
+</b><BR>
+The <B>masmApiCall.api</B> and <B>masmApiConst.api</B> files are linked to one another and must be edited in concert as follows:
+</P>
+
+<P><B><font color="#0000FF">Example:</font></B><BR>
+From <B>masmApiCall.api </B><BR>
+AppendMenu,hMenu,wFlags,wIDNewItem,lpNewItem<BR>
+<BR>
+From <B>masmApiConst.api </B><BR>
+<font color="#FF0000"><b>2</b></font><font color="#008080"><b>AppendMenu</b></font>,<font color="#008000"><b>MF_BITMAP,MF_OWNERDRAW,MF_SEPARATOR,MF_STRING</b></font>
+</P>
+
+<P>The api calls parameters are defined in <b> masmApiCall.api</b> and these parameters will appear when the API function is typed after an <B>invoke</B> statement. In
+<b> masmApiConst.api</b> you can set the drop-down list values for each of these parameters. In the example above&nbsp;
+the <font color="#FF0000"><b> second</b></font> <font color="#FF0000"><b> parameter</b></font>
+(<font color="#FF0000"><b>2</b></font>) of the <font color="#008080"><b> AppendMenu</b></font> function from the
+<b> masmApiCall.api</b> file will display a drop-down list containing
+<font color="#008000"><b> MF_BITMAP, MF_OWNERDRAW, MF_SEPARATOR, MF_STRING</b></font>. Do not use spaces in this file as those spaces will be copied to your code. Only API functions that have been previously defined in
+<b>masmApiCall.api</b> will be loaded otherwise they are
+ignored.
+</P>
+
+<P>The <B>xxxxApiStruct.api</B> files  have the following structure:<BR>
+<BR>
+<font color="#008080"><b>NameOfStruct</b></font>,<font color="#008000"><b>Field1</b></font>,<font color="#008000"><b>Field2</b></font>,etc..
+</P>
+
+<P><font color="#0000FF">.<b>Example:</b></font><br>
+<font color="#008080"><b>MMTIME</b></font>,<font color="#008000"><b>mmt_wType</b></font>,<font color="#008000"><b>mmt_TimeUnion</b></font>
+</P>
+
+</BODY>
+</HTML>

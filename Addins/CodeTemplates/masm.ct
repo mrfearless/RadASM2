@@ -1,0 +1,84 @@
+{assume}
+assume ~:ptr 
+{assume nothing}
+assume ~:nothing
+{comment function}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; PARAMETERS : ~
+;;
+{dialog close}
+invoke SendMessage,hWnd,WM_CLOSE,0,0
+{forever loop }
+.while TRUE
+	
+	.break .if ~
+	
+.endw
+{frame none}
+OPTION PROLOGUE:NONE
+OPTION EPILOGUE:NONE
+{frame default}
+OPTION PROLOGUE:PROLOGUEDEF
+OPTION EPILOGUE:EPILOGUEDEF
+{ifdef block}
+IFDEF 
+	
+ELSE
+	
+ENDIF
+{inc other}
+include gdi32.inc
+includelib gdi32.lib
+include comctl32.inc
+includelib comctl32.lib
+include comdlg32.inc
+includelib comdlg32.lib
+include shell32.inc
+includelib shell32.lib
+include advapi32.inc
+includelib advapi32.lib
+{message box}
+invoke MessageBox,0,T('~'),0,0
+{repeat ge? inc ecx}
+xor ecx,ecx
+.repeat
+
+	inc ecx
+.until ecx >= ~
+{repeat s? dec ecx}
+mov ecx,~
+.repeat
+	
+	dec ecx
+.until sign?
+{repeat z? dec ecx}
+mov ecx,~
+.repeat
+	
+	dec ecx
+.until zero?
+{uses esi edi ebx}
+uses esi edi ebx 
+{while a? dec ecx}
+.while ecx > ~
+	
+	dec ecx
+.endw
+{while be? inc ecx}
+mov ecx,~
+.while ecx <= 
+	
+	inc ecx
+.endw
+{while be? macro}
+xi = 0
+while xi lt
+	~
+	xi = xi + 1 
+endm
+{}
+
+/////////////// this file goes to /Addins /////////////////
+
+

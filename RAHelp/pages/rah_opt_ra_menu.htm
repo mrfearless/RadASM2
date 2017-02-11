@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Adding to and modifying menus</TITLE>
+</HEAD>
+
+<BODY>
+<P style="background-color: #99FF99; border-style: solid; border-width: 1">
+
+<CODE>
+<SCRIPT Language=JavaScript>
+font_variable="MS SANS SERIF,10"
+text_variable="0=project.rap \n" +
+"1=project.rc \n" +
+"2=project.asm \n" +
+"3=project.obj \n" +
+"4=project.res \n" +
+"5=project.exe \n" +
+"6=project.def \n" +
+"7=project.dll \n" +
+"8=project.txt \n" +
+"9=project.lib \n" +
+"10=project.mak \n" +
+"11=project.hla "
+font_variable2="TIMES NEW ROMAN,10"
+text_variable2="$A = Assembler path \n" +
+"$B = Binary path \n" +
+"$D = Addins path \n" +
+"$E = Debugger path \n" +
+"$H = Help file path \n" +
+"$I = Include path \n" +
+"$L = Library path \n" +
+"$M = Keyboard macro path \n" +
+"$P = Projects path \n" +
+"$R = Path of RadASM \n" +
+"$S = Sniplets path \n" +
+"$T = Templates path"
+</SCRIPT></CODE><B><font color="#0000FF" size="5">Adding to and modifying menus</font></B></P>
+
+<P>
+There are four menus that can be modified to suit your needs, Make, Tools, Macro and Help. Menu items on these menus can be added or removed to allow you to execute third party programs from RadASM. When you first install RadASM there are a number of menu options that are set by default, you may not have all of these items on your system so you will probably want to adjust your menus to reflect your programming environment.<BR>
+<I><B><br>
+<img border="0" src="../images/help_menu_opt.gif" width="198" height="250">
+</B></I>
+</P>
+<P>The edit menu dialogs (Help menu shown) are used to add or remove the items. To edit a particular menu choose the menu from the <B>Option</B> menu and the edit dialog will open. Each item in the can be deleted if necessary. To add an item select an item and press insert, a blank item will be inserted above the selected item. Fill in the fields related to that menu item and press OK when you are done editing the menu. The fields are described below.</P>
+
+<P>
+<B>Menu Item</B> - This is the menu item as it will appear in the menu. If you place an &amp; next to a letter, that will designate that letter as a quick key, use &amp;&amp; to represent a real &amp;<BR>
+<B>Accelerator</B> - You can choose an accelerator key from the drop-down
+combobox that will assign a hot-key to the menu item<BR>
+<B>Command</B> -The command line you wish to execute. The <CODE><A HREF="JavaScript:popup.TextPopup(text_variable2,font_variable2,9,9,-1,-1)">$_</a></CODE> variables can be used in place of paths to use the predefined paths.
+</P>
+
+<P>If you wish to include files from your project in the command line use the
+<CODE><A HREF="JavaScript:popup.TextPopup(text_variable,font_variable,9,9,-1,-1)">file number</a></CODE> from the <a href="rah_proj_files.htm#makefiles">[MakeFiles]</a>
+section of the RAP file to represent them.
+</P>
+
+<p>The $ variable is accessible also to represent the topmost filename in the
+edit control without extension.</p>
+
+<p>Beginning with RadASM version 2.0.2.3 the Tools, Macro and Help menus are
+assembler specific.This allows you to have a different set of menu items for
+each assembler that you use. The process is transparent, when you use an
+assembler it will take the menu items from radasm.ini and use those, if you make
+a change it will save them to the assembler.ini file and will use them in the
+future. Changing the items for one assembler has no effect on any of the others.</p>
+
+<p>To insert a separator in a menu you have only to enter a minus in the Menu
+item field and leave the others blank. To create a Sub Menu enter the name of
+the Sub Menu in the Menu item field then in the next item use two dots (..) to
+signify that it is a Sub Menu item, for example:</p>
+
+<pre>Item1
+Item2
+SubMenuLabel
+..SubMenuItem1
+..SubMenuItem2
+Item3</pre>
+
+<p style="border: 2 solid #008080"><B><font color="#FF0000">Notes</font></B> <font color="#FF0000"> :</font><BR>
+<B>1.</B> Do not change the make menu, it has hard coded commands. You can however assign your own accelerators, change menu text and insert menu breaks.
+You can also add new items.<BR>
+<B>2.</B> The two topmost user modifiable parts of the tools menu are equivalent
+to toolbar buttons (<b>I</b> and <b>II</b>). Do not use these menu items for sub menus.<BR>
+<B>3.</B> The user modifiable part of the macro menu is used to playback pre-recorded keystroke macros. You can group the macros using sub menus.<BR>
+<B>4.</B> The user modifiable part of the help menu is used to open help files. You can use any
+valid Windows file name. You can group the help files using sub menus.<br>
+<b>5.</b> (2.0.2.1) In the help menu if your command contains an exe file it
+will be treated as if it is in the tool menu and executed normally otherwise it
+will be opened with the program registered with Windows for the file type
+specified.</p>
+
+<CODE>
+<OBJECT
+  id=popup
+  type="application/x-oleobject"
+  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"
+>
+</OBJECT>
+</CODE>
+
+</BODY>
+</HTML>

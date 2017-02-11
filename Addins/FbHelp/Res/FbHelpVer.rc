@@ -1,0 +1,24 @@
+#define VERINF1 1
+VERINF1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEOS 0x00000004
+FILETYPE 0x00000002
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904E4"
+    BEGIN
+      VALUE "FileVersion", "1.0.0.0\0"
+      VALUE "FileDescription", "FreeBASIC dbghelp emulator\0"
+      VALUE "InternalName", "fbhelp.dll\0"
+      VALUE "LegalCopyright", "KetilO (C) 2009\0"
+      VALUE "OriginalFilename", "fbhelp.dll\0"
+      VALUE "ProductVersion", "1.0.0.0\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04E4
+  END
+END

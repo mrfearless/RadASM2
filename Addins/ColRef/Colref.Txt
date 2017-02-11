@@ -1,0 +1,18 @@
+Code by MINOR28
+Email: 
+Date: 01.09.2002 rev 17.06.2003
+Rev: 2
+
+Installation:
+1. Copy Colref.dll to \RadASM\addins
+
+2. Add text below: 
+x=Colref.dll,1
+
+to section named: [Addins]
+in file RadASM.ini
+*x is next free number
+
+Usage:
+Choose a color from the color dialog box or
+pic a color from the screen. Insert color reference in code.

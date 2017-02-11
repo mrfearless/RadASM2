@@ -1,0 +1,24 @@
+#define VERINF1 1
+VERINF1 VERSIONINFO
+FILEVERSION 1,0,5,0
+PRODUCTVERSION 1,0,5,0
+FILEOS 0x00000004
+FILETYPE 0x00000000
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileVersion", "1.0.5\0"
+      VALUE "FileDescription", "RadAsm AutoCorrect addin\0"
+      VALUE "InternalName", "AutoCorrect Addin\0"
+      VALUE "LegalCopyright", "cakmak (C) 2005\0"
+      VALUE "ProductName", "Auto Correct\0"
+      VALUE "ProductVersion", "1.0.5\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04B0
+  END
+END

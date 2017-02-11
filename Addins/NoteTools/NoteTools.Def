@@ -1,0 +1,5 @@
+LIBRARY NoteTools.dll
+EXPORTS
+	InstallDll
+	DllProc
+	GetOptions

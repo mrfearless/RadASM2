@@ -1,0 +1,184 @@
+ABORTPROC,4,Pointer to an application-defined callback function that the operating system calls when a print job is to be cancelled during spooling. See AbortProc for information on functions of this type.
+ACMDRIVERENUMCB,4,Pointer to an application-defined callback function that is used with the acmDriverEnum function. See acmDriverEnumCallback for information on functions of this type.
+ACMDRIVERPROC,4,Pointer to an application-defined callback function that is used with an installable audio compression manager (ACM) driver. See acmDriverProc for information on functions of this type.
+ACMFILTERCHOOSEHOOKPROC,4,Pointer to an application-defined function that hooks the acmFilterChoose dialog box. See acmFilterChooseHookProc for information on functions of this type.
+ACMFILTERENUMCB,4,Pointer to an application-defined callback function that is used with the acmFilterEnum function. See acmFilterEnumCallback for information on functions of this type.
+ACMFILTERTAGENUMCB,Pointer to an application-defined callback function that is used with the acmFilterTagEnum function. See acmFilterTagEnumCallback for information on functions of this type.
+ACMFORMATCHOOSEHOOKPROC,4,Pointer to an application-defined function that hooks the acmFormatChoose dialog box. See acmFormatChooseHookProc for information on functions of this type.
+ACMFORMATENUMCB,4,Pointer to an application-defined callback function that is used with the acmFormatEnum function. See acmFormatEnumCallback for information on functions of this type.
+ACMFORMATTAGENUMCB,4,Pointer to an application-defined callback function that is used with the acmFormatTagEnum function. See acmFormatTagEnumCallback for information on functions of this type.
+APPLET_PROC,4,Pointer to a library-defined callback function that is the entry point for a Control Panel application. See CplApplet for information on functions of this type.
+ATOM,2,Atom (a reference to a character string in an atom table).
+BOOL,4,Boolean variable (should be TRUE or FALSE).
+BOOLEAN,1,Boolean variable (should be TRUE or FALSE).
+DB,1,Unsigned byte (8 bits).
+BYTE,1,Unsigned byte (8 bits).
+SBYTE,1,Signed byte (8 bits).
+CCHAR,0,Windows character.
+CHAR,1,Windows character.
+COLORREF,4,Red, green, blue (RGB) color value (32 bits).
+CONST,0,Variable whose value is to remain constant during execution.
+CRITICAL_SECTION,24,Critical-section object.
+CTRYID,4,Country identifier.
+DLGPROC,4,Pointer to an application-defined dialog box callback procedure.
+DD,4,Unsigned doubleword (32 bits).
+DWORD,4,Unsigned doubleword (32 bits).
+SDWORD,4,Signed doubleword (32 bits).
+DWORDLONG,0,Double (64 bits).
+EDITWORDBREAKPROC,4,Pointer to an application-defined callback function that the operating system calls when a multiline edit control needs to break a line of text. See EditWordBreakProc for information on functions of this type.
+ENHMFENUMPROC,4,Pointer to an application-defined callback function that enumerates enhanced-metafile records.
+ENUMRESLANGPROC,4,Pointer to an application-defined callback function that enumerates resource languages.
+ENUMRESNAMEPROC,4,Pointer to an application-defined callback function that enumerates resource names.
+ENUMRESTYPEPROC,4,Pointer to an application-defined callback function that enumerates resource types.
+FARPROC,4,Pointer to a callback function.
+FLOAT,4,Floating-point variable.
+FONTENUMPROC,4,Pointer to an application-defined callback function that enumerates fonts.
+GLOBALHANDLE,0,Handle of a global memory block.
+GOBJENUMPROC,4,Pointer to an application-defined callback function that enumerates graphics device interface (GDI) objects.
+GRAYSTRINGPROC,4,Pointer to an application-defined callback function that draws gray text.
+HACCEL,4,Handle of an accelerator table.
+HANDLE,4,Handle of an object.
+HBITMAP,4,Handle of a bitmap.
+HBRUSH,4,Handle of a brush.
+HCOLORSPACE,4,Windows 95 only: Handle of a logical color space.
+HCONV,4,Handle of a dynamic data exchange (DDE) conversation.
+HCONVLIST,4,Handle of a DDE conversation list.
+HCURSOR,4,Handle of a cursor.
+HDC,4,Handle of a device context (DC).
+HDDEDATA,4,Handle of DDE data.
+HDWP,4,Handle of a deferred window position structure.
+HENHMETAFILE,4,Handle of an enhanced metafile.
+HFILE,4,Handle of a file.
+HFONT,4,Handle of a font.
+HGDIOBJ,4,Handle of a GDI object.
+HGLOBAL,4,Handle of a global memory block.
+HHOOK,4,Handle of a hook.
+HICON,4,Handle of an icon.
+HIMAGELIST,4,Handle to an image list.
+HINSTANCE,4,Handle of an instance.
+HKEY,4,Handle of a registry key.
+HKL,4,Handle of a keyboard layout.
+HLOCAL,4,Handle of a local memory block.
+HMENU,4,Handle of a menu.
+HMETAFILE,4,Handle of a metafile.
+HMODULE,4,Handle of a module.
+HOOKPROC,4,Pointer to an application-defined hook function.
+HPALETTE,4,Handle of a palette.
+HPEN,4,Handle of a pen.
+HRGN,4,Handle of a region.
+HRSRC,4,Handle of a resource.
+HSZ,4,Handle of a DDE string.
+HTREEITEM,4,Handle of an item in a tree-view control.
+HWINSTA,4,Handle of a workstation.
+HWND,4,Handle of a window.
+INT,0,Signed integer.
+IPADDR,4,A 32-bit value that contains an IP address. To convert this value to the "a.b.c.d" string form of an IP address, map the high-order byte to a, the low-order byte to d, and so on.
+LANGID,4,Language identifier.
+LCID,4,Locale identifier.
+LCSCSTYPE,4,Color space type.
+LCSGAMUTMATCH,4,Gamut-matching method.
+LCTYPE,4,Locale type.
+LINEDDAPROC,4,Pointer to a callback function that processes line coordinates.
+LOCALHANDLE,0,Handle of a local memory block.
+LONG,4,32-bit signed value.
+LONGLONG,8,Double (64 bits).
+LP,0,Pointer to a null-terminated Unicode™ string.
+LPARAM,4,32-bit message parameter.
+LPBOOL,4,Pointer to a Boolean variable.
+LPBYTE,4,Pointer to a byte.
+LPCCH,0,Pointer to a constant Windows character.
+LPCCHOOKPROC,4,Pointer to an application-defined hook function.
+LPCFHOOKPROC,4,Pointer to an application-defined hook function.
+LPCH,0,Pointer to a Windows character.
+LPCOLORREF,4,Pointer to a COLORREF value.
+LPCRITICAL_SECTION,4,Pointer to a critical-section object.
+LPCSTR,4,Pointer to a constant null-terminated Windows character string.
+LPCTSTR,4,Pointer to a constant null-terminated Unicode or Windows character string.
+LPCWCH,0,Pointer to a constant null-terminated Unicode character.
+LPCWSTR,4,Pointer to a constant null-terminated Unicode character string.
+LPDWORD,4,Pointer to an unsigned doubleword (32 bits).
+LPFRHOOKPROC,4,Pointer to an application-defined hook function.
+LPHANDLE,4,Pointer to a handle.
+LPHANDLER_FUNCTION,4,Pointer to a handler function.
+LPINT,4,Pointer to a signed integer.
+LPLONG,4,Pointer to a signed long (32 bits).
+LPOFNHOOKPROC,4,Pointer to an application-defined hook function.
+LPPRINTHOOKPROC,4,Pointer to an application-defined hook function.
+LPSETUPHOOKPROC,4,Pointer to an application-defined hook function.
+LPSTR,4,Pointer to a null-terminated Windows character string.
+LPTCH,0,Pointer to a Unicode character or a Windows character.
+LPTSTR,4,Pointer to a null-terminated Windows or Unicode character string.
+LRESULT,4,Signed result of message processing.
+LPVOID,4,Pointer to any type.
+LPWCH,0,Pointer to a Unicode character.
+LPWORD,4,Pointer to an unsigned word (16 bits).
+LPWSTR,4,Pointer to a null-terminated Unicode character string.
+LUID,8,Locally unique identifier.
+MFENUMPROC,0,Pointer to an application-defined callback function that enumerates metafile records.
+NPSTR,0,Pointer to a null-terminated Windows character string.
+NWPSTR,0,Pointer to a null-terminated Unicode string.
+PBOOL,4,Pointer to a Boolean variable.
+PBOOLEAN,4,Pointer to a Boolean variable.
+PBYTE,4,Pointer to a byte.
+PCCH,0,Pointer to a constant Windows character.
+PCH,0,Pointer to a Windows character.
+PCHAR,4,Pointer to a Windows character.
+PCRITICAL_SECTION,4,Pointer to a critical-section object.
+PCSTR,4,Pointer to a constant null-terminated Windows character string.
+PCWCH,4,Pointer to a constant Unicode character.
+PCWSTR,4,Pointer to a constant null-terminated Unicode character string.
+PDWORD,4,Pointer to an unsigned doubleword (32 bits).
+PFLOAT,4,Pointer to a floating-point variable.
+PFNCALLBACK,4,Pointer to a callback function.
+PHANDLE,4,Pointer to a handle.
+PHANDLER_ROUTINE,4,Pointer to a handler routine.
+PHKEY,4,Pointer to a registry key.
+PINT,4,Pointer to a signed integer.
+PLCID,4,Pointer to a locale identifier.
+PLONG,4,Pointer to a signed long (32 bits).
+PLUID,4,Pointer to a locally unique identifier (LUID).
+PROC,0,Pointer to a callback function.
+PROPENUMPROC,4,Pointer to an application-defined callback function that enumerates window properties. See PropEnumProc for information on functions of this type.
+PROPENUMPROCEX,4,Pointer to an application-defined callback function that enumerates window properties. See PropEnumProcEx for information on functions of this type.
+PSHORT,4,Pointer to a signed short (16 bits).
+PSID,0,Pointer to a security identifier (SID).
+PSTR,4,Pointer to a null-terminated Windows character string.
+PSZ,0,Pointer to a null-terminated Windows character string.
+PTBYTE,4,Pointer to a Windows or Unicode character.
+PTCH,0,Pointer to a Windows or Unicode character.
+PTCHAR,4,Pointer to a Windows or Unicode character.
+PTSTR,4,Pointer to a null-terminated Windows or Unicode character string.
+PUCHAR,4,Pointer to an unsigned Windows character.
+PUINT,4,Pointer to an unsigned integer.
+PULONG,4,Pointer to an unsigned long (32 bits).
+PUSHORT,4,Pointer to an unsigned short (16 bits).
+PVOID,4,Pointer to any type.
+PWCH,0,Pointer to a Unicode character.
+PWCHAR,4,Pointer to a Unicode character.
+PWORD,4,Pointer to an unsigned word (16 bits).
+PWSTR,4,Pointer to a null-terminated Unicode character string.
+REGSAM,4,Security access mask for registry key.
+SC_HANDLE,4,Handle of a service.
+SENDASYNCPROC,4,Pointer to an application-defined callback function that the operating system calls when the SendMessageCallback function is called. The system passes the message to the callback function after passing the message to the destination window procedure. See SendAsyncProc for information on functions of this type.
+SERVICE_STATUS_HANDLE,4,Handle of a service status value.
+SHORT,0,Short integer.
+SPHANDLE,0,Pointer to a handle.
+DT,10,Ten bytes float.
+TBYTE,10,Ten bytes float.
+TCHAR,1,Unicode character or Windows character.
+TIMERPROC,4,Pointer to an application-defined timer callback function.
+UCHAR,1,Unsigned Windows character.
+UINT,4,Unsigned integer.
+ULONG,4,Unsigned long integer (32 bits).
+USHORT,2,Unsigned short integer (16 bits).
+VOID,0,Any type.
+WCHAR,2,Unicode character.
+WNDENUMPROC,4,Pointer to an application-defined callback function that enumerates windows.
+WNDPROC,4,Pointer to an application-defined window procedure.
+DW,2,Unsigned word (16 bits).
+WORD,2,Unsigned word (16 bits).
+SWORD,2,Signed word (16 bits).
+WPARAM,4,32-bit message parameter.
+YIELDPROC,4,Pointer to a yield callback function.
+DQ,8,Unsigned (64 bits.)
+QWORD,8,Unsigned (64 bits.)

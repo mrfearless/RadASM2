@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>FASM COFF Example</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">FASM COFF Example</font></B></P>
+
+<P>
+<B><font color="#008000" size="4">Example</font></B><BR>
+<BR>
+The following is an example of a FASM program using console FASM to generate COFF files for Windows applications.<BR>
+<BR>
+<B><font color="#FF0000">format MS COFF</font></B> ; Generate COFF (.obj) output<BR>
+<BR>
+<B>include '%include%/win32ax.inc'</B> ; The standard include library<BR>
+<BR>
+section '.text' code readable executable<BR>
+<BR>
+<B>public <font color="#FF0000"> start</font></B> ; the entry point specified in your
+GoLink command line (<b>/entry</b> parameter)<BR>
+<B><font color="#FF0000">start</font>:</B><BR>
+<BR>
+invoke MessageBox,0,_message,_caption,MB_ICONQUESTION+MB_YESNO<BR>
+cmp eax,IDYES<BR>
+jne exit<BR>
+<BR>
+exit:<BR>
+invoke ExitProcess,0<BR>
+<BR>
+section '.data' data readable writeable<BR>
+<BR>
+_message db 'Hello I am a message box',0<BR>
+_caption db 'Hello there',0<BR>
+</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,5 @@
+LIBRARY PthExpl++
+EXPORTS
+	InstallDll
+	DllProc
+	GetOptions

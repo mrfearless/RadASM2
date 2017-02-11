@@ -1,0 +1,80 @@
+RadASM Source Safe addin
+-------------------------------------------------------------------------------
+
+1. Update RadASM.ini (See below)
+2. Copy SourceSafe.dll to RadASM\Addins folder.
+3. Use addin manager to activate the addin. There is also a debug mode option.
+
+Updates to RadASM.ini
+[SourceSafe]
+;Source safe path (where ss.exe and ssexp.exe is found.
+Path=C:\Program Files\Microsoft Visual Studio\Common\VSS\win32
+;Your Source Safe User name
+UserName=rauser
+;Your Source Safe Pass word
+PassWord=rapass
+
+If you use other than the default database:
+-------------------------------------------
+You must edit C:\Program Files\Microsoft Visual Studio\Common\VSS\srcsafe.ini
+
+Example db in: E:\VSS60DB\VSSDB
+
+; srcsafe.ini
+;
+; Three of these variables -- Data_Path, Users_Path, and Users_Txt -- must
+; be in srcsafe.ini.  Any other variable here can be overridden in ss.ini.
+; Similarly, any ss.ini variable can be placed in srcsafe.ini to set a
+; system "default," which individual users can still override in ss.ini.
+
+; The two important paths used by SourceSafe.
+Data_Path = e:\vss60db\vssdb\data
+Temp_Path = e:\vss60db\vssdb\temp
+
+; This tells admin where to put personal directories for new users.
+Users_Path = e:\vss60db\vssdb\users
+
+; From this, find users.txt; from that, in turn, find ss.ini for a user.
+Users_Txt = e:\vss60db\vssdb\users.txt
+
+-------------------------------------------------------------------------------
+
+Version 1.0.0.7
+
+Known issues.
+-------------
+o Dialogs.
+	- The dialogs RC file is NOT part of source safe project.
+o Menus.
+	- The menus RC file is NOT part of source safe project.
+o Project file
+	- RadASM's project file is NOT added to Source Safe.
+o Main RC file
+	- Remember to check out main RC file before adding any resources.
+o Check In
+	- Ok.
+o Check Out
+	- Ok.
+o Undo Check Out.
+	- Ok.
+	- Prompt to loose changes if any.
+o Get Latest Version
+	- Ok.
+	- If a file is changed and that file is open you will be prompted to reopen the file.
+o Adding a file.
+	- Ok.
+	- Prompt to add file to sourcesafe.
+o Renaming a file.
+	- Ok.
+o Removing a file.
+	- Ok.
+	- Prompt to remove file from sourcesafe.
+o Running Source Safe IDE
+	- There is no auto update to RadASM IDE when things are changed using Source Safe IDE.
+o Shared files
+	- Ok.
+	- Use Source Safe IDE to add shared files to your project. 
+o Shared database
+	- Not tested.
+
+KetilO

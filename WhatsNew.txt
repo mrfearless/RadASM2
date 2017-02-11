@@ -1,0 +1,173 @@
+RadASM 2.2.2.0
+--------------
+2.2.2.0
+o The debug register and watch windows are now in a single tool window.
+o Added FPU and MMX registers to debug window.
+o There can now be more than one xxxConst.api file using the same api.
+o The code editor now supports unlimitted line lenghts.
+o Fixed a bug when double clicking on errors in output window when using bcc.
+o Fixed a buffer overrun bug on corrupted project files.
+o Fixed bugs wuth project browser drag to new goroup. Disabled group name editing.
+2.2.1.9b
+o Holding Ctrl key while clicking on expand / collapse bookmark will expand / collapse
+  all child blocks in the parent block.
+2.2.1.9
+o Added a hidden option to disable accept command dialog.
+  In RadASM.ini section [Accept] add the following line:
+  DontAsk=1
+o Added UndoSave addin. It saves and loads undo information on project code files.
+  See Addin Manager help file for more info.
+o Project Options no longer expands project tree.
+2.2.1.8g
+o Better error message / handling if a programming language pack is missing.
+o Added UpdateChecker addin. It lets you check for RadASM updates, download and unzip files.
+2.2.1.8f
+o Adding a project file keeps the expanded / collapsed state of the project browser.
+o The expanded / collapsed state of the project browser is saved to the project file.
+o You can no longer delete a group with sub groups using the Project Groups tool.
+  You must delete the sub groups first. In previous versions this caused a group messup.
+o Fixed a bug in RAEdit when drawing the tab markers.
+2.2.1.8e
+o Improved 'Goto Declare' and double clicking in properties (better support for Obj32Asm).
+o Fixed bugs in masmParse (better support for Obj32Asm, macros and constants).
+o Fixed bug in RAEdit where trim trailing spaces did not update line changed state.
+2.2.1.8d
+o Fixed bug where closing Project Groups dialog using [X] made RadASM menu not responding.
+o Fixed bug where clicking left and right mouse buttons at the same time on a toolbar button
+  made RadASM hang.
+o CreateProtoEx addin now supports C/CPP
+o Improved CppParse to better support CreateProtoEx addin.
+o Alex has updated the CodeSize addin.
+2.2.1.8c
+o Added support for chm help files if the radhelp addin is not used.
+2.2.1.8b
+o Fixed bug in masmParse.dll that caused sluggis editing on older machines.
+o Fixed bug where red dot was missing if file is readonly or missing.
+o Fixed bug where autoload was not saved if a file was unsaved on project close.
+2.2.1.8
+o Made it possible to load api files depending on project type.
+  This makes it easier to create projects for other OS'es than Windows.
+  Contributed api files welcome.
+o Created a masm parser dll. This makes parsing masm projects more reliable.
+o Auto Load is replaced by saving current open files to project file.
+o File tabs can be dragged to a new position. The tab order is saved to project file.
+o The project browser now supports sub groups. Use Project Groups to maintain groups.
+o The Project Groups dialog has been redesigned and is more user friendly.
+o When a file is added to the project it will be added to the current group.
+o Added Project / Add Existing / Current Open File. Adds the current open file to the project.
+o Added Expand / Collapse toolbar button to project browser.
+o Added BS_SPLITBUTTON, BS_DEFSPLITBUTTON, BS_COMMANDLINK and BS_DEFCOMMANDLINK button styles.
+o Added TBS_REVERSED, TBS_DOWNISLEFT, TBS_NOTIFYBEFOREMOVE and TBS_TRANSPARENTBKGND trackbar styles.
+o Added SysLink control.
+2.2.1.7
+o The code parser for masm has been enhanced to include datatypes and array sizes.
+o The code parser for VC6 C/C++ (cppparse.dll) has been enhanced to include datatypes and array sizes.
+o The code parser for FreePASCAL has been enhanced to include datatypes and array sizes.
+o The code parser for FreeBASIC has been enhanced to include datatypes and array sizes.
+o Included RADebug addin. It adds sourcecode debugging capabilities to masm, VC6 C/C++,
+  FreePASCAL and FreeBASIC projects. See the RADebug.txt for more info.
+o Added support for MinGW.
+o The size of the code complet list is now saved to the ini file.
+o Fixed a minor bug in RAEdit. REM_GETCURSORWORD did not include the size of the
+  line number bar.
+o Fixed a minor bug in RAEdit. Bracematching caused wrong selection on EM_SCROLLCARET.
+o Fixed a buffer overrun vulnerability in TbrCreate.
+o Fixed a buffer overrun vulnerability in menu editor.
+2.2.1.6
+o Added resource type RT_HTML
+o Code lines now has a yellow indicator for unsaved chanees, green for saved changes.
+o Better code complete support for C/C++ (locals (Ctrl+Shift+Space) and casted structures). 
+0 Added protection against malicious project files (.rap). A dialog shows the command that will be
+  executed. It is up to you to accept the command or not. There is also a 'Don't ask again' option.
+  Even with this added protection you should always open a project file from a non trusted source
+  in text edit mode (File / Open File) and verify that it not executes any suspicious commands.
+o Fixed RadASM Project File (.rap) Stack-Based Buffer Overflow Vulnerability.
+o Fixed bug with environment variable that caused crash on win 2000.
+2.2.1.5
+o Option to set syntax backcolor on strings, comments, operators and numbers & hex values.
+o Api files can now have commented lines. A commented line must start with ; or //
+o Ini files now has a version.
+o Updated addins to latest version. This fixess several bugs.
+o Fixed bug with split screen.
+2.2.1.4
+o Flat toolbar on Project and Properties tools.
+o Rearanged Project toolbar buttons.
+o Option to set Info tool colors.
+o Incraced size of build option buffer.
+o Added block guiders.
+o Variable speed selection scrolling by mouse.
+o Fixed bug with environment option if there was no entries.
+o Fixed bug with project option / project groups.
+2.2.1.3
+o Added support for Free Pascal.
+o Added support for Digital Mars C/C++ compiler. Thanks PauloH.
+o Added Ignore Whitespace to find.
+  Example:
+  Find: mov eax,edx
+  will find:
+  mov    eax , edx
+o Added support for multiline find.
+  Example:
+  Find: mov eax,edx^Minc edx
+  wull find the lines:
+  mov eax,edx
+  inc edx
+o Fixed fasm parser bug.
+2.2.1.2b
+o Fixed bug with threaded build. The handle was not closed. Thanks a lot Willok.
+2.2.1.2
+o Included several improvements by drizz.
+o Added images to tab select.
+o Added default control sizes to dialog editor.
+o New RadASM icon by Anton Lesnichenko
+2.2.1.1
+o Added brace matching.
+o Added collapse on comment blocks.
+o Improved fasm code complete on structures.
+o Changed behaviour on 'Topmost File property'
+2.2.1.0c
+o Fixed bug with renaming files in templates using [*PROJECTNAME*] method.
+o Fixed tab select font problem.
+2.2.1.0b
+o Fixed bug in 'New Project' wizard where build options was not copied from template.
+o Fixed Trend Micro virus alert on Addin Manager. (thanks to Wayne Lozinski)
+2.2.1.0
+o It is now possible to create a new project even if the folder already exists.
+  This is useful when creating a RadASM project from existing sources.
+  - Warning that the folder exists.
+  - Warning if files are about to be overwritten.
+o The 'New Project Wizard' now has an Import button. It lets you import files to
+  the project. Useful when creating a new project from existing sources.
+o Font options dialog now shows font name.
+o Set focus to project explorer and Ctrl+E will expand / collapse project groups.
+  Useful with huge projects.
+o Improved project loading time.
+o Fixed a paint problem in RAEdit when a non fixed font was used.
+o Fixed a bug where closing all files would leave the 'File Change Notify' thread
+  running and the next file opened would create a new thread.
+o RAEdit now does a garbage collection each time memory is expanded.
+o Fixed a bug where adding an existing code file to project did not auto refresh properties.
+o Added ResourceID addin. Activate it with addinmanager.
+  - This addin auto exports resource id's to the file rsrc.xxx when any of the
+  - resource scripts are updated. At the same time code properties are refreshed.
+  - This means that code complete on resource id's will work immediatly after any
+  - resource script is saved.
+  - The export is done ONLY if the rsrc.xxx file exists in the projects root folder.
+
+  - rsrc.xxx:
+  - ------------------------
+  - Assembly		rsrc.inc
+  - Hla				rsrc.hhf
+  - C/C++			rsrc.h
+  - bcet, fb		rsrc.bi
+o Added option to minimize RadASM on run. RadASM will stay minimized while program is running.
+  - You can also use this to kill a program that hangs by restoring RadASM and press Esc.
+o Project options now has Path and Main Files buttons. Purpose is to have the info at hand
+  while setting up project build options.
+o On build errors RadASM will jump to first error.
+o New 'Project Wizard' that also works on Win95b (does not use property sheets).
+o Fixed bug in RadToolbar addin (crash on Win95b if custom toolbar was enabled).
+o Fixed bug in RadToolbar addin where customizing toolbar could give strange results.
+o Fixed a bug where using mouse wheel on properties window could leave the button painted.
+
+KetilO

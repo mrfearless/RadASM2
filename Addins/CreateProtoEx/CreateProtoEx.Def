@@ -1,0 +1,5 @@
+LIBRARY CreateProtoEx.dll
+EXPORTS
+	DllEntry
+	DllProc
+	InstallDll

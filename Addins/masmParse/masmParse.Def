@@ -1,0 +1,7 @@
+LIBRARY masmParse
+EXPORTS
+	FindInFile
+	InstallDll
+	FixUnknown
+	ParseFile
+	FindLocal

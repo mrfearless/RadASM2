@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Modifying project options</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #99FF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Modifying Project Options</font></B></P>
+
+<P><img border="0" src="../images/project_option.gif" width="492" height="486"></P>
+
+<P>Many of the options that were specified at the time you created your project can be modified later. Select <B>Project Options</B> from the <B>Project</B> menu to modify these options. Some of the options such as the assembler and project type are not modifiable, you are required to create a new project to change those options.<BR>
+<BR>
+Unlike the wizard the <B>Project Options</B> dialog allows you to specify <B>Debug</B> or <B>Release</B> code. Each project type has a set of build commands for a release version and debug version. Selecting one or the other will decide which of the command sets to use when building the project. Selecting <B>Debug</B> will add information to your executable useful to
+<a href="rah_debug.htm"> symbolic debuggers</a>.<BR>
+<BR>
+There are also options to alter the display of files in the Project box. Enabling <B>Show Project Groups</B> will display related files grouped together in subfolders and <B>Expand Groups </B>will default the state of those subfolders to "open".</P>
+
+<P>For a more detailed look at the command lines see <a href="adv_cmd_lines.htm">Editing
+command line options</a></P>
+
+<P style="border: 2 solid #008080"><B><font color="#FF0000">TIP</font></B>: To view the actual command line sent to the program you can add a T to the end of the second parameter, the command line will be sent to the output window before it executes. This is useful in debugging Project Options. e.g. : <B>5,OT,$B\LINK...</B></P>
+
+<P style="border: 2 solid #008080"><B><font color="#FF0000">TIP</font></B> If you attempt to put a filename in by identifying it's number and do not use a comma the parser will insert the number and not the filename, however using a comma will place quotes around the filename. There are instances where you want a file to be identified by the parser but do not want it in quotes in this case use <B>$</B> in front of the file number e.g. <B>$6 = myproject.def</B>, no quotes</P>
+
+</BODY>
+</HTML>

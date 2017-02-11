@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>FASM Installation notes</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #C0C0C0; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">FASM Installation notes</font></B></P>
+
+<P>
+There are a few things to remember when using FASM with RadASM. First because you want to take advantage of the resource editors in RadASM you will probably want to use COFF file format as your format. This will create a .obj file that can be used when linking to the resources created by RadASM. It is highly recommended that you use the FASM&amp;ALink package when installing FASM. For more information about this combination see the following thread. It contains the FASM assembler and the includes necessary to begin Win32 programming. The rest of this page will assume the following configuration :<BR>
+<BR>
+Assembler : fasm.exe - console version (1.46 was used for this example)<BR>
+Linker : GoLink.exe - this freeware linker can be downloaded from <a href="http://www.godevtool.com/"> Jeremy Gordon</a><BR>
+Res compiler : GoRC.exe - This freeware res compiler can be downloaded from <a href="http://www.godevtool.com/"> Jeremy Gordon</a><BR>
+<BR>
+Unzip the FASM&amp;ALink file to <B>C:\FASM</B>, and create a folder called <B>BIN</B> in the <B>\FASM </B>folder. Copy ALink.exe to the <B>BIN</B> folder if you are planning on using ALink to link your programs. Unzip GoRC and GoLink to the <B>BIN</B> folder as well. Create a folder called <B>HELP</B> to put your Win32.HLP reference and any other help references you might need.<BR>
+<BR>
+To use GoLink you must create the following simple txt file in the <B>BIN</B> folder. The file should be named <B>GFL.txt </B>(<B>G</B>olink <B>F</B>ile <B>L</B>ist). This file contains a list of Windows DLLs that GoLink will scan when looking for a particular imported function. GoLink starts at the top of the file and scans down,
+quitting when it finds the file it needs, so put the most common DLLs at the top. It should have at least these files:<BR>
+<BR>
+Kernel32.dll<BR>
+User32.dll<BR>
+shell32.dll<BR>
+Gdi32.dll<BR>
+comdlg32.dll<BR>
+comctl32.dll<BR>
+<BR>
+You can continue to add to this list as needed and don't worry about having too many files in it, the linker only takes what it needs, but be sure to put the DLLs that are most common near the top, this will make the link faster. Remember the order of the files is directly related to link time, e.g. putting <B>Kernel32</B> last in a long list is a bad idea, you will always use that dll (GetModuleHandle)<BR>
+<BR>
+Make the following changes :<BR>
+<BR>
+<B><font color="#0000FF">FASM.INI</font></B><BR>
+<BR>
+<B><font color="#008000">[Project]</font></B><BR>
+Type=Win32 App,<font color="#FF0000"><b>Win9x Unicode</b>,<B>Win32 App (no res)</B>,<b>DLL</b></font><BR>
+Files=Asm,Inc,Txt,RC<BR>
+Folders=Bak,Mod<BR>
+MenuMake=Compile RC,Assemble,Link,Build,Go,Run,Go All<BR>
+<BR>
+<B><font color="#008000">[Win32 App]</font></B><BR>
+Files=1,1,0,1,0<BR>
+Folders=1,0,1<BR>
+MenuMake=1,1,1,1,1,1,1,0<BR>
+;x=FileToDelete/CheckExistsOnExit,<BR>
+;(O)utput/(C)onsole/0,Command,<BR>
+;MakeFile1[,MakeFile2[,MakeFile3...]]<BR>
+1=4,O,$B\GORC /r,1<BR>
+2=3,O,$A\FASM,2,3<BR>
+3=5,O,$B\GoLink @$B\GFL.txt /entry <B><font color="#FF0000">start</font></B> /files ,3,4<BR>
+4=0,0,,5<BR>
+5=<BR>
+6=<BR>
+11=4,O,$B\GORC /r,1<BR>
+12=3,O,$A\FASM,2,3<BR>
+13=5,O,$B\GoLink @$B\GFL.txt /debug coff /entry <B><font color="#FF0000">start</font></B> /files,3,4<BR>
+14=0,0,,5<BR>
+15=<BR>
+16=<BR>
+<BR>
+<B>Add the following sections:</B><BR>
+<BR>
+<B><font color="#008000">[Win9x Unicode]</font></B><BR>
+Files=1,1,0,1,0<BR>
+Folders=1,0,1<BR>
+MenuMake=1,1,1,1,1,1,1,0<BR>
+;x=FileToDelete/CheckExistsOnExit,<BR>
+;(O)utput/(C)onsole/0,Command,<BR>
+;MakeFile1[,MakeFile2[,MakeFile3...]]<BR>
+1=4,O,$B\GORC /r,1<BR>
+2=3,O,$A\FASM,2,3<BR>
+3=5,O,$B\GoLink @$B\GFL.txt /mslu /entry <B><font color="#FF0000">start</font></B> /files,3,4<BR>
+4=0,0,,5<BR>
+5=<BR>
+6=<BR>
+11=4,O,$B\GORC /r,1<BR>
+12=3,O,$A\FASM,2,3<BR>
+13=5,O,$B\GoLink @$B\GFL.txt /mslu /debug coff /entry <B><font color="#FF0000">start</font></B> /files,3,4<BR>
+14=0,0,,5<BR>
+15=<BR>
+16=<BR>
+<BR>
+<B><font color="#008000">[Win32 App (no res)]</font></B><BR>
+Files=1,1,0,0,0<BR>
+Folders=1,0,1<BR>
+MenuMake=1,1,1,1,1,1,1,0<BR>
+;x=FileToDelete/CheckExistsOnExit,<BR>
+;(O)utput/(C)onsole/0,Command,<BR>
+;MakeFile1[,MakeFile2[,MakeFile3...]]<BR>
+1=4,O,$B\GORC /r,1<BR>
+2=3,O,$A\FASM,2,3<BR>
+3=5,O,$B\GoLink @$B\GFL.txt /entry <B><font color="#FF0000">start</font></B> /files,3<BR>
+4=0,0,,5<BR>
+5=<BR>
+6=<BR>
+11=4,O,$B\GORC /r,1<BR>
+12=3,O,$A\FASM,2,3<BR>
+13=5,O,$B\GoLink @$B\GFL.txt /debug coff /entry <B><font color="#FF0000">start</font></B> /files ,3<BR>
+14=0,0,,5<BR>
+15=<BR>
+16=<BR>
+<BR>
+<B><font color="#008000">[DLL]</font></B><BR>
+Files=1,1,1,0,1,0<BR>
+Folders=1,0,0<BR>
+MenuMake=0,1,1,1,0,0,0,0<BR>
+;x=FileToDelete/CheckExistsOnExit,<BR>
+;(O)utput/(C)onsole/0,Command,<BR>
+;MakeFile1[,MakeFile2[,MakeFile3...]]<BR>
+1=4,O,$B\GORC /r /f,1<BR>
+2=3,O,$A\FASM,2,3<BR>
+3=7,O,$B\GoLink @$B\GFL.txt&nbsp; @$6 /dll /entry <B><font color="#FF0000">DllEntryPoint</font></B> /files ,3<BR>
+4=0,0,,5<BR>
+5=<BR>
+6=<BR>
+11=4,O,$B\GORC /r /f,1<BR>
+12=3,O,$A\FASM,2,3<BR>
+13=7,O,$B\GoLink @$B\GFL.txt @$6 /dll /debug coff /entry <B><font color="#FF0000">DllEntryPoint</font></B> /files,3<BR>
+14=0,0,,5<BR>
+15=<BR>
+16=
+</P>
+
+<P style="border: 2 solid #008080">
+<font color="#000080"><b>
+note 1</b>:</font> <B><font color="#FF0000">start</font></B> (or <B><font color="#FF0000">DllEntryPoint</font></B>) is the entry point of your program, this can be changed to reflect the actual entry point name.
+</P>
+
+<P style="border: 2 solid #008080">
+<font color="#000080"><b>
+note 2</b>:</font> The /files option is used to obtain a more verbose output from the linker, it can be omitted. I have included it in order that you can see which DLLs the linker is using and adjust your GFL.txt file to better suit your needs if link time becomes too long.<BR>
+</P>
+
+<P style="border: 2 solid #008080">
+<font color="#000080"><b>
+note 3</b>:</font> The def file for GoLink (separate command file) was added
+in version 0.21a.If you are using a version under that you must remove the @$6
+from the DLL link command and manually enter your exports.
+</P>
+
+<P style="border: 2 solid #008080">
+<font color="#000080"><b>note 4</b>:</font> The <B>Win9x Unicode</B> option when you create a file will include the Microsoft Layer For Unicode in your executable, this DLL is available from Microsoft and should be placed in the BIN folder. It will enable Unicode support on 9x systems. The destination system must have the DLL in the applications folder or Windows will issue an error and your application will terminate. This is necessary for any applications that make calls to Unicode functions on a 9x system.
+</P>
+
+<P>
+<B><font size="4" color="#0000FF">Set the paths as follows, bold indicates a change from default</font></B><BR>
+<BR>
+<B><font color="#008000">[Paths]</font></B><BR>
+$A=C:\Fasm<BR>
+$B=$A\BIN<BR>
+$D=$R<BR>
+$H=$A\Help<BR>
+<B>$I=$A\Include</B><BR>
+<B>$L=$A\LIB</B><BR>
+$P=$R\Fasm\Projects<BR>
+$S=$R\Fasm\Sniplets<BR>
+$T=$R\Fasm\Templates<BR>
+$M=$R\Fasm\Macro<BR>
+</P>
+
+<P>If you are using the Fasm&amp;ALink package the <B>invoke</B> macro is available for StdCalls. To have the API list drop down make the following change. Since the masmApiCall.api is the most complete you are best to redirect your lookups to that file.<BR>
+<BR>
+<B><font color="#008000">[Api]</font></B><BR>
+<B>Trig=invoke</B><BR>
+<B>Call=Masm\masmApiCall.api</B><BR>
+Const=Masm\masmApiConst.api<BR>
+Word=Fasm\fasmApiWord.api<BR>
+Message=Fasm\fasmMessage.api<BR>
+<BR>
+Be sure to add <B>include '%include%/win32ax.inc'</B> to your project in order to have access to the <B>Invoke</B> macro</P>
+
+<P>In the FASM&amp;ALink file there is a linker named ALink, this is not used in this example installation as the libraries for that linker were not complete at the writing of this help file. IMHO it will make a better (read faster) linker when the libraries are properly developed. For now I recommend GoLink as it does not need any library files to work with, giving you access to the complete named API. If you decide to use ALink substitute the following in [Win32 App], for [Win32 App (no res)] remove the <B>,4</B><BR>
+<BR>
+3=5,O,$B\alink -oPE,3,4,$L\win32.lib,-entry,<B>start</B><BR>
+13=5,O,$B\alink -oPE,3,4,$L\win32.lib,-entry,<B>start</B></P>
+
+</BODY>
+</HTML>

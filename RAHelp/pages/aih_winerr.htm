@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>WinErr by QvasiModo</title>
+</head>
+
+<body>
+
+<p style="background-color: #99CCFF; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">WinErr by QvasiModo</font></B></p>
+<p><b>WinErr</b> 2.014 by <b> QvasiModo</b> (Mario Vilas)<br>
+07 Nov 03<br>
+<br>
+Provides a quick lookup of system error codes and their descriptions.<br>
+You can look for decimal numbers, hexadecimal numbers (preceded by "0x"), and equate names.<br>
+The list of errors currently supported includes system errors (GetLastError API), Winsock errors (WSAEGetLastError API), and COM errors (as returned in EAX).<br>
+<br>
+There are two versions (completely independent from each other):<br>
+    - WinErr.exe        Standalone version.<br>
+    - WinErr.dll      	AddIn version (see below).<br>
+<br>
+The standalone version will store it's settings in WinErr.Ini, located at the same directory in wich WinErr.exe resides.<br>
+<br>
+You can load the WinErr addin under the following IDEs:<br>
+    - AsmEdit, by Ewayne L. Wagner<br>
+    - Chrome (formerly known as MAsmEd), by Franck Charlet<br>
+    - QuickEditor, by Steve Hutchesson<br>
+    - RadAsm, by Ketil Olsen<br>
+    - WinAsm, by Antonis Kyprianou<br>
+<br>
+If you want to know more about this programs, please go to this forum:<br>
+<br>
+<a href="http://board.win32asmcommunity.net/">    http://board.win32asmcommunity.net/</a></p>
+<hr>
+<p><b>Integration with RadAsm (v2.0.3.0 and above):</b><br>
+<br>
+Copy WinErr.dll to your AddIns folder and install it using Addin Manager.<br>
+To do it manually, add the following to the [AddIns] section of RadASM.ini:<br>
+<br>
+    n=WinErr.dll,x,1<br>
+<br>
+Where "n" is the next available addin number, and "x" is the option (0 to disable, 1 to enable).<br>
+For earlier versions of RadAsm, the following entry must be added instead:<br>
+<br>
+n=WinErr.dll,x<br>
+<br>
+The settings will be stored in AddIns\WinErr.Ini.</p>
+<p style="border: 2 solid #008080"><font color="#FF0000"><b>Author's note</b></font>:
+This program is freeware, and you are free to use and/or redistribute it, provided no modifications are made to the original package, and I am given the proper credit. :)
+</p>
+<p style="border: 2 solid #008080"><font color="#FF0000"><b>Editors note</b></font>:
+Only the RadASM integration is included here. For other information see the
+website indicated</p>
+
+</body>
+
+</html>

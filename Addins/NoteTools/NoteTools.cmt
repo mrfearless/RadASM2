@@ -1,0 +1,17 @@
+[.code]
+DllProc=RadASM relays messages to this procedure
+GetIniText=GetIniText retreives the text from the comment file
+InvisibleProc=Proc for the invisible window
+InstallDll=RadASM calls this procedure to allow for the initial setup of your DLL
+CreateToolTip=Creates the tooltip control and assigns the property listbox to it
+DlgProc=The dlg proc for the edit dialog
+DllEntry=Dll entry proc when loading the DLL
+SetIniText=Writes the result of the edit dialog to the ini file
+SetUpWindow=Creates an invisible window to handle messages
+GetItemName=Gets the item name under the cursor
+ListBoxSubClass=This subclass procedure relays the WM_MOUSEMOVE message to the invisible window
+[.data]
+hInstance=Instance handle
+CmtFile=Comment file name buffer
+[struct]
+VECTOR3D=Test

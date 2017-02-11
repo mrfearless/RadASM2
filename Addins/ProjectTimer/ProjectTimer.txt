@@ -1,0 +1,13 @@
+Project Timer v1.00   Made by Tziotas Milos
+===========================================
+.................Sunday, October 16th, 2005
+===========================================
+                        Assembled with MASM
+
+This plugin will tell you how long you had
+the project opened in total so you have a
+rough estimate of time spent developing.
+
+#####################################
+E-Mail: tziotas@gmx.net
+ICQ # : 71895226

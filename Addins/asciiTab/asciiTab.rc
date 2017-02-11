@@ -1,0 +1,5 @@
+
+#include "res/asciiTabdlg.rc"
+#include "Res/asciiTabVer.rc"
+#include "Res/asciiTabRes.rc"
+

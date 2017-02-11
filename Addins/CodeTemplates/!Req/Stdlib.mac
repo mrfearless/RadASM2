@@ -1,0 +1,206 @@
+?IsMem macro op:req
+	exitm<( ( (.TYPE (op)) SHR 1 ) AND 1)>
+endm
+
+?IsImm macro op:req
+	exitm<( ( (.TYPE (op)) SHR 2 ) AND 1)>
+endm
+
+?IsReg macro op:req
+	exitm<( ( (.TYPE (op)) SHR 4 ) AND 1)>
+endm
+
+echod macro d
+	%echo @CatStr(%d)
+endm
+
+option nokeyword:<.startup,.exit>
+option dotname
+
+.startup macro
+	start: 
+	invoke GetModuleHandle,0
+endm
+
+.exit macro
+	invoke ExitProcess,eax
+	end start
+endm
+
+@ArgRev macro args:vararg
+	local arg,argsrev
+	argsrev textequ <>
+	for arg,<&args>
+		argsrev catstr <arg>,<!,>,argsrev
+	ENDM
+	argsrev substr argsrev,1,@SizeStr(%argsrev)-1
+	exitm argsrev
+endm
+
+$call macro func:req, args:vararg
+local argsr,arg
+	ifnb <args>
+	    argsr textequ @ArgRev(args)
+		%for arg,<argsr>
+			push arg
+		endm
+	endif
+	call func
+endm
+
+comment *
+??dxGen macro
+local typ
+	for typ,<b,w,d,q,t>
+		d&typ&? macro __args:VARARG 
+			for arg,<__args>
+				&arg d&typ ?
+			endm
+		endm
+	endm
+endm
+*
+
+db? macro __args:VARARG 
+	for arg,<__args>
+		&arg db ?
+	endm
+endm
+
+dw? macro __args:VARARG 
+	align word
+	for arg,<__args>
+		&arg dw ?
+	endm
+endm
+
+dd? macro __args:VARARG 
+	align dword
+	for arg,<__args>
+		&arg dd ?
+	endm
+endm
+
+dq? macro __args:VARARG 
+	align qword
+	for arg,<__args>
+		&arg dq ?
+	endm
+endm
+
+; if your string contains any of "!","<",">","(",")" put it manually in data!
+;	.data
+;	yoursym db yourqstr,0
+;	.code
+
+T macro __qstr:VARARG
+LOCAL __sym
+	.data
+	align 4
+	__sym db __qstr,0
+	.code
+	exitm <offset __sym>
+endm
+
+WT macro __qstr:VARARG
+LOCAL __sym,__unq,__len
+	.data
+	align 4
+	__sym label word
+	__len = @SizeStr(<__qstr>)
+	if __len gt 2
+	__unq textequ @SubStr(<__qstr>,2,@SizeStr(<__qstr>)-2)
+	%forc c,<__unq>
+		db "&c",0
+	endm
+	endif
+	dw 0
+	.code
+	exitm <offset __sym>
+endm
+ 
+m2m macro __M1:req,__M2:req
+	push __M2
+	pop __M1
+endm
+
+m2mr macro __M1:req,__M2:req,__reg; free trash reg
+	ifb <__reg>
+		mov eax,__M2
+		mov __M1,eax
+	else
+		mov __reg,__M2
+		mov __M1,__reg
+	endif
+endm
+
+stosc macro __chr
+	ifb <__chr>
+		mov byte ptr [edi],al
+	else
+		mov byte ptr [edi],__chr
+	endif
+	inc edi
+endm
+
+lodsc macro __chr
+	ifb <__chr>
+		mov al,[esi]
+	else
+		mov __chr,byte ptr [esi]
+	endif
+	inc esi
+endm
+
+return macro __retval
+	if ?IsImm(__retval)
+	if __retval eq 0
+		xor eax,eax
+	elseif __retval eq -1
+		or eax,-1
+	elseif __retval eq 1
+		xor eax,eax
+		inc eax
+	else
+		mov eax,__retval
+	endif
+	else
+		ifdifi <__retval>,<eax>
+		mov eax,__retval
+		endif
+	endif
+	ret
+endm
+
+$invoke macro __args:VARARG
+	invoke __args
+	exitm <eax>
+endm
+
+fld4 macro __fpvalue
+local __name
+.data
+	align 4
+	__name real4 __fpvalue
+.code
+	fld __name
+endm
+
+fld8 macro __fpvalue
+local __name
+.data
+	align 8
+	__name real8 __fpvalue
+.code
+	fld __name
+endm
+
+fld10 macro __fpvalue
+local __name
+.data
+	align 16
+	__name real10 __fpvalue
+.code
+	fld __name
+endm
+

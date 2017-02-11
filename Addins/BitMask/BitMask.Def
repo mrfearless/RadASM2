@@ -1,0 +1,5 @@
+LIBRARY BitMask.dll
+EXPORTS
+	DllProc
+	InstallDll
+	GetOptions

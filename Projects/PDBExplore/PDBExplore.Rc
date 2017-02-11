@@ -1,0 +1,2 @@
+#include "Res/PDBExploreDlg.rc"
+#include "Res/ChildDlg.rc"

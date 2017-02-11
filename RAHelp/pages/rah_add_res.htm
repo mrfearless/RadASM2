@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Adding a resource</TITLE>
+</HEAD>
+
+<BODY>
+
+<P style="background-color: #FFFF99; border-style: solid; border-width: 1">
+
+<B><font color="#0000FF" size="5">Adding a resource</font></B></P>
+
+<P>
+To add a resource to your project you first should have the actual raw resource (bitmap file or cursor etc..) in the same folder or a subfolder of the project. This is not absolutely necessary but it will save you a headache if you keep everything in one place. Usually it is advisable to keep the actual raw resources in the \RES folder itself, this keeps everything together and organized. For the purpose of discussion it will be assumed that your raw resources reside in the \RES folder. Once you have copied the raw resources to the \RES folder you can select the appropriate menu item to add it to your project.<BR>
+<B><I><br>
+</I></B>
+<IMG SRC="../images/project_menu.gif" ALT="" BORDER=0 width="149" height="146">
+</P>
+
+<P>The <B>Resource</B> menu item is used to add most types of resources. Selecting this option will open the following dialog, it will allow you to add BITMAP, CURSORS, ICONS, IMAGES (Gif and JPG),
+AVI, MIDI, WAVE and RCDATA resources to your program. To add a resource press the <B>Add</B> button, you don't have to press ADD for the first resource, then fill in the
+appropriate fields. To delete a resource select the resource from the list and press the <B>Delete</B> or hit the [DEL] key.
+</P>
+
+<P>
+<img border="0" src="../images/res_dialog.gif" width="501" height="289"></P>
+
+<P>The resource type is selected from the dropdown <B><font color="#0000FF">Type</font></B> combo box. Press the <IMG SRC="../images/little_button.gif" ALT="" BORDER=0 width="19" height="18"> button next to the filename to select the raw resource file associated with the resource definition entry, you can enter the file path directly but since RadASM uses relative paths it is best to use the Open File dialog. The <B><font color="#0000FF">Name</font></B> and <B><font color="#0000FF">ID</font></B> fields are used to identify your resource, you can enter either or both. If you choose to enter a name only for the resource, you must enter 0 as the ID and inside your application it will be access by its name string. If you enter an ID number your program will access the resource by that number. If you enter both a name and an ID, the name will be included as an equate in the resource file and the ID is used to access the resource in your application. Choosing <B><font color="#0000FF">Export</font></B> will export the generated RES file to the first output window, this is useful if you wish to use the equates from your resource file in your program.</P>
+
+<P>
+Once you have the resources added to your file, RadASM will automatically flag the build procedure to compile the resource before linking the program. This is also the case when you add or remove resources later. You can also select <B>Compile RC</B> from the
+<b>Make</b> menu to manually compile the RC files into RES file format for use with LINK.<BR>
+</P>
+
+</BODY>
+</HTML>

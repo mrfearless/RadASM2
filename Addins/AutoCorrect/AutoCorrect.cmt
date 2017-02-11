@@ -1,0 +1,7 @@
+[code]
+AutoCorrectDlg=This proc allows to editing list
+DealWithBeforeSpace=Searches the string in list
+LoadListFromFile=0) Loads to list    1) Loads to mem
+LoadStringsToMem=Prepares the items index etc
+MultilineDlg=If need deals with multiline out
+PrepareToReplace=Ready for indent, caret positioning
