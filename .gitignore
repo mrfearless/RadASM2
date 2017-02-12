@@ -1,7 +1,5 @@
 bak/
 *.undo
-*.obj
-*.pdb
 *.ilk
 *.exp
 Help/
