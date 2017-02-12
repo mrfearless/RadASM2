@@ -1,0 +1,12 @@
+How to make a new release.
+--------------------------
+
+1. Unzip Release.zip to Release folder.
+2. Run ReleaseUpdate.bat to update the files in Release folder.
+3. Run ReleaseMakeAll.bat to create:
+	RadASM.zip
+	Assembly.zip
+	HighLevel.zip
+	Language.zip
+	RAHelp.zip
+	Release.zip
