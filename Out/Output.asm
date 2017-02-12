@@ -704,7 +704,7 @@ SetErr:
 		invoke VerticalCenter,hEdit,REM_VCENTER
 		invoke SetErrorBookMark,hEdit,iLine
 	.endif
-	invoke SendMessage,hOutREd,REM_SETHILITELINE,nLine,1
+	invoke SendMessage,hOutREd,REM_SETHILITELINE,nLine,0;1
 	invoke SendMessage,hOutREd,REM_SETBOOKMARK,nLine,7
 	xor		eax,eax
 	inc		eax

@@ -108,7 +108,7 @@ ResourceExport proc uses edi,fOut:DWORD
 	mov		nInx,eax
 	mov		nMiss,eax
 	;#define
-	.while nInx<256
+	.while nInx<512  ; .while nInx<256 - Edited 02/12/2015 fearless - adjust for more resource entries 
 		inc		nInx
 		invoke BinToDec,nInx,addr buffer1
 		invoke GetPrivateProfileString,addr iniResource,addr buffer1,addr szNULL,addr buffer,sizeof buffer,addr ProjectFile
@@ -159,7 +159,7 @@ ResourceExport proc uses edi,fOut:DWORD
 	xor		eax,eax
 	mov		nInx,eax
 	mov		nMiss,eax
-	.while nInx<256
+	.while nInx<512  ; .while nInx<256 - Edited 02/12/2015 fearless - adjust for more resource entries 
 		inc		nInx
 		invoke BinToDec,nInx,addr buffer1
 		invoke GetPrivateProfileString,addr iniResource,addr buffer1,addr szNULL,addr buffer,sizeof buffer,addr ProjectFile
@@ -345,7 +345,7 @@ ResourceProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		xor		eax,eax
 		mov		nInx,eax
 		mov		nMiss,eax
-		.while nInx<256
+		.while nInx<512  ; .while nInx<256 - Edited 02/12/2015 fearless - adjust for more resource entries 
 			inc		nInx
 			invoke BinToDec,nInx,addr buffer1
 			invoke GetPrivateProfileString,addr iniResource,addr buffer1,addr szNULL,addr buffer,sizeof buffer,addr ProjectFile

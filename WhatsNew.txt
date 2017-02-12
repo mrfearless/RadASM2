@@ -1,5 +1,9 @@
-RadASM 2.2.2.0
+RadASM 2.2.2.2
 --------------
+2.2.2.2
+o New project based on template - Added in xml file rename in to ProjectName.xml if it exists.
+2.2.2.1
+o Changed max resource items saved to .rc file from 256 items to 512 - fearless 02/12/2015
 2.2.2.0
 o The debug register and watch windows are now in a single tool window.
 o Added FPU and MMX registers to debug window.

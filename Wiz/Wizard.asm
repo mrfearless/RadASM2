@@ -409,6 +409,22 @@ ProWizFinish proc uses ebx esi edi
 					cmp		ebx,32
 					jne		@b
 				.endif
+				
+				; fearless added 01/02/2016 - add check for resource type 1 being a manifest and rename it to projectname.xml
+				mov ebx, 1
+				invoke BinToDec,ebx,addr buffer2
+				invoke GetPrivateProfileString, addr iniResource, Addr buffer2, Addr szNULL, addr iniBuffer, 128, Addr ProjectFile
+				.if eax
+					;Check if file is main projectfile
+					invoke SearchMem,addr iniBuffer,addr buffer3,FALSE,TRUE,FALSE
+					.if eax
+						;File is main project file. Rename it
+						mov		edx,eax
+						invoke ProWizFixLine,edx,addr iniBuffer,addr buffer1,addr buffer3
+					.endif
+					invoke WritePrivateProfileString,addr iniResource,addr buffer2,addr iniBuffer,addr ProjectFile
+				.endif
+				
 			.endif
 			;Write active make menu items to project file
 			mov		eax,hPsDlg[12]
@@ -754,6 +770,22 @@ Template:
 													invoke strcat,addr buffer,addr buffer2
 													pop		esi
 													invoke ProWizFixLine,esi,addr bLine,addr buffer,NULL
+												.else
+                                                    ;30/01/2016 fearless - Added in check for xml manifest file, to rename it to ProjectName.Xml if it exists 
+                                                    ;Check if file is main xml Rc file
+    												mov		eax,'lmX'
+    												mov		dword ptr buffer2,eax
+    												invoke strcpy,addr buffer,addr buffer3
+    												invoke strcat,addr buffer,addr buffer2
+    												invoke SearchMem,addr bLine,addr buffer,FALSE,TRUE,FALSE
+    												.if eax
+    													;File is main xml Rc file. Rename it
+    													push	eax
+    													invoke strcpy,addr buffer,addr buffer1
+    													invoke strcat,addr buffer,addr buffer2
+    													pop		esi
+    													invoke ProWizFixLine,esi,addr bLine,addr buffer,NULL
+    											    .endif
 												.endif
 											.endif
 										.endif
@@ -931,6 +963,19 @@ Template:
 												invoke strcat,addr buffer,addr buffer2
 												pop		esi
 												invoke ProWizFixLine,esi,addr bLine,addr buffer,NULL
+											.else
+											    invoke strcpy,addr buffer,addr buffer3
+    											mov		eax,'lmX'
+    											mov		dword ptr buffer2,eax
+    											invoke strcat,addr buffer,addr buffer2
+    											invoke SearchMem,addr bLine,addr buffer,FALSE,TRUE,FALSE
+    											.if eax
+    												push	eax
+    												invoke strcpy,addr buffer,addr buffer1
+    												invoke strcat,addr buffer,addr buffer2
+    												pop		esi
+    												invoke ProWizFixLine,esi,addr bLine,addr buffer,NULL
+    										    .endif
 											.endif
 										.endif
 									.endif
@@ -1065,7 +1110,7 @@ DialogFunc1 proc uses ebx,hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		.endif
 		invoke SendDlgItemMessage,hWin,IDD_CBOASSEMBLER,CB_SETCURSEL,nInx,0
 		invoke GetDlgItem,hWin,IDD_PN
-		invoke SendMessage,eax,EM_LIMITTEXT,16,0
+		invoke SendMessage,eax,EM_LIMITTEXT,32,0 ; fearless 04/06/2016 changed project name size to 32 bytes long instead of 16
 		invoke GetDlgItem,hWin,IDD_PD
 		invoke SendMessage,eax,EM_LIMITTEXT,127,0
 		call SetIni
