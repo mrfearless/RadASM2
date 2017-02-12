@@ -1,7 +1,7 @@
 echo off
 cls
 rem echo Pakker ut Release.zip
-rem "C:\Program Files\WinZip\winzip32.exe" -e Release.Zip Release
+rem ""Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -m5 Release.Zip Release
 rem pause
 echo Oppdaterer addins
 copy ..\Addins\AddinMana\AddinMana.dll Release\Addins

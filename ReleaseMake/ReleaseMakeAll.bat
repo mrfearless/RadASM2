@@ -21,7 +21,7 @@ echo off
 cls
 echo Lager RadASMIDE.zip
 cd Release
-"C:\Program Files\WinZip\winzip32.exe" -a -r -p ..\RadASMIDE.zip @..\ReleaseRadASMIDE.def
+"Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -afzip -m5 -r ..\RadASMIDE.zip @..\ReleaseRadASMIDE.def
 cd ..
 pause
 
@@ -29,7 +29,7 @@ echo off
 cls
 echo Lager Assembly.zip
 cd Release
-"C:\Program Files\WinZip\winzip32.exe" -a -r -p ..\Assembly.zip @..\ReleaseAssembly.def
+"Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -afzip -m5 -r ..\Assembly.zip @..\ReleaseAssembly.def
 cd ..
 pause
 
@@ -37,7 +37,7 @@ echo off
 cls
 echo Lager HighLevel.zip
 cd Release
-"C:\Program Files\WinZip\winzip32.exe" -a -r -p ..\HighLevel.zip @..\ReleaseHighLevel.def
+"Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -afzip -m5 -r ..\HighLevel.zip @..\ReleaseHighLevel.def
 cd ..
 pause
 
@@ -45,7 +45,7 @@ echo off
 cls
 echo Lager Language.zip
 cd Release
-"C:\Program Files\WinZip\winzip32.exe" -a -r -p ..\Language.zip Language\*.*
+"Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -afzip -m5 -r ..\Language.zip .\Language\*.*
 cd ..
 pause
 
@@ -53,7 +53,7 @@ echo off
 cls
 echo Lager RAHelp.zip
 cd Release
-"C:\Program Files\WinZip\winzip32.exe" -a -r -p ..\RAHelp.zip Help\RadASM.chm
+"Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -afzip -m5 -r ..\RAHelp.zip .\Help\RadASM.chm
 cd ..
 pause
 
@@ -61,6 +61,6 @@ echo off
 cls
 echo Lager Release.zip
 cd Release
-"C:\Program Files\WinZip\winzip32.exe" -a -r ..\Release.zip *.*
+"Z:\Program Files\Compression Programs\WinRAR\WinRar.exe" a -afzip -m5 -r ..\Release.zip .\*.*
 cd ..
 pause
