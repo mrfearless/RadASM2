@@ -16,20 +16,20 @@ I have made some very minor adjustments, which are detailed in the WhatsNew.txt
 
 
 ## Features
-*User friendly interface.
-*Project browsing and properties.
-*Inbuilt programmer tools: ‘Ascii Table’, ‘Colref’, ‘Toolbar Creator’ etc.
-*Multiple Undo/Redo.
-*Find & Replace keywords.
-*Block indents, outdents and comments.
-*Bookmarks.
-*Syntax highlighting.
-*Custom controls.
-*Automatic code completion.
-*Record macros for ease of use.
-*Addins to extend its functionality.
-*Template system for automatic code generation.
-*Supports various programming languages.
+* User friendly interface.
+* Project browsing and properties.
+* Inbuilt programmer tools: ‘Ascii Table’, ‘Colref’, ‘Toolbar Creator’ etc.
+* Multiple Undo/Redo.
+* Find & Replace keywords.
+* Block indents, outdents and comments.
+* Bookmarks.
+* Syntax highlighting.
+* Custom controls.
+* Automatic code completion.
+* Record macros for ease of use.
+* Addins to extend its functionality.
+* Template system for automatic code generation.
+* Supports various programming languages.
 
 
 ## Credits
