@@ -1,0 +1,9 @@
+bak/
+Release/
+AdobeSourceCodeFont/
+*.bat
+*.def
+*.log
+*.txt
+HowTo.txt
+
