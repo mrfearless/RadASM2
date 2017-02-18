@@ -37,6 +37,6 @@ Visit the wiki entry [Setting up the RadASM environment](https://github.com/mrfe
 
 
 ## Credits
-Written and Programmed by KetilO
-Minor updates including Multilingual installer by fearless
+* Written and Programmed by KetilO
+* Minor updates including Multilingual installer by fearless
 
