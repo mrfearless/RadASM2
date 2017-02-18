@@ -18,7 +18,7 @@ I have made some very minor adjustments, which are detailed in the WhatsNew.txt
 ## Features
 * User friendly interface.
 * Project browsing and properties.
-* Inbuilt programmer tools: ‘Ascii Table’, ‘Colref’, ‘Toolbar Creator’ etc.
+* Inbuilt programmer tools: â€˜Ascii Tableâ€™, â€˜Colrefâ€™, â€˜Toolbar Creatorâ€™ etc.
 * Multiple Undo/Redo.
 * Find & Replace keywords.
 * Block indents, outdents and comments.
@@ -29,9 +29,14 @@ I have made some very minor adjustments, which are detailed in the WhatsNew.txt
 * Record macros for ease of use.
 * Addins to extend its functionality.
 * Template system for automatic code generation.
-* Supports various programming languages.
+* ![Supports various programming languages.](https://github.com/mrfearless/RadASM2/wiki/Supported-Programming-Languages)
+
+
+## Setup
+Visit the wiki entry [Setting up the RadASM environment](https://github.com/mrfearless/RadASM2/wiki/Setting-up-the-RadASM-environment) for more details.
 
 
 ## Credits
 Written and Programmed by KetilO
+Minor updates including Multilingual installer by fearless
 
