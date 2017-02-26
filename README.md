@@ -29,7 +29,7 @@ I have made some very minor adjustments, which are detailed in the WhatsNew.txt
 * Record macros for ease of use.
 * Addins to extend its functionality.
 * Template system for automatic code generation.
-* ![Supports various programming languages.](https://github.com/mrfearless/RadASM2/wiki/Supported-Programming-Languages)
+* [Supports various programming languages.](https://github.com/mrfearless/RadASM2/wiki/Supported-Programming-Languages)
 
 
 ## Setup
