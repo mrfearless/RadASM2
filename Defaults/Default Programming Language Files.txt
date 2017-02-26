@@ -1,0 +1,30 @@
+Here are located the default programming language files for RadASM v2.x
+
+They define a number of specifics for each programming language, that help define how RadASM recognises and processes the various source files associated with a particular language:
+
+- KeyWords recognition:
+
+	- Registers
+	- Instructions
+	- Directives
+	- Logic and control flow
+	- Macros
+
+- Codeblock macros
+
+- API functions & parsing
+
+- Themes & colors
+
+- Paths
+	- Bin
+	- Include
+	- Lib
+	- Project
+	- Templates
+	
+- Base templates
+
+Not all are implemented for each language - some features are more specific, depending on the programming language.
+
+The files are placed here for ease of access and for future updating.
