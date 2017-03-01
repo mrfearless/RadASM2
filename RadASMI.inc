@@ -442,6 +442,9 @@ PROFILE ends
 ;#########################################################################
 
 .const
+ONLINE_HELP_MSDN                EQU 0
+ONLINE_HELP_GOOGLE              EQU 1
+
 
 IML_START						equ 46
 IMG_ARROW						equ 42
@@ -1512,6 +1515,15 @@ szStringsW						dw 'S','t','r','i','n','g','s',0
 
 szhhctrl						db 'hhctrl.ocx',0
 szHtmlHelpA						db 'HtmlHelpA',0
+
+; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google.
+szGoogleHomeAddress             DB "http://www.google.com",0
+szMSDNHomeAddress               DB "http://msdn.microsoft.com",0
+szGoogleSearchUrl               DB "https://www.google.com/search?q=",0
+szMSDNSearchUrl                 DB "https://social.msdn.microsoft.com/search/en-us/?query=",0
+szWebSearchKeyword              DB MAX_PATH DUP (0)
+szShellOpen                     DB "Open",0 
+; ---
 
 ;#########################################################################
 

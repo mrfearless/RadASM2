@@ -3559,6 +3559,45 @@ WndProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		invoke SendMessage,hStatus,SB_SETTEXT,2,addr szAssembler
 		invoke iniSetAsmMenu
 		invoke FileDir,offset FilePath
+		
+		; fearless Added 01/03/2017
+		Invoke RegisterHotKey, hWin, 0, MOD_CONTROL	+ MOD_NOREPEAT, VK_F1
+		Invoke RegisterHotKey, hWin, 1, MOD_CONTROL	+ MOD_NOREPEAT, VK_F2
+		; ---
+	
+	; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google. 
+	.ELSEIF eax == WM_HOTKEY
+	    .IF wParam == 0
+		    mov	eax,lParam
+		    and	eax,0FFFFh
+		    .IF eax == MOD_CONTROL
+		        mov eax, lParam
+		        shr eax, 16
+		        .IF eax == VK_F1
+					mov	LineWord[0],0
+					.if hEdit
+						invoke GetWordFromPos,hEdit
+					.endif
+					invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_MSDN	            
+		        .ENDIF
+		    .ENDIF
+	    .ELSEIF wParam == 1
+		    mov	eax,lParam
+		    and	eax,0FFFFh
+		    .IF eax == MOD_CONTROL
+		        mov eax, lParam
+		        shr eax, 16
+		        .IF eax == VK_F2
+					mov	LineWord[0],0
+					.if hEdit
+						invoke GetWordFromPos,hEdit
+					.endif
+					invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_GOOGLE	            
+		        .ENDIF
+		    .ENDIF
+	    .ENDIF
+	; ---
+	
 	.elseif eax==WM_MEASUREITEM
 		push	esi
 		mov		esi,lParam
@@ -3659,6 +3698,10 @@ WndProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 			invoke MoveWindow,hWin,scrnsize.rect.left,scrnsize.rect.top,eax,edx,TRUE
 		.endif
 	.elseif eax==WM_CLOSE
+	    ; fearless Added 01/03/2017
+	    Invoke UnregisterHotKey, hWin, 0
+	    Invoke UnregisterHotKey, hWin, 1
+	    ; ---
 		.if fProject
 			invoke CloseProject
 			.if eax

@@ -327,3 +327,38 @@ DoHelp proc lpszHelpFile:DWORD,lpszWord:DWORD
 	ret
 
 DoHelp endp
+
+; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google.
+DoOnlineHelp PROC lpszWord:DWORD, dwSearchProvider:DWORD
+    
+    .IF lpszWord == NULL
+        .IF dwSearchProvider == 0 ; MSDN
+            Invoke lstrcpy, Addr szWebSearchKeyword, Addr szMSDNHomeAddress
+        .ELSE
+            Invoke lstrcpy, Addr szWebSearchKeyword, Addr szGoogleHomeAddress
+        .ENDIF
+    .ELSE
+        Invoke lstrlen, lpszWord
+        .IF eax == 0
+            .IF dwSearchProvider == 0 ; MSDN
+                Invoke lstrcpy, Addr szWebSearchKeyword, Addr szMSDNHomeAddress
+            .ELSE
+                Invoke lstrcpy, Addr szWebSearchKeyword, Addr szGoogleHomeAddress
+            .ENDIF        
+        .ELSE
+            .IF dwSearchProvider == 0 ; MSDN
+                Invoke lstrcpy, Addr szWebSearchKeyword, Addr szMSDNSearchUrl
+            .ELSE ; Google
+                Invoke lstrcpy, Addr szWebSearchKeyword, Addr szGoogleSearchUrl
+            .ENDIF
+            Invoke lstrcat, Addr szWebSearchKeyword, lpszWord
+        .ENDIF
+        Invoke SetWindowText, hInfEdt, Addr szWebSearchKeyword
+    .ENDIF
+
+    Invoke ShellExecute, Addr szShellOpen, NULL, Addr szWebSearchKeyword, NULL, NULL, SW_SHOWNORMAL
+    ret
+
+DoOnlineHelp ENDP
+
+
