@@ -12,7 +12,7 @@ BEGIN
       VALUE "FileVersion", "1.0.0.4\0"
       VALUE "FileDescription", "Update checker addin for RadASM\0"
       VALUE "InternalName", "UpdateChecker.dll\0"
-      VALUE "LegalCopyright", "KetilO (C) 2009\0"
+      VALUE "LegalCopyright", "KetilO (C) 2009 - fearless 2017\0"
       VALUE "OriginalFilename", "UpdateChecker.dll\0"
       VALUE "ProductVersion", "1.0.0.4\0"
     END

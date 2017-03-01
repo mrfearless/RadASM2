@@ -69,9 +69,9 @@ szDone							db 'Done!',13,10,0
 szClose							db 'Close',0
 
 szFmtVersion					db 'Your current version:',9,'%s',13,10,'Version at Github:',9,'%s',0 ;'Your current version:',9,'%s',13,10,'Version at sourceforge:',9,'%s',0
-szUrlVersion					db 'https://github.com/mrfearless/RadASM2/blob/master/ReleaseVersion.txt',0 ;'https://fbedit.svn.sourceforge.net/svnroot/fbedit/RadASM/ReleaseVersion.txt',0
+szUrlVersion					db 'https://raw.githubusercontent.com/mrfearless/RadASM2/master/ReleaseVersion.txt',0 ;'https://fbedit.svn.sourceforge.net/svnroot/fbedit/RadASM/ReleaseVersion.txt',0
 szUrlFile						db 'https://github.com/mrfearless/RadASM2/blob/master/ReleaseMake/',0 ;'https://fbedit.svn.sourceforge.net/svnroot/fbedit/RadASM/ReleaseMake/',0
-
+szRawGithubDL                   db '?raw=true',0 ; added 27/02/2017
 szDownloading					db 'Downloading: ',0
 szFmtFilesize					db 'Filesize: %d bytes',0
 szIDEFile						db 'RadASMIDE.zip',0

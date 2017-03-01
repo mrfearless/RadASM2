@@ -80,6 +80,7 @@ InetConnect proc lphInternet:DWORD,lphUrl:DWORD,lpUrl:DWORD
 		.else
 			invoke lstrcpy,addr buffer,addr szUrlFile
 			invoke lstrcat,addr buffer,addr szDLFileName
+			invoke lstrcat,addr buffer,addr szRawGithubDL ; added 27/02/2017
 		.endif
 		mov		edx,lphInternet
 		invoke InternetOpenUrl,[edx],addr buffer,0,0,INTERNET_FLAG_RELOAD or INTERNET_FLAG_NO_CACHE_WRITE,addr contextid
