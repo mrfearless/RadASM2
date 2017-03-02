@@ -328,7 +328,7 @@ DoHelp proc lpszHelpFile:DWORD,lpszWord:DWORD
 
 DoHelp endp
 
-; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google.
+; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google, CTRL+ALT+M is for MSDN.
 DoOnlineHelp PROC lpszWord:DWORD, dwSearchProvider:DWORD
     
     .IF lpszWord == NULL
@@ -337,6 +337,7 @@ DoOnlineHelp PROC lpszWord:DWORD, dwSearchProvider:DWORD
         .ELSE
             Invoke lstrcpy, Addr szWebSearchKeyword, Addr szGoogleHomeAddress
         .ENDIF
+        Invoke lstrcpy, Addr szWebSearchInfo, Addr szWebSearchKeyword
     .ELSE
         Invoke lstrlen, lpszWord
         .IF eax == 0
@@ -344,17 +345,33 @@ DoOnlineHelp PROC lpszWord:DWORD, dwSearchProvider:DWORD
                 Invoke lstrcpy, Addr szWebSearchKeyword, Addr szMSDNHomeAddress
             .ELSE
                 Invoke lstrcpy, Addr szWebSearchKeyword, Addr szGoogleHomeAddress
-            .ENDIF        
+            .ENDIF
+            Invoke lstrcpy, Addr szWebSearchInfo, Addr szWebSearchKeyword     
         .ELSE
+            Invoke lstrcpy, Addr szWebSearchInfo, Addr szWebSearchingFor
+            Invoke lstrcat, Addr szWebSearchInfo, lpszWord
+            Invoke lstrcat, Addr szWebSearchInfo, Addr szWebSearchCRLF
+            
             .IF dwSearchProvider == 0 ; MSDN
                 Invoke lstrcpy, Addr szWebSearchKeyword, Addr szMSDNSearchUrl
             .ELSE ; Google
                 Invoke lstrcpy, Addr szWebSearchKeyword, Addr szGoogleSearchUrl
             .ENDIF
             Invoke lstrcat, Addr szWebSearchKeyword, lpszWord
+            Invoke lstrcat, Addr szWebSearchInfo, Addr szWebSearchKeyword
         .ENDIF
-        Invoke SetWindowText, hInfEdt, Addr szWebSearchKeyword
+        
     .ENDIF
+
+	m2m hOutREd,hOut2
+	invoke ShowWindow,hOut2,SW_SHOW
+	invoke SetParent,hOutBtn1,hOut2
+	invoke SetParent,hOutBtn2,hOut2
+	invoke SetParent,hOutBtn3,hOut2
+	invoke ShowWindow,hOut1,SW_HIDE
+	invoke ShowWindow,hOut3,SW_HIDE
+	invoke SetFocus,hOutREd
+    Invoke TextToOutput, Addr szWebSearchInfo
 
     Invoke ShellExecute, Addr szShellOpen, NULL, Addr szWebSearchKeyword, NULL, NULL, SW_SHOWNORMAL
     ret

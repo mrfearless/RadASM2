@@ -3561,40 +3561,50 @@ WndProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		invoke FileDir,offset FilePath
 		
 		; fearless Added 01/03/2017
-		Invoke RegisterHotKey, hWin, 0, MOD_CONTROL	+ MOD_NOREPEAT, VK_F1
-		Invoke RegisterHotKey, hWin, 1, MOD_CONTROL	+ MOD_NOREPEAT, VK_F2
+		Invoke RegisterHotKey, hWin, 0, MOD_NOREPEAT, VK_F1
+		Invoke RegisterHotKey, hWin, 1, MOD_CONTROL	or MOD_NOREPEAT, VK_F1
+		Invoke RegisterHotKey, hWin, 2, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_G
+		Invoke RegisterHotKey, hWin, 3, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_M
 		; ---
 	
-	; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google. 
+	; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+ALT+G to search online for keyword. CTRL+F1 is for MSDN, CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN. 
 	.ELSEIF eax == WM_HOTKEY
 	    .IF wParam == 0
-		    mov	eax,lParam
-		    and	eax,0FFFFh
-		    .IF eax == MOD_CONTROL
-		        mov eax, lParam
-		        shr eax, 16
-		        .IF eax == VK_F1
-					mov	LineWord[0],0
-					.if hEdit
-						invoke GetWordFromPos,hEdit
-					.endif
-					invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_MSDN	            
-		        .ENDIF
-		    .ENDIF
+			mov	LineWord[0],0
+			.if hEdit
+				invoke GetWordFromPos,hEdit
+			.endif	    
+	        .IF OnlineHelpUseF1 == TRUE
+	            invoke DoOnlineHelp,offset LineWord, OnlineHelpProvider
+	        .ELSE
+	            invoke DoHelp,offset F1,offset LineWord
+	        .ENDIF
+	        
 	    .ELSEIF wParam == 1
-		    mov	eax,lParam
-		    and	eax,0FFFFh
-		    .IF eax == MOD_CONTROL
-		        mov eax, lParam
-		        shr eax, 16
-		        .IF eax == VK_F2
-					mov	LineWord[0],0
-					.if hEdit
-						invoke GetWordFromPos,hEdit
-					.endif
-					invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_GOOGLE	            
-		        .ENDIF
-		    .ENDIF
+			mov	LineWord[0],0
+			.if hEdit
+				invoke GetWordFromPos,hEdit
+			.endif	    
+	        .IF OnlineHelpUseF1 == TRUE
+	            invoke DoHelp,offset F1,offset LineWord
+	        .ELSE
+	            invoke DoOnlineHelp,offset LineWord, OnlineHelpProvider
+	        .ENDIF
+
+	    .ELSEIF wParam == 2
+			mov	LineWord[0],0
+			.if hEdit
+				invoke GetWordFromPos,hEdit
+			.endif
+			invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_GOOGLE
+
+        .ELSEIF wParam == 3
+			mov	LineWord[0],0
+			.if hEdit
+				invoke GetWordFromPos,hEdit
+			.endif
+			invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_MSDN
+
 	    .ENDIF
 	; ---
 	

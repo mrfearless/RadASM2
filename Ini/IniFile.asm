@@ -78,6 +78,12 @@ iniKeyHelpCF1		db 'CF1',0
 iniKeyHelpSF1		db 'SF1',0
 iniKeyHelpCSF1		db 'CSF1',0
 
+; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google, CTRL+ALT+M is for MSDN.
+iniOnlineHelp       db 'OnlineHelp',0
+iniDefaultProvider  db 'DefaultProvider',0 ; 0 for MSDN, 1 for google
+iniF1OnlineHelp     db 'F1',0 ; 0 for FALSE, 1 for TRUE to use F1 to call online help instead.
+
+
 iniDefCCList		db '200,150',0
 iniDefPrnPagemm		db '20990,29690,1000,1000,1000,1000,0',0
 iniDefPrnPageInch	db '8500,11000,500,500,500,500,0',0
@@ -1060,6 +1066,15 @@ iniSetF1Help proc uses ebx
 	invoke iniPathFix,addr SF1
 	invoke GetPrivateProfileString,addr iniKeyHelp,addr iniKeyHelpCSF1,addr szNULL,addr CSF1,255,ebx
 	invoke iniPathFix,addr CSF1
+	
+	mov	ebx,offset iniFile
+	Invoke GetPrivateProfileInt, Addr iniOnlineHelp, Addr iniDefaultProvider, 0, ebx
+	mov OnlineHelpProvider, eax
+	
+	mov	ebx,offset iniFile
+	Invoke GetPrivateProfileInt, Addr iniOnlineHelp, Addr iniF1OnlineHelp, 0, ebx
+	mov OnlineHelpUseF1, eax
+	
 	ret
 
 iniSetF1Help endp
@@ -1767,6 +1782,9 @@ iniAddMenu proc uses ebx esi edi
 		mov		edx,offset iniFile
 	.endif
 	invoke iniMenu,addr iniMenuHelp,edx,MENUHELP,addr nAccel,hMem,64
+	
+	; Insert sep and online search menu item here, set id to 127
+	
 	invoke CreateAcceleratorTable,hMem,nAccel
 	mov		hAccel,eax
 	invoke GlobalFree,hMem
