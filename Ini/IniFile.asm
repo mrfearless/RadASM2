@@ -78,7 +78,7 @@ iniKeyHelpCF1		db 'CF1',0
 iniKeyHelpSF1		db 'SF1',0
 iniKeyHelpCSF1		db 'CSF1',0
 
-; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google, CTRL+ALT+M is for MSDN.
+; fearless Added 01/03/2017 - allow F1/CTRL+F1 search online for keyword. CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN.
 iniOnlineHelp       db 'OnlineHelp',0
 iniDefaultProvider  db 'DefaultProvider',0 ; 0 for MSDN, 1 for google
 iniF1OnlineHelp     db 'F1',0 ; 0 for FALSE, 1 for TRUE to use F1 to call online help instead.

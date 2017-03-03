@@ -328,7 +328,7 @@ DoHelp proc lpszHelpFile:DWORD,lpszWord:DWORD
 
 DoHelp endp
 
-; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google, CTRL+ALT+M is for MSDN.
+; fearless Added 01/03/2017 - allow F1/CTRL+F1 search online for keyword. CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN.
 DoOnlineHelp PROC lpszWord:DWORD, dwSearchProvider:DWORD
     
     .IF lpszWord == NULL
@@ -377,5 +377,32 @@ DoOnlineHelp PROC lpszWord:DWORD, dwSearchProvider:DWORD
     ret
 
 DoOnlineHelp ENDP
+
+; fearless Added 03/03/2017 - Allow Edit->Open to try to open a web url if filename and includelib\filename doesnt exist and string starts with http or www. 
+DoOpenUrl PROC USES EBX lpszWord:DWORD
+
+    mov ebx, lpszWord
+    mov eax, dword ptr [ebx]
+    .IF eax == 'ptth' || eax == '.www' || eax == 'http' || eax == 'www.'
+        Invoke lstrcpy, Addr szWebSearchInfo, Addr szWebOpeningUrl
+        Invoke lstrcat, Addr szWebSearchInfo, lpszWord
+        Invoke lstrcat, Addr szWebSearchInfo, Addr szWebSearchCRLF
+        
+        m2m hOutREd,hOut2
+        invoke ShowWindow,hOut2,SW_SHOW
+        invoke SetParent,hOutBtn1,hOut2
+        invoke SetParent,hOutBtn2,hOut2
+        invoke SetParent,hOutBtn3,hOut2
+        invoke ShowWindow,hOut1,SW_HIDE
+        invoke ShowWindow,hOut3,SW_HIDE
+        invoke SetFocus,hOutREd
+        Invoke TextToOutput, Addr szWebSearchInfo
+        Invoke ShellExecute, Addr szShellOpen, NULL, lpszWord, NULL, NULL, SW_SHOWNORMAL
+     
+    .ENDIF
+    ret
+
+DoOpenUrl ENDP
+
 
 

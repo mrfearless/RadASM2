@@ -1516,11 +1516,12 @@ szStringsW						dw 'S','t','r','i','n','g','s',0
 szhhctrl						db 'hhctrl.ocx',0
 szHtmlHelpA						db 'HtmlHelpA',0
 
-; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+F2 to search online for keyword. CTRL+F1 is for MSDN, CTRL+F2 is for google, CTRL+ALT+M is for MSDN.
+; fearless Added 01/03/2017 - allow F1/CTRL+F1 search online for keyword. CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN.
 szGoogleHomeAddress             DB "http://www.google.com",0
 szMSDNHomeAddress               DB "http://msdn.microsoft.com",0
 szGoogleSearchUrl               DB "https://www.google.com/search?q=",0
 szMSDNSearchUrl                 DB "https://social.msdn.microsoft.com/search/en-us/?query=",0
+szWebOpeningUrl                 DB "Opening url: ",0
 szWebSearchingFor               DB "Online search for: ",0
 szWebSearchCRLF                 DB 13,10,0
 szWebSearchKeyword              DB MAX_PATH DUP (0)

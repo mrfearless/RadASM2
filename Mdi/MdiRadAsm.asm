@@ -2058,6 +2058,9 @@ CmdEdit proc hWin:HWND
 				invoke GetFullPathName,offset LineTxt,sizeof FileName,offset FileName,addr vTmp
 				invoke OpenEditFile
 				jmp		Ex
+			.else
+    			invoke DoOpenUrl,offset LineWord
+    			jmp     Ex
 			.endif
 		.endif
 	.else
@@ -3567,7 +3570,7 @@ WndProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		Invoke RegisterHotKey, hWin, 3, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_M
 		; ---
 	
-	; fearless Added 01/03/2017 - allow CTRL+F1 and CTRL+ALT+G to search online for keyword. CTRL+F1 is for MSDN, CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN. 
+	; fearless Added 01/03/2017 - allow F1/CTRL+F1 search online for keyword. CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN.
 	.ELSEIF eax == WM_HOTKEY
 	    .IF wParam == 0
 			mov	LineWord[0],0
