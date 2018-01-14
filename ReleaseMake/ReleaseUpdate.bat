@@ -33,7 +33,7 @@ copy ..\Addins\TbrCreate\TbrCreate.exe Release\Addins
 copy ..\Addins\UpdateChecker\UpdateChecker.dll Release\Addins
 copy ..\Addins\RadAsm.inc Release\Masm\Inc
 
-rem copy ..\Addins\\.dll Release\Addins
+rem copy ..\Addins\\*.dll Release\Addins
 
 echo Oppdaterer addins hjelpefiler
 copy ..\Addins\AddinMana\AddinMana.txt Release\Addins\Help
@@ -59,7 +59,7 @@ copy ..\Addins\StyleMana\StyleMana.txt Release\Addins\Help
 copy ..\Addins\UpdateChecker\UpdateChecker.txt Release\Addins\Help
 
 
-rem copy ..\Addins\\.txt Release\Addins\Help
+rem copy ..\Addins\\*.txt Release\Addins\Help
 
 pause
 

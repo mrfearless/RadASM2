@@ -86,7 +86,7 @@ Group=Assembly,Resources,Misc
 8=1
 9=1
 [AutoLoad]
-AutoLoad=1,2,5,7,3,8,6,9
+AutoLoad=1,2,5,7,3,8,6,9,4
 [VersionControl]
 Settings=1246
 Milestones=129
@@ -97,7 +97,7 @@ MilestoneOnTime=2
 MilestoneOnDate=0
 MilestoneOnDateWhen=1
 MilestoneOnDateStatus=0
-MilestoneOnDateDate=27
+MilestoneOnDateDate=13
 MilestoneOnDateTimeYear=2009
 MilestoneOnDateTimeMonth=12
 MilestoneOnDateTimeDate=11
@@ -130,7 +130,7 @@ ProductVer4Range=0
 6=00FFFFFF
 7=00FFFFFF
 [PTimer]
-PTimer=35044191
+PTimer=35202282
 [Size]
 5=0,0,0,0
 1=0,0,0,0,11015
@@ -140,6 +140,7 @@ PTimer=35044191
 8=0,0,0,0,16271
 6=0,0,0,0,30
 9=0,0,0,0,0
+4=0,0,0,0,0
 [GroupExpand]
 GroupExpand=1,1,1,0
 [BookMark]
@@ -168,6 +169,7 @@ GroupExpand=1,1,1,0
 8=
 6=
 9=
+4=
 [Find]
 1="szDLPath"
 2="szWhatsNew"

@@ -1026,13 +1026,13 @@ project Flags=0x20 {
 			str Value: Default="<$shpath(26)=@<ShellFoldersCU>\\AppData=_LocAppDataFolder>";
 		}
 		var BuildBase: Flags=0x5, Type=0, Description="Build target base name" {
-			str Value: Default="RadASM-2.2.2.2-Setup";
+			str Value: Default="RadASM-2.2.2.3-Setup";
 		}
 		var BuildDate: Flags=0x5, Type=0, Description="Build date as YYYYMMDD" {
-			str Value: Default=20170213;
+			str Value: Default=20180114;
 		}
 		var BuildDayNo: Flags=0x5, Type=0, Description="Build day number, starting from 1 January 2000" {
-			str Value: Default=6254;
+			str Value: Default=6589;
 		}
 		var BuildFolder: Flags=0x5, Type=1, Description="Folder containing the build target" {
 			str Value: Default="M:\\GitProjects\\RadASM2\\ReleaseMake";
@@ -1044,10 +1044,10 @@ project Flags=0x20 {
 			str Value: Default="Serial# 5EF2902E108DB45C-04010201";
 		}
 		var BuildTarget: Flags=0x5, Type=1, Description="Build target file path" {
-			str Value: Default="M:\\GitProjects\\RadASM2\\ReleaseMake\\RadASM-2.2.2.2-Setup.exe";
+			str Value: Default="M:\\GitProjects\\RadASM2\\ReleaseMake\\RadASM-2.2.2.3-Setup.exe";
 		}
 		var BuildTime: Flags=0x5, Type=0, Description="Build time as HHMMSS" {
-			str Value: Default=212448;
+			str Value: Default=191056;
 		}
 		var BuildType: Flags=0x5, Type=0, Description="Build type: always TSU" {
 			str Value: Default=TSU;
@@ -1344,7 +1344,7 @@ project Flags=0x20 {
 			str Value: Default="<MSOfficeDir14=MSOfficeDir12=MSOfficeDir11=MSOfficeDir10=MSOfficeDir9=MSOfficeDir8=!<ProgramFilesFolder>\\Microsoft Office\\Office>";
 		}
 		var PackageCode: Flags=0x205, Type=0, Description="Distribution package GUID" {
-			str Value: Default="{90E592BC-FA1C-4EA5-EDEE-88F3418A9F1D}";
+			str Value: Default="{F2861BC8-D488-4A71-E93A-A66723E91669}";
 		}
 		var PersonalFolder: Flags=0x244, Type=1, Description="Current User Documents folder" {
 			str Value: Default="<$shpath(5)=@<ShellFoldersCU>\\Personal=_LocPersonalFolder>";
@@ -1381,7 +1381,7 @@ project Flags=0x20 {
 			str Value: Default=RadASM;
 		}
 		var ProductVersion: Flags=0x204, Type=0, Description="Product version" {
-			str Value: Default="2.2.2.2";
+			str Value: Default="2.2.2.3";
 		}
 		var ProfileFolder: Flags=0x244, Type=1, Description="Current User profile base folder" {
 			str Value: Default="<$syspath(7)=$shpath(40)=%USERPROFILE=_LocProfileFolder>";
@@ -1419,7 +1419,7 @@ project Flags=0x20 {
 			str Value: Default="<$shpath({DFDF76A2-C82A-4D63-906A-5644AC457385})=CommonProfileFolder>";
 		}
 		var Publisher: Flags=0x204, Type=0, Description="Publisher\'s name" {
-			str Value: Default=KetilO;
+			str Value: Default=fearless;
 		}
 		var QuickLaunchFolder: Flags=0x244, Type=1, Description="Current User Quick Launch folder" {
 			str Value: Default="<$shpath({52A4F021-7B75-48A9-9F6B-4B87A210BC8F})=_LocQuickLaunchFolder>";
@@ -1500,7 +1500,7 @@ project Flags=0x20 {
 			str Value: Default="<$sysval(4)>";
 		}
 		var SessionID: Flags=0x204, Type=0, Description="Pseudo-random 8-character session identifier" {
-			str Value: Default="8F6D4FBF";
+			str Value: Default="38E01CF2";
 		}
 		var ShellFoldersCU: Flags=0x20C, Type=2, Description="Current User Shell folders registry key" {
 			str Value: Default="<HKCU>\\<WinCurVer>\\Explorer\\Shell Folders";
@@ -5613,12 +5613,12 @@ project Flags=0x20 {
 						xlat ID=1058 {"Підтримка Microsoft макроассемблера і пакет SDK MASM32 Стіва Hutchesson в.\r\n\r\nwww.masm32.com"}
 					}
 				}
-				component Component_Jwasm: Flags=0x40, Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=2328961 {
+				component Component_Jwasm: Flags=0x40, Comment="sourceforge.net/projects/jwasm/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=2328961 {
 					str DisplayName: Flags=0x40000, Default=Jwasm;
 					str Description: Flags=0x50000, Default="Support for the Jwasm assembler - Jwasm by Andreas Grech (japheth) is a fork of the open watcom wasm assembler." {
 						xlat ID=1027 {"Suport per al assemblador Jwasm - Jwasm d\'Andreas Grech (japheth) és una forquilla de l\'assemblador Watcom WASM oberta."}
 						xlat ID=2052 {"支持Jwasm汇编器 - Jwasm的Andreas Grech（japheth）是开放的watcom汇编器的一个分支。"}
-						xlat ID=1033 {"Support for the Jwasm assembler - Jwasm by Andreas Grech (japheth) is a fork of the open watcom wasm assembler."}
+						xlat ID=1033 {"Support for the Jwasm assembler - Jwasm by Andreas Grech (japheth) is a fork of the open watcom wasm assembler.\r\n\r\nsourceforge.net/projects/jwasm/"}
 						xlat ID=1036 {"Support pour l\'assembleur de Jwasm - Jwasm par Andreas Grech (japheth) est une fourchette de l\'assembleur de wasm watcom ouvert."}
 						xlat ID=1031 {"Unterstützung für den Jwasm Assembler - Jwasm von Andreas Grech (japheth) ist eine Gabel des offenen watcom wasm assembler."}
 						xlat ID=1032 {"Υποστήριξη για το συναρμολογητή Jwasm - Jwasm από τον Ανδρέα Grech (japheth) είναι ένα πιρούνι της ανοικτής συναρμολογητή Watcom wasm."}
@@ -5636,23 +5636,103 @@ project Flags=0x20 {
 				}
 				component Component_HJWasm: Flags=0x40, Comment="www.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=1019440 {
 					str DisplayName: Flags=0x40000, Default=HJWasm;
-					str Description: Flags=0x50000, Default="Support for the HJWasm assembler. HJWasm by Branislav Habus and John Hankinson is a fork of the Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm" {
-						xlat ID=1027 {"Suport per l\'assemblador HJWasm. HJWasm de Branislav Habus i John Hankinson és una forquilla de l\'assemblador Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=2052 {"支持HJWasm汇编器。 HJWasm由Branislav Habus和John Hankinson是Jwasm汇编器的一个分支。\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1033 {"Support for the HJWasm assembler. HJWasm by Branislav Habus and John Hankinson is a fork of the Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1036 {"Support pour l\'assembleur HJWasm. HJWasm de Branislav Habus et John Hankinson est une fourche de l\'assembleur Jwasm.\r\n\r\nWww.terraspace.co.uk/hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
-						xlat ID=1031 {"Unterstützung für den HJWasm-Assembler. HJWasm von Branislav Habus und John Hankinson ist eine Gabel des Jwasm Assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
-						xlat ID=1032 {"Υποστήριξη για το συναρμολογητή HJWasm. HJWasm Ο Branislav Habus και John Hankinson είναι ένα πιρούνι του συναρμολογητή Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+					str Description: Flags=0x50000, Default="Support for the HJWasm (x86 & x64) assembler. HJWasm by Branislav Habus and John Hankinson is a fork of the Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm" {
+						xlat ID=1027 {"Suport per l\'assemblador HJWasm (x86 & x64). HJWasm de Branislav Habus i John Hankinson és una forquilla de l\'assemblador Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=2052 {"支持HJWasm汇编器。 HJWasm (x86 & x64)由Branislav Habus和John Hankinson是Jwasm汇编器的一个分支。\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1033 {"Support for the HJWasm (x86 & x64) assembler. HJWasm by Branislav Habus and John Hankinson is a fork of the Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1036 {"Support pour l\'assembleur HJWasm (x86 & x64). HJWasm de Branislav Habus et John Hankinson est une fourche de l\'assembleur Jwasm.\r\n\r\nWww.terraspace.co.uk/hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
+						xlat ID=1031 {"Unterstützung für den HJWasm (x86 & x64) Assembler. HJWasm von Branislav Habus und John Hankinson ist eine Gabel des Jwasm Assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
+						xlat ID=1032 {"Υποστήριξη για το συναρμολογητή HJWasm (x86 & x64). HJWasm Ο Branislav Habus και John Hankinson είναι ένα πιρούνι του συναρμολογητή Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
 						xlat ID=1037 {"תמיכה עבור מאסף HJWasm. HJWasm ידי Branislav Habus וג\'ון Hankinson הוא מזלג של מאסף Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1040 {"Il supporto per l\'assemblatore HJWasm. HJWasm da Branislav Habus e John Hankinson è un fork del assemblatore Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1042 {"HJWasm 어셈블러 지원. Branislav Habus 및 John Hankinson의 HJWasm은 Jwasm 어셈블러의 포크입니다.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1044 {"Støtte for HJWasm assembler. HJWasm av Branislav Habus og John Hankinson er en gaffel av Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1045 {"Wsparcie dla montera HJWasm. HJWasm Branislav Habus i John Hankinson jest rozwidlenie asemblera Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1046 {"Suporte para o montador HJWasm. HJWasm de Branislav Habus e John Hankinson é um garfo do montador Jwasm.\r\n\r\nWww.terraspace.co.uk/hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
-						xlat ID=1049 {"Поддержка ассемблере HJWasm. HJWasm Бранислав Habus и Джон Hankinson является ответвлением ассемблере Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1053 {"Stöd för HJWasm assembler. HJWasm av Branislav Habus och John Hankinson är en gaffel av Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
-						xlat ID=1055 {"HJWasm assembler için destek. BJNWASM Branislav Habus ve John Hankinson, Jwasm assemblerinin çatalıdır.\r\n\r\nWww.terraspace.co.uk / hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
-						xlat ID=1058 {"Підтримка асемблері HJWasm. HJWasm Браніслав Habus і Джон Hankinson є відгалуженням асемблері Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1040 {"Il supporto per l\'assemblatore HJWasm (x86 & x64). HJWasm da Branislav Habus e John Hankinson è un fork del assemblatore Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1042 {"HJWasm  (x86 & x64) 어셈블러 지원. Branislav Habus 및 John Hankinson의 HJWasm은 Jwasm 어셈블러의 포크입니다.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1044 {"Støtte for HJWasm (x86 & x64) assembler. HJWasm av Branislav Habus og John Hankinson er en gaffel av Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1045 {"Wsparcie dla montera HJWasm (x86 & x64). HJWasm Branislav Habus i John Hankinson jest rozwidlenie asemblera Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1046 {"Suporte para o montador HJWasm (x86 & x64). HJWasm de Branislav Habus e John Hankinson é um garfo do montador Jwasm.\r\n\r\nWww.terraspace.co.uk/hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
+						xlat ID=1049 {"Поддержка ассемблере HJWasm (x86 & x64). HJWasm Бранислав Habus и Джон Hankinson является ответвлением ассемблере Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1053 {"Stöd för HJWasm (x86 & x64) assembler. HJWasm av Branislav Habus och John Hankinson är en gaffel av Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+						xlat ID=1055 {"HJWasm (x86 & x64) assembler için destek. BJNWASM Branislav Habus ve John Hankinson, Jwasm assemblerinin çatalıdır.\r\n\r\nWww.terraspace.co.uk / hjwasm.html\r\nGithub.com/Terraspace/HJWasm"}
+						xlat ID=1058 {"Підтримка асемблері HJWasm (x86 & x64). HJWasm Браніслав Habus і Джон Hankinson є відгалуженням асемблері Jwasm.\r\n\r\nwww.terraspace.co.uk/hjwasm.html\r\ngithub.com/Terraspace/HJWasm"}
+					}
+					component Component_HJWasm_Combined: Flags=0x40, Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=0 {
+						str DisplayName: Flags=0x50000, Default=Combined {
+							xlat ID=1027 {"conjunt"}
+							xlat ID=2052 {"组合"}
+							xlat ID=1033 {"Combined"}
+							xlat ID=1036 {"Combiné"}
+							xlat ID=1031 {"Kombiniert"}
+							xlat ID=1032 {"Σε συνδυασμό"}
+							xlat ID=1037 {"מְשׁוּלָב"}
+							xlat ID=1040 {"Combinato"}
+							xlat ID=1042 {"결합 된"}
+							xlat ID=1044 {"kombinert"}
+							xlat ID=1045 {"Łączny"}
+							xlat ID=1046 {"Combinado"}
+							xlat ID=1049 {"комбинированный"}
+							xlat ID=3082 {"Conjunto"}
+							xlat ID=1053 {"Kombinerad"}
+							xlat ID=1055 {"Kombine"}
+							xlat ID=1058 {"комбінований"}
+						}
+						str Description: Flags=0x50000, Default="Support for combined HJWasm (x86 & x64) assembler installation" {
+							xlat ID=1027 {"Compatible amb la instal·lació assemblador combinat HJWasm (x86 i x64)"}
+							xlat ID=2052 {"支持组合HJWasm（x86＆x64）汇编程序安装"}
+							xlat ID=1033 {"Support for combined HJWasm (x86 & x64) assembler installation"}
+							xlat ID=1036 {"Prise en charge de l\'installation combinée de l\'assembleur HJWasm (x86 & x64)"}
+							xlat ID=1031 {"Unterstützung für kombinierte HJWasm (x86 & x64) Assembler-Installation"}
+							xlat ID=1032 {"Υποστήριξη για συνδυασμένη HJWasm (x86 & x64) εγκατάσταση συναρμολόγησης"}
+							xlat ID=1037 {"תמיכת HJWasm משולבת (x86 & x64) התקנה מאספת"}
+							xlat ID=1040 {"Il supporto per HJWasm (x86 e x64) installazione assemblatore combinato"}
+							xlat ID=1042 {"결합 된 HJWasm (x86 & x64) 어셈블러 설치 지원"}
+							xlat ID=1044 {"Støtte for kombinert HJWasm (x86 og x64) assembler installasjon"}
+							xlat ID=1045 {"sparcie dla połączonego HJWasm (x86 i x64) instalacji asemblera"}
+							xlat ID=1046 {"Suporte para a instalação combinada do montador HJWasm (x86 & x64)"}
+							xlat ID=1049 {"Поддержка комбинированных HJWasm (x86 и x64) установки ассемблере"}
+							xlat ID=3082 {"Compatibilidad con la instalación combinada de HJWasm (x86 y x64)"}
+							xlat ID=1053 {"Stöd för kombinerad HJWasm (x86 och x64) assembler installation"}
+							xlat ID=1055 {"Birleştirilmiş HJWasm (x86 ve x64) assembler yüklemesi için destek"}
+							xlat ID=1058 {"Підтримка комбінованих HJWasm (x86 і x64) установки асемблері"}
+						}
+					}
+					component Component_HJWasm_Seperate: Flags=0x40, Condition=0, Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=3, ExtraSize=0 {
+						str DisplayName: Flags=0x50000, Default=Separate {
+							xlat ID=1027 {"Separat"}
+							xlat ID=2052 {"分离"}
+							xlat ID=1033 {"Separate"}
+							xlat ID=1036 {"Séparé"}
+							xlat ID=1031 {"Getrennte"}
+							xlat ID=1032 {"Ξεχωριστός"}
+							xlat ID=1037 {"נפרד"}
+							xlat ID=1040 {"Separato"}
+							xlat ID=1042 {"갈라진"}
+							xlat ID=1044 {"Skille"}
+							xlat ID=1045 {"Oddzielny"}
+							xlat ID=1046 {"Separado"}
+							xlat ID=1049 {"отдельный"}
+							xlat ID=3082 {"Separar"}
+							xlat ID=1053 {"Separat"}
+							xlat ID=1055 {"Ayrı"}
+							xlat ID=1058 {"окремий"}
+						}
+						str Description: Flags=0x50000, Default="Support for separate HJWasm32 (x86) and HJWasm64 (x64) assembler installations. One for each architecture. Each has its own folders and settings." {
+							xlat ID=1027 {"Suport per HJWasm32 separada (86) i de les instal·lacions d\'assemblador HJWasm64 (x64). Un per a cada arquitectura. Cada un té les seves pròpies carpetes i configuracions."}
+							xlat ID=2052 {"支持单独的HJWasm32（x86）和HJWasm64（x64）汇编器安装。 每个架构一个。 每个都有自己的文件夹和设置。"}
+							xlat ID=1033 {"Support for separate HJWasm32 (x86) and HJWasm64 (x64) assembler installations. One for each architecture. Each has its own folders and settings."}
+							xlat ID=1036 {"Prise en charge des installations d\'assembleur HJWasm32 (x86) et HJWasm64 (x64) distinctes. Un pour chaque architecture. Chacun a ses propres dossiers et paramètres."}
+							xlat ID=1031 {"Unterstützung für separate HJWasm32 (x86) und HJWasm64 (x64) Assembler-Installationen. Eine für jede Architektur. Jeder hat seine eigenen Ordner und Einstellungen."}
+							xlat ID=1032 {"Υποστήριξη για ξεχωριστή HJWasm32 (x86) και εγκαταστάσεις συναρμολόγησης HJWasm64 (x64). Ένα για κάθε αρχιτεκτονική. Καθένα από αυτά έχει τη δική τους φακέλους και τις ρυθμίσεις του."}
+							xlat ID=1037 {"תמיכת HJWasm32 הנפרד (x86) ו HJWasm64 (x64) התקנות מאספות. אחת עבור כל ארכיטקטורה. לכל אחד מהם יש תיקיות והגדרות משלה."}
+							xlat ID=1040 {"Il supporto per HJWasm32 separato (x86) e HJWasm64 (x64) installazioni assembler. Uno per ogni architettura. Ognuno ha le proprie cartelle e impostazioni."}
+							xlat ID=1042 {"별도의 HJWasm32 (x86) 및 HJWasm64 (x64) 어셈블러 설치를 지원합니다. 각 아키텍처마다 하나씩. 각 폴더에는 고유 한 폴더와 설정이 있습니다."}
+							xlat ID=1044 {"Støtte for separat HJWasm32 (x86) og HJWasm64 (x64) assembler installasjoner. Én for hver arkitektur. Hver har sine egne mapper og innstillinger."}
+							xlat ID=1045 {"Wsparcie dla oddzielnego HJWasm32 (x86) i HJWasm64 (64) instalacji asemblera. Po jednym dla każdej architektury. Każdy ma swoje własne foldery i ustawienia."}
+							xlat ID=1046 {"Suporte para instalações separadas HJWasm32 (x 86) e HJWasm64 (x64). Um para cada arquitetura. Cada um tem suas próprias pastas e configurações."}
+							xlat ID=1049 {"Поддержка отдельного HJWasm32 (x86) и HJWasm64 (x64) ассемблерными установок. Один для каждой архитектуры. Каждый из них имеет свои собственные папки и настройки."}
+							xlat ID=3082 {"Soporte para instalaciones de ensamblador HJWasm32 (x86) y HJWasm64 (x64) separadas. Uno para cada arquitectura. Cada uno tiene sus propias carpetas y configuraciones."}
+							xlat ID=1053 {"Stöd för separat HJWasm32 (x86) och HJWasm64 (x64) monteringsanläggningar. En för varje arkitektur. Var och en har sina egna mappar och inställningar."}
+							xlat ID=1055 {"Ayrı HJWasm32 (x86) ve HJWasm64 (x64) assembler yüklemeleri için destek. Her mimari için bir tane. Her klasörün kendi ayarları ve ayarları vardır."}
+							xlat ID=1058 {"Підтримка окремого HJWasm32 (x86) і HJWasm64 (x64) асемблерними установок. Один для кожної архітектури. Кожен з них має свої власні папки і налаштування."}
+						}
 					}
 				}
 				component Component_Asmc: Flags=0x40, Comment="https://github.com/nidud/asmc", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=950952 {
@@ -5676,7 +5756,7 @@ project Flags=0x20 {
 						xlat ID=1058 {"Підтримка асемблері ASMC. ASMC від nidud є відгалуженням асемблері Jwasm.\r\n\r\ngithub.com/nidud/asmc"}
 					}
 				}
-				component Component_Nasm: Flags=0x40, Comment="http://www.nasm.us/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=202548 {
+				component Component_Nasm: Flags=0x40, Condition=0, Comment="http://www.nasm.us/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=3, ExtraSize=202548 {
 					str DisplayName: Flags=0x40000, Default=Nasm;
 					str Description: Flags=0x40000, Default="Support for the Netwide Assembler (NASM)\r\n\r\nwww.nasm.us";
 				}
@@ -5696,9 +5776,30 @@ project Flags=0x20 {
 					str DisplayName: Flags=0x40000, Default=Fasm;
 					str Description: Flags=0x40000, Default="Support for flat assembler (FASM) by Tomasz Grysztar.\r\n\r\nwww.flatassembler.net";
 				}
-				component Component_HLA: Flags=0x40, Comment="High Level Assembly\r\nhttp://webster.cs.ucr.edu\r\nhttp://www.plantation-productions.com/Webster/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=256215 {
+				component Component_HLA: Flags=0x40, Condition=0, Comment="High Level Assembly\r\nhttp://webster.cs.ucr.edu\r\nhttp://www.plantation-productions.com/Webster/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=2, ExtraSize=256215 {
 					str DisplayName: Flags=0x40000, Default=HLA;
 					str Description: Flags=0x40000, Default="Support for High Level Assembler (HLA) by Randall Hyde.\r\n\r\nwww.plantation-productions.com/Webster/";
+				}
+				component Component_UASM: Flags=0x40, Comment="www.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=3301733 {
+					str DisplayName: Flags=0x40000, Default=UASM;
+					str Description: Flags=0x50000, Default="Support for the UASM (x86 & x64) assembler. UASM by Branislav Habus and John Hankinson is a fork of the Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM" {
+						xlat ID=1027 {"Suport per l\'assemblador UASM (x86 & x64). UASM de Branislav Habus i John Hankinson és una forquilla de l\'assemblador Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=2052 {"支持UASM汇编器。 UASM (x86 & x64)由Branislav Habus和John Hankinson是Jwasm汇编器的一个分支。\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1033 {"Support for the UASM (x86 & x64) assembler. UASM by Branislav Habus and John Hankinson is a fork of the Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1036 {"Support pour l\'assembleur UASM (x86 & x64). UASM de Branislav Habus et John Hankinson est une fourche de l\'assembleur Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1031 {"Unterstützung für den UASM (x86 & x64) Assembler. UASM von Branislav Habus und John Hankinson ist eine Gabel des Jwasm Assembler.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1032 {"Υποστήριξη για το συναρμολογητή UASM (x86 & x64). UASM Ο Branislav Habus και John Hankinson είναι ένα πιρούνι του συναρμολογητή Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1037 {"תמיכה עבור מאסף UASM. UASM ידי Branislav Habus וג\'ון Hankinson הוא מזלג של מאסף Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1040 {"Il supporto per l\'assemblatore UASM (x86 & x64). UASM da Branislav Habus e John Hankinson è un fork del assemblatore Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1042 {"UASM  (x86 & x64) 어셈블러 지원. Branislav Habus 및 John Hankinson의 UASM은 Jwasm 어셈블러의 포크입니다.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1044 {"Støtte for UASM (x86 & x64) assembler. UASM av Branislav Habus og John Hankinson er en gaffel av Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1045 {"Wsparcie dla montera UASM (x86 & x64). UASM Branislav Habus i John Hankinson jest rozwidlenie asemblera Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1046 {"Suporte para o montador UASM (x86 & x64). UASM de Branislav Habus e John Hankinson é um garfo do montador Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1049 {"Поддержка ассемблере UASM (x86 & x64). UASM Бранислав Habus и Джон Hankinson является ответвлением ассемблере Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1053 {"Stöd för UASM (x86 & x64) assembler. UASM av Branislav Habus och John Hankinson är en gaffel av Jwasm assembler.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1055 {"UASM (x86 & x64) assembler için destek. UASM Branislav Habus ve John Hankinson, Jwasm assemblerinin çatalıdır.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+						xlat ID=1058 {"Підтримка асемблері UASM (x86 & x64). UASM Браніслав Habus і Джон Hankinson є відгалуженням асемблері Jwasm.\r\n\r\nwww.terraspace.co.uk/UASM.html\r\ngithub.com/Terraspace/UASM"}
+					}
 				}
 			}
 			component Component_Basic: Flags=0x40, Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=0 {
@@ -5744,7 +5845,7 @@ project Flags=0x20 {
 					str DisplayName: Flags=0x40000, Default=FreeBASIC;
 					str Description: Flags=0x40000, Default="Support for freeBASIC.\r\n\r\nwww.freebasic.net";
 				}
-				component Component_BCET: Flags=0x40, Comment="http://www.arargh.com/basic/index.html", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=61830 {
+				component Component_BCET: Flags=0x40, Condition=0, Comment="http://www.arargh.com/basic/index.html", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=3, ExtraSize=61830 {
 					str DisplayName: Flags=0x40000, Default=BCET;
 					str Description: Flags=0x40000, Default="Support for Basic Compile to Expression Tree (BCET) by John L Wright, Jr.\r\n\r\nwww.arargh.com/basic/index.html";
 				}
@@ -5752,7 +5853,7 @@ project Flags=0x20 {
 			component __label="Component_C-Cpp", Flags=0x40, Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=0 {
 				str DisplayName: Flags=0x40000, Default="C/C++";
 				str Description: Flags=0x40000, Default="C/C++";
-				component Component_BorlandCpp: Flags=0x40, Comment="http://edn.embarcadero.com/article/20633", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=41381 {
+				component Component_BorlandCpp: Flags=0x40, Condition=0, Comment="http://edn.embarcadero.com/article/20633", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=3, ExtraSize=41381 {
 					str DisplayName: Flags=0x40000, Default="Borland C++";
 					str Description: Flags=0x40000, Default="Support for the Borland C++ 5.5 compiler (now owned by Embarcadero Technologies).\r\n\r\nedn.embarcadero.com/article/20633";
 				}
@@ -5764,7 +5865,7 @@ project Flags=0x20 {
 					str DisplayName: Flags=0x40000, Default="Digital Mars C/C++";
 					str Description: Flags=0x40000, Default="Support for the Digital Mars C++ compiler.\r\n\r\nwww.digitalmars.com/download/freecompiler.html";
 				}
-				component __label="Component_lcc-win", Flags=0x40, Comment="lcc-win\r\nhttp://www.cs.virginia.edu/~lcc-win32/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=45367 {
+				component __label="Component_lcc-win", Flags=0x40, Condition=0, Comment="lcc-win\r\nhttp://www.cs.virginia.edu/~lcc-win32/", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=2, ExtraSize=45367 {
 					str DisplayName: Flags=0x40000, Default="lcc-win32";
 					str Description: Flags=0x40000, Default="Support for lcc-win: A Compiler system for windows by Jacob Navia.\r\n\r\nwww.cs.virginia.edu/~lcc-win32/";
 				}
@@ -5772,7 +5873,7 @@ project Flags=0x20 {
 			component Component_Others: Flags=0x40, Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=0 {
 				str DisplayName: Flags=0x40000, Default=Others;
 				str Description: Flags=0x40000, Default=Others;
-				component Component_MinGW: Flags=0x40, Comment="http://www.mingw.org", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=3, State1=3, ExtraSize=750470 {
+				component Component_MinGW: Flags=0x40, Condition=0, Comment="http://www.mingw.org", Platforms=0x7FFFFFFF, Packaging=0, Languages="0=", State0=2, State1=3, ExtraSize=750470 {
 					str DisplayName: Flags=0x40000, Default=MinGW;
 					str Description: Flags=0x40000, Default="Support for Minimalist GNU for Windows (MinGW)\r\n\r\nwww.mingw.org";
 				}
@@ -5863,14 +5964,260 @@ project Flags=0x20 {
 			file fb.ini: Flags=0x10000, Component=Component_FreeBASIC, Path="Release\\fb.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 				str Name: Default=fb.ini;
 			}
+			folder Folder1_1BF0D20DD040C478: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				str Name: Default=HJWasm32;
+				file error.txt_BA0AAFE0B376611B: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\error.txt", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=error.txt;
+				}
+				file ErrorCodes.dat_451EDC503EB2FE0E: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\ErrorCodes.dat", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=ErrorCodes.dat;
+				}
+				folder Folder1_7095B47BB3F3E17E: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Sniplets;
+					folder Folder1_15CFAF8D7674904A: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+						str Name: Default=Code;
+					}
+					folder Folder1_712C240E41AF9A15: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+						str Name: Default=Debug;
+					}
+					folder Folder1_7759FCB0F95D2D43: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+						str Name: Default=Macro;
+					}
+				}
+				folder Folder1_8746DEEF98C54C7E: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Macro;
+				}
+				folder Folder1_9EE3DA030A851500: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Templates;
+					file DialogAsMain_x86.tpl_0BB7291802B4B658: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\Templates\\DialogAsMain_x86.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=DialogAsMain_x86.tpl;
+					}
+					file Dll32Project.tpl_9A98A46613C41D1B: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\Templates\\Dll32Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=Dll32Project.tpl;
+					}
+				}
+				folder Folder1_DAA90ED89B1AF556: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Projects;
+				}
+				file HJWasm32ApiCall.api_881AAF005DC3DCE0: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32ApiCall.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32ApiCall.api;
+				}
+				file HJWasm32ApiConst.api_9C161CB3F9A2048E: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32ApiConst.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32ApiConst.api;
+				}
+				file HJWasm32ApiStruct.api_4C3B18424DB9827B: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32ApiStruct.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32ApiStruct.api;
+				}
+				file HJWasm32ApiWord.api_BCCD270961969ACA: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32ApiWord.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32ApiWord.api;
+				}
+				file HJWasm32Array.api_90B1AEB01733EF5E: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32Array.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32Array.api;
+				}
+				file HJWasm32Message.api_4A280FE49E7AA487: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32Message.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32Message.api;
+				}
+				file HJWasm32Stdlib.api_1788DB3BAB918B77: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32Stdlib.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32Stdlib.api;
+				}
+				file HJWasm32Type.api_1AD6252EC7D7A4E7: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32\\HJWasm32Type.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32Type.api;
+				}
+			}
+			folder Folder1_7F081C55060A2E09: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				str Name: Default=HJWasm64;
+				file error.txt_E21E3077B5AE573D: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\error.txt", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=error.txt;
+				}
+				file ErrorCodes.dat_1F69D12F45824510: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\ErrorCodes.dat", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=ErrorCodes.dat;
+				}
+				folder Folder1_0F1C2B001B7F4DEF: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Projects;
+				}
+				folder Folder1_3780E3E00D2448EB: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Macro;
+				}
+				folder Folder1_9AC3ABDB29923A18: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Sniplets;
+					folder Folder1_5217772240DCFFAD: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+						str Name: Default=Debug;
+					}
+					folder Folder1_98F053ECCC041B92: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+						str Name: Default=Macro;
+					}
+					folder Folder1_F7E977744B185C2B: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+						str Name: Default=Code;
+					}
+				}
+				folder Folder1_9F8FB626D94FA550: Flags=0x0, Component=Component_HJWasm_Seperate, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					str Name: Default=Templates;
+					file DialogAsMain_x64.tpl_54A889F39137A117: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\Templates\\DialogAsMain_x64.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=DialogAsMain_x64.tpl;
+					}
+					file Dll64Project.tpl_77E22FEFB6F69E5C: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\Templates\\Dll64Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=Dll64Project.tpl;
+					}
+				}
+				file HJWasm64ApiCall.api_F259F3795559C516: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64ApiCall.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64ApiCall.api;
+				}
+				file HJWasm64ApiConst.api_48FBFA8C2451A5F2: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64ApiConst.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64ApiConst.api;
+				}
+				file HJWasm64ApiStruct.api_4B251755621AD498: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64ApiStruct.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64ApiStruct.api;
+				}
+				file HJWasm64ApiWord.api_92C6124A2B68C9B4: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64ApiWord.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64ApiWord.api;
+				}
+				file HJWasm64Array.api_3000781AB4E125B9: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64Array.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64Array.api;
+				}
+				file HJWasm64Message.api_091086E3C1B0BC8B: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64Message.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64Message.api;
+				}
+				file HJWasm64Stdlib.api_93B54C62753F44E8: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64Stdlib.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64Stdlib.api;
+				}
+				file HJWasm64Type.api_2813F8207F801CE1: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64\\HJWasm64Type.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64Type.api;
+				}
+			}
+			folder Folder1_96A42B0EF11C384B: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				str Name: Default=UASM32;
+				file error.txt_928AD31CEB6773F5: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\error.txt", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=error.txt;
+				}
+				file ErrorCodes.dat_913434E044E09E9D: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\ErrorCodes.dat", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=ErrorCodes.dat;
+				}
+				folder Macro_7627A135FC346EB7: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Macro;
+				}
+				folder Projects_ACFFFC3B04040A56: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Projects;
+				}
+				folder Sniplets_E3A39B336CDAEF7B: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Sniplets;
+					folder Code_55E7107ABC4ED601: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+						str Name: Default=Code;
+					}
+					folder Debug_882D73A35185BABA: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+						str Name: Default=Debug;
+					}
+				}
+				folder Templates_AFE4D697E560B6E5: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Templates;
+					file DialogAsMain_x86.tpl_B2BF337E5AB42209: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\Templates\\DialogAsMain_x86.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=DialogAsMain_x86.tpl;
+					}
+					file Dll32Project.tpl_9F3C76DA04F6F942: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\Templates\\Dll32Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=Dll32Project.tpl;
+					}
+					file ModernUI_Control.tpl_66FC0EA6FCA23630: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\Templates\\ModernUI_Control.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=ModernUI_Control.tpl;
+					}
+					file x32dbg_plugin.tpl_A3DE20A76438EA5B: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\Templates\\x32dbg_plugin.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=x32dbg_plugin.tpl;
+					}
+				}
+				file UASM32ApiCall.api_A9D908BB8D47E6C0: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32ApiCall.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32ApiCall.api;
+				}
+				file UASM32ApiConst.api_5B9F7AA62F98750E: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32ApiConst.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32ApiConst.api;
+				}
+				file UASM32ApiStruct.api_3CA0C4DC25AD13AE: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32ApiStruct.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32ApiStruct.api;
+				}
+				file UASM32ApiWord.api_CE7F1E0BE514CC39: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32ApiWord.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32ApiWord.api;
+				}
+				file UASM32Array.api_3AD2D961110018A5: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32Array.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32Array.api;
+				}
+				file UASM32Message.api_41AE2230549918F0: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32Message.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32Message.api;
+				}
+				file UASM32Stdlib.api_2D2A45CD48F0C8B3: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32Stdlib.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32Stdlib.api;
+				}
+				file UASM32Type.api_B28E62E22B010808: Flags=0x0, Component=Component_UASM, Path="Release\\UASM32\\UASM32Type.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32Type.api;
+				}
+			}
+			folder Folder1_CE11AE794803F0B8: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				str Name: Default=UASM64;
+				file error.txt_6AF7F8522C8846F9: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\error.txt", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=error.txt;
+				}
+				file ErrorCodes.dat_808771B24A4F075E: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\ErrorCodes.dat", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=ErrorCodes.dat;
+				}
+				folder Macro_FDA9D8174824CFD7: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Macro;
+				}
+				folder Projects_E8FF7B7BB88961A9: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Projects;
+				}
+				folder Sniplets_2E5DFFACDCC2C44C: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Sniplets;
+					folder Code_08599A34554346FE: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+						str Name: Default=Code;
+					}
+					folder Debug_7F03B946CC6DC698: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+						str Name: Default=Debug;
+					}
+				}
+				folder Templates_BB16B4365FE0087C: Flags=0x0, Component=Component_UASM, Traits=0x80000000, InstallAction=1, RemoveAction=1 {
+					str Name: Default=Templates;
+					file DialogAsMain_x64.tpl_6443666BFA46EE85: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\Templates\\DialogAsMain_x64.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=DialogAsMain_x64.tpl;
+					}
+					file Dll64Project.tpl_4D5D0243382FF5B9: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\Templates\\Dll64Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+						str Name: Default=Dll64Project.tpl;
+					}
+				}
+				file UASM64ApiCall.api_61CEB7236CAE9420: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64ApiCall.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64ApiCall.api;
+				}
+				file UASM64ApiConst.api_9EBCC544986A8506: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64ApiConst.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64ApiConst.api;
+				}
+				file UASM64ApiStruct.api_72A4E4CF4A2A3A64: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64ApiStruct.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64ApiStruct.api;
+				}
+				file UASM64ApiWord.api_2DF95173DB110910: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64ApiWord.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64ApiWord.api;
+				}
+				file UASM64Array.api_B6C4958684D665E6: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64Array.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64Array.api;
+				}
+				file UASM64Message.api_DABA0E831FF552FD: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64Message.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64Message.api;
+				}
+				file UASM64Stdlib.api_678EC2A21A1304D2: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64Stdlib.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64Stdlib.api;
+				}
+				file UASM64Type.api_85A9D877FACD36CC: Flags=0x0, Component=Component_UASM, Path="Release\\UASM64\\UASM64Type.api", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64Type.api;
+				}
+			}
 			file fp.ini: Flags=0x10000, Component=Component_FreePascal, Path="Release\\fp.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 				str Name: Default=fp.ini;
 			}
 			file GoAsm.ini: Flags=0x10000, Component=Component_Goasm, Path="Release\\GoAsm.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 				str Name: Default=GoAsm.ini;
 			}
-			file HJWasm.ini: Flags=0x10000, Component=Component_HJWasm, Path="Release\\HJWasm.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+			file HJWasm.ini: Flags=0x10000, Component=Component_HJWasm_Combined, Path="Release\\HJWasm.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 				str Name: Default=HJWasm.ini;
+			}
+			file HJWasm32.ini_8A94F2DFEDA2788F: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm32.ini", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+				str Name: Default=HJWasm32.ini;
+			}
+			file HJWasm64.ini_DF29DE92D1AC5530: Flags=0x0, Component=Component_HJWasm_Seperate, Path="Release\\HJWasm64.ini", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+				str Name: Default=HJWasm64.ini;
 			}
 			file HL.dll_FFD00C8CCEC9D5AD: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\HL.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
 				str Name: Default=HL.dll;
@@ -6147,13 +6494,31 @@ project Flags=0x20 {
 						str Name: Default=WinErr.txt;
 					}
 				}
-				file HJWasm.ct_10442FB3AD9308E0: Flags=0x0, Component=Component_HJWasm, Path="Release\\AddIns\\HJWasm.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasm.ct_10442FB3AD9308E0: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\AddIns\\HJWasm.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasm.ct;
 				}
-				file HJWasm.kwl_88347C3C003232DD: Flags=0x0, Component=Component_HJWasm, Path="Release\\AddIns\\HJWasm.kwl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasm.kwl_88347C3C003232DD: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\AddIns\\HJWasm.kwl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasm.kwl;
 				}
-				file HJWasmParse.dll_8734222229FC5EE7: Flags=0x0, Component=Component_HJWasm, Path="Release\\AddIns\\HJWasmParse.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
+				file HJWasm32.ct_FD4BBCF4B83DF5AA: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\HJWasm32.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32.ct;
+				}
+				file HJWasm32.kwl_ED8692D901DA4A55: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\HJWasm32.kwl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm32.kwl;
+				}
+				file HJWasm32Parse.dll_A1F43140A7BD650E: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\HJWasm32Parse.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
+					str Name: Default=HJWasm32Parse.dll;
+				}
+				file HJWasm64.ct_0182EBBE0A72DFB5: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\HJWasm64.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64.ct;
+				}
+				file HJWasm64.kwl_24285E083AA7A1B4: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\HJWasm64.kwl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=HJWasm64.kwl;
+				}
+				file HJWasm64Parse.dll_BA4D6C5BCADF4E20: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\HJWasm64Parse.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
+					str Name: Default=HJWasm64Parse.dll;
+				}
+				file HJWasmParse.dll_8734222229FC5EE7: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\AddIns\\HJWasmParse.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
 					str Name: Default=HJWasmParse.dll;
 				}
 				file hla.ct_D5D5EFE74FE8EA2C: Flags=0x0, Component=Component_HLA, Path="Release\\AddIns\\hla.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
@@ -6281,6 +6646,24 @@ project Flags=0x20 {
 				}
 				file TxtLnkMan.dll_7544C2A512E76F06: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\TxtLnkMan.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
 					str Name: Default=TxtLnkMan.dll;
+				}
+				file UASM32.ct_2584CC98BBE5FB7E: Flags=0x0, Component=Component_UASM, Path="Release\\AddIns\\UASM32.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32.ct;
+				}
+				file UASM32.kwl_D18614589B8B7E30: Flags=0x0, Component=Component_UASM, Path="Release\\AddIns\\UASM32.kwl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM32.kwl;
+				}
+				file UASM32Parse.dll_16CC9F8ECA84D63C: Flags=0x0, Component=Component_UASM, Path="Release\\AddIns\\UASM32Parse.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
+					str Name: Default=UASM32Parse.dll;
+				}
+				file UASM64.ct_0280F8712473483D: Flags=0x0, Component=Component_UASM, Path="Release\\AddIns\\UASM64.ct", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64.ct;
+				}
+				file UASM64.kwl_9B662E0221A4B020: Flags=0x0, Component=Component_UASM, Path="Release\\AddIns\\UASM64.kwl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					str Name: Default=UASM64.kwl;
+				}
+				file UASM64Parse.dll_5EE69BF3E4E66F3A: Flags=0x0, Component=Component_UASM, Path="Release\\AddIns\\UASM64Parse.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
+					str Name: Default=UASM64Parse.dll;
 				}
 				file UndoSave.dll_A543960AC52FB20B: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\AddIns\\UndoSave.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
 					str Name: Default=UndoSave.dll;
@@ -7822,68 +8205,68 @@ project Flags=0x20 {
 					str Name: Default=goasmMessage.api;
 				}
 			}
-			folder Radasm_Lang_HJWasm: Flags=0x10000, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+			folder Radasm_Lang_HJWasm: Flags=0x10000, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 				str Name: Default=HJWasm;
-				file error.txt_E48FB8432308BB8A: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\error.txt", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+				file error.txt_E48FB8432308BB8A: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\error.txt", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=error.txt;
 				}
-				file ErrorCodes.dat_44B6F5D5DC354014: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\ErrorCodes.dat", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+				file ErrorCodes.dat_44B6F5D5DC354014: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\ErrorCodes.dat", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=ErrorCodes.dat;
 				}
-				file HJWasmApiCall.api_7307BA56EE73FF2E: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmApiCall.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmApiCall.api_7307BA56EE73FF2E: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmApiCall.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmApiCall.api;
 				}
-				file HJWasmApiConst.api_7CF5047A69E9DB48: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmApiConst.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmApiConst.api_7CF5047A69E9DB48: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmApiConst.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmApiConst.api;
 				}
-				file HJWasmApiStruct.api_926B0EF4B7834834: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmApiStruct.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmApiStruct.api_926B0EF4B7834834: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmApiStruct.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmApiStruct.api;
 				}
-				file HJWasmApiWord.api_949B3F4F4DE52EC6: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmApiWord.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmApiWord.api_949B3F4F4DE52EC6: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmApiWord.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmApiWord.api;
 				}
-				file HJWasmArray.api_DAAD46F64D54EE78: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmArray.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmArray.api_DAAD46F64D54EE78: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmArray.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmArray.api;
 				}
-				file HJWasmMessage.api_0DC02598ABF0B6A6: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmMessage.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmMessage.api_0DC02598ABF0B6A6: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmMessage.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmMessage.api;
 				}
-				file HJWasmStdlib.api_886CC23DC5D0AF7D: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmStdlib.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmStdlib.api_886CC23DC5D0AF7D: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmStdlib.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmStdlib.api;
 				}
-				file HJWasmType.api_1D8BB83CB659CA61: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\HJWasmType.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				file HJWasmType.api_1D8BB83CB659CA61: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\HJWasmType.api", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 					str Name: Default=HJWasmType.api;
 				}
-				folder Radasm_Lang_HJWasm_Macro: Flags=0x0, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				folder Radasm_Lang_HJWasm_Macro: Flags=0x0, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 					str Name: Default=Macro;
 				}
-				folder Radasm_Lang_HJWasm_Projects: Flags=0x10000, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				folder Radasm_Lang_HJWasm_Projects: Flags=0x10000, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 					str Name: Default=Projects;
 				}
-				folder Radasm_Lang_HJWasm_Sniplets: Flags=0x10000, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				folder Radasm_Lang_HJWasm_Sniplets: Flags=0x10000, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 					str Name: Default=Sniplets;
-					folder Folder1_0060C864A9A0F513: Flags=0x0, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					folder Folder1_0060C864A9A0F513: Flags=0x0, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 						str Name: Default=Code;
 					}
-					folder Folder1_7BBE53BF4E34A437: Flags=0x0, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					folder Folder1_7BBE53BF4E34A437: Flags=0x0, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 						str Name: Default=Debug;
 					}
-					folder Folder1_CDC270E472A15375: Flags=0x0, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+					folder Folder1_CDC270E472A15375: Flags=0x0, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 						str Name: Default=Macro;
 					}
 				}
-				folder Radasm_Lang_HJWasm_Templates: Flags=0x10000, Component=Component_HJWasm, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
+				folder Radasm_Lang_HJWasm_Templates: Flags=0x10000, Component=Component_HJWasm_Combined, Traits=0x80000000, InstallAction=0, RemoveAction=1 {
 					str Name: Default=Templates;
-					file DialogAsMain_x64.tpl_5D78E78F65C30D86: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\Templates\\DialogAsMain_x64.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					file DialogAsMain_x64.tpl_5D78E78F65C30D86: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\Templates\\DialogAsMain_x64.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 						str Name: Default=DialogAsMain_x64.tpl;
 					}
-					file DialogAsMain_x86.tpl_2C024B96D4E0C666: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\Templates\\DialogAsMain_x86.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					file DialogAsMain_x86.tpl_2C024B96D4E0C666: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\Templates\\DialogAsMain_x86.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 						str Name: Default=DialogAsMain_x86.tpl;
 					}
-					file Dll32Project.tpl_B8916827ED7189DC: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\Templates\\Dll32Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					file Dll32Project.tpl_B8916827ED7189DC: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\Templates\\Dll32Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 						str Name: Default=Dll32Project.tpl;
 					}
-					file Dll64Project.tpl_6ADCC09329B03CBC: Flags=0x0, Component=Component_HJWasm, Path="Release\\HJWasm\\Templates\\Dll64Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
+					file Dll64Project.tpl_6ADCC09329B03CBC: Flags=0x0, Component=Component_HJWasm_Combined, Path="Release\\HJWasm\\Templates\\Dll64Project.tpl", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=0, Packaging=0 {
 						str Name: Default=Dll64Project.tpl;
 					}
 				}
@@ -9445,6 +9828,12 @@ project Flags=0x20 {
 			file tasm.ini: Flags=0x10000, Component=Component_Tasm, Path="Release\\tasm.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
 				str Name: Default=tasm.ini;
 			}
+			file UASM32.ini: Flags=0x10000, Component=Component_UASM, Path="Release\\UASM32.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				str Name: Default=UASM32.ini;
+			}
+			file UASM64.ini: Flags=0x10000, Component=Component_UASM, Path="Release\\UASM64.ini", Attributes=0x0, InstallAction=4, RemoveAction=4, Registration=0, RegOrder=0, Packaging=0 {
+				str Name: Default=UASM64.ini;
+			}
 			file WBDll.dll_3A853314A88BBCE6: Flags=0x0, Component=_ProductName__DefaultFiles, Path="Release\\WBDll.dll", Attributes=0x0, InstallAction=4, RemoveAction=2, Registration=0, RegOrder=1000, Packaging=0 {
 				str Name: Default=WBDll.dll;
 			}
@@ -10671,8 +11060,15 @@ project Flags=0x20 {
 				str Name: Default=Software;
 				regkey RegCompanyHKLM: Flags=0x0, InstallAction=0, RemoveAction=1, RegView=0, AccessLevel=0 {
 					str Name: Default="<Publisher>";
-					regkey RegProductHKLM: Flags=0x0, InstallAction=0, RemoveAction=1, RegView=0, AccessLevel=0 {
+					regkey RegProductHKLM: Flags=0x0, Component=Product, InstallAction=0, RemoveAction=1, RegView=0, AccessLevel=0 {
 						str Name: Default="<ProductName>";
+						regkey RegistryKey1_2F2A6090913A6E7F: Flags=0x0, Component=Product, InstallAction=0, RemoveAction=1, RegView=0, AccessLevel=0 {
+							str Name: Default=2;
+							regval RegistryValue_Radasm_InstallFolder: Flags=0x10000, Component=Product, Type=1, InstallAction=1, RemoveAction=1, Separator=";" {
+								str Name: Default=InstallFolder;
+								str Data: Default="<<PRIMARYFOLDER>>";
+							}
+						}
 					}
 				}
 				regkey RegMicrosoftHKLM: Flags=0x0, InstallAction=0, RemoveAction=0, RegView=0, AccessLevel=0 {
@@ -10749,11 +11145,23 @@ project Flags=0x20 {
 			str Key: Default=Assembler;
 			str Data: Default=Goasm;
 		}
-		inival INI_Assembler_HJWasm: Flags=0x10000, Component=Component_HJWasm, InstallAction=4, RemoveAction=1, Separator="," {
+		inival INI_Assembler_HJWasm: Flags=0x10000, Component=Component_HJWasm_Combined, InstallAction=4, RemoveAction=1, Separator="," {
 			str File: Default="<_ProductName__Default_Install_Folder>\\RadASM.ini";
 			str Section: Default=Assembler;
 			str Key: Default=Assembler;
 			str Data: Default=HJWasm;
+		}
+		inival INI_Assembler_HJWasm32: Flags=0x10000, Component=Component_HJWasm_Seperate, InstallAction=4, RemoveAction=1, Separator="," {
+			str File: Default="<_ProductName__Default_Install_Folder>\\RadASM.ini";
+			str Section: Default=Assembler;
+			str Key: Default=Assembler;
+			str Data: Default=HJWasm32;
+		}
+		inival INI_Assembler_HJWasm64: Flags=0x10000, Component=Component_HJWasm_Seperate, InstallAction=4, RemoveAction=1, Separator="," {
+			str File: Default="<_ProductName__Default_Install_Folder>\\RadASM.ini";
+			str Section: Default=Assembler;
+			str Key: Default=Assembler;
+			str Data: Default=HJWasm64;
 		}
 		inival INI_Assembler_Hla: Flags=0x10000, Component=Component_HLA, InstallAction=4, RemoveAction=1, Separator="," {
 			str File: Default="<_ProductName__Default_Install_Folder>\\RadASM.ini";
@@ -10796,6 +11204,12 @@ project Flags=0x20 {
 			str Section: Default=Assembler;
 			str Key: Default=Assembler;
 			str Data: Default=tasm;
+		}
+		inival INI_Assembler_UASM: Flags=0x10000, Component=Component_UASM, InstallAction=4, RemoveAction=1, Separator="," {
+			str File: Default="<_ProductName__Default_Install_Folder>\\RadASM.ini";
+			str Section: Default=Assembler;
+			str Key: Default=Assembler;
+			str Data: Default="UASM32,UASM64";
 		}
 		inival INI_Assembler_Yasm: Flags=0x10000, Component=Component_Yasm, InstallAction=4, RemoveAction=1, Separator="," {
 			str File: Default="<_ProductName__Default_Install_Folder>\\RadASM.ini";
@@ -10900,7 +11314,7 @@ project Flags=0x20 {
 	mimetypes;
 	typelibs;
 	services;
-	installer Flags=0x50, InstallLevel=4, RebootMode=1, ErrorMode=0xFF16F9, ProcessCheck=0, Uninstaller=2, IconSource=0;
+	installer Flags=0x50, InstallLevel=4, RebootMode=0, ErrorMode=0xFF16F9, ProcessCheck=0, Uninstaller=2, IconSource=0;
 	userreg Flags=0x70, RegPath="<HKCU>\\Software\\<Publisher>\\<ProductName>", RegValue1=User, RegValue2=Company, RegValue3=ProductCode;
 	actions {
 		sub _EntryHandler: Comment="Handles installer startup and selection of session type" {
@@ -11282,7 +11696,7 @@ project Flags=0x20 {
 	}
 	richtexts {
 		rtf License1: {"{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fnil\\fcharset0 MS Shell Dlg;}}\r\n{\\*\\generator Msftedit 5.41.21.2512;}\\viewkind4\\uc1\\pard\\lang6153\\f0\\fs17 LICENSE AGREEMENT\\par\r\n\\par\r\nTODO - Replace this text with your own license agreement to which the customer should agree prior to installation of your product.\\par\r\n\\par\r\nInstallMate will display this text prior to the installation process proper, and will cancel the process if the customer does not agree to its terms.\\par\r\n}\r\n"}
-		rtf Readme1: {"{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 Segoe UI;}}\r\n{\\*\\generator Msftedit 5.41.21.2512;}\\viewkind4\\uc1\\pard\\lang6153\\f0\\fs17 RadASM 2.2.2.2\\par\r\n--------------\\par\r\n2.2.2.2\\par\r\no New project based on template - Added in xml file rename in to ProjectName.xml if it exists.\\par\r\n2.2.2.1\\par\r\no Changed max resource items saved to .rc file from 256 items to 512 - fearless 02/12/2015\\par\r\n2.2.2.0\\par\r\no The debug register and watch windows are now in a single tool window.\\par\r\no Added FPU and MMX registers to debug window.\\par\r\no There can now be more than one xxxConst.api file using the same api.\\par\r\no The code editor now supports unlimitted line lenghts.\\par\r\no Fixed a bug when double clicking on errors in output window when using bcc.\\par\r\no Fixed a buffer overrun bug on corrupted project files.\\par\r\no Fixed bugs wuth project browser drag to new goroup. Disabled group name editing.\\par\r\n2.2.1.9b\\par\r\no Holding Ctrl key while clicking on expand / collapse bookmark will expand / collapse\\par\r\n  all child blocks in the parent block.\\par\r\n2.2.1.9\\par\r\no Added a hidden option to disable accept command dialog.\\par\r\n  In RadASM.ini section [Accept] add the following line:\\par\r\n  DontAsk=1\\par\r\no Added UndoSave addin. It saves and loads undo information on project code files.\\par\r\n  See Addin Manager help file for more info.\\par\r\no Project Options no longer expands project tree.\\par\r\n2.2.1.8g\\par\r\no Better error message / handling if a programming language pack is missing.\\par\r\no Added UpdateChecker addin. It lets you check for RadASM updates, download and unzip files.\\par\r\n2.2.1.8f\\par\r\no Adding a project file keeps the expanded / collapsed state of the project browser.\\par\r\no The expanded / collapsed state of the project browser is saved to the project file.\\par\r\no You can no longer delete a group with sub groups using the Project Groups tool.\\par\r\n  You must delete the sub groups first. In previous versions this caused a group messup.\\par\r\no Fixed a bug in RAEdit when drawing the tab markers.\\par\r\n2.2.1.8e\\par\r\no Improved \'Goto Declare\' and double clicking in properties (better support for Obj32Asm).\\par\r\no Fixed bugs in masmParse (better support for Obj32Asm, macros and constants).\\par\r\no Fixed bug in RAEdit where trim trailing spaces did not update line changed state.\\par\r\n2.2.1.8d\\par\r\no Fixed bug where closing Project Groups dialog using [X] made RadASM menu not responding.\\par\r\no Fixed bug where clicking left and right mouse buttons at the same time on a toolbar button\\par\r\n  made RadASM hang.\\par\r\no CreateProtoEx addin now supports C/CPP\\par\r\no Improved CppParse to better support CreateProtoEx addin.\\par\r\no Alex has updated the CodeSize addin.\\par\r\n2.2.1.8c\\par\r\no Added support for chm help files if the radhelp addin is not used.\\par\r\n2.2.1.8b\\par\r\no Fixed bug in masmParse.dll that caused sluggis editing on older machines.\\par\r\no Fixed bug where red dot was missing if file is readonly or missing.\\par\r\no Fixed bug where autoload was not saved if a file was unsaved on project close.\\par\r\n2.2.1.8\\par\r\no Made it possible to load api files depending on project type.\\par\r\n  This makes it easier to create projects for other OS\'es than Windows.\\par\r\n  Contributed api files welcome.\\par\r\no Created a masm parser dll. This makes parsing masm projects more reliable.\\par\r\no Auto Load is replaced by saving current open files to project file.\\par\r\no File tabs can be dragged to a new position. The tab order is saved to project file.\\par\r\no The project browser now supports sub groups. Use Project Groups to maintain groups.\\par\r\no The Project Groups dialog has been redesigned and is more user friendly.\\par\r\no When a file is added to the project it will be added to the current group.\\par\r\no Added Project / Add Existing / Current Open File. Adds the current open file to the project.\\par\r\no Added Expand / Collapse toolbar button to project browser.\\par\r\no Added BS_SPLITBUTTON, BS_DEFSPLITBUTTON, BS_COMMANDLINK and BS_DEFCOMMANDLINK button styles.\\par\r\no Added TBS_REVERSED, TBS_DOWNISLEFT, TBS_NOTIFYBEFOREMOVE and TBS_TRANSPARENTBKGND trackbar styles.\\par\r\no Added SysLink control.\\par\r\n2.2.1.7\\par\r\no The code parser for masm has been enhanced to include datatypes and array sizes.\\par\r\no The code parser for VC6 C/C++ (cppparse.dll) has been enhanced to include datatypes and array sizes.\\par\r\no The code parser for FreePASCAL has been enhanced to include datatypes and array sizes.\\par\r\no The code parser for FreeBASIC has been enhanced to include datatypes and array sizes.\\par\r\no Included RADebug addin. It adds sourcecode debugging capabilities to masm, VC6 C/C++,\\par\r\n  FreePASCAL and FreeBASIC projects. See the RADebug.txt for more info.\\par\r\no Added support for MinGW.\\par\r\no The size of the code complet list is now saved to the ini file.\\par\r\no Fixed a minor bug in RAEdit. REM_GETCURSORWORD did not include the size of the\\par\r\n  line number bar.\\par\r\no Fixed a minor bug in RAEdit. Bracematching caused wrong selection on EM_SCROLLCARET.\\par\r\no Fixed a buffer overrun vulnerability in TbrCreate.\\par\r\no Fixed a buffer overrun vulnerability in menu editor.\\par\r\n2.2.1.6\\par\r\no Added resource type RT_HTML\\par\r\no Code lines now has a yellow indicator for unsaved chanees, green for saved changes.\\par\r\no Better code complete support for C/C++ (locals (Ctrl+Shift+Space) and casted structures). \\par\r\n0 Added protection against malicious project files (.rap). A dialog shows the command that will be\\par\r\n  executed. It is up to you to accept the command or not. There is also a \'Don\'t ask again\' option.\\par\r\n  Even with this added protection you should always open a project file from a non trusted source\\par\r\n  in text edit mode (File / Open File) and verify that it not executes any suspicious commands.\\par\r\no Fixed RadASM Project File (.rap) Stack-Based Buffer Overflow Vulnerability.\\par\r\no Fixed bug with environment variable that caused crash on win 2000.\\par\r\n2.2.1.5\\par\r\no Option to set syntax backcolor on strings, comments, operators and numbers & hex values.\\par\r\no Api files can now have commented lines. A commented line must start with ; or //\\par\r\no Ini files now has a version.\\par\r\no Updated addins to latest version. This fixess several bugs.\\par\r\no Fixed bug with split screen.\\par\r\n2.2.1.4\\par\r\no Flat toolbar on Project and Properties tools.\\par\r\no Rearanged Project toolbar buttons.\\par\r\no Option to set Info tool colors.\\par\r\no Incraced size of build option buffer.\\par\r\no Added block guiders.\\par\r\no Variable speed selection scrolling by mouse.\\par\r\no Fixed bug with environment option if there was no entries.\\par\r\no Fixed bug with project option / project groups.\\par\r\n2.2.1.3\\par\r\no Added support for Free Pascal.\\par\r\no Added support for Digital Mars C/C++ compiler. Thanks PauloH.\\par\r\no Added Ignore Whitespace to find.\\par\r\n  Example:\\par\r\n  Find: mov eax,edx\\par\r\n  will find:\\par\r\n  mov    eax , edx\\par\r\no Added support for multiline find.\\par\r\n  Example:\\par\r\n  Find: mov eax,edx^Minc edx\\par\r\n  wull find the lines:\\par\r\n  mov eax,edx\\par\r\n  inc edx\\par\r\no Fixed fasm parser bug.\\par\r\n2.2.1.2b\\par\r\no Fixed bug with threaded build. The handle was not closed. Thanks a lot Willok.\\par\r\n2.2.1.2\\par\r\no Included several improvements by drizz.\\par\r\no Added images to tab select.\\par\r\no Added default control sizes to dialog editor.\\par\r\no New RadASM icon by Anton Lesnichenko\\par\r\n2.2.1.1\\par\r\no Added brace matching.\\par\r\no Added collapse on comment blocks.\\par\r\no Improved fasm code complete on structures.\\par\r\no Changed behaviour on \'Topmost File property\'\\par\r\n2.2.1.0c\\par\r\no Fixed bug with renaming files in templates using [*PROJECTNAME*] method.\\par\r\no Fixed tab select font problem.\\par\r\n2.2.1.0b\\par\r\no Fixed bug in \'New Project\' wizard where build options was not copied from template.\\par\r\no Fixed Trend Micro virus alert on Addin Manager. (thanks to Wayne Lozinski)\\par\r\n2.2.1.0\\par\r\no It is now possible to create a new project even if the folder already exists.\\par\r\n  This is useful when creating a RadASM project from existing sources.\\par\r\n  - Warning that the folder exists.\\par\r\n  - Warning if files are about to be overwritten.\\par\r\no The \'New Project Wizard\' now has an Import button. It lets you import files to\\par\r\n  the project. Useful when creating a new project from existing sources.\\par\r\no Font options dialog now shows font name.\\par\r\no Set focus to project explorer and Ctrl+E will expand / collapse project groups.\\par\r\n  Useful with huge projects.\\par\r\no Improved project loading time.\\par\r\no Fixed a paint problem in RAEdit when a non fixed font was used.\\par\r\no Fixed a bug where closing all files would leave the \'File Change Notify\' thread\\par\r\n  running and the next file opened would create a new thread.\\par\r\no RAEdit now does a garbage collection each time memory is expanded.\\par\r\no Fixed a bug where adding an existing code file to project did not auto refresh properties.\\par\r\no Added ResourceID addin. Activate it with addinmanager.\\par\r\n  - This addin auto exports resource id\'s to the file rsrc.xxx when any of the\\par\r\n  - resource scripts are updated. At the same time code properties are refreshed.\\par\r\n  - This means that code complete on resource id\'s will work immediatly after any\\par\r\n  - resource script is saved.\\par\r\n  - The export is done ONLY if the rsrc.xxx file exists in the projects root folder.\\par\r\n\\par\r\n  - rsrc.xxx:\\par\r\n  - ------------------------\\par\r\n  - Assembly\\tab\\tab rsrc.inc\\par\r\n  - Hla\\tab\\tab\\tab\\tab rsrc.hhf\\par\r\n  - C/C++\\tab\\tab\\tab rsrc.h\\par\r\n  - bcet, fb\\tab\\tab rsrc.bi\\par\r\no Added option to minimize RadASM on run. RadASM will stay minimized while program is running.\\par\r\n  - You can also use this to kill a program that hangs by restoring RadASM and press Esc.\\par\r\no Project options now has Path and Main Files buttons. Purpose is to have the info at hand\\par\r\n  while setting up project build options.\\par\r\no On build errors RadASM will jump to first error.\\par\r\no New \'Project Wizard\' that also works on Win95b (does not use property sheets).\\par\r\no Fixed bug in RadToolbar addin (crash on Win95b if custom toolbar was enabled).\\par\r\no Fixed bug in RadToolbar addin where customizing toolbar could give strange results.\\par\r\no Fixed a bug where using mouse wheel on properties window could leave the button painted.\\par\r\n\\par\r\nKetilO\\par\r\n\\par\r\n\\par\r\n}\r\n"}
+		rtf Readme1: {"{\\rtf1\\ansi\\ansicpg1252\\deff0{\\fonttbl{\\f0\\fswiss\\fprq2\\fcharset0 Segoe UI;}}\r\n{\\*\\generator Msftedit 5.41.21.2512;}\\viewkind4\\uc1\\pard\\lang6153\\f0\\fs17 RadASM 2.2.2.3\\par\r\n--------------\\par\r\n2.2.2.3\\par\r\no Increased custom control max count to 64\\par\r\no Extended custom control properties count. Previously this was limited to 127 total unique properties, of which 69 \\par\r\n  where in use by RadASM. These properties as defined by ccdef and ccdefex are now handled in a new manner to store\\par\r\n  the text strings of the new property names in the notused field of the TYPES structure. Control IDs > 65535 will\\par\r\n  store the property strings in this manner and retrieved/parsed for inclusion in the dialog properties listview.\\par\r\no Added property description editbox below properties list.\\par\r\no Took out some experimental code that I worked on trying to incorporate web search for F1/CTRL+F1.\\par\r\no Took out some experimental code that allowed opening of a url from a text string of a url in comments.\\par\r\n2.2.2.2\\par\r\no New project based on template - Added in xml file rename in to ProjectName.xml if it exists.\\par\r\n2.2.2.1\\par\r\no Changed max resource items saved to .rc file from 256 items to 512 - fearless 02/12/2015\\par\r\n2.2.2.0\\par\r\no The debug register and watch windows are now in a single tool window.\\par\r\no Added FPU and MMX registers to debug window.\\par\r\no There can now be more than one xxxConst.api file using the same api.\\par\r\no The code editor now supports unlimitted line lenghts.\\par\r\no Fixed a bug when double clicking on errors in output window when using bcc.\\par\r\no Fixed a buffer overrun bug on corrupted project files.\\par\r\no Fixed bugs wuth project browser drag to new goroup. Disabled group name editing.\\par\r\n2.2.1.9b\\par\r\no Holding Ctrl key while clicking on expand / collapse bookmark will expand / collapse\\par\r\n  all child blocks in the parent block.\\par\r\n2.2.1.9\\par\r\no Added a hidden option to disable accept command dialog.\\par\r\n  In RadASM.ini section [Accept] add the following line:\\par\r\n  DontAsk=1\\par\r\no Added UndoSave addin. It saves and loads undo information on project code files.\\par\r\n  See Addin Manager help file for more info.\\par\r\no Project Options no longer expands project tree.\\par\r\n2.2.1.8g\\par\r\no Better error message / handling if a programming language pack is missing.\\par\r\no Added UpdateChecker addin. It lets you check for RadASM updates, download and unzip files.\\par\r\n2.2.1.8f\\par\r\no Adding a project file keeps the expanded / collapsed state of the project browser.\\par\r\no The expanded / collapsed state of the project browser is saved to the project file.\\par\r\no You can no longer delete a group with sub groups using the Project Groups tool.\\par\r\n  You must delete the sub groups first. In previous versions this caused a group messup.\\par\r\no Fixed a bug in RAEdit when drawing the tab markers.\\par\r\n2.2.1.8e\\par\r\no Improved \'Goto Declare\' and double clicking in properties (better support for Obj32Asm).\\par\r\no Fixed bugs in masmParse (better support for Obj32Asm, macros and constants).\\par\r\no Fixed bug in RAEdit where trim trailing spaces did not update line changed state.\\par\r\n2.2.1.8d\\par\r\no Fixed bug where closing Project Groups dialog using [X] made RadASM menu not responding.\\par\r\no Fixed bug where clicking left and right mouse buttons at the same time on a toolbar button\\par\r\n  made RadASM hang.\\par\r\no CreateProtoEx addin now supports C/CPP\\par\r\no Improved CppParse to better support CreateProtoEx addin.\\par\r\no Alex has updated the CodeSize addin.\\par\r\n2.2.1.8c\\par\r\no Added support for chm help files if the radhelp addin is not used.\\par\r\n2.2.1.8b\\par\r\no Fixed bug in masmParse.dll that caused sluggis editing on older machines.\\par\r\no Fixed bug where red dot was missing if file is readonly or missing.\\par\r\no Fixed bug where autoload was not saved if a file was unsaved on project close.\\par\r\n2.2.1.8\\par\r\no Made it possible to load api files depending on project type.\\par\r\n  This makes it easier to create projects for other OS\'es than Windows.\\par\r\n  Contributed api files welcome.\\par\r\no Created a masm parser dll. This makes parsing masm projects more reliable.\\par\r\no Auto Load is replaced by saving current open files to project file.\\par\r\no File tabs can be dragged to a new position. The tab order is saved to project file.\\par\r\no The project browser now supports sub groups. Use Project Groups to maintain groups.\\par\r\no The Project Groups dialog has been redesigned and is more user friendly.\\par\r\no When a file is added to the project it will be added to the current group.\\par\r\no Added Project / Add Existing / Current Open File. Adds the current open file to the project.\\par\r\no Added Expand / Collapse toolbar button to project browser.\\par\r\no Added BS_SPLITBUTTON, BS_DEFSPLITBUTTON, BS_COMMANDLINK and BS_DEFCOMMANDLINK button styles.\\par\r\no Added TBS_REVERSED, TBS_DOWNISLEFT, TBS_NOTIFYBEFOREMOVE and TBS_TRANSPARENTBKGND trackbar styles.\\par\r\no Added SysLink control.\\par\r\n2.2.1.7\\par\r\no The code parser for masm has been enhanced to include datatypes and array sizes.\\par\r\no The code parser for VC6 C/C++ (cppparse.dll) has been enhanced to include datatypes and array sizes.\\par\r\no The code parser for FreePASCAL has been enhanced to include datatypes and array sizes.\\par\r\no The code parser for FreeBASIC has been enhanced to include datatypes and array sizes.\\par\r\no Included RADebug addin. It adds sourcecode debugging capabilities to masm, VC6 C/C++,\\par\r\n  FreePASCAL and FreeBASIC projects. See the RADebug.txt for more info.\\par\r\no Added support for MinGW.\\par\r\no The size of the code complet list is now saved to the ini file.\\par\r\no Fixed a minor bug in RAEdit. REM_GETCURSORWORD did not include the size of the\\par\r\n  line number bar.\\par\r\no Fixed a minor bug in RAEdit. Bracematching caused wrong selection on EM_SCROLLCARET.\\par\r\no Fixed a buffer overrun vulnerability in TbrCreate.\\par\r\no Fixed a buffer overrun vulnerability in menu editor.\\par\r\n2.2.1.6\\par\r\no Added resource type RT_HTML\\par\r\no Code lines now has a yellow indicator for unsaved chanees, green for saved changes.\\par\r\no Better code complete support for C/C++ (locals (Ctrl+Shift+Space) and casted structures). \\par\r\n0 Added protection against malicious project files (.rap). A dialog shows the command that will be\\par\r\n  executed. It is up to you to accept the command or not. There is also a \'Don\'t ask again\' option.\\par\r\n  Even with this added protection you should always open a project file from a non trusted source\\par\r\n  in text edit mode (File / Open File) and verify that it not executes any suspicious commands.\\par\r\no Fixed RadASM Project File (.rap) Stack-Based Buffer Overflow Vulnerability.\\par\r\no Fixed bug with environment variable that caused crash on win 2000.\\par\r\n2.2.1.5\\par\r\no Option to set syntax backcolor on strings, comments, operators and numbers & hex values.\\par\r\no Api files can now have commented lines. A commented line must start with ; or //\\par\r\no Ini files now has a version.\\par\r\no Updated addins to latest version. This fixess several bugs.\\par\r\no Fixed bug with split screen.\\par\r\n2.2.1.4\\par\r\no Flat toolbar on Project and Properties tools.\\par\r\no Rearanged Project toolbar buttons.\\par\r\no Option to set Info tool colors.\\par\r\no Incraced size of build option buffer.\\par\r\no Added block guiders.\\par\r\no Variable speed selection scrolling by mouse.\\par\r\no Fixed bug with environment option if there was no entries.\\par\r\no Fixed bug with project option / project groups.\\par\r\n2.2.1.3\\par\r\no Added support for Free Pascal.\\par\r\no Added support for Digital Mars C/C++ compiler. Thanks PauloH.\\par\r\no Added Ignore Whitespace to find.\\par\r\n  Example:\\par\r\n  Find: mov eax,edx\\par\r\n  will find:\\par\r\n  mov    eax , edx\\par\r\no Added support for multiline find.\\par\r\n  Example:\\par\r\n  Find: mov eax,edx^Minc edx\\par\r\n  wull find the lines:\\par\r\n  mov eax,edx\\par\r\n  inc edx\\par\r\no Fixed fasm parser bug.\\par\r\n2.2.1.2b\\par\r\no Fixed bug with threaded build. The handle was not closed. Thanks a lot Willok.\\par\r\n2.2.1.2\\par\r\no Included several improvements by drizz.\\par\r\no Added images to tab select.\\par\r\no Added default control sizes to dialog editor.\\par\r\no New RadASM icon by Anton Lesnichenko\\par\r\n2.2.1.1\\par\r\no Added brace matching.\\par\r\no Added collapse on comment blocks.\\par\r\no Improved fasm code complete on structures.\\par\r\no Changed behaviour on \'Topmost File property\'\\par\r\n2.2.1.0c\\par\r\no Fixed bug with renaming files in templates using [*PROJECTNAME*] method.\\par\r\no Fixed tab select font problem.\\par\r\n2.2.1.0b\\par\r\no Fixed bug in \'New Project\' wizard where build options was not copied from template.\\par\r\no Fixed Trend Micro virus alert on Addin Manager. (thanks to Wayne Lozinski)\\par\r\n2.2.1.0\\par\r\no It is now possible to create a new project even if the folder already exists.\\par\r\n  This is useful when creating a RadASM project from existing sources.\\par\r\n  - Warning that the folder exists.\\par\r\n  - Warning if files are about to be overwritten.\\par\r\no The \'New Project Wizard\' now has an Import button. It lets you import files to\\par\r\n  the project. Useful when creating a new project from existing sources.\\par\r\no Font options dialog now shows font name.\\par\r\no Set focus to project explorer and Ctrl+E will expand / collapse project groups.\\par\r\n  Useful with huge projects.\\par\r\no Improved project loading time.\\par\r\no Fixed a paint problem in RAEdit when a non fixed font was used.\\par\r\no Fixed a bug where closing all files would leave the \'File Change Notify\' thread\\par\r\n  running and the next file opened would create a new thread.\\par\r\no RAEdit now does a garbage collection each time memory is expanded.\\par\r\no Fixed a bug where adding an existing code file to project did not auto refresh properties.\\par\r\no Added ResourceID addin. Activate it with addinmanager.\\par\r\n  - This addin auto exports resource id\'s to the file rsrc.xxx when any of the\\par\r\n  - resource scripts are updated. At the same time code properties are refreshed.\\par\r\n  - This means that code complete on resource id\'s will work immediatly after any\\par\r\n  - resource script is saved.\\par\r\n  - The export is done ONLY if the rsrc.xxx file exists in the projects root folder.\\par\r\n\\par\r\n  - rsrc.xxx:\\par\r\n  - ------------------------\\par\r\n  - Assembly\\tab\\tab rsrc.inc\\par\r\n  - Hla\\tab\\tab\\tab\\tab rsrc.hhf\\par\r\n  - C/C++\\tab\\tab\\tab rsrc.h\\par\r\n  - bcet, fb\\tab\\tab rsrc.bi\\par\r\no Added option to minimize RadASM on run. RadASM will stay minimized while program is running.\\par\r\n  - You can also use this to kill a program that hangs by restoring RadASM and press Esc.\\par\r\no Project options now has Path and Main Files buttons. Purpose is to have the info at hand\\par\r\n  while setting up project build options.\\par\r\no On build errors RadASM will jump to first error.\\par\r\no New \'Project Wizard\' that also works on Win95b (does not use property sheets).\\par\r\no Fixed bug in RadToolbar addin (crash on Win95b if custom toolbar was enabled).\\par\r\no Fixed bug in RadToolbar addin where customizing toolbar could give strange results.\\par\r\no Fixed a bug where using mouse wheel on properties window could leave the button painted.\\par\r\n\\par\r\nKetilO\\par\r\n\\par\r\n\\par\r\n}\r\n"}
 		rtf WhatsNew.txt: Path="..\\WhatsNew.txt";
 	}
 	fontstyles Default=DefaultUIFont {
@@ -11781,6 +12195,7 @@ project Flags=0x20 {
 						xlat ID=1055 {"Tüm dosyalar=*.*"}
 						xlat ID=1058 {"Все файлы=*.*"}
 					}
+					str Append: Default="<ProductName>";
 					str Text: Flags=0x50000, PhraseID=Text.SelectFolder, Default="Select the Installation Folder" {
 						xlat ID=1027 {"Seleccioneu la carpeta d\'instal·lació"}
 						xlat ID=2052 {"选择安装文件夹"}

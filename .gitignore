@@ -2,6 +2,7 @@ bak/
 *.undo
 *.ilk
 *.exp
+*.old
 Help/
 template/
 downloads/

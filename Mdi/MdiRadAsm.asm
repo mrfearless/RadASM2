@@ -95,15 +95,26 @@ start:
 							dec		eax
 						.endw
 						mov		edi,offset CustCtrl
-						mov		eax,32
+						mov		ebx,offset CustTypes
+						mov		eax,NO_OF_CC ;32
 						.while eax
 							push	eax
+							
+							mov eax, [ebx].TYPES.ID
+							.IF eax > 65535
+							    mov eax, [ebx].TYPES.notused
+							    .IF eax != 0
+							        Invoke GlobalFree, eax
+							    .ENDIF
+							.ENDIF
+							
 							mov		eax,[edi].CUSTCTRL.hDll
 							.if eax
 								invoke FreeLibrary,eax
 							.endif
 							pop		eax
 							add		edi,sizeof CUSTCTRL
+							add		ebx,sizeof TYPES
 							dec		eax
 						.endw
 						pop		edi
@@ -2058,9 +2069,10 @@ CmdEdit proc hWin:HWND
 				invoke GetFullPathName,offset LineTxt,sizeof FileName,offset FileName,addr vTmp
 				invoke OpenEditFile
 				jmp		Ex
-			.else
-    			invoke DoOpenUrl,offset LineWord
-    			jmp     Ex
+			; fearless add option to open url
+			;.else
+    		;	invoke DoOpenUrl,offset LineWord
+    		;	jmp     Ex
 			.endif
 		.endif
 	.else
@@ -3563,53 +3575,53 @@ WndProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		invoke iniSetAsmMenu
 		invoke FileDir,offset FilePath
 		
-		; fearless Added 01/03/2017
-		Invoke RegisterHotKey, hWin, 0, MOD_NOREPEAT, VK_F1
-		Invoke RegisterHotKey, hWin, 1, MOD_CONTROL	or MOD_NOREPEAT, VK_F1
-		Invoke RegisterHotKey, hWin, 2, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_G
-		Invoke RegisterHotKey, hWin, 3, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_M
-		; ---
-	
-	; fearless Added 01/03/2017 - allow F1/CTRL+F1 search online for keyword. CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN.
-	.ELSEIF eax == WM_HOTKEY
-	    .IF wParam == 0
-			mov	LineWord[0],0
-			.if hEdit
-				invoke GetWordFromPos,hEdit
-			.endif	    
-	        .IF OnlineHelpUseF1 == TRUE
-	            invoke DoOnlineHelp,offset LineWord, OnlineHelpProvider
-	        .ELSE
-	            invoke DoHelp,offset F1,offset LineWord
-	        .ENDIF
-	        
-	    .ELSEIF wParam == 1
-			mov	LineWord[0],0
-			.if hEdit
-				invoke GetWordFromPos,hEdit
-			.endif	    
-	        .IF OnlineHelpUseF1 == TRUE
-	            invoke DoHelp,offset F1,offset LineWord
-	        .ELSE
-	            invoke DoOnlineHelp,offset LineWord, OnlineHelpProvider
-	        .ENDIF
-
-	    .ELSEIF wParam == 2
-			mov	LineWord[0],0
-			.if hEdit
-				invoke GetWordFromPos,hEdit
-			.endif
-			invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_GOOGLE
-
-        .ELSEIF wParam == 3
-			mov	LineWord[0],0
-			.if hEdit
-				invoke GetWordFromPos,hEdit
-			.endif
-			invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_MSDN
-
-	    .ENDIF
-	; ---
+;		; fearless Added 01/03/2017
+;		Invoke RegisterHotKey, hWin, 0, MOD_NOREPEAT, VK_F1
+;		Invoke RegisterHotKey, hWin, 1, MOD_CONTROL	or MOD_NOREPEAT, VK_F1
+;		Invoke RegisterHotKey, hWin, 2, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_G
+;		Invoke RegisterHotKey, hWin, 3, MOD_CONTROL	or MOD_ALT or MOD_NOREPEAT, VK_M
+;		; ---
+;	
+;	; fearless Added 01/03/2017 - allow F1/CTRL+F1 search online for keyword. CTRL+ALT+G is for google, CTRL+ALT+M is for MSDN.
+;	.ELSEIF eax == WM_HOTKEY
+;	    .IF wParam == 0
+;			mov	LineWord[0],0
+;			.if hEdit
+;				invoke GetWordFromPos,hEdit
+;			.endif	    
+;	        .IF OnlineHelpUseF1 == TRUE
+;	            invoke DoOnlineHelp,offset LineWord, OnlineHelpProvider
+;	        .ELSE
+;	            invoke DoHelp,offset F1,offset LineWord
+;	        .ENDIF
+;	        
+;	    .ELSEIF wParam == 1
+;			mov	LineWord[0],0
+;			.if hEdit
+;				invoke GetWordFromPos,hEdit
+;			.endif	    
+;	        .IF OnlineHelpUseF1 == TRUE
+;	            invoke DoHelp,offset F1,offset LineWord
+;	        .ELSE
+;	            invoke DoOnlineHelp,offset LineWord, OnlineHelpProvider
+;	        .ENDIF
+;
+;	    .ELSEIF wParam == 2
+;			mov	LineWord[0],0
+;			.if hEdit
+;				invoke GetWordFromPos,hEdit
+;			.endif
+;			invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_GOOGLE
+;
+;        .ELSEIF wParam == 3
+;			mov	LineWord[0],0
+;			.if hEdit
+;				invoke GetWordFromPos,hEdit
+;			.endif
+;			invoke DoOnlineHelp,offset LineWord, ONLINE_HELP_MSDN
+;
+;	    .ENDIF
+;	; ---
 	
 	.elseif eax==WM_MEASUREITEM
 		push	esi
@@ -3712,8 +3724,8 @@ WndProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		.endif
 	.elseif eax==WM_CLOSE
 	    ; fearless Added 01/03/2017
-	    Invoke UnregisterHotKey, hWin, 0
-	    Invoke UnregisterHotKey, hWin, 1
+	    ;Invoke UnregisterHotKey, hWin, 0
+	    ;Invoke UnregisterHotKey, hWin, 1
 	    ; ---
 		.if fProject
 			invoke CloseProject

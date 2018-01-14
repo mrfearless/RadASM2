@@ -182,7 +182,7 @@ BEGIN
     MENUITEM "&New Project\tCtrl+Shift+N",IDM_FILE_NEWPROJECT
     MENUITEM "&Open Project\tCtrl+Shift+O",IDM_FILE_OPENPROJECT
     MENUITEM "&Close Project\tCtrl+Shift+C",IDM_FILE_CLOSEPROJECT
-    MENUITEM "&Delete Project\tCtrl+Shift+D",IDM_FILE_DELETEPROJECT
+    MENUITEM "&Delete Project",IDM_FILE_DELETEPROJECT
     MENUITEM "",,0x00000800
     MENUITEM "Ne&w File\tCtrl+N",IDM_FILE_NEWFILE
     MENUITEM "O&pen File\tCtrl+O",IDM_FILE_OPENFILE

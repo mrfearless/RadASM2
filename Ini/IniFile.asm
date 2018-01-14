@@ -2693,6 +2693,43 @@ iniRStripStr proc lpStr:DWORD,nByte:DWORD
 
 iniRStripStr endp
 
+iniGetItemEx proc USES EDI ESI lpSource:DWORD,lpDest:DWORD,dwStartPos:DWORD
+    LOCAL pos:DWORD
+
+	mov	esi,lpSource
+	mov	edi,lpDest
+	
+	mov eax, dwStartPos
+	mov pos, eax
+	add esi, eax
+	
+	movzx eax, byte ptr [esi]
+	.IF al == 0
+	    mov byte ptr [edi], 0
+	    mov eax, 0
+	    ret
+	.ENDIF
+	.WHILE al != 0
+	
+	    .IF al == ','
+	        mov byte ptr [edi], 0
+	        inc pos
+	        mov eax, pos
+	        ret
+	    .ENDIF
+	    mov byte ptr [edi], al
+	    
+	    inc pos
+	    inc esi
+	    inc edi
+	    movzx eax, byte ptr [esi]
+	.ENDW
+	mov byte ptr [edi], 0
+	mov eax, pos
+	ret
+
+iniGetItemEx endp
+
 iniGetItem proc lpSource:DWORD,lpDest:DWORD
 
 	push	esi

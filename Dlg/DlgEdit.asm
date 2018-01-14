@@ -4,9 +4,10 @@ UpdateCtl			PROTO :DWORD
 
 .const
 
-DLGVER			equ 102
-MaxMem			equ 128*1024*3
-WS_ALWAYS		equ WS_CHILD or WS_VISIBLE or WS_CLIPSIBLINGS or WS_CLIPCHILDREN
+DLGVER			    equ 102
+MaxMem			    equ 128*1024*3
+WS_ALWAYS		    equ WS_CHILD or WS_VISIBLE or WS_CLIPSIBLINGS or WS_CLIPCHILDREN
+NO_OF_CC            EQU 64 ; number of custom controls
 
 .data
 
@@ -60,8 +61,11 @@ PrAll				db '(Name),(ID),Left,Top,Width,Height,Caption,Border,SysMenu,MaxButton,
 					db 'Sort,Flat,(StartID),TabIndex,Format,SizeGrip,Group,Icon,UseTabs,StartupPos,Orientation,SetBuddy,MultiSelect,HideSel,TopMost,xExStyle,xStyle,IntegralHgt,Image,Buttons,PopUp,OwnerDraw,Transp,Timer,AutoPlay,WeekNum,AviClip,AutoSize,ToolTip,Wrap,'
 					db 'Divider,DragDrop,'
 					db 'Smooth,Ellipsis,Language,HasStrings,(HelpID)'
-					db 1024 dup(0)
-NO_OF_PR			equ 32+32+5
+					db 1024 dup(0) ; fearless changed to allow more property strings to be added
+NO_OF_PR			equ 32+32+5 ;69 bytes long - fearless, CustBuff is 1024 which means actually only 15 controls will show up custom properties. fearless changed CustBuff to 4096 (61 controls)
+TOTAL_PR            dd 0
+
+
 
 				;0-Dialog
 ctltypes			dd 0
@@ -777,7 +781,7 @@ ctltypes			dd 0
 					;
 					dd 100
 					dd 21
-CustTypes			TYPES 32 dup(<0>)
+CustTypes			TYPES NO_OF_CC dup(<0>) ; fearless  changed 32 to 64 
 
 szNOTStyle			db 'NOT ',0
 dwNOTStyle			dd WS_VISIBLE

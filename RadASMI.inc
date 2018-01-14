@@ -1197,14 +1197,14 @@ lpAddWordToWordList				dd offset AddWordToWordList
 lpRefreshProperty				dd offset RefreshProperty
 ;Do not insert or move, just add
 
-AppName							db 'RadASM version 2.2.2.2',0
+AppName							db 'RadASM version 2.2.2.3',0
 DisplayName						db 'RadASM',0
 AboutMsg						db 'RadASM (C) KetilO 2001-2009',13,10,13,10,'radasmide@hotmail.com',0
 AboutUrl1						db 'http://radasm.cherrytree.at/',0
 AboutUrl2						db 'http://www.oby.ro/rad_asm',0
 
 ;Do not insert or move, just add
-nRadASMVer						dd 2220
+nRadASMVer						dd 2223
 fMaximized						dd 0
 lpIniFile						dd offset iniFile
 lpProject						dd offset ProjectFile
@@ -1531,6 +1531,8 @@ OnlineHelpProvider              DD 0
 OnlineHelpUseF1                 DD 0
 ; ---
 
+szPropertyDescriptionText       DB "Property Description",0
+
 ;#########################################################################
 
 .data?
@@ -1594,6 +1596,7 @@ hFontTxt						dd ?
 hFontHex						dd ?
 hFullScreen						dd ?
 hFound							dd ?
+hPrpTxtDesc						dd ?
 ;Do not insert or move, just add
 
 ofn								OPENFILENAME <?>

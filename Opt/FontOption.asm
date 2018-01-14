@@ -108,6 +108,8 @@ UpdateToolFonts proc
 	call	UpdateToolFont
 	mov		eax,hPrpLstDlg
 	call	UpdateToolFont
+	mov eax, hPrpTxtDesc
+	call UpdateToolFont
 	mov		eax,hPrpTxt
 	call	UpdateToolFont
 	mov		eax,hPrpTxtMulti

@@ -1,3 +1,17 @@
+;.686
+;.MMX
+;.XMM
+;
+;DEBUG32 EQU 1
+;
+;IFDEF DEBUG32
+;    PRESERVEXMMREGS equ 1
+;    includelib M:\Masm32\lib\Debug32.lib
+;    DBG32LIB equ 1
+;    DEBUGEXE textequ <'M:\Masm32\DbgWin.exe'>
+;    include M:\Masm32\include\debug32.inc
+;ENDIF
+
 
 .const
 
@@ -29,7 +43,169 @@ IDC_BTNSET				equ 3304
 IDC_STCWARN				equ 3305
 IDC_STCTXT				equ 3306
 
+; Property IDs
+Property_NumID          EQU 1
+Property_Left           EQU 2
+Property_Top            EQU 3
+Property_Width          EQU 4
+Property_Height         EQU 5
+Property_StartID        EQU 6
+Property_TabIndex       EQU 7
+
+Property_Name           EQU 100
+Property_Caption        EQU 101
+Property_MultiCaption   EQU 102
+
+Property_SysMenu        EQU 200
+Property_MaxButton      EQU 201
+Property_MinButton      EQU 202
+Property_Enabled        EQU 203
+Property_Visible        EQU 204
+Property_Default        EQU 205
+Property_Auto           EQU 206
+Property_AutoPlay       EQU 206
+Property_AutoSize       EQU 206
+Property_Mnemonic       EQU 207
+Property_WordWrap       EQU 208
+Property_MultiLine      EQU 209
+Property_MultiSelect    EQU 209
+Property_Locked         EQU 210
+Property_Child          EQU 211
+Property_SizeBorder     EQU 212
+Property_SizeGrip       EQU 212
+Property_TabStop        EQU 213
+Property_Notify         EQU 214
+Property_WantCR         EQU 215
+Property_SortList       EQU 216
+Property_Flat           EQU 217
+Property_Group          EQU 218
+
+Property_UseTabs        EQU 220
+Property_SetBuddy       EQU 221
+Property_HideSelection  EQU 222
+Property_TopMost        EQU 223
+Property_IntegralHeight EQU 224
+Property_Buttons        EQU 225
+Property_PopUp          EQU 226
+Property_OwnerDrawBtn   EQU 227
+Property_OwnerDrawLsv   EQU 227
+Property_Transparent    EQU 228
+Property_Timer          EQU 229
+Property_WeekNum        EQU 230
+Property_ToolTip        EQU 231
+Property_WrapToolbar    EQU 232
+Property_DividerToolbar EQU 233
+Property_DragDrop       EQU 234
+Property_ProgressSmooth EQU 235
+Property_HasStrings     EQU 236
+
+Property_Clipping       EQU 300
+Property_ScrollBar      EQU 301
+Property_Alignment      EQU 302
+Property_AutoScroll     EQU 303
+Property_Format         EQU 304
+Property_StartupPos     EQU 305
+Property_Orientation    EQU 306
+Property_SortListview   EQU 307
+Property_OwnerDrawCbo   EQU 308
+Property_Ellipsis       EQU 309
+
+Property_Border         EQU 400
+Property_Type           EQU 401
+
+Property_Font           EQU 1000
+Property_Class          EQU 1001
+Property_Menu           EQU 1002
+Property_xExStyle       EQU 1003
+Property_xStyle         EQU 1004
+Property_Image          EQU 1005
+Property_AviClip        EQU 1006
+
+Property_CustomControl  EQU 65535
+
+
+
+
 .data
+
+; Property Descriptions
+szProperty_Null           DB 0,0,0,0
+szProperty_NumID          DB "Specifies the numeric id used to identify the control.",0
+szProperty_Left           DB "Specifies the distance between the left edge of a control and its parent.",0
+szProperty_Top            DB "Specifies the distance between the top edge of a control and its parent.",0
+szProperty_Width          DB "Specifies the width of a control on the screen.",0
+szProperty_Height         DB "Specifies the height of a control on the screen.",0
+szProperty_StartID        DB "Specifies the start index of numeric control ids when adding controls to a dialog.",0
+szProperty_TabIndex       DB "Specifies the tab order of a control on a dialog.",0
+
+szProperty_Name           DB "Specifies the text name used to reference a control in code.",0
+szProperty_Caption        DB "Specifies the text displayed in a control or dialog/window title.",0
+szProperty_MultiCaption   DB "Specifies the text displayed in a control.",0
+
+szProperty_SysMenu        DB "Specifies whether the window has a window menu on its title bar. The WS_CAPTION style must also be specified.",0
+szProperty_MaxButton      DB "Specifies whether a dialog/window has a Maximize button.",0
+szProperty_MinButton      DB "Specifies whether a dialog/window has a Minimize button.",0
+szProperty_Enabled        DB "Specifies whether a control can respond to input/interaction.",0
+szProperty_Visible        DB "Specifies whether a control or window is visible or hidden.",0
+szProperty_Default        DB "Specifies which command button or control responds to the ENTER key being pressed when there are two or more command buttons on an active dialog.",0
+szProperty_Auto           DB "Specifies automatic state of checkbox or radio control, where the system auto toggles display of the checkbox or radio mark.",0
+szProperty_AutoPlay       DB "Specifies if the media file associated with the control is automatically played.",0
+szProperty_AutoSize       DB "Specifies whether a control is automatically resized to fit its contents.",0
+szProperty_Mnemonic       DB "Specifies whether a mnemonic is supported. The input focus is moved to the control associated with the mnemonic whenever the user either presses the key that corresponds to the mnemonic or presses the key and the ALT key in combination.",0
+szProperty_WordWrap       DB "Specifies whether text is wrapped around the edges of the control to display within the bounds of the control.",0
+szProperty_MultiLine      DB "Specified whether text displays on a single line or multiple lines within a control.",0
+szProperty_MultiSelect    DB "Specifies whether a user can make multiple selections in a control or just a single selection.",0
+szProperty_Locked         DB "Specifies whether the control is locked and prevented from being moved in design mode.",0
+szProperty_Child          DB "Specifies whether a window/control is a child of another window/control. A window with this style cannot have a menu bar. This style cannot be used with the WS_POPUP style.",0
+szProperty_SizeBorder     DB "Specifies whether a window is resizable by user at runtime.",0
+szProperty_SizeGrip       DB "Specifies whether a statusbar shows a sizing grip to indicate that the associated window can be resized by the user.",0
+szProperty_TabStop        DB "Specifies whether a user can use the TAB key to move the focus to a control.",0
+szProperty_Notify         DB "Specifies if the control will notify the parent of any supported interactions, for example mouse clicks etc.",0
+szProperty_WantCR         DB "Specifies if the control will process carriage returns (Enter/Return key)",0
+szProperty_SortList       DB "Specifies if the listbox items are sorted.",0
+szProperty_Flat           DB " ",0
+szProperty_Group          DB "Specifies whether the control is the first control of a group of controls. The group consists of this first control and all controls defined after it, up to the next control with the WS_GROUP style.",0
+
+szProperty_UseTabs        DB " ",0
+szProperty_SetBuddy       DB " ",0
+szProperty_HideSelection  DB "Specifies if the selected text or item is not displayed as selectied/highlighted when the control loses focus.",0
+szProperty_TopMost        DB "Specifies if the window/control is set as the topmost window - the highest window in the z-order.",0
+szProperty_IntegralHeight DB "Specifies that the size of the list box is exactly the size specified by the application when it created the list box. Normally, the system sizes a list box so that the list box does not display partial items.",0
+szProperty_Buttons        DB "Specified if the treeview control shows +/- buttons before nodes.",0
+szProperty_PopUp          DB "Specifies whether the window/control is a pop-up window. This style cannot be used with the WS_CHILD style.",0
+szProperty_OwnerDrawBtn   DB "Specifies if the drawing of the control is handled automatically by the system or is owner drawn and managed by user code.",0
+szProperty_OwnerDrawLsv   DB "Specifies if the drawing of the control is handled automatically by the system or is owner drawn and managed by user code.",0
+szProperty_Transparent    DB "Specifies if the animation control uses transparent background.",0
+szProperty_Timer          DB "Specifies if the animation control uses a timer.",0
+szProperty_WeekNum        DB "Specifies if the week number is displayed in the monthview control.",0
+szProperty_ToolTip        DB "Specifies whether the control displays tooltips when the mouse hovers over specific parts of a control, depending on the control: toolbar buttons in a toolbar, tabs in a tab control, etc",0
+szProperty_WrapToolbar    DB "Specifies whether the toolbar control wraps buttons so they are always all displayed on screen on the toolbar.",0
+szProperty_DividerToolbar DB "Specifies whether the toolbar control shows a divider line.",0
+szProperty_DragDrop       DB " ",0
+szProperty_ProgressSmooth DB "Specifies the type of progress bar used, a smooth filled bar, or an incremental stepped one.",0
+szProperty_HasStrings     DB "Specifies that a list box contains items consisting of strings. The list box maintains the memory and addresses for the strings so that the application can use the LB_GETTEXT message to retrieve the text for a particular item.",0
+
+szProperty_Clipping       DB "Specifies if clipping is used. Clip children excludes the area occupied by child windows when drawing occurs within the parent window. Clip siblings clips all other overlapping child windows out of the region of the child window to be updated.",0
+szProperty_ScrollBar      DB "Specifies if the window/control includes a scrollbar: horizontal, vertical, both or none.",0
+szProperty_Alignment      DB "Specifies the alignment and positioning of text displayed in the control.",0
+szProperty_AutoScroll     DB "Specifies if the control automatically handles scrolling. Depending on the control this could be scrolling text into view in an edit control or items in a listbox.",0
+szProperty_Format         DB "Specifies the format of the date time in the datetime picker control.",0
+szProperty_StartupPos     DB "Specifies the intital starting location of the window/dialog.",0
+szProperty_Orientation    DB "Specifies the angle of the hyperlink text displayed.",0
+szProperty_SortListview   DB "Specifies if the listview items are sorted.",0
+szProperty_OwnerDrawCbo   DB "Specifies if the drawing of the control is handled automatically by the system or is owner drawn and managed by user code.",0
+szProperty_Ellipsis       DB "Specified if the control uses ellipsis. An ellipsis (…) is displayed for text that doesn’t fit in the display of the window/control.",0
+
+szProperty_Border         DB "Specifies the type of border/frame for the window/control. For dialogs and windows specifying certain frames may result in changes to the overall type of window that is created.",0
+szProperty_Type           DB "Specifies the sub-type of the control or additional style settings for a controll. Certain controls have different types associated with them, supporting varied usages.",0
+
+szProperty_Font           DB "Specifies the font family and size used by a dialog.",0
+szProperty_Class          DB "Specifies the class used as basis to create the window/control.",0
+szProperty_Menu           DB "Specifies if the window uses a menu and sets the associated menu resource to use with this window.",0
+szProperty_xExStyle       DB "The extended style flags used in the window/control's creation.",0
+szProperty_xStyle         DB "The style flags used in the window/control's creation. Note, changing different properties in the properties list will change the style flags.",0
+szProperty_Image          DB "The specified image filename to load into the control.",0
+szProperty_AviClip        DB "The specified avi movie clip filename to load into the control.",0
 
 szStyle				db 'Style',0
 szExStyle			db 'ExStyle',0
@@ -444,6 +620,11 @@ ElliStc				db 'None,EndEllipsis,PathEllipsis,WordEllipsis',0
 					dd -1 xor SS_ELLIPSISMASK,SS_WORDELLIPSIS
 					dd -1,0
 
+
+
+
+
+
 szPropErr			db 'Invalid property value.',0
 StyleWarn			db 'WARNING!!',0Dh,'Some styles can make RadASM  unstable. Save before use.',0
 StyleEx				dd 0
@@ -463,6 +644,9 @@ szStyleTxt			db 'WS_POPUP,WS_CHILD,WS_MINIMIZE,WS_VISIBLE,'
 					db 'WS_BORDER,WS_DLGFRAME,WS_VSCROLL,WS_HSCROLL,'
 					db 'WS_SYSMENU,WS_THICKFRAME,WS_GROUP,WS_TABSTOP',0
 
+
+
+
 .data?
 
 lbtxtbuffer				db 4096 dup(?)
@@ -476,6 +660,243 @@ OldPropCboProc			dd ?
 OldPropTxtBtnProc		dd ?
 
 .code
+
+;----------------------------------------------------------------------
+; Get custom control's property text description
+;----------------------------------------------------------------------
+PropCustCtrlGetTxtDesc PROC USES EBX dwLabelID:DWORD
+    LOCAL dwType:DWORD
+    LOCAL lpszPropertyDesc:DWORD
+    LOCAL lpProperties:DWORD
+    LOCAL dwLenProperties:DWORD
+    LOCAL lpPropBlock:DWORD
+    LOCAL nPropCount:DWORD
+    
+    mov ebx, dwLabelID
+    mov eax, dword ptr [ebx]
+    mov dwType, eax
+    mov eax, dword ptr [ebx+4]
+    mov lpProperties, eax
+
+    .IF eax != 0
+        mov eax, dwType
+        .IF eax == 1 || eax == 2 || eax == 3
+            lea eax, szProperty_Null
+        .ELSEIF eax == 4 || eax == 5
+            ; get property description after block of properties
+            mov eax, lpProperties
+            add eax, 16d
+
+        .ELSEIF eax == 6
+            ; get property description after properties string and block of properties
+            Invoke strlen, lpProperties
+            .IF eax == 0
+                lea eax, szProperty_Null
+            .ELSE
+                mov dwLenProperties, eax
+                add eax, lpProperties
+                inc eax
+                mov lpPropBlock, eax
+                
+                mov nPropCount, 1
+                mov ebx, lpProperties
+                movzx eax, byte ptr [ebx]
+                .WHILE al != 0 && (ebx < lpPropBlock)
+                    .IF al == ','
+                        inc nPropCount
+                    .ENDIF
+                    inc ebx
+                    movzx eax, byte ptr [ebx]
+                .ENDW
+                
+                ; count of , indicates how many properties * 16 + lpPropBlock = pointer to property description
+                ; start with propcount of 1, as if string is empty then there would be no properties anyhow.
+                mov eax, nPropCount
+                mov ebx, 16d
+                mul ebx
+                add eax, lpPropBlock
+            .ENDIF
+        .ELSE
+            lea eax, szProperty_Null
+        .ENDIF
+    .ELSE
+        lea eax, szProperty_Null
+    .ENDIF
+    ret
+
+PropCustCtrlGetTxtDesc ENDP
+
+
+;----------------------------------------------------------------------
+; Set property text description
+;----------------------------------------------------------------------
+PropSetTxtDesc PROC dwLabelID:DWORD
+
+    mov eax, dwLabelID
+    .IF eax == 0 || eax == -1
+        ;lea eax, szProperty_Null
+        ret
+    .ELSEIF eax == Property_NumID
+        lea eax, szProperty_NumID
+    .ELSEIF eax == Property_Left
+        lea eax, szProperty_Left
+    .ELSEIF eax == Property_Top
+        lea eax, szProperty_Top
+    .ELSEIF eax == Property_Width
+        lea eax, szProperty_Width
+    .ELSEIF eax == Property_Height
+        lea eax, szProperty_Height
+    .ELSEIF eax == Property_StartID
+        lea eax, szProperty_StartID
+    .ELSEIF eax == Property_TabIndex
+        lea eax, szProperty_TabIndex
+    
+    .ELSEIF eax == Property_Name
+        lea eax, szProperty_Name
+    .ELSEIF eax == Property_Caption
+        lea eax, szProperty_Caption
+    .ELSEIF eax == Property_MultiCaption
+        lea eax, szProperty_MultiCaption
+
+    .ELSEIF eax == Property_SysMenu
+        lea eax, szProperty_SysMenu
+    .ELSEIF eax == Property_MaxButton
+        lea eax, szProperty_MaxButton
+    .ELSEIF eax == Property_MinButton
+        lea eax, szProperty_MinButton
+    .ELSEIF eax == Property_Enabled
+        lea eax, szProperty_Enabled
+    .ELSEIF eax == Property_Visible
+        lea eax, szProperty_Visible
+    .ELSEIF eax == Property_Default
+        lea eax, szProperty_Default
+    .ELSEIF eax == Property_Auto
+        lea eax, szProperty_Auto
+    .ELSEIF eax == Property_AutoPlay
+        lea eax, szProperty_AutoPlay
+    .ELSEIF eax == Property_AutoSize
+        lea eax, szProperty_AutoSize
+    .ELSEIF eax == Property_Mnemonic
+        lea eax, szProperty_Mnemonic
+    .ELSEIF eax == Property_WordWrap
+        lea eax, szProperty_WordWrap
+    .ELSEIF eax == Property_MultiLine
+        lea eax, szProperty_MultiLine
+    .ELSEIF eax == Property_MultiSelect
+        lea eax, szProperty_MultiSelect
+    .ELSEIF eax == Property_Locked
+        lea eax, szProperty_Locked
+    .ELSEIF eax == Property_Child
+        lea eax, szProperty_Child
+    .ELSEIF eax == Property_SizeBorder
+        lea eax, szProperty_SizeBorder
+    .ELSEIF eax == Property_SizeGrip
+        lea eax, szProperty_SizeGrip
+    .ELSEIF eax == Property_TabStop
+        lea eax, szProperty_TabStop
+    .ELSEIF eax == Property_Notify
+        lea eax, szProperty_Notify
+    .ELSEIF eax == Property_WantCR
+        lea eax, szProperty_WantCR
+    .ELSEIF eax == Property_SortList
+        lea eax, szProperty_SortList
+    .ELSEIF eax == Property_Flat
+        lea eax, szProperty_Flat
+    .ELSEIF eax == Property_Group
+        lea eax, szProperty_Group
+
+    .ELSEIF eax == Property_UseTabs
+        lea eax, szProperty_UseTabs
+    .ELSEIF eax == Property_SetBuddy
+        lea eax, szProperty_SetBuddy
+    .ELSEIF eax == Property_HideSelection
+        lea eax, szProperty_HideSelection
+    .ELSEIF eax == Property_TopMost
+        lea eax, szProperty_TopMost
+    .ELSEIF eax == Property_IntegralHeight
+        lea eax, szProperty_IntegralHeight
+    .ELSEIF eax == Property_Buttons
+        lea eax, szProperty_Buttons
+    .ELSEIF eax == Property_PopUp
+        lea eax, szProperty_PopUp
+    .ELSEIF eax == Property_OwnerDrawBtn
+        lea eax, szProperty_OwnerDrawBtn
+    .ELSEIF eax == Property_OwnerDrawLsv
+        lea eax, szProperty_OwnerDrawLsv
+    .ELSEIF eax == Property_Transparent
+        lea eax, szProperty_Transparent
+    .ELSEIF eax == Property_Timer
+        lea eax, szProperty_Timer
+    .ELSEIF eax == Property_WeekNum
+        lea eax, szProperty_WeekNum
+    .ELSEIF eax == Property_ToolTip
+        lea eax, szProperty_ToolTip
+    .ELSEIF eax == Property_WrapToolbar
+        lea eax, szProperty_WrapToolbar
+    .ELSEIF eax == Property_DividerToolbar
+        lea eax, szProperty_DividerToolbar
+    .ELSEIF eax == Property_DragDrop
+        lea eax, szProperty_DragDrop
+    .ELSEIF eax == Property_ProgressSmooth
+        lea eax, szProperty_ProgressSmooth
+    .ELSEIF eax == Property_HasStrings
+        lea eax, szProperty_HasStrings
+    
+    .ELSEIF eax == Property_Clipping
+        lea eax, szProperty_Clipping
+    .ELSEIF eax == Property_ScrollBar
+        lea eax, szProperty_ScrollBar
+    .ELSEIF eax == Property_Alignment
+        lea eax, szProperty_Alignment
+    .ELSEIF eax == Property_AutoScroll
+        lea eax, szProperty_AutoScroll
+    .ELSEIF eax == Property_Format
+        lea eax, szProperty_Format
+    .ELSEIF eax == Property_StartupPos
+        lea eax, szProperty_StartupPos
+    .ELSEIF eax == Property_Orientation
+        lea eax, szProperty_Orientation
+    .ELSEIF eax == Property_SortListview
+        lea eax, szProperty_SortListview
+    .ELSEIF eax == Property_OwnerDrawCbo
+        lea eax, szProperty_OwnerDrawCbo
+    .ELSEIF eax == Property_Ellipsis
+        lea eax, szProperty_Ellipsis
+
+    .ELSEIF eax == Property_Border
+        lea eax, szProperty_Border
+    .ELSEIF eax == Property_Type
+        lea eax, szProperty_Type
+    
+    .ELSEIF eax == Property_Font
+        lea eax, szProperty_Font
+    .ELSEIF eax == Property_Class
+        lea eax, szProperty_Class
+    .ELSEIF eax == Property_Menu
+        lea eax, szProperty_Menu
+    .ELSEIF eax == Property_xExStyle
+        lea eax, szProperty_xExStyle
+    .ELSEIF eax == Property_xStyle
+        lea eax, szProperty_xStyle
+    .ELSEIF eax == Property_Image 
+        lea eax, szProperty_Image
+    .ELSEIF eax == Property_AviClip
+        lea eax, szProperty_AviClip
+    .ELSEIF eax >= Property_CustomControl
+        Invoke PropCustCtrlGetTxtDesc, dwLabelID
+    .ELSE
+        lea eax, szProperty_Null
+    .ENDIF
+
+    .IF eax != 0
+        Invoke SendMessage, hPrpTxtDesc, WM_SETTEXT, 0, eax
+    .ENDIF
+    xor eax, eax
+    ret
+
+PropSetTxtDesc ENDP
+
+
 
 SetPrpFocus proc
 
@@ -497,7 +918,6 @@ SetPrpFocus proc
 SetPrpFocus endp
 
 GetCustProp proc nType:DWORD,nProp:DWORD
-
 	invoke GetTypePtr,nType
 	mov		edx,nProp
 	sub		edx,[eax].TYPES.nmethod
@@ -838,6 +1258,13 @@ PropListSetPos proc
 		invoke SendMessage,hPrpLst,LB_GETITEMRECT,nInx,addr rect
 		invoke SendMessage,hPrpLst,LB_GETITEMDATA,nInx,0
 		mov		lbid,eax
+		
+		;PrintText 'PropListSetPos'
+		;PrintDec lbid
+		Invoke PropSetTxtDesc, lbid
+		
+		
+		mov eax, lbid
 		invoke SetWindowLong,hTxtBtn,GWL_USERDATA,eax
 		mov		eax,lbid
 		.if (eax>=200 && eax<=499) || eax==1000 || eax==1003 || eax==1004 || eax>65535
@@ -1216,13 +1643,15 @@ PropTxtLst proc uses esi,hCtl:DWORD,lbid:DWORD
 		.endif
 	.elseif eax>65535
 		mov		edx,[eax+4]
-		.if dword ptr [eax]==1
+		.if dword ptr [eax]==1 || dword ptr [eax]==4 ; added type 4 for property descriptions
 			invoke TxtLstFalseTrue,[esi].style,edx
-		.elseif dword ptr [eax]==2
+		.elseif dword ptr [eax]==2 || dword ptr [eax]==5 ; added type 5 for property descriptions
 			invoke TxtLstFalseTrue,[esi].exstyle,edx
-		.elseif dword ptr [eax]==3
+		.elseif dword ptr [eax]==3 || dword ptr [eax]==6 ; added type 6 for property descriptions
 			invoke TxtLstMulti,[esi].style,[esi].exstyle,edx
 		.endif
+		
+		
 	.endif
 	assume esi:nothing
 	ret
@@ -1459,6 +1888,9 @@ PropListCodeProc proc uses ebx esi edi,hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:
 			jmp		Ex
 		.endif
 	.elseif eax==WM_SETFOCUS || eax==WM_KILLFOCUS
+	    invoke ShowWindow,hPrpLstDlg,SW_HIDE
+	    invoke ShowWindow,hPrpLst,SW_HIDE
+	    invoke ShowWindow,hPrpTxtDesc,SW_HIDE
 		invoke SetPrpFocus
 	.elseif eax==WM_VSCROLL || eax==WM_MOUSEWHEEL
 		invoke ShowWindow,hTxtBtn,SW_HIDE
@@ -1916,17 +2348,17 @@ PropEditUpdList proc uses esi edi,lpPtr:DWORD
 						mov		[esi].exstyle,eax
 					.endif
 				.elseif eax>65535
-					.if dword ptr [eax]==1
+					.if dword ptr [eax]==1 || dword ptr [eax]==4 ; added 4 for property descriptions
 						mov		eax,[esi].style
 						and		eax,[edi]
 						or		eax,[edi+4]
 						mov		[esi].style,eax
-					.elseif dword ptr [eax]==2
+					.elseif dword ptr [eax]==2 || dword ptr [eax]==5 ; added 5 for property descriptions
 						mov		eax,[esi].exstyle
 						and		eax,[edi]
 						or		eax,[edi+4]
 						mov		[esi].exstyle,eax
-					.elseif dword ptr [eax]==3
+					.elseif dword ptr [eax]==3 || dword ptr [eax]==6 ; added 6 for property descriptions
 						mov		eax,[esi].style
 						and		eax,[edi]
 						or		eax,[edi+4]
@@ -2072,6 +2504,9 @@ PropTxtLstProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 				invoke SetWindowText,hPrpTxt,addr buffer
 				invoke SendMessage,hWin,LB_GETITEMDATA,nInx,0
 				mov		lbid,eax
+				;PrintText 'PropTxtLstProc'
+				;PrintDec lbid
+				;Invoke PropSetTxtDesc, lbid
 				invoke PropEditUpdList,lbid
 				pop		nInx
 				invoke SendMessage,hPrpLst,LB_SETCURSEL,nInx,0
@@ -2128,6 +2563,9 @@ PropTxtLstProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		.endif
 	.elseif eax==WM_SETFOCUS
 		;invoke SendMessage,hWnd,WM_NCACTIVATE,TRUE,0
+        invoke ShowWindow,hPrpTbrCode,SW_HIDE
+		invoke ShowWindow,hPrpCboCode,SW_HIDE		
+		invoke ShowWindow,hPrpLstCode,SW_HIDE
 		invoke SetPrpFocus
 	.elseif eax==WM_KILLFOCUS
 		invoke ShowWindow,hWin,SW_HIDE
@@ -2185,7 +2623,7 @@ PropTxtBtnProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 PropTxtBtnProc endp
 
 ListFalseTrue proc uses esi,CtlVal:DWORD,lpVal:DWORD,lpBuff:DWORD
-
+; invoke ListFalseTrue,[esi].style,[eax+4],edi
 	mov		esi,lpVal
 	mov		eax,[esi]
 	xor		eax,-1
@@ -2239,6 +2677,8 @@ PropSetOwner proc fCode:DWORD
 		invoke ShowWindow,hPrpTbrCode,SW_SHOWNA
 		invoke ShowWindow,hPrpCboCode,SW_SHOWNA
 		invoke ShowWindow,hPrpLstDlg,SW_HIDE
+		invoke ShowWindow,hPrpLst,SW_HIDE
+		invoke ShowWindow,hPrpTxtDesc,SW_HIDE
 		invoke ShowWindow,hPrpLstCode,SW_SHOWNA
 		invoke InvalidateRect,hPrp,NULL,TRUE
 	.else
@@ -2249,6 +2689,8 @@ PropSetOwner proc fCode:DWORD
 		invoke ShowWindow,hPrpCboDlg,SW_SHOWNA
 		invoke ShowWindow,hPrpLstCode,SW_HIDE
 		invoke ShowWindow,hPrpLstDlg,SW_SHOWNA
+		invoke ShowWindow,hPrpLst,SW_SHOWNA
+		invoke ShowWindow,hPrpTxtDesc,SW_SHOWNA
 		invoke SetParent,hPrpTxtMulti,hPrpLst
 	.endif
 	invoke SetParent,hTxtBtn,hPrpLst
@@ -2260,6 +2702,7 @@ PropSetOwner endp
 PropertyList proc uses esi edi,hCtl:DWORD
 	LOCAL	buffer1[512]:BYTE
 	LOCAL	nType:DWORD
+	LOCAL   nTypeID:DWORD
 	LOCAL	lbid:DWORD
 	LOCAL	fList:DWORD
 	LOCAL	fList1:DWORD
@@ -2267,11 +2710,18 @@ PropertyList proc uses esi edi,hCtl:DWORD
 	LOCAL	fList3:DWORD
 	LOCAL	nInx:DWORD
 	LOCAL	tInx:DWORD
+	LOCAL   nPr:DWORD
+	LOCAL   nLenProperties:DWORD
+	LOCAL   ptrProperties:DWORD
+	LOCAL   ptrMethods:DWORD
+	LOCAL   pos:DWORD
 
 	invoke ToolBarStatus
 	invoke PropSetOwner,FALSE
 	invoke ShowWindow,hPrpLstCode,SW_HIDE
 	invoke ShowWindow,hPrpLstDlg,SW_SHOWNA
+	invoke ShowWindow,hPrpLst,SW_SHOWNA
+	Invoke ShowWindow,hPrpTxtDesc,SW_SHOWNA
 	invoke SendMessage,hPrpCbo,CB_RESETCONTENT,0,0
 	invoke ShowWindow,hPrpTxtMulti,SW_HIDE
 	invoke ShowWindow,hPrpTxt,SW_HIDE
@@ -2291,6 +2741,8 @@ PropertyList proc uses esi edi,hCtl:DWORD
 		assume esi:ptr DIALOG
 		mov		eax,[esi].ntype
 		mov		nType,eax
+		mov		eax,[esi].ntypeid
+		mov		nTypeID,eax
 		invoke GetTypePtr,nType
 		m2m		fList,(TYPES ptr [eax]).flist
 		m2m		fList1,(TYPES ptr [eax]).flist+4
@@ -2690,15 +3142,16 @@ PropertyList proc uses esi edi,hCtl:DWORD
 				.endif
 			.elseif edx==68	;(HelpID)
 			.elseif eax>=NoOfButtons
+			    ;eax = nType, edx == nInx			
 				;Custom properties
 				invoke GetCustProp,eax,edx
 				mov		lbid,eax
 				.if eax
-					.if dword ptr [eax]==1
+					.if dword ptr [eax]==1 || dword ptr [eax]==4 ; added type 4 for property descriptions
 						invoke ListFalseTrue,[esi].style,[eax+4],edi
-					.elseif dword ptr [eax]==2
+					.elseif dword ptr [eax]==2 || dword ptr [eax]==5 ; added type 5 for property descriptions
 						invoke ListFalseTrue,[esi].exstyle,[eax+4],edi
-					.elseif dword ptr [eax]==3
+					.elseif dword ptr [eax]==3 || dword ptr [eax]==6 ; added type 6 for property descriptions
 						invoke ListMultiStyle,[esi].style,[esi].exstyle,[eax+4],edi
 					.endif
 				.endif
@@ -2709,6 +3162,61 @@ PropertyList proc uses esi edi,hCtl:DWORD
 		inc		nInx
 		jmp		@b
 	  @@:
+
+	    mov eax, nTypeID
+	    .IF eax > 65535
+
+	        mov nPr, 0
+	        mov	lbid, 0
+            Invoke GetTypePtr,nType
+            mov edx, [eax].TYPES.notused
+            mov ptrProperties, edx
+            
+            mov	eax, (TYPES ptr [eax]).methods
+            mov ptrMethods, eax
+            
+            .IF ptrProperties != 0
+                Invoke strlen, ptrProperties
+                mov nLenProperties, eax
+                .IF eax != 0
+                    mov pos, 0
+                    ;DbgDump ptrProperties, nLenProperties
+                    Invoke iniGetItemEx, ptrProperties, Addr buffer1, pos
+                    mov pos, eax
+                	.WHILE eax != 0
+                		mov eax, ptrMethods
+                		mov edx, nPr
+                		lea		eax,[eax+edx*8]
+                		mov	lbid, eax
+            			.IF eax
+            		        invoke strlen,addr buffer1
+            		        lea edi,buffer1[eax]
+                			mov ax,09h
+                			stosw
+                			dec edi				
+            			    
+            			    mov eax, lbid
+            				.if dword ptr [eax]==1 || dword ptr [eax]==4 ; added type 4 for property descriptions
+            					invoke ListFalseTrue,[esi].style,[eax+4],edi
+            				.elseif dword ptr [eax]==2 || dword ptr [eax]==5 ; added type 5 for property descriptions
+            					invoke ListFalseTrue,[esi].exstyle,[eax+4],edi
+            				.elseif dword ptr [eax]==3 || dword ptr [eax]==6 ; added type 6 for property descriptions
+            					invoke ListMultiStyle,[esi].style,[esi].exstyle,[eax+4],edi
+            				.endif
+            		        invoke SendMessage,hPrpLst,LB_ADDSTRING,0,addr buffer1
+            		        invoke SendMessage,hPrpLst,LB_SETITEMDATA,eax,lbid					
+            			.ENDIF        		
+                		;PrintDec nPr
+                        inc nPr
+		                mov	dword ptr buffer1,0
+		                mov	dword ptr buffer1[4],0                        
+                		Invoke iniGetItemEx, ptrProperties, Addr buffer1, pos
+                		mov pos, eax
+                	.ENDW
+                .ENDIF
+            .ENDIF
+        .ENDIF
+
 		invoke SendMessage,hPrpLst,LB_SETTOPINDEX,tInx,0
 		invoke GetWindowLong,hMdiCld,4
 		.if eax
@@ -2729,7 +3237,15 @@ PropertyList proc uses esi edi,hCtl:DWORD
 	.if eax==LB_ERR
 		xor		eax,eax
 	.endif
+	mov nInx, eax
 	invoke SendMessage,hPrpLst,LB_SETCURSEL,eax,0
+
+	invoke SendMessage,hPrpLst,LB_GETITEMDATA,nInx,0
+	mov		lbid,eax	
+	;PrintText 'PropertyList'
+	;PrintDec lbid
+	Invoke PropSetTxtDesc, lbid
+	
 	invoke SendMessage,hPrpLst,WM_SETREDRAW,TRUE,0
   Ex:
 	ret
@@ -2817,6 +3333,12 @@ Do_Properties proc
 	invoke SetParent,hTxtLst,eax
 	invoke SetWindowLong,hTxtLst,GWL_WNDPROC,addr PropTxtLstProc
 	mov		OldPropTxtLstProc,eax
+	
+	; fearless - add property description box
+	invoke CreateWindowEx,0,addr szEdit,Addr szProperty_Null,WS_CHILD or WS_CLIPCHILDREN or WS_CLIPSIBLINGS or WS_VSCROLL or ES_MULTILINE or ES_READONLY,0,0,0,0,hWin,0,hInstance,0
+	mov hPrpTxtDesc, eax
+	invoke SendMessage,hTxtLst,WM_SETFONT,hTTFont,0
+	
 	invoke CreateWindowEx,0,addr szButton,addr szBtnText,WS_CHILD or WS_CLIPCHILDREN or WS_CLIPSIBLINGS,lbTp+1+84,16,16,16,hPrpLst,0,hInstance,0
 	mov		hTxtBtn,eax
 	invoke SetWindowLong,hTxtBtn,GWL_ID,1
@@ -2909,8 +3431,26 @@ ToolPropertySize proc lParam:LPARAM
 	sub		ecx,rect.top
 	add		ecx,2
 	mov		eax,ht
+	sub eax, lbHt
+	sub eax, 3
+	sub eax, lbHt
+	sub eax, 3
 	sub		eax,ecx
 	invoke MoveWindow,hPrpLstDlg,0,ecx,wt,eax,TRUE
+	
+	mov	ecx,ht
+	sub ecx, lbHt
+	sub ecx, 3
+	sub ecx, lbHt
+	sub ecx, 3
+	mov eax, lbHt
+	add eax, 3
+	add eax, lbHt
+	add eax, 3
+	dec wt
+	dec wt
+	invoke MoveWindow,hPrpTxtDesc,0,ecx,wt,eax,TRUE
+	
 	.if hDialog
 		invoke PropSetOwner,FALSE
 		invoke PropListSetPos

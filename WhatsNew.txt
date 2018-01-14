@@ -1,5 +1,16 @@
-RadASM 2.2.2.2
+RadASM 2.2.2.3
 --------------
+2.2.2.3
+o Increased custom control max count to 64
+o Extended custom control properties count. Previously this was limited to 127 total unique properties, of which 69 
+  where in use by RadASM. These properties as defined by ccdef and ccdefex are now handled in a new manner to store
+  the text strings of the new property names in the notused field of the TYPES structure. Control IDs > 65535 will
+  store the property strings in this manner and retrieved/parsed for inclusion in the dialog properties listview.
+o Added property description editbox below properties list.
+o Took out some experimental code that I worked on trying to incorporate web search for F1/CTRL+F1.
+o Took out some experimental code that allowed opening of a url from a text string of a url in comments.
+
+
 2.2.2.2
 o Installer: Created multi-lingual installer for RadASM v2.2.2.2
 o Template: Added in xml file rename. If ProjectName.xml exists for manifest it is renamed to new project output file.

@@ -1,3 +1,18 @@
+;.686
+;.MMX
+;.XMM
+;
+;DEBUG32 EQU 1
+;
+;IFDEF DEBUG32
+;    PRESERVEXMMREGS equ 1
+;    includelib M:\Masm32\lib\Debug32.lib
+;    DBG32LIB equ 1
+;    DEBUGEXE textequ <'M:\Masm32\DbgWin.exe'>
+;    include M:\Masm32\include\debug32.inc
+;ENDIF
+
+; limitation on total number of custom properties than can be used
 .const
 
 NoOfButtons		equ 34
@@ -48,16 +63,16 @@ szGetDef			db 'GetDef',0
 szGetDefEx			db 'GetDefEx',0
 
 nButtons			dd NoOfButtons
-hButtons			dd NoOfButtons+32 dup(0)
+hButtons			dd NoOfButtons+32 dup(0) ; changed +32 to +64
 szToolBoxTlt		db 'Pointer,EditText,Static,GroupBox,Button,CheckBox,RadioButton,ComboBox,ListBox,HScroll,VScroll,TabStrip,ProgressBar,TreeView,'
 					db 'ListView,TrackBar,UpDown,Image,ToolBar,StatusBar,DatePicker,MonthView,RichEdit,UserDefinedControl,ImageCombo,Shape,IPAddress,'
 					db 'Animate,HotKey,HPager,VPager,ReBar,Header,Syslink',0
-					db 512 dup(0)
+					db 512 dup(0) ; changed 512 to 2048 to allow for longer text toolbox controls
 .data?
 
 OldToolBoxBtnProc	dd ?
-CustBuff			db 1024 dup(?)
-CustCtrl			CUSTCTRL 32 dup(<?>)
+CustBuff			db 1024 dup(?) ; fearless changed 1024 to 4096 to allow for 61 custom controls NO_OF_PR = 67bytes (4096/67=61) instead of 15 controls previously
+CustCtrl			CUSTCTRL 32 dup(<?>) ; fearless changed 32 to 64
 
 .code
 
@@ -70,6 +85,7 @@ GetCustomControls proc uses ebx esi edi
 	LOCAL	nPr:DWORD
 	LOCAL	mDC:HDC
 	LOCAL	nColor:DWORD
+	LOCAL   nLenString:DWORD
 
 	mov		ebx,offset CustTypes
 	mov		esi,offset CustCtrl
@@ -211,34 +227,62 @@ GetDefEx:
 		mov		[ebx].TYPES.nmethod,edx
 		mov		[ebx].TYPES.methods,eax
 	.endif
-	mov		edx,[edi].CCDEFEX.lpproperty
-	.while byte ptr [edx]
-		push	edx
-		mov		buffer,','
-		invoke iniGetItem,edx,addr buffer[1]
-		invoke strcat,offset PrAll,addr buffer
-		mov		ecx,nPr
-		inc		nPr
-		mov		eax,80000000h
-		.if ecx>=128
-		.elseif ecx>=96
-			sub		ecx,96
-			shr		eax,cl
-			or		[ebx].TYPES.flist[12],eax
-		.elseif ecx>=64
-			sub		ecx,64
-			shr		eax,cl
-			or		[ebx].TYPES.flist[8],eax
-		.elseif ecx>=32
-			sub		ecx,32
-			shr		eax,cl
-			or		[ebx].TYPES.flist[4],eax
-		.else
-			shr		eax,cl
-			or		[ebx].TYPES.flist[0],eax
-		.endif
-		pop		edx
-	.endw
+	
+	; fearless 12/01/2018 - if custom control and id > 65535 then get properties string and alloc mem for length and copy string to this mem
+	; used TYPES.notused field for storing this string pointer.
+	mov eax, [ebx].TYPES.ID
+	.IF eax > 65535
+    	mov		edx,[edi].CCDEFEX.lpproperty
+    	.IF edx != 0
+    	    Invoke strlen, edx
+    	    mov nLenString, eax
+    	    .IF eax != 0
+    	        add eax, 4
+    	        Invoke GlobalAlloc,GMEM_FIXED + GMEM_ZEROINIT, eax
+    	        .IF eax != NULL
+    	            mov [ebx].TYPES.notused, eax
+    	            mov	edx,[edi].CCDEFEX.lpproperty
+    	            Invoke RtlMoveMemory, eax, edx, nLenString
+    	            mov eax, [ebx].TYPES.notused
+    	            add eax, nLenString
+    	            mov byte ptr [eax],0
+    	            ;DbgDump eax, 4	            
+    	        .ENDIF
+    	    .ENDIF
+    	.ENDIF
+	.ELSE
+
+    	mov		edx,[edi].CCDEFEX.lpproperty
+    	.while byte ptr [edx]
+    		push	edx
+    		mov		buffer,','
+    		invoke iniGetItem,edx,addr buffer[1]
+    
+    		invoke strcat,offset PrAll,addr buffer
+    		mov		ecx,nPr
+    		mov TOTAL_PR, ecx
+    		inc		nPr
+    		mov		eax,80000000h
+            .if ecx>=128
+    		.elseif ecx>=96
+    			sub		ecx,96
+    			shr		eax,cl
+    			or		[ebx].TYPES.flist[12],eax
+    		.elseif ecx>=64
+    			sub		ecx,64
+    			shr		eax,cl
+    			or		[ebx].TYPES.flist[8],eax
+    		.elseif ecx>=32
+    			sub		ecx,32
+    			shr		eax,cl
+    			or		[ebx].TYPES.flist[4],eax
+    		.else
+    			shr		eax,cl
+    			or		[ebx].TYPES.flist[0],eax
+    		.endif
+    		pop		edx
+    	.endw
+    .ENDIF
 	retn
 
 GetCustomControls endp
