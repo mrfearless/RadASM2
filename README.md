@@ -1,6 +1,6 @@
 # RadASM
 
-![](https://github.com/mrfearless/RadASM2/blob/master/Res/RadAsm.png) [Current version: 2.2.2.2 - Last updated: 18/08/2016](https://github.com/mrfearless/RadASM2/releases/latest)
+![](https://github.com/mrfearless/RadASM2/blob/master/Res/RadAsm.png) [Current version: 2.2.2.3 - Last updated: 14/01/2018](https://github.com/mrfearless/RadASM2/releases/latest)
 
 ## Overview
 
