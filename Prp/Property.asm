@@ -1888,9 +1888,9 @@ PropListCodeProc proc uses ebx esi edi,hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:
 			jmp		Ex
 		.endif
 	.elseif eax==WM_SETFOCUS || eax==WM_KILLFOCUS
-	    invoke ShowWindow,hPrpLstDlg,SW_HIDE
-	    invoke ShowWindow,hPrpLst,SW_HIDE
-	    invoke ShowWindow,hPrpTxtDesc,SW_HIDE
+	    ;invoke ShowWindow,hPrpLstDlg,SW_HIDE
+	    ;invoke ShowWindow,hPrpLst,SW_HIDE
+	    ;invoke ShowWindow,hPrpTxtDesc,SW_HIDE
 		invoke SetPrpFocus
 	.elseif eax==WM_VSCROLL || eax==WM_MOUSEWHEEL
 		invoke ShowWindow,hTxtBtn,SW_HIDE
@@ -2563,9 +2563,9 @@ PropTxtLstProc proc hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		.endif
 	.elseif eax==WM_SETFOCUS
 		;invoke SendMessage,hWnd,WM_NCACTIVATE,TRUE,0
-        invoke ShowWindow,hPrpTbrCode,SW_HIDE
-		invoke ShowWindow,hPrpCboCode,SW_HIDE		
-		invoke ShowWindow,hPrpLstCode,SW_HIDE
+        ;invoke ShowWindow,hPrpTbrCode,SW_HIDE
+		;invoke ShowWindow,hPrpCboCode,SW_HIDE		
+		;invoke ShowWindow,hPrpLstCode,SW_HIDE
 		invoke SetPrpFocus
 	.elseif eax==WM_KILLFOCUS
 		invoke ShowWindow,hWin,SW_HIDE
