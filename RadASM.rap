@@ -179,11 +179,11 @@ MinorFiles=*.res;*.obj;
 
 [Size]
 1=22,22,536,413,943
-2=0,416,869,416,50340
+2=0,416,869,416,45212
 3=154,154,590,413,1388
 4=0,0,590,413,40666
 5=132,132,536,413,84918
-6=12,26,869,416,117933
+6=12,26,869,416,2554
 7=132,132,536,413,293
 8=44,44,536,413,34580
 9=88,88,536,413,48462
@@ -191,9 +191,9 @@ MinorFiles=*.res;*.obj;
 11=88,88,536,413,43026
 12=154,154,590,413,1082
 13=176,176,590,413,3558
-14=176,176,536,413,8310
-15=22,22,590,413,1563
-16=66,66,536,413,37361
+14=176,176,536,413,6688
+15=22,22,590,413,20586
+16=66,66,536,413,109657
 17=0,0,536,413,27028
 18=176,176,536,413
 19=110,110,536,413
@@ -278,7 +278,7 @@ MinorFiles=*.res;*.obj;
 100=110,110,536,413
 101=0,0,0,0,1886
 104=0,0,728,518
-105=0,0,728,518,2211
+105=0,0,728,518,2253
 106=0,0,0,0,1152
 107=0,0,0,0,739
 108=0,0,0,0
@@ -305,7 +305,7 @@ MinorFiles=*.res;*.obj;
 128=0,0,0,0
 
 [AutoLoad]
-AutoLoad=14,119,16,15,5,6,2,125
+AutoLoad=14,119,16,15,5,6,2,105
 
 [BookMark]
 0=
@@ -491,16 +491,16 @@ ID=105
 44=6,C:\RadASM\Masm\Templates\Dialog.rad,,WndProc
 76=0,C:\RadASM\Masm\Templates\Dialog.rad,,WndProc
 [Find]
-1="UpdateCbo"
-2="CB_SETITEMDATA"
-3="hPrpLst"
-4="PropEditUpdList"
-5="SetPrpFocus"
-6="dword ptr [eax]==1"
-7="SetWindowLong,hPrpLstDlg"
-8="PropSetOwner"
-9="invoke SendMessage,hPrpLst,LB_SETCURSEL"
-10="LBN_SELCHANGE"
+1="NO_OF_CC"
+2="hPrpTxtDesc"
+3="WM_SETFOCUS"
+4="SS_BITMAP"
+5="szStyleTxt"
+6="WS_DISABLED"
+7="UpdateCbo"
+8="CB_SETITEMDATA"
+9="hPrpLst"
+10="PropEditUpdList"
 
 [BreakPoint]
 0=
@@ -541,7 +541,7 @@ MilestoneOnTime=2
 MilestoneOnDate=0
 MilestoneOnDateWhen=1
 MilestoneOnDateStatus=0
-MilestoneOnDateDate=14
+MilestoneOnDateDate=31
 MilestoneOnDateTimeYear=2006
 MilestoneOnDateTimeMonth=8
 MilestoneOnDateTimeDate=27
@@ -690,14 +690,14 @@ Group=Assembly,Resources,..RC File,..Menu,..Dialog,Misc,Include
 4=,,,,,,
 96=,,,,,,,,,,,,
 9=,,,,,
-16=,,,4,612368384,75497472,67651656,74
+16=,547356672,,107374182,603979776,344064000,67649608,32842
 7=15,,536887296,8,,1073741824,4282,73984
 20=,,,,
 38=640
 93=,
 105=663584
 80=
-15=672272513,1753481296,268523731,76548128,1,278528,8421888,301990016,43,,536936448,1074956304,1073775248,1085808810,1355972754,258
+15=672272513,1753481296,268523731,76548128,1,278528,8421888,301990016,35,,536936448,1074956304,1073775248,1085808810,1355972754,258
 10=,,,
 55=,
 35=,
@@ -761,7 +761,7 @@ Group=Assembly,Resources,..RC File,..Menu,..Dialog,Misc,Include
 [SourceSafe]
 Project=$/RadASM
 [PTimer]
-PTimer=2223151632
+PTimer=2229357428
 [RADebugBP]
 96=
 55=

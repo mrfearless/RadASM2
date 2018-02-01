@@ -67,12 +67,12 @@ hButtons			dd NoOfButtons+32 dup(0) ; changed +32 to +64
 szToolBoxTlt		db 'Pointer,EditText,Static,GroupBox,Button,CheckBox,RadioButton,ComboBox,ListBox,HScroll,VScroll,TabStrip,ProgressBar,TreeView,'
 					db 'ListView,TrackBar,UpDown,Image,ToolBar,StatusBar,DatePicker,MonthView,RichEdit,UserDefinedControl,ImageCombo,Shape,IPAddress,'
 					db 'Animate,HotKey,HPager,VPager,ReBar,Header,Syslink',0
-					db 512 dup(0) ; changed 512 to 2048 to allow for longer text toolbox controls
+					db 1024 dup(0) ; changed 512 to 2048 to allow for longer text toolbox controls
 .data?
 
 OldToolBoxBtnProc	dd ?
 CustBuff			db 1024 dup(?) ; fearless changed 1024 to 4096 to allow for 61 custom controls NO_OF_PR = 67bytes (4096/67=61) instead of 15 controls previously
-CustCtrl			CUSTCTRL 32 dup(<?>) ; fearless changed 32 to 64
+CustCtrl			CUSTCTRL 64 dup(<?>) ; fearless changed 32 to 64
 
 .code
 
@@ -227,6 +227,7 @@ GetDefEx:
 		mov		[ebx].TYPES.nmethod,edx
 		mov		[ebx].TYPES.methods,eax
 	.endif
+	mov [ebx].TYPES.notused, 0
 	
 	; fearless 12/01/2018 - if custom control and id > 65535 then get properties string and alloc mem for length and copy string to this mem
 	; used TYPES.notused field for storing this string pointer.
@@ -242,10 +243,11 @@ GetDefEx:
     	        .IF eax != NULL
     	            mov [ebx].TYPES.notused, eax
     	            mov	edx,[edi].CCDEFEX.lpproperty
-    	            Invoke RtlMoveMemory, eax, edx, nLenString
-    	            mov eax, [ebx].TYPES.notused
-    	            add eax, nLenString
-    	            mov byte ptr [eax],0
+    	            Invoke lstrcpyn, eax, edx, nLenString
+    	            ;Invoke RtlMoveMemory, eax, edx, nLenString
+    	            ;mov eax, [ebx].TYPES.notused
+    	            ;add eax, nLenString
+    	            ;mov byte ptr [eax],0
     	            ;DbgDump eax, 4	            
     	        .ENDIF
     	    .ENDIF

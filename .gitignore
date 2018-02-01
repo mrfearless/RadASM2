@@ -3,6 +3,7 @@ bak/
 *.ilk
 *.exp
 *.old
+*.obj
 Help/
 template/
 downloads/
