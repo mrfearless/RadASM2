@@ -69,7 +69,7 @@ MilestoneOnTime=2
 MilestoneOnDate=0
 MilestoneOnDateWhen=1
 MilestoneOnDateStatus=0
-MilestoneOnDateDate=25
+MilestoneOnDateDate=29
 MilestoneOnDateTimeYear=2009
 MilestoneOnDateTimeMonth=8
 MilestoneOnDateTimeDate=17
@@ -116,7 +116,7 @@ ProductVer4Range=0
 0=
 
 [AutoLoad]
-AutoLoad=1,2
+AutoLoad=1,2,5
 [VerInf]
 Nme=VERINF1
 ID=1
@@ -141,10 +141,13 @@ CompanyName=
 6=
 3=
 [Find]
-1="16384"
-2="8192"
-3="szname"
-4="lpAddProperty"
+1="DestroyCmntBlock"
+2="CmntBlock"
+3="comment"
+4="16384"
+5="8192"
+6="szname"
+7="lpAddProperty"
 [Collapse]
 6=
 1=,,,,,,,
@@ -154,10 +157,12 @@ CompanyName=
 3=
 [Size]
 6=0,0,0,0,34
-1=0,0,0,0,7825
-2=0,0,0,0,2287
+1=0,0,0,0,6402
+2=0,0,0,0,2497
 5=0,0,0,0,17486
 4=0,0,0,0,31
 3=0,0,0,0,84
 [PTimer]
-PTimer=17579908
+PTimer=17921160
+[GroupExpand]
+GroupExpand=1,1,1,0
