@@ -873,7 +873,7 @@ DialogCldClassName				db 'MdiDialogChild',0
 HexEdCldClassName				db 'MdiHexEdChild',0
 RAEditClass						db 'RAEDIT',0
 RAHexEdClass					db 'RAHEXEDIT',0
-RichEditClass					db 'RichEdit20A',0
+RichEditClass					db 'RichEdit20A',0 ;RichEdit50W
 DlgEditClass					db 'DlgEdit',0
 DlgEditDummyClass				db 'DlgEditDummy',0
 ToolTipsClassName				db 'Tooltips_class32',0
@@ -909,7 +909,7 @@ szCtlText						db 'Dialog,EditText,Static,GroupBox,Button,CheckBox,RadioButton,C
 								db 'MonthView,RichEdit,UserDefinedControl,ImageCombo,Shape,IPAddress,Animate,HotKey,HPager,VPager,ReBar,Header,SysLink',0
 								db 512 dup(0)
 
-RichEditDLL						db 'riched20.dll',0
+RichEditDLL						db 'riched20.dll',0 ;msftedit.dll
 RAEditDLL						db 'RAEdit.dll',0
 RAHexEdDLL						db 'RAHexEd.dll',0
 RAGridDLL						db 'RAGrid.dll',0
@@ -1197,7 +1197,7 @@ lpAddWordToWordList				dd offset AddWordToWordList
 lpRefreshProperty				dd offset RefreshProperty
 ;Do not insert or move, just add
 
-AppName							db 'RadASM version 2.2.2.3',0
+AppName							db 'RadASM version 2.2.2.4',0
 DisplayName						db 'RadASM',0
 AboutMsg						db 'RadASM (C) KetilO 2001-2009',13,10,13,10,'radasmide@hotmail.com',0
 AboutUrl1						db 'http://radasm.cherrytree.at/',0

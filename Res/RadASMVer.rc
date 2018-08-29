@@ -1,7 +1,7 @@
 #define VERINF1 1
 VERINF1 VERSIONINFO
-FILEVERSION 2,2,2,3
-PRODUCTVERSION 2,2,2,3
+FILEVERSION 2,2,2,4
+PRODUCTVERSION 2,2,2,4
 FILEOS 0x00000004
 FILETYPE 0x00000001
 BEGIN
@@ -9,12 +9,12 @@ BEGIN
   BEGIN
     BLOCK "040904E4"
     BEGIN
-      VALUE "FileVersion", "2.2.2.3\0"
+      VALUE "FileVersion", "2.2.2.4\0"
       VALUE "FileDescription", "Assembly IDE\0"
       VALUE "InternalName", "RadASM\0"
       VALUE "LegalCopyright", "KetilO (C) 2001-2005\0"
       VALUE "OriginalFilename", "RadASM.exe\0"
-      VALUE "ProductVersion", "2.2.2.3\0"
+      VALUE "ProductVersion", "2.2.2.4\0"
     END
   END
   BLOCK "VarFileInfo"

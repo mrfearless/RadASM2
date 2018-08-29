@@ -63,15 +63,15 @@ szGetDef			db 'GetDef',0
 szGetDefEx			db 'GetDefEx',0
 
 nButtons			dd NoOfButtons
-hButtons			dd NoOfButtons+32 dup(0) ; changed +32 to +64
+hButtons			dd NoOfButtons+96 dup(0) ; changed +32 to +64
 szToolBoxTlt		db 'Pointer,EditText,Static,GroupBox,Button,CheckBox,RadioButton,ComboBox,ListBox,HScroll,VScroll,TabStrip,ProgressBar,TreeView,'
 					db 'ListView,TrackBar,UpDown,Image,ToolBar,StatusBar,DatePicker,MonthView,RichEdit,UserDefinedControl,ImageCombo,Shape,IPAddress,'
 					db 'Animate,HotKey,HPager,VPager,ReBar,Header,Syslink',0
-					db 1024 dup(0) ; changed 512 to 2048 to allow for longer text toolbox controls
+					db 4096 dup(0) ; changed 512 to 2048 to allow for longer text toolbox controls
 .data?
 
 OldToolBoxBtnProc	dd ?
-CustBuff			db 1024 dup(?) ; fearless changed 1024 to 4096 to allow for 61 custom controls NO_OF_PR = 67bytes (4096/67=61) instead of 15 controls previously
+CustBuff			db 4096 dup(?) ; fearless changed 1024 to 4096 to allow for 61 custom controls NO_OF_PR = 67bytes (4096/67=61) instead of 15 controls previously
 CustCtrl			CUSTCTRL 64 dup(<?>) ; fearless changed 32 to 64
 
 .code

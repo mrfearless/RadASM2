@@ -61,7 +61,7 @@ PrAll				db '(Name),(ID),Left,Top,Width,Height,Caption,Border,SysMenu,MaxButton,
 					db 'Sort,Flat,(StartID),TabIndex,Format,SizeGrip,Group,Icon,UseTabs,StartupPos,Orientation,SetBuddy,MultiSelect,HideSel,TopMost,xExStyle,xStyle,IntegralHgt,Image,Buttons,PopUp,OwnerDraw,Transp,Timer,AutoPlay,WeekNum,AviClip,AutoSize,ToolTip,Wrap,'
 					db 'Divider,DragDrop,'
 					db 'Smooth,Ellipsis,Language,HasStrings,(HelpID)'
-					db 1024 dup(0) ; fearless changed to allow more property strings to be added
+					db 4096 dup(0) ; fearless changed to allow more property strings to be added
 NO_OF_PR			equ 32+32+5 ;69 bytes long - fearless, CustBuff is 1024 which means actually only 15 controls will show up custom properties. fearless changed CustBuff to 4096 (61 controls)
 TOTAL_PR            dd 0
 
