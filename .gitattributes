@@ -12,3 +12,10 @@
 *.bmp binary
 *.png binary
 *.jpg binary
+*.gif binary
+*.cur binary
+*.doc binary
+*.docx binary
+*.rtf binary
+*.chm binary
+*.hlp binary
