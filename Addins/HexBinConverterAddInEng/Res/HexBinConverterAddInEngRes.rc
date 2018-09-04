@@ -1,0 +1,6 @@
+#define ikon							5001
+#define ikonBMP							5002
+#define MANIFEST 						24
+ikon					ICON      DISCARDABLE "Res/sct1.ico"
+ikonBMP					BITMAP    DISCARDABLE "Res/sct1.bmp"
+1						MANIFEST  DISCARDABLE "Res/manifest.xml"

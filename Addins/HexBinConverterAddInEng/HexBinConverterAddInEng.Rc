@@ -1,0 +1,3 @@
+#include "Res/HexBinConverterAddInEngVer.rc"
+#include "Res/HexBinConverterAddInEngRes.rc"
+#include "Res/HexBinConverterAddInEngDlg.rc"

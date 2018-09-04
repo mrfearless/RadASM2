@@ -1,0 +1,38 @@
+; ЬЮЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЪЮ?
+; Ь?кФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ?Ь?
+; Ь?? ммллллллллл   ммлллллллмм   млллллллллм ?Ь?
+; Ь?? лллллллллпп   лллллллллпп   плллллллллп ?Ь?
+; Ь?? лл            ллп               ллл     ?Ь?
+; Ь?? лл            лл                ллл     ?Ь?
+; Ь?? лллллллллмм   лл                ллл     ?Ь?
+; Ь?? ппллллллллл   лл                ллл     ?Ь?
+; Ь??          лл   лл                ллл     ?Ь?
+; Ь??          лл   ллм               ллл     ?Ь?
+; Ь?? ммллллллллл   лллллллллмм       ллл     ?Ь?
+; Ь?? лллллллллпп   пплллллллпп       плп     ?Ь?
+; Ь??                                         ?Ь?
+; Ь??                home of secret reversersЎ?Ь?
+; Ь?УФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ?Ь?
+; HexBinConverter RadASM Addin v1.0
+; _______________________________________________________________________________
+; Author    : BlueDeviL <bluedevil@sctzine.com>
+; Tester    : ErrorInside <errorinside@sctzine.com>
+; IDE       : RADAssembler v2.2.2.3 <http://masm32.com/board/index.php?board=24.0>
+; Template  : BlueDeviL // SCT
+; Date      : 28/08/2018
+; License   : MIT
+; ЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏЏ
+;																  www.sctzine.com
+
+->	28.08.2017 HexBinConverter RadASM Addin
+	Hello
+	Hex.Bin Converter can both convert hexadecimal numbers to binary and binary to
+    hexadecimal. Itis really important to understand number systems and number base
+    conversions while coding assembly.
+    I have coded this executable nearly 8 years ago. And now i converted it to a
+    RadASM addin. So this is a good example for me to learn coding addin to RadASM.
+    This addin might have bugs o can be coded better. You can inform me via email
+    i shared above.
+    Cya
+
+	Blue DeviL //SCT

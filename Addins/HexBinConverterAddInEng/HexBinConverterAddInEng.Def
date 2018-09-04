@@ -1,0 +1,5 @@
+LIBRARY HexBinConverterAddInEng
+EXPORTS
+	DllProc
+	InstallDll
+	GetOptions
