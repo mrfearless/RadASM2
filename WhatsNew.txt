@@ -1,6 +1,8 @@
 RadASM 2.2.2.4
 --------------
 2.2.2.4
+o Fix: Increased the number of files and directories created by Project wizard - Files and Folders page 
+  from 8 to 12. See https://github.com/mrfearless/RadASM2/issues/12 for details.
 o Fix api listbox not showing after viewing dialog and switching back to code
 o Reverted some changes made previously trying to increase custom control count as still crashing. See
   https://github.com/mrfearless/RadASM2/issues/7 for details.
