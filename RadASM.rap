@@ -1,7 +1,7 @@
 [Project]
 Assembler=masm
 Type=Win32 App
-Description=RadASM V2.2.2.3
+Description=RadASM V2.2.2.4
 Backup=$P\Bak\
 Debug=0
 Group=1
@@ -179,7 +179,7 @@ MinorFiles=*.res;*.obj;
 
 [Size]
 1=22,22,536,413,943
-2=0,416,869,416,33764
+2=0,416,869,416,1259
 3=154,154,590,413,1388
 4=0,0,590,413,40521
 5=132,132,536,413,69514
@@ -188,7 +188,7 @@ MinorFiles=*.res;*.obj;
 8=44,44,536,413,7693
 9=88,88,536,413,48462
 10=110,110,536,413,4056
-11=88,88,536,413,43026
+11=88,88,536,413,4446
 12=154,154,590,413,1082
 13=176,176,590,413,3558
 14=176,176,536,413,1625
@@ -305,7 +305,7 @@ MinorFiles=*.res;*.obj;
 128=0,0,0,0
 
 [AutoLoad]
-AutoLoad=2,16,4,5,6,8,17,35,79,86,96,113,39,65,10,37,94,119
+AutoLoad=11,2
 
 [BookMark]
 0=
@@ -491,16 +491,16 @@ ID=105
 44=6,C:\RadASM\Masm\Templates\Dialog.rad,,WndProc
 76=0,C:\RadASM\Masm\Templates\Dialog.rad,,WndProc
 [Find]
-1="2.2.2"
-2="Cmnt"
-3="CmntBlock"
-4="REM_SETFONT"
-5="REM_RAINIT"
-6="RichEdit20A"
-7="RichEditDLL"
-8="SETHILITEWORDS"
-9="REM_SETHILITEWORDS"
-10="hPrpTxtDesc"
+1="BlueDeviL"
+2="createfile"
+3="fearless"
+4="2.2.2"
+5="Cmnt"
+6="CmntBlock"
+7="REM_SETFONT"
+8="REM_RAINIT"
+9="RichEdit20A"
+10="RichEditDLL"
 
 [BreakPoint]
 0=
@@ -541,7 +541,7 @@ MilestoneOnTime=2
 MilestoneOnDate=0
 MilestoneOnDateWhen=1
 MilestoneOnDateStatus=0
-MilestoneOnDateDate=29
+MilestoneOnDateDate=26
 MilestoneOnDateTimeYear=2006
 MilestoneOnDateTimeMonth=8
 MilestoneOnDateTimeDate=27
@@ -761,7 +761,7 @@ Group=Assembly,Resources,..RC File,..Menu,..Dialog,Misc,Include
 [SourceSafe]
 Project=$/RadASM
 [PTimer]
-PTimer=2233822113
+PTimer=2242150348
 [RADebugBP]
 96=
 55=
@@ -795,6 +795,6 @@ PTimer=2233822113
 38=
 105=
 [GroupExpand]
-GroupExpand=1,1,1,1,1,1,1,0
+GroupExpand=1,0,1,1,0,0,0,0
 [Watch]
 Watch=z:tempbuff

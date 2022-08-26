@@ -41,26 +41,34 @@ IDC_LSTTPL			equ	2001
 IDC_EDTTPL			equ	2002
 
 ;**********************
-
+; Project Wizard Page 3 Constant
 IDD_WIZ3			equ 153
-
-IDD_FIC1			equ 601
-IDD_FIC2			equ 602
-IDD_FIC3			equ 603
-IDD_FIC4			equ 604
-IDD_FIC5			equ 605
-IDD_FIC6			equ 606
-IDD_FIC7			equ 607
-IDD_FIC8			equ 608
-	
-IDD_FOC1			equ 611
-IDD_FOC2			equ 612
-IDD_FOC3			equ 613
-IDD_FOC4			equ 614
-IDD_FOC5			equ 615
-IDD_FOC6			equ 616
-IDD_FOC7			equ 617
-IDD_FOC8			equ 618
+; File Creation Checkboxes
+IDD_FIC1			equ 601 ;\
+IDD_FIC2			equ 602 ;|
+IDD_FIC3			equ 603 ;|
+IDD_FIC4			equ 604 ;| 
+IDD_FIC5			equ 605 ;|
+IDD_FIC6			equ 606 ;|
+IDD_FIC7			equ 607 ;|
+IDD_FIC8			equ 608 ;|
+IDD_FIC9			equ 609 ;|
+IDD_FIC10			equ 610 ;|
+IDD_FIC11			equ 611 ;|
+IDD_FIC12			equ 612 ;|  26-08-2022 BlueDevil
+; Folder Creation Checkboxes  > ADDED: Extra 4 ChkBx for files 
+IDD_FOC1			equ 631 ;|         Extra 4 ChkBx for folders
+IDD_FOC2			equ 632 ;|
+IDD_FOC3			equ 633 ;|
+IDD_FOC4			equ 634 ;|
+IDD_FOC5			equ 635 ;|
+IDD_FOC6			equ 636 ;|
+IDD_FOC7			equ 637 ;|
+IDD_FOC8			equ 638 ;|
+IDD_FOC9			equ 639 ;|
+IDD_FOC10			equ 640 ;|
+IDD_FOC11			equ 641 ;|
+IDD_FOC12			equ 642 ;/
 
 IMPROW struct
 	fCpy		dd ?
@@ -68,8 +76,8 @@ IMPROW struct
 	fMain		dd ?
 	lpszName	dd ?
 IMPROW ends
-
-IDC_BTNIMP			equ 620
+; Import button
+IDC_BTNIMP			equ 650 ;26-08-2022 BlueDevil
 
 ;**********************
 
@@ -247,7 +255,7 @@ ProWizFinish proc uses ebx esi edi
 			mov		eax,hPsDlg[8]
 			mov		hWin,eax
 			mov		ID,IDD_FOC1
-			mov		ebx,8
+			mov		ebx,12; 26-08-2022 - BlueDeviL changed from 8 to 12
 		  @@:
 			invoke IsDlgButtonChecked,hWin,ID
 			.if eax==BST_CHECKED
@@ -264,7 +272,7 @@ ProWizFinish proc uses ebx esi edi
 			mov		ID,IDD_FIC1
 			mov		eax,hPsDlg[8]
 			mov		hWin,eax
-			mov		ebx,8
+			mov		ebx,12; 26-08-2022 - BlueDeviL changed from 8 to 12
 		  @@:
 			invoke IsDlgButtonChecked,hWin,ID
 			.if eax==BST_CHECKED
@@ -1588,7 +1596,7 @@ DialogFunc3 proc uses ebx,hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		invoke GetPrivateProfileString,addr iniProject,addr iniFiles,addr szNULL,addr iniBuffer,sizeof iniBuffer,addr szAsmIni
 		invoke GetPrivateProfileString,addr iniType,addr iniFiles,addr szNULL,addr buffer,sizeof buffer,addr szAsmIni
 		mov		ID,IDD_FIC1
-		mov		ebx,8
+		mov		ebx,12; 26-08-2022 - BlueDeviL changed from 8 to 12
 	  @@:
 		invoke iniGetItem,addr iniBuffer,addr buffer1
 		.if buffer1
@@ -1612,7 +1620,7 @@ DialogFunc3 proc uses ebx,hWin:HWND,uMsg:UINT,wParam:WPARAM,lParam:LPARAM
 		invoke GetPrivateProfileString,addr iniProject,addr iniFolders,addr szNULL,addr iniBuffer,sizeof iniBuffer,addr szAsmIni
 		invoke GetPrivateProfileString,addr iniType,addr iniFolders,addr szNULL,addr buffer,sizeof buffer,addr szAsmIni
 		mov		ID,IDD_FOC1
-		mov		ebx,8
+		mov		ebx,12; 26-08-2022 - BlueDeviL changed from 8 to 12
 	  @@:
 		invoke iniGetItem,addr iniBuffer,addr buffer1
 		.if buffer1
