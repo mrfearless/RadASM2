@@ -1,6 +1,6 @@
 # RadASM
 
-![](https://github.com/mrfearless/RadASM2/blob/master/Res/RadAsm.png) [Current version: 2.2.2.3 - Last updated: 14/01/2018](https://github.com/mrfearless/RadASM2/releases/latest)
+![](https://github.com/mrfearless/RadASM2/blob/master/Res/RadAsm.png) [Current version: 2.2.2.4 - Last updated: 26/08/2022](https://github.com/mrfearless/RadASM2/releases/latest)
 
 ## Overview
 
@@ -38,5 +38,6 @@ Visit the wiki entry [Setting up the RadASM environment](https://github.com/mrfe
 
 ## Credits
 * Written and Programmed by KetilO
-* Minor updates including Multilingual installer by fearless
+* Minor updates including Multilingual installer by [fearless](https://github.com/mrfearless)
+* [Blue DeviL](https://github.com/blue-devil)
 
