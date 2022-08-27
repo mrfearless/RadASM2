@@ -1,6 +1,9 @@
 # Force line-endings to be CRLF because we are in Windows platform
 * text eol=crlf
 
+*.tpl linguist-language=Text
+*.inc linguist-language=Assembly
+
 #
 ## These files are binary and should be left untouched
 #
