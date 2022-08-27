@@ -38,6 +38,6 @@ Visit the wiki entry [Setting up the RadASM environment](https://github.com/mrfe
 
 ## Credits
 * Written and Programmed by KetilO
-* Minor updates including Multilingual installer by [fearless](https://github.com/mrfearless)
+* [fearless](https://github.com/mrfearless)
 * [Blue DeviL](https://github.com/blue-devil)
 
