@@ -1204,7 +1204,7 @@ AboutUrl1						db 'http://radasm.cherrytree.at/',0
 AboutUrl2						db 'http://www.oby.ro/rad_asm',0
 
 ;Do not insert or move, just add
-nRadASMVer						dd 2223
+nRadASMVer						dd 2224
 fMaximized						dd 0
 lpIniFile						dd offset iniFile
 lpProject						dd offset ProjectFile
